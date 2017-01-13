@@ -1,0 +1,22 @@
+package com.caihong.bbs.manager;
+
+import java.util.List;
+
+import com.caihong.common.page.Pagination;
+import com.caihong.bbs.entity.BbsUserActiveLevel;
+
+public interface BbsUserActiveLevelMng {
+	public Pagination getPage(int pageNo, int pageSize);
+	
+	public List<BbsUserActiveLevel> getList(Integer count);
+
+	public BbsUserActiveLevel findById(Integer id);
+
+	public BbsUserActiveLevel save(BbsUserActiveLevel bean);
+
+	public BbsUserActiveLevel update(BbsUserActiveLevel bean);
+
+	public BbsUserActiveLevel deleteById(Integer id);
+	
+	public BbsUserActiveLevel[] deleteByIds(Integer[] ids);
+}

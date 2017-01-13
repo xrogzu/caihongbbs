@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>道具商店 - ${site.name}</title>
+	<link href="${resSys}/front.css" rel="stylesheet" type="text/css"/>
+    <link href="/${res}/bbs_forum/css/whole.css" type="text/css" rel="stylesheet" />
+    <link href="/${res}/bbs_forum/css/layout.css" type="text/css" rel="stylesheet" />
+    <link href="/${res}/bbs_member/css/set.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/${res}/bbs_box/jquery1.4.2.js"></script> 
+	<script type="text/javascript" src="/${res}/bbs_box/wbox.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/${res}/bbs_box/wbox.css" />
+    <style type="text/css">
+    #set-menu li.current2{background:url(/${res}/bbs_member/img/fav-cur.gif) no-repeat 0 0.5em;}
+    #set-menu li.current2 a{color:#707070;font-weight:700}
+    </style>
+  </head>
+  <body>
+    <!--header-->[#include "../include/页头.html"/]<!--/header-->
+    <!--main-->
+    <div class="main-wrap">
+    <div id="main">
+    <div id="breadCrumb"><img alt="" align="absMiddle" style="cursor: pointer" src="/${res}/bbs_forum/img/home.gif" /> <a href="${base}/">${site.name}</a> &raquo; <a href="${base}/member/index.jhtml">会员中心</a> &raquo;道具商店</div>
+    <div id="set-wrap">
+    <div id="set-side">
+    <div id="set-side-wrap">
+    [#include "../member/会员中心页_导航.html"/]
+    </div>
+    </div>
+    <div style="width:820px; margin:auto;background:#fff;float:right;">
+    <div class="cc" id="set-content-wrap">
+    <div>
+    <div class="set-tab-table">
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr class="tac" id="infolist">
+          <td class="current"><a href="#" style="cursor: pointer">道具商店</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+     <div class="set-tab-box" style="height:600px;">
+     <table cellspacing="1" cellpadding="5" border="0" width="100%">
+     	<tbody>
+     <tr>
+     	<td colspan="4"  height="30" bgcolor="#FFFFFF">
+     		我的道具包容量：${user.magicPacketSize!}/${user.group.magicPacketSize!};目前您有${user.point!}积分,${user.prestige!}彩虹币
+     	</td>
+     </tr>
+     <tr>
+     <td style="border:1px solid #cccccc;" bgcolor="#FFFFFF" align="center">道具名称</td>
+     <td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" bgcolor="#FFFFFF" align="center">道具功能</td>
+     <td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" width="80" bgcolor="#FFFFFF" align="center">售价</td>
+      <td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" width="80" bgcolor="#FFFFFF" align="center">购买</td></tr>
+     [#if magics?size>0]
+     [#list magics as magic]
+     	
+     	<tr>
+     	<td style="border:1px solid #cccccc;" bgcolor="#FFFFFF" align="center">
+     		${magic.name!}&nbsp;
+     	</td>
+     	<td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" bgcolor="#FFFFFF" >	${magic.description!}&nbsp;</td>
+       <td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" width="80" bgcolor="#FFFFFF" align="center">${magic.price!}&nbsp;[#if magic.credit==1]积分[#else]彩虹币[/#if]</td>
+	      <td style="border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;" width="80" bgcolor="#FFFFFF" align="center"> [#if magic.num>0]<a href="${base}/magic/getbuymagicpage.jspx?mid=${magic.identifier}"  id="magica_${magic.identifier}">购买</a>[#else]此道具缺货[/#if]
+     	</td>
+     	
+     	</tr>
+     	
+     [/#list]
+     [#else]
+     	没有道具
+     [/#if]
+     </tbody>
+     </table>
+<script type="text/javascript"> 
+var id;
+var strs=new Array();
+$("a[id^='magica']").each(function(){
+	id=$(this).attr("id");
+	strs=id.split("_");
+		$(this).wBox({title: "购买道具",requestType:"iframe",iframeWH:{width:400,height:200},target:"${base}/magic/getbuymagicpage.jspx?mid="+strs[1]});
+	});
+</script>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--/main-->
+    <!--footer-->[#include "../include/页脚.html"/]<!--footer-->
+  </body>
+</html>

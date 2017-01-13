@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="true">
+	
+	<bean id="category_list" class="com.caihong.bbs.action.directive.CategoryDirective"/>
+	<bean id="forum_list" class="com.caihong.bbs.action.directive.ForumDirective"/>
+	<bean id="topic_page" class="com.caihong.bbs.action.directive.TopicPageDirective"/>
+	<bean id="post_page" class="com.caihong.bbs.action.directive.PostPageDirective"/>
+	<bean id="topic_vcount" class="com.caihong.bbs.action.directive.ViewCountDirective"/>
+	<bean id="my_topic" class="com.caihong.bbs.action.directive.MyTopicPageDirective"/>
+	<bean id="my_reply" class="com.caihong.bbs.action.directive.MyReplyPageDirective"/>
+	<bean id="config_count" class="com.caihong.bbs.action.directive.ConfigCountDirective"/>
+	<bean id="topic_day" class="com.caihong.bbs.action.directive.TopicDayPageDirective"/>
+	<bean id="newtopic_list" class="com.caihong.bbs.action.directive.NewTopicDirective"/>
+	<bean id="cms_friendlink_ctg_list" class="com.caihong.bbs.action.directive.CmsFriendlinkCtgListDirective"/>
+	<bean id="cms_friendlink_list" class="com.caihong.bbs.action.directive.CmsFriendlinkListDirective"/>
+	<bean id="bbs_posttype" class="com.caihong.bbs.action.directive.BbsPostTypeDirective"/>
+	<!--后台权限标签-->
+	<bean id="cms_perm" class="com.caihong.bbs.web.PermistionDirective"/>
+	
+	<bean id="topicCountEhCache" class="com.caihong.bbs.cache.TopicCountEhCacheImpl"/>
+	<bean id="bbsConfigEhCache" class="com.caihong.bbs.cache.BbsConfigEhCacheImpl"/>
+	
+	<bean id="cmsSiteMng" class="com.caihong.core.manager.impl.CmsSiteMngImpl"/>
+	<bean id="bbsCategoryMng" class="com.caihong.bbs.manager.impl.BbsCategoryMngImpl"/>
+	<bean id="bbsUserMng" class="com.caihong.bbs.manager.impl.BbsUserMngImpl"/>
+	<bean id="bbsUserGroupMng" class="com.caihong.bbs.manager.impl.BbsUserGroupMngImpl"/>
+	<bean id="bbsUserExtMng" class="com.caihong.bbs.manager.impl.BbsUserExtMngImpl"/>
+	<bean id="bbsPostMng" class="com.caihong.bbs.manager.impl.BbsPostMngImpl"/>
+	<bean id="bbsTopicMng" class="com.caihong.bbs.manager.impl.BbsTopicMngImpl"/>
+	<bean id="bbsConfigMng" class="com.caihong.bbs.manager.impl.BbsConfigMngImpl"/>
+	<bean id="bbsForumMng" class="com.caihong.bbs.manager.impl.BbsForumMngImpl"/>
+	<bean id="bbsOperationMng" class="com.caihong.bbs.manager.impl.BbsOperationMngImpl"/>
+	<bean id="bbsGradeMng" class="com.caihong.bbs.manager.impl.BbsGradeMngImpl"/>
+	<bean id="attachmentMng" class="com.caihong.bbs.manager.impl.AttachmentMngImpl"/>
+	<bean id="cmsResourceMng" class="com.caihong.bbs.template.manager.impl.CmsResourceMngImpl"/>
+	<bean id="cmsConfigMng" class="com.caihong.core.manager.impl.CmsConfigMngImpl"/>
+	<bean id="cmsSensitivityMng" class="com.caihong.bbs.manager.impl.CmsSensitivityMngImpl"/>
+	<bean id="cmsFriendlinkCtgMng" class="com.caihong.bbs.manager.impl.CmsFriendlinkCtgMngImpl"/>
+	<bean id="cmsFriendlinkMng" class="com.caihong.bbs.manager.impl.CmsFriendlinkMngImpl"/>
+	<bean id="bbsPostTypeMng" class="com.caihong.bbs.manager.impl.BbsPostTypeMngImpl"/>
+	<bean id="bbsLoginLogMng" class="com.caihong.bbs.manager.impl.BbsLoginLogMngImpl"/>
+	<bean id="bbsUserOnlineMng" class="com.caihong.bbs.manager.impl.BbsUserOnlineMngImpl"/>
+	<bean id="bbsCreditExchangeMng" class="com.caihong.bbs.manager.impl.BbsCreditExchangeMngImpl"/>
+	<bean id="bbsCommonMagicMng" class="com.caihong.bbs.manager.impl.BbsCommonMagicMngImpl"/>
+	
+	<bean id="cmsSiteDao" class="com.caihong.core.dao.impl.CmsSiteDaoImpl"/>
+	<bean id="bbsCategoryDao" class="com.caihong.bbs.dao.impl.BbsCategoryDaoImpl"/>
+	<bean id="bbsUserDao" class="com.caihong.bbs.dao.impl.BbsUserDaoImpl"/>
+	<bean id="bbsUserGroupDao" class="com.caihong.bbs.dao.impl.BbsUserGroupDaoImpl"/>
+	<bean id="bbsUserExtDao" class="com.caihong.bbs.dao.impl.BbsUserExtDaoImpl"/>
+	<bean id="bbsPostDao" class="com.caihong.bbs.dao.impl.BbsPostDaoImpl"/>
+	<bean id="bbsTopicDao" class="com.caihong.bbs.dao.impl.BbsTopicDaoImpl"/>
+	<bean id="bbsConfigDao" class="com.caihong.bbs.dao.impl.BbsConfigDaoImpl"/>
+	<bean id="bbsForumDao" class="com.caihong.bbs.dao.impl.BbsForumDaoImpl"/>
+	<bean id="bbsOperationDao" class="com.caihong.bbs.dao.impl.BbsOperationDaoImpl"/>
+	<bean id="bbsGradeDao" class="com.caihong.bbs.dao.impl.BbsGradeDaoImpl"/>
+	<bean id="attachmentDao" class="com.caihong.bbs.dao.impl.AttachmentDaoImpl"/>
+	<bean id="cmsConfigDao" class="com.caihong.core.dao.impl.CmsConfigDaoImpl"/>
+	<bean id="cmsSensitivityDao" class="com.caihong.bbs.dao.impl.CmsSensitivityDaoImpl"/>
+	<bean id="cmsFriendlinkCtgDao" class="com.caihong.bbs.dao.impl.CmsFriendlinkCtgDaoImpl"/>
+	<bean id="cmsFriendlinkDao" class="com.caihong.bbs.dao.impl.CmsFriendlinkDaoImpl"/>
+	<bean id="bbsPostTypeDao" class="com.caihong.bbs.dao.impl.BbsPostTypeDaoImpl"/>
+	<bean id="bbsLoginLogDao" class="com.caihong.bbs.dao.impl.BbsLoginLogDaoImpl"/>
+	<bean id="bbsUserOnlineDao" class="com.caihong.bbs.dao.impl.BbsUserOnlineDaoImpl"/>
+	<bean id="bbsCreditExchangeDao" class="com.caihong.bbs.dao.impl.BbsCreditExchangeDaoImpl"/>
+	<bean id="bbsCommonMagicDao" class="com.caihong.bbs.dao.impl.BbsCommonMagicDaoImpl"/>
+</beans>

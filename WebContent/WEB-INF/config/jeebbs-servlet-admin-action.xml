@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="true">
+	
+	<bean id="imageUploadAct" class="com.caihong.bbs.action.ImageUploadAct"/>
+	<bean id="welcomeAct" class="com.caihong.bbs.action.WelcomeAct"/>
+	<bean id="bbsCategoryAct" class="com.caihong.bbs.action.BbsCategoryAct"/>
+	<bean id="bbsForumAct" class="com.caihong.bbs.action.BbsForumAct"/>
+	<bean id="bbsUserGroupAct" class="com.caihong.bbs.action.BbsUserGroupAct"/>
+	<bean id="resourceAct" class="com.caihong.bbs.action.template.ResourceAct"/>
+	<bean id="frameAct" class="com.caihong.bbs.action.FrameAct"/>
+	<bean id="bbsUserAct" class="com.caihong.bbs.action.BbsUserAct"/>
+	<bean id="cmsSiteConfigAct" class="com.caihong.bbs.action.CmsSiteConfigAct"/>
+	<bean id="cmsLoginAct" class="com.caihong.bbs.action.login.CmsLoginAct"/>
+	<bean id="personalAct" class="com.caihong.bbs.action.PersonalAct"/>
+	<bean id="cmsSensitivtyAct" class="com.caihong.bbs.action.CmsSensitivityAct"/>
+	<bean id="cmsFriendlinkCtgAct" class="com.caihong.bbs.action.CmsFriendlinkCtgAct"/>
+	<bean id="cmsFriendlinkAct" class="com.caihong.bbs.action.CmsFriendlinkAct"/>
+	<bean id="bbsPostTypeAct" class="com.caihong.bbs.action.BbsPostTypeAct"/>
+	<bean id="bbsCommonMagicAct" class="com.caihong.bbs.action.BbsCommonMagicAct"/>
+	<bean id="templateAct" class="com.caihong.bbs.action.template.TemplateAct">
+		<property name="tplManager" ref="tplManager"/>
+	</bean>
+	<bean id="bbsReportAct" class="com.caihong.bbs.action.BbsReportAct"/>
+	<bean id="bbsLimitAct" class="com.caihong.bbs.action.BbsLimitAct"/>
+	<bean id="bbsThirdAccountAct" class="com.caihong.bbs.action.BbsThirdAccountAct"/>
+	<bean id="bbsMessageAct" class="com.caihong.bbs.action.BbsMessageAct"/>
+	<bean id="bbsUserActiveLevelAct" class="com.caihong.bbs.action.BbsUserActiveLevelAct"/>
+	<bean id="bbsWebserviceAct" class="com.caihong.bbs.action.BbsWebserviceAct"/>
+	<bean id="bbsWebserviceAuthAct" class="com.caihong.bbs.action.BbsWebserviceAuthAct"/>
+	<bean id="bbsWebserviceCallRecordAct" class="com.caihong.bbs.action.BbsWebserviceCallRecordAct"/>
+</beans>
