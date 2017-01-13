@@ -120,7 +120,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>JeeBbsAdmin</servlet-name>
-		<url-pattern>/jeeadmin/jeebbs/*</url-pattern>
+		<url-pattern>/admin/bbs/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>JeeCmsFront</servlet-name>

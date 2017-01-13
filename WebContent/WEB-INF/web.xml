@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-	<display-name>JeeBbs4</display-name>
+	<display-name>BBS</display-name>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -43,7 +43,7 @@
 		<filter-class>com.caihong.common.web.XssFilter</filter-class>
 		<init-param>
 			<param-name>excludeUrls</param-name>
-			<param-value>/jeeadmin/jeebbs@/search@/member/report</param-value>
+			<param-value>/admin/bbs@/search@/member/report</param-value>
     	</init-param>
     	<init-param>
 			<param-name>SplitChar</param-name>
@@ -159,7 +159,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>JeeBbsAdmin</servlet-name>
-		<url-pattern>/jeeadmin/jeebbs/*</url-pattern>
+		<url-pattern>/admin/bbs/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>JeeBbsFront</servlet-name>

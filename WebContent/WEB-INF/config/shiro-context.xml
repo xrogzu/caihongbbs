@@ -26,19 +26,19 @@
 				/login.jspx = authc
 				/logout.jspx = logout
 				/member/** = user
-				/jeeadmin/jeebbs/login.do = authc
-				/jeeadmin/jeebbs/logout.do = logout
-				/jeeadmin/jeebbs/** =user
+				/admin/bbs/login.do = authc
+				/admin/bbs/logout.do = logout
+				/admin/bbs/** =user
 			</value>
 		</property>
 	</bean>
 	<!-- Shiro Filter -->	
 	<bean id="adminUrlBean" class="com.caihong.core.security.BbsAdminUrl">
-		<property name="adminLogin" value="/jeeadmin/jeebbs/login.do"/>
-		<property name="adminPrefix" value="/jeeadmin/jeebbs/"/>
+		<property name="adminLogin" value="/admin/bbs/login.do"/>
+		<property name="adminPrefix" value="/admin/bbs/"/>
 	</bean>
 	<bean id="authcFilter" class="com.caihong.core.security.BbsAuthenticationFilter" parent="adminUrlBean">
-		<property name="adminIndex" value="/jeeadmin/jeebbs/index.do"/>
+		<property name="adminIndex" value="/admin/bbs/index.do"/>
 		<property name="rememberMeParam" value="rememberMe"/> 
 	</bean>
 	<bean id="userFilter" class="com.caihong.core.security.BbsUserFilter" parent="adminUrlBean"/>

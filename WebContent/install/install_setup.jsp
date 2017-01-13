@@ -27,7 +27,7 @@
 		<td height="280" align="left" bgcolor="#F0F8FD"
 			style="padding: 10px; line-height: 1.7em;">恭喜您，系统已经安装成功！<br />
 		请重启TOMCAT服务。只有重启TOMCAT服务之后，安装才能生效。<br />
-		后台登录地址“网站根路径/jeeadmin/jeebbs/index.do”<br />
+		后台登录地址“网站根路径/admin/bbs/index.do”<br />
 		后台管理员admin，密码password。</td>
 	</tr>
 </table>
