@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-01-14 01:18:10
+Date: 2017-01-14 11:44:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -451,7 +451,7 @@ CREATE TABLE `bbs_login_log` (
   PRIMARY KEY (`id`),
   KEY `fk_bbs_login_log_user` (`user_id`),
   CONSTRAINT `fk_bbs_login_log_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=878 DEFAULT CHARSET=utf8 COMMENT='登录日志';
+) ENGINE=InnoDB AUTO_INCREMENT=883 DEFAULT CHARSET=utf8 COMMENT='登录日志';
 
 -- ----------------------------
 -- Records of bbs_login_log
@@ -471,6 +471,11 @@ INSERT INTO `bbs_login_log` VALUES ('874', '5', '2017-01-14 00:00:16', null, '12
 INSERT INTO `bbs_login_log` VALUES ('875', '5', '2017-01-14 00:00:26', null, '127.0.0.1');
 INSERT INTO `bbs_login_log` VALUES ('876', '5', '2017-01-14 00:55:34', null, '127.0.0.1');
 INSERT INTO `bbs_login_log` VALUES ('877', '5', '2017-01-14 00:55:36', null, '0:0:0:0:0:0:0:1');
+INSERT INTO `bbs_login_log` VALUES ('878', '5', '2017-01-14 01:37:44', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('879', '5', '2017-01-14 01:38:06', null, '0:0:0:0:0:0:0:1');
+INSERT INTO `bbs_login_log` VALUES ('880', '5', '2017-01-14 01:38:28', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('881', '5', '2017-01-14 01:39:36', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('882', '5', '2017-01-14 01:44:54', null, '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for bbs_magic_config
@@ -583,11 +588,13 @@ CREATE TABLE `bbs_operation` (
   KEY `FK_BBS_OPERATION_USER` (`operater_id`),
   CONSTRAINT `FK_BBS_OPEATTION` FOREIGN KEY (`SITE_ID`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `FK_BBS_OPERATION_USER` FOREIGN KEY (`operater_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8 COMMENT='主题、帖子操作记录';
+) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8 COMMENT='主题、帖子操作记录';
 
 -- ----------------------------
 -- Records of bbs_operation
 -- ----------------------------
+INSERT INTO `bbs_operation` VALUES ('330', '1', '5', 'POST', '186', '屏蔽', null, '2017-01-14 01:48:43');
+INSERT INTO `bbs_operation` VALUES ('331', '1', '5', 'POST', '186', '取消屏蔽', null, '2017-01-14 01:48:48');
 
 -- ----------------------------
 -- Table structure for bbs_permission
@@ -826,14 +833,17 @@ CREATE TABLE `bbs_session` (
   PRIMARY KEY (`sid`),
   KEY `fk_session_user` (`user_id`),
   CONSTRAINT `fk_session_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1257 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
+) ENGINE=InnoDB AUTO_INCREMENT=1281 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
 
 -- ----------------------------
 -- Records of bbs_session
 -- ----------------------------
-INSERT INTO `bbs_session` VALUES ('1254', '6A0AF51BD91ADEFE14AA2313AA19B8FD', '5', '127.0.0.1', '2017-01-14 00:55:30', '2017-01-14 00:55:30');
-INSERT INTO `bbs_session` VALUES ('1255', 'AB53EB234F9EE8474DADA134CB987C81', '5', '0:0:0:0:0:0:0:1', '2017-01-14 00:55:34', '2017-01-14 00:55:34');
-INSERT INTO `bbs_session` VALUES ('1256', 'EC1A09438829C7711598AC2DAC588199', null, '127.0.0.1', '2017-01-14 01:05:28', '2017-01-14 01:05:28');
+INSERT INTO `bbs_session` VALUES ('1275', '45C4EB4CDD0679289B3167C0F5C75A18', null, '127.0.0.1', '2017-01-14 03:03:56', '2017-01-14 03:03:56');
+INSERT INTO `bbs_session` VALUES ('1276', '0505AE94226F5A9BA525A6BB4E5A1B34', null, '127.0.0.1', '2017-01-14 03:09:44', '2017-01-14 03:09:44');
+INSERT INTO `bbs_session` VALUES ('1277', '2E27B4727105B0764CAAFF2896BDEBFD', null, '127.0.0.1', '2017-01-14 03:09:47', '2017-01-14 03:09:47');
+INSERT INTO `bbs_session` VALUES ('1278', 'D2CFA159C41C23F579E511D2912512B8', null, '127.0.0.1', '2017-01-14 03:12:29', '2017-01-14 03:12:29');
+INSERT INTO `bbs_session` VALUES ('1279', 'DAA743DFB53E8D8BB6938F49F2963981', null, '127.0.0.1', '2017-01-14 03:12:44', '2017-01-14 03:12:44');
+INSERT INTO `bbs_session` VALUES ('1280', '0B8BFDE48D1D226F0980E16445B59FEB', null, '127.0.0.1', '2017-01-14 03:13:44', '2017-01-14 03:13:44');
 
 -- ----------------------------
 -- Table structure for bbs_third_account
@@ -908,7 +918,7 @@ CREATE TABLE `bbs_topic` (
 -- ----------------------------
 -- Records of bbs_topic
 -- ----------------------------
-INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '1', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '1', '1', '1', '0');
+INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '2', '2', '2', '0');
 
 -- ----------------------------
 -- Table structure for bbs_topic_text
@@ -1243,7 +1253,7 @@ CREATE TABLE `jb_user` (
 -- ----------------------------
 -- Records of jb_user
 -- ----------------------------
-INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'qianfo_713@163.com', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-14 00:55:36', '0:0:0:0:0:0:0:1', '947', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', 'AB53EB234F9EE8474DADA134CB987C81', '3', '0');
+INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'qianfo_713@163.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-14 01:44:54', '127.0.0.1', '952', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', '41FCE65041EAD4AEE55F4B4D760FF298', '3', '0');
 
 -- ----------------------------
 -- Table structure for jb_user_attr
@@ -1296,14 +1306,14 @@ CREATE TABLE `jc_config` (
   `port` int(11) DEFAULT NULL COMMENT '端口',
   `db_file_uri` varchar(50) NOT NULL DEFAULT '/dbfile.svl?n=' COMMENT '数据库附件访问地址',
   `is_upload_to_db` tinyint(1) NOT NULL DEFAULT '0' COMMENT '上传附件至数据库',
-  `def_img` varchar(255) NOT NULL DEFAULT '/caihong/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
+  `def_img` varchar(255) NOT NULL DEFAULT '/JeeCms/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
   `login_url` varchar(255) NOT NULL DEFAULT '/login.jspx' COMMENT '登录地址',
   `process_url` varchar(255) DEFAULT NULL COMMENT '登录后处理地址',
   `mark_on` tinyint(1) NOT NULL DEFAULT '1' COMMENT '开启图片水印',
   `mark_width` int(11) NOT NULL DEFAULT '120' COMMENT '图片最小宽度',
   `mark_height` int(11) NOT NULL DEFAULT '120' COMMENT '图片最小高度',
   `mark_image` varchar(100) DEFAULT '/r/cms/www/watermark.png' COMMENT '图片水印',
-  `mark_content` varchar(100) NOT NULL DEFAULT 'www.caihong.com' COMMENT '文字水印内容',
+  `mark_content` varchar(100) NOT NULL DEFAULT 'www.jeecms.com' COMMENT '文字水印内容',
   `mark_size` int(11) NOT NULL DEFAULT '20' COMMENT '文字水印大小',
   `mark_color` varchar(10) NOT NULL DEFAULT '#FF0000' COMMENT '文字水印颜色',
   `mark_alpha` int(11) NOT NULL DEFAULT '50' COMMENT '水印透明度（0-100）',
@@ -1326,7 +1336,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '2020', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.caihong.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-14', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-14', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -1352,8 +1362,8 @@ INSERT INTO `jc_config_attr` VALUES ('1', 'qqID', '101194204');
 INSERT INTO `jc_config_attr` VALUES ('1', 'qqKey', 'd4e1583fabe2a2db6e44bbcc8a2c24e8');
 INSERT INTO `jc_config_attr` VALUES ('1', 'sinaID', '');
 INSERT INTO `jc_config_attr` VALUES ('1', 'qqWeboID', '');
-INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopnum', '146');
-INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopday', '2015-3-21');
+INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopnum', '13');
+INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopday', '2017-1-14');
 INSERT INTO `jc_config_attr` VALUES ('1', 'changeGroup', '10');
 INSERT INTO `jc_config_attr` VALUES ('1', 'autoChangeGroup', 'false');
 INSERT INTO `jc_config_attr` VALUES ('1', 'serviceExpirationEmailNotice', 'true');
@@ -1486,7 +1496,7 @@ CREATE TABLE `jc_site` (
 -- ----------------------------
 -- Records of jc_site
 -- ----------------------------
-INSERT INTO `jc_site` VALUES ('1', '1', null, 'localhost', 'www', '彩虹医学网论坛', '彩虹医学网', 'http://', '.jhtml', '.html', null, '0', '0', 'zh_CN', 'zh_CN', 'blue', 'mobile', '2', '2', '1', '1', '192.168.0.2,192.168.0.7,192.168.0.144,localhost', '', '1');
+INSERT INTO `jc_site` VALUES ('1', '1', null, 'bbs.caihongyixue.com', 'www', '彩虹医学网论坛', '彩虹医学网', 'http://', '.jhtml', '.html', null, '0', '0', 'zh_CN', 'zh_CN', 'blue', 'mobile', '2', '2', '1', '1', '192.168.0.2,192.168.0.7,192.168.0.144,localhost', '', '1');
 
 -- ----------------------------
 -- Table structure for jo_authentication
@@ -1533,7 +1543,7 @@ INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用�
 INSERT INTO `jo_config` VALUES ('message_register_subject', '彩虹医学网会员注册信息');
 INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册彩虹医学网系统会员\r\n请点击以下链接进行激活\r\nhttp://localhost:2020/active.jspx?username=${username}&key=${activationCode}\r\n');
 INSERT INTO `jo_config` VALUES ('message_serviceexpiration_subject', 'JEECMS商业服务到期');
-INSERT INTO `jo_config` VALUES ('message_serviceexpiration_text', '感谢您使用JEECMS系列产品，您的服务已到期，如需得到我司服务，您可以到电话联系售前人员购买支持服务，联系方式在官网可以查询：http://www.caihong.com');
+INSERT INTO `jo_config` VALUES ('message_serviceexpiration_text', '感谢您使用JEECMS系列产品，您的服务已到期，如需得到我司服务，您可以到电话联系售前人员购买支持服务，联系方式在官网可以查询：http://www.jeecms.com');
 INSERT INTO `jo_config` VALUES ('message_subject', 'JEECMS会员密码找回信息');
 INSERT INTO `jo_config` VALUES ('message_text', '感谢您使用JEECMS系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 
@@ -1619,4 +1629,4 @@ CREATE TABLE `jo_user` (
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('5', 'admin', 'qianfo_713@163.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-14 00:55:36', '0:0:0:0:0:0:0:1', '1696', null, null, '1', null, null, '0', null);
+INSERT INTO `jo_user` VALUES ('5', 'admin', 'qianfo_713@163.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-14 01:44:54', '127.0.0.1', '1701', null, null, '1', null, null, '0', null);
