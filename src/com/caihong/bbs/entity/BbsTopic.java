@@ -102,7 +102,7 @@ public class BbsTopic extends BaseBbsTopic {
 	}
 
 	/**
-	 * 获得访问路径前缀。如：http://bbs.caihong.com/luntan/2
+	 * 获得访问路径前缀。如：http://bbs.caihongyixue.com/luntan/2
 	 * 
 	 * @return
 	 */

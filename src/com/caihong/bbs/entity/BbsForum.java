@@ -41,7 +41,7 @@ public class BbsForum extends BaseBbsForum {
 	}
 
 	/**
-	 * 获得访问路径。如：http://bbs.caihong.com/luntan/index.htm
+	 * 获得访问路径。如：http://bbs.caihongyixue.com/luntan/index.htm
 	 * 
 	 * @return
 	 */
