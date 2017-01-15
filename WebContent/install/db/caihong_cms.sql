@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhsot
-Source Server Version : 50703
+Source Server         : localhost
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : caihong_cms
 
 Target Server Type    : MYSQL
-Target Server Version : 50703
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-01-14 11:45:14
+Date: 2017-01-16 01:11:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -372,7 +372,7 @@ CREATE TABLE `jc_api_record` (
   KEY `index_jc_api_record_sign` (`sign`),
   CONSTRAINT `fk_api_info` FOREIGN KEY (`api_info_id`) REFERENCES `jc_api_info` (`id`),
   CONSTRAINT `fk_api_record_account` FOREIGN KEY (`api_account`) REFERENCES `jc_api_account` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=utf8 COMMENT='API调用记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='API调用记录';
 
 -- ----------------------------
 -- Records of jc_api_record
@@ -389,7 +389,7 @@ CREATE TABLE `jc_api_user_login` (
   `login_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '登陆时间',
   `login_count` int(11) NOT NULL DEFAULT '0' COMMENT '登陆次数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='API用户登录表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='API用户登录表';
 
 -- ----------------------------
 -- Records of jc_api_user_login
@@ -420,23 +420,20 @@ CREATE TABLE `jc_channel` (
   CONSTRAINT `fk_jc_channel_model` FOREIGN KEY (`model_id`) REFERENCES `jc_model` (`model_id`),
   CONSTRAINT `fk_jc_channel_parent` FOREIGN KEY (`parent_id`) REFERENCES `jc_channel` (`channel_id`),
   CONSTRAINT `fk_jc_channel_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COMMENT='CMS栏目表';
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COMMENT='CMS栏目表';
 
 -- ----------------------------
 -- Records of jc_channel
 -- ----------------------------
-INSERT INTO `jc_channel` VALUES ('75', '1', '1', null, 'news', '1', '2', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('76', '5', '1', null, 'pic', '3', '4', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('77', '6', '1', null, 'video', '5', '6', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('78', '4', '1', null, 'download', '7', '16', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('79', '8', '1', null, 'job', '17', '18', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('80', '2', '1', null, 'survey', '19', '20', '11', '0', '1', null);
-INSERT INTO `jc_channel` VALUES ('81', '9', '1', null, 'doc', '21', '22', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('82', '2', '1', null, 'message', '23', '24', '10', '0', '1', null);
-INSERT INTO `jc_channel` VALUES ('90', '4', '1', '78', 'xtrj', '8', '9', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('91', '4', '1', '78', 'mtzs', '10', '11', '10', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('92', '4', '1', '78', 'jptj', '12', '13', '9', '1', '1', null);
-INSERT INTO `jc_channel` VALUES ('93', '4', '1', '78', 'yxyl', '14', '15', '10', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('75', '1', '1', null, 'news', '1', '8', '4', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('76', '5', '1', null, 'zjtd', '9', '10', '2', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('77', '6', '1', null, 'education', '11', '12', '1', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('78', '1', '1', null, 'yyhz', '13', '14', '3', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('81', '2', '1', null, 'gywm', '15', '16', '5', '0', '1', null);
+INSERT INTO `jc_channel` VALUES ('82', '2', '1', null, 'message', '17', '18', '6', '0', '1', null);
+INSERT INTO `jc_channel` VALUES ('94', '1', '1', '75', 'docbbs', '2', '3', '2', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('95', '1', '1', '75', 'hzyd', '4', '5', '3', '1', '1', null);
+INSERT INTO `jc_channel` VALUES ('96', '1', '1', '75', 'wzxw', '6', '7', '1', '1', '1', null);
 
 -- ----------------------------
 -- Table structure for jc_channel_attr
@@ -476,18 +473,15 @@ CREATE TABLE `jc_channel_count` (
 -- ----------------------------
 -- Records of jc_channel_count
 -- ----------------------------
-INSERT INTO `jc_channel_count` VALUES ('75', '442', '0', '0', '0', '22', '16', '16', '16', '22');
-INSERT INTO `jc_channel_count` VALUES ('76', '201', '0', '0', '0', '11', '0', '0', '0', '11');
-INSERT INTO `jc_channel_count` VALUES ('77', '38', '0', '0', '0', '15', '0', '0', '0', '15');
-INSERT INTO `jc_channel_count` VALUES ('78', '25', '0', '0', '0', '14', '0', '0', '0', '14');
-INSERT INTO `jc_channel_count` VALUES ('79', '49', '0', '0', '0', '10', '0', '0', '0', '10');
-INSERT INTO `jc_channel_count` VALUES ('80', '33', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('81', '72', '0', '0', '0', '10', '0', '0', '0', '10');
+INSERT INTO `jc_channel_count` VALUES ('75', '447', '5', '5', '5', '50', '20', '28', '28', '28');
+INSERT INTO `jc_channel_count` VALUES ('76', '207', '6', '6', '6', '11', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('77', '81', '43', '43', '43', '15', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('78', '28', '3', '3', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('81', '73', '1', '1', '1', '10', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('82', '6', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('90', '12', '0', '0', '0', '4', '0', '0', '0', '4');
-INSERT INTO `jc_channel_count` VALUES ('91', '2', '0', '0', '0', '8', '0', '0', '0', '8');
-INSERT INTO `jc_channel_count` VALUES ('92', '12', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('93', '2', '0', '0', '0', '2', '0', '0', '0', '2');
+INSERT INTO `jc_channel_count` VALUES ('94', '0', '0', '0', '0', '16', '16', '16', '16', '16');
+INSERT INTO `jc_channel_count` VALUES ('95', '0', '0', '0', '0', '12', '12', '12', '12', '12');
+INSERT INTO `jc_channel_count` VALUES ('96', '3', '3', '3', '3', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_channel_department
@@ -566,18 +560,15 @@ CREATE TABLE `jc_channel_ext` (
 -- ----------------------------
 -- Records of jc_channel_ext
 -- ----------------------------
-INSERT INTO `jc_channel_ext` VALUES ('75', '新闻', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '1', '1', '/WEB-INF/t/cms/www/mobile/channel/news.html');
-INSERT INTO `jc_channel_ext` VALUES ('76', '图库', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('77', '视频', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '1', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('78', '下载', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('79', '招聘', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('80', '网络调查', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/alone/alone_survey.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/alone/alone_survey.html.html');
-INSERT INTO `jc_channel_ext` VALUES ('81', '文库', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('75', '新闻资讯', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '1', '1', '/WEB-INF/t/cms/www/mobile/channel/news.html');
+INSERT INTO `jc_channel_ext` VALUES ('76', '专家团队', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('77', '空中课堂', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '1', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('78', '预约会诊', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('81', '关于我们', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/alone/alone_about.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/alone/alone_about.html');
 INSERT INTO `jc_channel_ext` VALUES ('82', '留言板', null, null, '0', '0', '0', '0', '10', null, null, '/guestbook.jspx', null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('90', '系统软件', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('91', '媒体助手', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('92', '精品推荐', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_recommend.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('93', '游戏娱乐', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('94', '医生论坛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
+INSERT INTO `jc_channel_ext` VALUES ('95', '患者园地', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
+INSERT INTO `jc_channel_ext` VALUES ('96', '网站新闻', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
 
 -- ----------------------------
 -- Table structure for jc_channel_model
@@ -601,12 +592,7 @@ CREATE TABLE `jc_channel_model` (
 INSERT INTO `jc_channel_model` VALUES ('75', '1', '/WEB-INF/t/cms/www/default/content/news2.html', '0', '/WEB-INF/t/cms/www/mobile/content/news.html');
 INSERT INTO `jc_channel_model` VALUES ('76', '5', '', '0', '');
 INSERT INTO `jc_channel_model` VALUES ('77', '6', '', '0', '');
-INSERT INTO `jc_channel_model` VALUES ('79', '8', '', '0', '');
 INSERT INTO `jc_channel_model` VALUES ('81', '9', '/WEB-INF/t/cms/www/default/content/doc_pdfjs.html', '0', '');
-INSERT INTO `jc_channel_model` VALUES ('90', '4', '', '0', '');
-INSERT INTO `jc_channel_model` VALUES ('91', '4', '', '0', '');
-INSERT INTO `jc_channel_model` VALUES ('92', '4', '', '0', '');
-INSERT INTO `jc_channel_model` VALUES ('93', '4', '', '0', '');
 
 -- ----------------------------
 -- Table structure for jc_channel_txt
@@ -662,13 +648,15 @@ CREATE TABLE `jc_chnl_group_contri` (
 INSERT INTO `jc_chnl_group_contri` VALUES ('75', '1');
 INSERT INTO `jc_chnl_group_contri` VALUES ('76', '1');
 INSERT INTO `jc_chnl_group_contri` VALUES ('77', '1');
-INSERT INTO `jc_chnl_group_contri` VALUES ('79', '1');
-INSERT INTO `jc_chnl_group_contri` VALUES ('81', '1');
+INSERT INTO `jc_chnl_group_contri` VALUES ('94', '1');
+INSERT INTO `jc_chnl_group_contri` VALUES ('95', '1');
+INSERT INTO `jc_chnl_group_contri` VALUES ('96', '1');
 INSERT INTO `jc_chnl_group_contri` VALUES ('75', '2');
 INSERT INTO `jc_chnl_group_contri` VALUES ('76', '2');
 INSERT INTO `jc_chnl_group_contri` VALUES ('77', '2');
-INSERT INTO `jc_chnl_group_contri` VALUES ('79', '2');
-INSERT INTO `jc_chnl_group_contri` VALUES ('81', '2');
+INSERT INTO `jc_chnl_group_contri` VALUES ('94', '2');
+INSERT INTO `jc_chnl_group_contri` VALUES ('95', '2');
+INSERT INTO `jc_chnl_group_contri` VALUES ('96', '2');
 
 -- ----------------------------
 -- Table structure for jc_chnl_group_view
@@ -715,7 +703,7 @@ CREATE TABLE `jc_comment` (
   CONSTRAINT `fk_jc_comment_reply` FOREIGN KEY (`reply_user_id`) REFERENCES `jc_user` (`user_id`),
   CONSTRAINT `fk_jc_comment_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_comment_user` FOREIGN KEY (`comment_user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='CMS评论表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='CMS评论表';
 
 -- ----------------------------
 -- Records of jc_comment
@@ -724,6 +712,7 @@ INSERT INTO `jc_comment` VALUES ('11', null, null, '30', '1', '2016-10-10 08:50:
 INSERT INTO `jc_comment` VALUES ('13', null, null, '39', '1', '2016-10-10 08:56:21', null, '0', '0', '1', '1', null, null, '0');
 INSERT INTO `jc_comment` VALUES ('14', null, null, '130', '1', '2016-10-10 14:00:12', null, '0', '0', '1', '1', null, null, '0');
 INSERT INTO `jc_comment` VALUES ('15', null, null, '132', '1', '2016-10-10 14:01:13', null, '0', '0', '1', '1', null, null, '0');
+INSERT INTO `jc_comment` VALUES ('16', '1', null, '123', '1', '2017-01-15 23:27:16', null, '0', '0', '0', '0', null, null, '0');
 
 -- ----------------------------
 -- Table structure for jc_comment_ext
@@ -745,6 +734,7 @@ INSERT INTO `jc_comment_ext` VALUES ('11', '117.41.152.66', '早就该这样了�
 INSERT INTO `jc_comment_ext` VALUES ('13', '117.41.152.66', '四川人民伤不起，忘国家加紧开展救援以及灾后重建工作。', '');
 INSERT INTO `jc_comment_ext` VALUES ('14', '117.41.152.66', '保持定力：坚持走中国特色解决民族问题的正确道路', '');
 INSERT INTO `jc_comment_ext` VALUES ('15', '117.41.152.66', '燃烧吧小宇宙，中国大妈征服世界，哈哈哈哈...', '');
+INSERT INTO `jc_comment_ext` VALUES ('16', '127.0.0.1', '阿斯顿发顺丰', null);
 
 -- ----------------------------
 -- Table structure for jc_config
@@ -794,7 +784,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '2021', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-01-14', '2017-01-14 01:57:45', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice4', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-01-14', '2016-10-15');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-01-16', '2017-01-16 00:36:11', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice4', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-01-16', '2017-01-16');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -947,95 +937,99 @@ CREATE TABLE `jc_content` (
   KEY `index_jc_content_sort_date` (`sort_date`),
   KEY `index_jc_content_is_recommend` (`is_recommend`),
   KEY `index_jc_content_recommend_level` (`recommend_level`),
-  CONSTRAINT `fk_jc_contentchannel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`),
   CONSTRAINT `fk_jc_content_model` FOREIGN KEY (`model_id`) REFERENCES `jc_model` (`model_id`),
   CONSTRAINT `fk_jc_content_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_content_type` FOREIGN KEY (`type_id`) REFERENCES `jc_content_type` (`type_id`),
-  CONSTRAINT `fk_jc_content_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8 COMMENT='CMS内容表';
+  CONSTRAINT `fk_jc_content_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
+  CONSTRAINT `fk_jc_contentchannel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COMMENT='CMS内容表';
 
 -- ----------------------------
 -- Records of jc_content
 -- ----------------------------
-INSERT INTO `jc_content` VALUES ('2', '76', '1', '2', '5', '1', '2016-07-15 14:47:24', '0', '0', '0', '2', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('7', '76', '1', '2', '5', '1', '2016-07-15 15:33:26', '0', '0', '1', '2', '17', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('11', '75', '1', '1', '1', '1', '2016-07-15 16:23:32', '0', '0', '0', '2', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('12', '75', '1', '1', '1', '1', '2016-07-15 17:22:47', '0', '0', '0', '2', '1', '0', '0', '0', '1', '0');
-INSERT INTO `jc_content` VALUES ('13', '76', '1', '2', '5', '1', '2016-07-19 14:12:48', '1', '0', '1', '2', '3', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('14', '75', '1', '2', '1', '1', '2016-07-19 14:26:30', '0', '0', '0', '2', '21', '0', '0', '14', '13', '0');
-INSERT INTO `jc_content` VALUES ('23', '75', '1', '1', '1', '1', '2016-09-13 17:16:04', '0', '0', '0', '2', '16', '0', '0', '12', '11', '1');
-INSERT INTO `jc_content` VALUES ('27', '75', '1', '2', '1', '1', '2016-09-22 16:30:13', '0', '0', '0', '2', '1', '0', '0', '2', '2', '1');
-INSERT INTO `jc_content` VALUES ('28', '75', '1', '2', '1', '1', '2016-09-22 16:56:46', '0', '0', '0', '2', '4', '0', '0', '2', '2', '1');
-INSERT INTO `jc_content` VALUES ('29', '75', '1', '1', '1', '1', '2016-09-23 09:07:33', '0', '0', '0', '2', '1', '0', '0', '1', '1', '1');
-INSERT INTO `jc_content` VALUES ('30', '75', '1', '1', '1', '1', '2016-09-23 09:09:41', '0', '0', '0', '2', '54', '1', '0', '44', '41', '1');
-INSERT INTO `jc_content` VALUES ('32', '75', '1', '2', '1', '1', '2016-09-23 09:19:38', '0', '0', '0', '2', '2', '0', '0', '1', '2', '1');
-INSERT INTO `jc_content` VALUES ('33', '75', '1', '2', '1', '1', '2016-09-23 09:23:39', '0', '0', '0', '2', '18', '0', '0', '18', '18', '1');
-INSERT INTO `jc_content` VALUES ('36', '75', '1', '2', '1', '1', '2016-09-23 09:40:21', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('37', '75', '1', '2', '1', '1', '2016-09-23 09:43:34', '0', '0', '0', '2', '2', '0', '0', '1', '0', '1');
-INSERT INTO `jc_content` VALUES ('39', '75', '1', '2', '1', '1', '2016-09-23 09:54:17', '0', '0', '0', '2', '27', '1', '0', '17', '18', '1');
-INSERT INTO `jc_content` VALUES ('43', '79', '1', '1', '8', '1', '2016-09-26 09:33:15', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('44', '79', '1', '1', '8', '1', '2016-09-26 09:34:35', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('45', '79', '1', '1', '8', '1', '2016-09-26 09:38:39', '0', '0', '0', '2', '17', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('46', '79', '1', '1', '8', '1', '2016-09-26 09:45:02', '0', '0', '0', '2', '17', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('47', '79', '1', '1', '8', '1', '2016-09-26 09:47:54', '0', '0', '0', '2', '16', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('48', '79', '1', '1', '8', '1', '2016-09-26 09:50:04', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('49', '79', '1', '1', '8', '1', '2016-09-26 09:51:13', '0', '0', '0', '2', '16', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('50', '79', '1', '1', '8', '1', '2016-09-26 09:54:56', '0', '0', '0', '2', '16', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('51', '79', '1', '1', '8', '1', '2016-09-26 09:56:01', '0', '0', '0', '2', '5', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('53', '77', '1', '2', '6', '1', '2016-09-26 10:19:13', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('2', '76', '1', '2', '5', '1', '2016-07-15 14:47:24', '0', '0', '0', '2', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('7', '76', '1', '2', '5', '1', '2016-07-15 15:33:26', '0', '0', '1', '2', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('11', '96', '1', '2', '1', '1', '2016-07-15 16:23:32', '0', '0', '0', '2', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('12', '96', '1', '2', '1', '1', '2016-07-15 17:22:47', '0', '0', '0', '2', '0', '0', '0', '0', '1', '0');
+INSERT INTO `jc_content` VALUES ('13', '76', '1', '2', '5', '1', '2016-07-19 14:12:48', '1', '0', '1', '2', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('14', '96', '1', '2', '1', '1', '2016-07-19 14:26:30', '0', '0', '0', '2', '0', '0', '0', '0', '13', '0');
+INSERT INTO `jc_content` VALUES ('23', '96', '1', '1', '1', '1', '2016-09-13 17:16:04', '0', '0', '0', '2', '0', '0', '0', '0', '11', '1');
+INSERT INTO `jc_content` VALUES ('27', '96', '1', '2', '1', '1', '2016-09-22 16:30:13', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
+INSERT INTO `jc_content` VALUES ('28', '96', '1', '2', '1', '1', '2016-09-22 16:56:46', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
+INSERT INTO `jc_content` VALUES ('29', '96', '1', '1', '1', '1', '2016-09-23 09:07:33', '0', '0', '0', '2', '0', '0', '0', '0', '1', '1');
+INSERT INTO `jc_content` VALUES ('30', '96', '1', '2', '1', '1', '2016-09-23 09:09:41', '0', '0', '0', '2', '1', '0', '0', '0', '41', '1');
+INSERT INTO `jc_content` VALUES ('32', '96', '1', '2', '1', '1', '2016-09-23 09:19:38', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
+INSERT INTO `jc_content` VALUES ('33', '96', '1', '2', '1', '1', '2016-09-23 09:23:39', '0', '0', '0', '2', '0', '0', '0', '0', '18', '1');
+INSERT INTO `jc_content` VALUES ('36', '96', '1', '2', '1', '1', '2016-09-23 09:40:21', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('37', '96', '1', '2', '1', '1', '2016-09-23 09:43:34', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('39', '96', '1', '2', '1', '1', '2016-09-23 09:54:17', '0', '0', '0', '2', '0', '0', '0', '0', '18', '1');
+INSERT INTO `jc_content` VALUES ('53', '77', '1', '2', '6', '1', '2016-09-26 10:19:13', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('55', '77', '1', '2', '6', '1', '2016-09-26 10:20:11', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('57', '77', '1', '2', '6', '1', '2016-09-26 10:21:19', '0', '0', '0', '2', '4', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('59', '77', '1', '2', '6', '1', '2016-09-26 10:22:24', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('61', '77', '1', '2', '6', '1', '2016-09-26 10:29:06', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('63', '77', '1', '2', '6', '1', '2016-09-26 10:30:05', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('67', '81', '1', '2', '9', '1', '2016-09-26 14:08:56', '0', '0', '0', '2', '16', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('68', '81', '1', '2', '9', '1', '2016-09-26 14:34:34', '0', '0', '0', '2', '3', '0', '1', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('69', '90', '1', '1', '4', '1', '2016-09-26 16:37:28', '0', '1', '1', '2', '16', '0', '1', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('71', '91', '1', '1', '4', '1', '2016-09-27 09:47:27', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('72', '90', '1', '2', '4', '1', '2016-09-27 10:18:46', '0', '1', '1', '2', '4', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('74', '81', '1', '2', '9', '1', '2016-09-29 09:28:56', '0', '0', '0', '2', '12', '0', '1', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('100', '93', '1', '2', '4', '1', '2016-10-10 11:09:06', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('101', '91', '1', '2', '4', '1', '2016-10-10 11:16:31', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('102', '90', '1', '1', '4', '1', '2016-10-10 11:19:18', '0', '1', '1', '2', '16', '0', '40', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('103', '90', '1', '1', '4', '1', '2016-10-10 11:21:37', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('104', '93', '1', '1', '4', '1', '2016-10-10 11:27:17', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('105', '91', '1', '1', '4', '1', '2016-10-10 11:28:52', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('106', '91', '1', '1', '4', '1', '2016-10-10 11:30:54', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('107', '91', '1', '1', '4', '1', '2016-10-10 11:32:35', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('108', '91', '1', '1', '4', '1', '2016-10-10 11:34:05', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('109', '91', '1', '1', '4', '1', '2016-10-10 11:35:26', '0', '1', '1', '2', '16', '0', '21', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('110', '91', '1', '1', '4', '1', '2016-10-10 11:36:32', '0', '1', '1', '2', '4', '0', '1', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('111', '75', '1', '2', '1', '1', '2016-10-10 11:45:47', '0', '0', '0', '2', '16', '0', '0', '12', '12', '1');
-INSERT INTO `jc_content` VALUES ('112', '75', '1', '2', '1', '1', '2016-10-10 11:48:08', '0', '0', '0', '2', '17', '0', '0', '16', '18', '1');
-INSERT INTO `jc_content` VALUES ('113', '75', '1', '4', '1', '1', '2016-10-10 11:50:03', '0', '0', '0', '2', '29', '0', '0', '13', '11', '1');
-INSERT INTO `jc_content` VALUES ('114', '76', '1', '2', '5', '1', '2016-10-10 13:11:12', '0', '0', '1', '2', '18', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('115', '76', '1', '2', '5', '1', '2016-10-10 13:15:37', '0', '0', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('116', '76', '1', '2', '5', '1', '2016-10-10 13:19:22', '0', '0', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('117', '76', '1', '2', '5', '1', '2016-10-10 13:22:07', '0', '0', '0', '2', '18', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('118', '76', '1', '2', '5', '1', '2016-10-10 13:23:50', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('119', '76', '1', '2', '5', '1', '2016-10-10 13:26:38', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('120', '76', '1', '2', '5', '1', '2016-10-10 13:35:17', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('121', '77', '1', '2', '6', '1', '2016-10-10 13:38:11', '1', '1', '1', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('122', '77', '1', '2', '6', '1', '2016-10-10 13:40:05', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('123', '77', '1', '2', '6', '1', '2016-10-10 13:41:03', '0', '1', '1', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('124', '77', '1', '2', '6', '1', '2016-10-10 13:42:48', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('125', '77', '1', '2', '6', '1', '2016-10-10 13:44:47', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('126', '77', '1', '2', '6', '1', '2016-10-10 13:46:01', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('127', '77', '1', '2', '6', '1', '2016-10-10 13:46:26', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('128', '77', '1', '2', '6', '1', '2016-10-10 13:46:52', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('129', '77', '1', '2', '6', '1', '2016-10-10 13:47:24', '0', '0', '0', '2', '18', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('130', '75', '1', '1', '1', '1', '2016-10-10 13:51:07', '1', '0', '0', '2', '22', '1', '0', '12', '12', '1');
-INSERT INTO `jc_content` VALUES ('131', '75', '1', '1', '1', '1', '2016-10-10 13:54:05', '0', '0', '0', '2', '17', '0', '0', '15', '13', '1');
-INSERT INTO `jc_content` VALUES ('132', '75', '1', '1', '1', '1', '2016-10-10 13:55:46', '0', '0', '0', '2', '7', '2', '0', '1', '1', '1');
-INSERT INTO `jc_content` VALUES ('133', '81', '1', '2', '9', '1', '2016-10-10 14:08:28', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('134', '81', '1', '2', '9', '1', '2016-10-10 14:11:44', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('135', '81', '1', '2', '9', '1', '2016-10-10 14:13:55', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('136', '81', '1', '2', '9', '1', '2016-10-10 14:14:59', '1', '0', '0', '2', '3', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('137', '81', '1', '2', '9', '1', '2016-10-10 14:17:16', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('138', '81', '1', '2', '9', '1', '2016-10-10 14:19:56', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('139', '81', '1', '2', '9', '1', '2016-10-10 14:24:49', '0', '0', '0', '2', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('140', '79', '1', '1', '8', '1', '2016-10-10 14:27:44', '0', '0', '0', '2', '18', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('141', '76', '1', '2', '5', '1', '2016-10-11 09:44:23', '0', '0', '0', '0', '2', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('57', '77', '1', '2', '6', '1', '2016-09-26 10:21:19', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('59', '77', '1', '2', '6', '1', '2016-09-26 10:22:24', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('61', '77', '1', '2', '6', '1', '2016-09-26 10:29:06', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('63', '77', '1', '2', '6', '1', '2016-09-26 10:30:05', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('67', '81', '1', '2', '9', '1', '2016-09-26 14:08:56', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('68', '81', '1', '2', '9', '1', '2016-09-26 14:34:34', '0', '0', '0', '2', '0', '0', '1', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('74', '81', '1', '2', '9', '1', '2016-09-29 09:28:56', '0', '0', '0', '2', '0', '0', '1', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('111', '96', '1', '2', '1', '1', '2016-10-10 11:45:47', '0', '0', '0', '2', '0', '0', '0', '0', '12', '1');
+INSERT INTO `jc_content` VALUES ('112', '96', '1', '2', '1', '1', '2016-10-10 11:48:08', '0', '0', '0', '2', '0', '0', '0', '0', '18', '1');
+INSERT INTO `jc_content` VALUES ('113', '96', '1', '4', '1', '1', '2016-10-10 11:50:03', '0', '0', '0', '2', '0', '0', '0', '0', '11', '1');
+INSERT INTO `jc_content` VALUES ('114', '76', '1', '2', '5', '1', '2016-10-10 13:11:12', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('115', '76', '1', '2', '5', '1', '2016-10-10 13:15:37', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('116', '76', '1', '2', '5', '1', '2016-10-10 13:19:22', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('117', '76', '1', '2', '5', '1', '2016-10-10 13:22:07', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('118', '76', '1', '2', '5', '1', '2016-10-10 13:23:50', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('119', '76', '1', '2', '5', '1', '2016-10-10 13:26:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('120', '76', '1', '2', '5', '1', '2016-10-10 13:35:17', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('121', '77', '1', '2', '6', '1', '2016-10-10 13:38:11', '1', '1', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('122', '77', '1', '2', '6', '1', '2016-10-10 13:40:05', '0', '1', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('123', '77', '1', '2', '6', '1', '2016-10-10 13:41:03', '0', '1', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('124', '77', '1', '2', '6', '1', '2016-10-10 13:42:48', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('125', '77', '1', '2', '6', '1', '2016-10-10 13:44:47', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('126', '77', '1', '2', '6', '1', '2016-10-10 13:46:01', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('127', '77', '1', '2', '6', '1', '2016-10-10 13:46:26', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('128', '77', '1', '2', '6', '1', '2016-10-10 13:46:52', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('129', '77', '1', '2', '6', '1', '2016-10-10 13:47:24', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('130', '96', '1', '2', '1', '1', '2016-10-10 13:51:07', '1', '0', '0', '2', '0', '0', '0', '0', '12', '1');
+INSERT INTO `jc_content` VALUES ('131', '96', '1', '2', '1', '1', '2016-10-10 13:54:05', '0', '0', '0', '2', '0', '0', '0', '0', '13', '1');
+INSERT INTO `jc_content` VALUES ('132', '96', '1', '2', '1', '1', '2016-10-10 13:55:46', '0', '0', '0', '2', '0', '0', '0', '0', '1', '1');
+INSERT INTO `jc_content` VALUES ('133', '81', '1', '2', '9', '1', '2016-10-10 14:08:28', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('134', '81', '1', '2', '9', '1', '2016-10-10 14:11:44', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('135', '81', '1', '2', '9', '1', '2016-10-10 14:13:55', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('136', '81', '1', '2', '9', '1', '2016-10-10 14:14:59', '1', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('137', '81', '1', '2', '9', '1', '2016-10-10 14:17:16', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('138', '81', '1', '2', '9', '1', '2016-10-10 14:19:56', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('139', '81', '1', '2', '9', '1', '2016-10-10 14:24:49', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('141', '76', '1', '2', '5', '1', '2016-10-11 09:44:23', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('142', '94', '1', '2', '1', '1', '2017-01-15 23:13:58', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('143', '94', '1', '2', '1', '1', '2017-01-15 23:38:31', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('144', '94', '1', '2', '1', '1', '2017-01-15 23:41:09', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('145', '94', '1', '2', '1', '1', '2017-01-15 23:41:39', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('146', '94', '1', '2', '1', '1', '2017-01-15 23:42:15', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('147', '94', '1', '2', '1', '1', '2017-01-15 23:42:42', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('148', '94', '1', '2', '1', '1', '2017-01-15 23:43:10', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('149', '94', '1', '2', '1', '1', '2017-01-15 23:43:51', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('150', '94', '1', '2', '1', '1', '2017-01-16 00:23:57', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('151', '94', '1', '2', '1', '1', '2017-01-16 00:24:48', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('152', '94', '1', '2', '1', '1', '2017-01-16 00:25:17', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('153', '94', '1', '2', '1', '1', '2017-01-16 00:25:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('154', '94', '1', '2', '1', '1', '2017-01-16 00:26:09', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('155', '94', '1', '2', '1', '1', '2017-01-16 00:26:45', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('156', '94', '1', '2', '1', '1', '2017-01-16 00:27:10', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('157', '94', '1', '2', '1', '1', '2017-01-16 00:27:48', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('158', '95', '1', '2', '1', '1', '2017-01-16 00:28:46', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('159', '95', '1', '2', '1', '1', '2017-01-16 00:29:10', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('160', '95', '1', '2', '1', '1', '2017-01-16 00:29:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('161', '95', '1', '2', '1', '1', '2017-01-16 00:30:14', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('162', '95', '1', '2', '1', '1', '2017-01-16 00:30:39', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('163', '95', '1', '2', '1', '1', '2017-01-16 00:31:10', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('164', '95', '1', '2', '1', '1', '2017-01-16 00:31:44', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('165', '95', '1', '2', '1', '1', '2017-01-16 00:32:09', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('166', '95', '1', '2', '1', '1', '2017-01-16 00:32:37', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('167', '95', '1', '2', '1', '1', '2017-01-16 00:33:11', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('168', '95', '1', '2', '1', '1', '2017-01-16 00:33:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('169', '95', '1', '2', '1', '1', '2017-01-16 00:34:14', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for jc_contenttag
@@ -1054,6 +1048,248 @@ CREATE TABLE `jc_contenttag` (
 -- ----------------------------
 -- Records of jc_contenttag
 -- ----------------------------
+INSERT INTO `jc_contenttag` VALUES ('142', '1', '0');
+INSERT INTO `jc_contenttag` VALUES ('142', '2', '1');
+INSERT INTO `jc_contenttag` VALUES ('142', '3', '2');
+INSERT INTO `jc_contenttag` VALUES ('142', '4', '3');
+INSERT INTO `jc_contenttag` VALUES ('142', '5', '4');
+INSERT INTO `jc_contenttag` VALUES ('142', '6', '5');
+INSERT INTO `jc_contenttag` VALUES ('142', '7', '6');
+INSERT INTO `jc_contenttag` VALUES ('142', '2', '7');
+INSERT INTO `jc_contenttag` VALUES ('142', '3', '8');
+INSERT INTO `jc_contenttag` VALUES ('142', '8', '9');
+INSERT INTO `jc_contenttag` VALUES ('142', '1', '10');
+INSERT INTO `jc_contenttag` VALUES ('142', '9', '11');
+INSERT INTO `jc_contenttag` VALUES ('143', '10', '0');
+INSERT INTO `jc_contenttag` VALUES ('143', '11', '1');
+INSERT INTO `jc_contenttag` VALUES ('143', '12', '2');
+INSERT INTO `jc_contenttag` VALUES ('143', '13', '3');
+INSERT INTO `jc_contenttag` VALUES ('143', '14', '4');
+INSERT INTO `jc_contenttag` VALUES ('143', '11', '5');
+INSERT INTO `jc_contenttag` VALUES ('143', '15', '6');
+INSERT INTO `jc_contenttag` VALUES ('143', '16', '7');
+INSERT INTO `jc_contenttag` VALUES ('143', '17', '8');
+INSERT INTO `jc_contenttag` VALUES ('143', '18', '9');
+INSERT INTO `jc_contenttag` VALUES ('144', '19', '0');
+INSERT INTO `jc_contenttag` VALUES ('144', '19', '1');
+INSERT INTO `jc_contenttag` VALUES ('144', '20', '2');
+INSERT INTO `jc_contenttag` VALUES ('144', '21', '3');
+INSERT INTO `jc_contenttag` VALUES ('144', '22', '4');
+INSERT INTO `jc_contenttag` VALUES ('144', '23', '5');
+INSERT INTO `jc_contenttag` VALUES ('145', '24', '0');
+INSERT INTO `jc_contenttag` VALUES ('145', '25', '1');
+INSERT INTO `jc_contenttag` VALUES ('145', '26', '2');
+INSERT INTO `jc_contenttag` VALUES ('145', '27', '3');
+INSERT INTO `jc_contenttag` VALUES ('145', '28', '4');
+INSERT INTO `jc_contenttag` VALUES ('145', '29', '5');
+INSERT INTO `jc_contenttag` VALUES ('145', '28', '6');
+INSERT INTO `jc_contenttag` VALUES ('146', '30', '0');
+INSERT INTO `jc_contenttag` VALUES ('146', '31', '1');
+INSERT INTO `jc_contenttag` VALUES ('146', '32', '2');
+INSERT INTO `jc_contenttag` VALUES ('146', '33', '3');
+INSERT INTO `jc_contenttag` VALUES ('146', '34', '4');
+INSERT INTO `jc_contenttag` VALUES ('146', '35', '5');
+INSERT INTO `jc_contenttag` VALUES ('146', '31', '6');
+INSERT INTO `jc_contenttag` VALUES ('146', '36', '7');
+INSERT INTO `jc_contenttag` VALUES ('146', '37', '8');
+INSERT INTO `jc_contenttag` VALUES ('146', '38', '9');
+INSERT INTO `jc_contenttag` VALUES ('147', '39', '0');
+INSERT INTO `jc_contenttag` VALUES ('148', '40', '0');
+INSERT INTO `jc_contenttag` VALUES ('148', '41', '1');
+INSERT INTO `jc_contenttag` VALUES ('148', '42', '2');
+INSERT INTO `jc_contenttag` VALUES ('148', '41', '3');
+INSERT INTO `jc_contenttag` VALUES ('148', '42', '4');
+INSERT INTO `jc_contenttag` VALUES ('148', '43', '5');
+INSERT INTO `jc_contenttag` VALUES ('149', '44', '0');
+INSERT INTO `jc_contenttag` VALUES ('149', '44', '1');
+INSERT INTO `jc_contenttag` VALUES ('149', '44', '2');
+INSERT INTO `jc_contenttag` VALUES ('150', '45', '0');
+INSERT INTO `jc_contenttag` VALUES ('151', '46', '0');
+INSERT INTO `jc_contenttag` VALUES ('151', '47', '1');
+INSERT INTO `jc_contenttag` VALUES ('151', '48', '2');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '3');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '4');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '5');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '6');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '7');
+INSERT INTO `jc_contenttag` VALUES ('151', '49', '8');
+INSERT INTO `jc_contenttag` VALUES ('152', '50', '0');
+INSERT INTO `jc_contenttag` VALUES ('152', '51', '1');
+INSERT INTO `jc_contenttag` VALUES ('152', '52', '2');
+INSERT INTO `jc_contenttag` VALUES ('152', '31', '3');
+INSERT INTO `jc_contenttag` VALUES ('152', '53', '4');
+INSERT INTO `jc_contenttag` VALUES ('152', '54', '5');
+INSERT INTO `jc_contenttag` VALUES ('152', '55', '6');
+INSERT INTO `jc_contenttag` VALUES ('152', '31', '7');
+INSERT INTO `jc_contenttag` VALUES ('152', '56', '8');
+INSERT INTO `jc_contenttag` VALUES ('152', '57', '9');
+INSERT INTO `jc_contenttag` VALUES ('153', '58', '0');
+INSERT INTO `jc_contenttag` VALUES ('153', '31', '1');
+INSERT INTO `jc_contenttag` VALUES ('153', '59', '2');
+INSERT INTO `jc_contenttag` VALUES ('153', '60', '3');
+INSERT INTO `jc_contenttag` VALUES ('153', '61', '4');
+INSERT INTO `jc_contenttag` VALUES ('153', '46', '5');
+INSERT INTO `jc_contenttag` VALUES ('154', '62', '0');
+INSERT INTO `jc_contenttag` VALUES ('154', '63', '1');
+INSERT INTO `jc_contenttag` VALUES ('154', '64', '2');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '3');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '4');
+INSERT INTO `jc_contenttag` VALUES ('154', '64', '5');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '6');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '7');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '8');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '9');
+INSERT INTO `jc_contenttag` VALUES ('154', '65', '10');
+INSERT INTO `jc_contenttag` VALUES ('155', '66', '0');
+INSERT INTO `jc_contenttag` VALUES ('155', '46', '1');
+INSERT INTO `jc_contenttag` VALUES ('155', '46', '2');
+INSERT INTO `jc_contenttag` VALUES ('155', '46', '3');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '0');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '1');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '2');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '3');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '4');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '5');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '6');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '7');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '8');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '9');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '10');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '11');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '12');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '13');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '14');
+INSERT INTO `jc_contenttag` VALUES ('156', '68', '15');
+INSERT INTO `jc_contenttag` VALUES ('156', '67', '16');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '0');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '1');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '2');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '3');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '4');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '5');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '6');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '7');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '8');
+INSERT INTO `jc_contenttag` VALUES ('157', '70', '9');
+INSERT INTO `jc_contenttag` VALUES ('157', '69', '10');
+INSERT INTO `jc_contenttag` VALUES ('158', '31', '0');
+INSERT INTO `jc_contenttag` VALUES ('158', '56', '1');
+INSERT INTO `jc_contenttag` VALUES ('158', '57', '2');
+INSERT INTO `jc_contenttag` VALUES ('158', '71', '3');
+INSERT INTO `jc_contenttag` VALUES ('158', '72', '4');
+INSERT INTO `jc_contenttag` VALUES ('158', '73', '5');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '0');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '1');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '2');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '3');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '4');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '5');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '6');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '7');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '8');
+INSERT INTO `jc_contenttag` VALUES ('159', '70', '9');
+INSERT INTO `jc_contenttag` VALUES ('159', '69', '10');
+INSERT INTO `jc_contenttag` VALUES ('160', '74', '0');
+INSERT INTO `jc_contenttag` VALUES ('160', '75', '1');
+INSERT INTO `jc_contenttag` VALUES ('160', '32', '2');
+INSERT INTO `jc_contenttag` VALUES ('160', '33', '3');
+INSERT INTO `jc_contenttag` VALUES ('160', '76', '4');
+INSERT INTO `jc_contenttag` VALUES ('160', '77', '5');
+INSERT INTO `jc_contenttag` VALUES ('160', '78', '6');
+INSERT INTO `jc_contenttag` VALUES ('160', '79', '7');
+INSERT INTO `jc_contenttag` VALUES ('160', '80', '8');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '0');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '1');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '2');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '3');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '4');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '5');
+INSERT INTO `jc_contenttag` VALUES ('161', '81', '6');
+INSERT INTO `jc_contenttag` VALUES ('162', '48', '0');
+INSERT INTO `jc_contenttag` VALUES ('162', '49', '1');
+INSERT INTO `jc_contenttag` VALUES ('162', '49', '2');
+INSERT INTO `jc_contenttag` VALUES ('162', '49', '3');
+INSERT INTO `jc_contenttag` VALUES ('162', '63', '4');
+INSERT INTO `jc_contenttag` VALUES ('162', '46', '5');
+INSERT INTO `jc_contenttag` VALUES ('163', '48', '0');
+INSERT INTO `jc_contenttag` VALUES ('163', '49', '1');
+INSERT INTO `jc_contenttag` VALUES ('163', '49', '2');
+INSERT INTO `jc_contenttag` VALUES ('163', '49', '3');
+INSERT INTO `jc_contenttag` VALUES ('163', '49', '4');
+INSERT INTO `jc_contenttag` VALUES ('163', '48', '5');
+INSERT INTO `jc_contenttag` VALUES ('163', '32', '6');
+INSERT INTO `jc_contenttag` VALUES ('163', '82', '7');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '0');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '1');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '2');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '3');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '4');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '5');
+INSERT INTO `jc_contenttag` VALUES ('164', '84', '6');
+INSERT INTO `jc_contenttag` VALUES ('164', '83', '7');
+INSERT INTO `jc_contenttag` VALUES ('164', '85', '8');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '0');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '1');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '2');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '3');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '4');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '5');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '6');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '7');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '8');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '9');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '10');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '11');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '12');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '13');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '14');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '15');
+INSERT INTO `jc_contenttag` VALUES ('165', '81', '16');
+INSERT INTO `jc_contenttag` VALUES ('165', '86', '17');
+INSERT INTO `jc_contenttag` VALUES ('165', '87', '18');
+INSERT INTO `jc_contenttag` VALUES ('166', '88', '0');
+INSERT INTO `jc_contenttag` VALUES ('166', '48', '1');
+INSERT INTO `jc_contenttag` VALUES ('166', '58', '2');
+INSERT INTO `jc_contenttag` VALUES ('166', '46', '3');
+INSERT INTO `jc_contenttag` VALUES ('167', '32', '0');
+INSERT INTO `jc_contenttag` VALUES ('167', '89', '1');
+INSERT INTO `jc_contenttag` VALUES ('167', '89', '2');
+INSERT INTO `jc_contenttag` VALUES ('167', '89', '3');
+INSERT INTO `jc_contenttag` VALUES ('167', '90', '4');
+INSERT INTO `jc_contenttag` VALUES ('167', '59', '5');
+INSERT INTO `jc_contenttag` VALUES ('167', '60', '6');
+INSERT INTO `jc_contenttag` VALUES ('167', '61', '7');
+INSERT INTO `jc_contenttag` VALUES ('168', '48', '0');
+INSERT INTO `jc_contenttag` VALUES ('168', '49', '1');
+INSERT INTO `jc_contenttag` VALUES ('168', '49', '2');
+INSERT INTO `jc_contenttag` VALUES ('168', '49', '3');
+INSERT INTO `jc_contenttag` VALUES ('168', '48', '4');
+INSERT INTO `jc_contenttag` VALUES ('168', '58', '5');
+INSERT INTO `jc_contenttag` VALUES ('168', '31', '6');
+INSERT INTO `jc_contenttag` VALUES ('168', '56', '7');
+INSERT INTO `jc_contenttag` VALUES ('168', '57', '8');
+INSERT INTO `jc_contenttag` VALUES ('168', '61', '9');
+INSERT INTO `jc_contenttag` VALUES ('168', '31', '10');
+INSERT INTO `jc_contenttag` VALUES ('168', '56', '11');
+INSERT INTO `jc_contenttag` VALUES ('168', '57', '12');
+INSERT INTO `jc_contenttag` VALUES ('168', '91', '13');
+INSERT INTO `jc_contenttag` VALUES ('168', '79', '14');
+INSERT INTO `jc_contenttag` VALUES ('168', '33', '15');
+INSERT INTO `jc_contenttag` VALUES ('168', '92', '16');
+INSERT INTO `jc_contenttag` VALUES ('169', '93', '0');
+INSERT INTO `jc_contenttag` VALUES ('169', '58', '1');
+INSERT INTO `jc_contenttag` VALUES ('169', '31', '2');
+INSERT INTO `jc_contenttag` VALUES ('169', '56', '3');
+INSERT INTO `jc_contenttag` VALUES ('169', '57', '4');
+INSERT INTO `jc_contenttag` VALUES ('169', '94', '5');
+INSERT INTO `jc_contenttag` VALUES ('169', '59', '6');
+INSERT INTO `jc_contenttag` VALUES ('169', '59', '7');
+INSERT INTO `jc_contenttag` VALUES ('169', '60', '8');
+INSERT INTO `jc_contenttag` VALUES ('169', '61', '9');
+INSERT INTO `jc_contenttag` VALUES ('169', '46', '10');
+INSERT INTO `jc_contenttag` VALUES ('169', '79', '11');
+INSERT INTO `jc_contenttag` VALUES ('169', '33', '12');
+INSERT INTO `jc_contenttag` VALUES ('169', '92', '13');
 
 -- ----------------------------
 -- Table structure for jc_content_attachment
@@ -1073,20 +1309,6 @@ CREATE TABLE `jc_content_attachment` (
 -- ----------------------------
 -- Records of jc_content_attachment
 -- ----------------------------
-INSERT INTO `jc_content_attachment` VALUES ('69', '0', '/u/cms/www/201609/261635496465.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('71', '0', '/u/cms/www/201609/271002022fag.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('72', '0', '/u/cms/www/201609/27102743993k.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('100', '0', '/u/cms/www/201610/10110756cg7o.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('101', '0', '/u/cms/www/201610/10111518cqda.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('102', '0', '/u/cms/www/201610/10111758q1kj.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('103', '0', '/u/cms/www/201610/101120397iez.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('104', '0', '/u/cms/www/201610/10112554wirt.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('105', '0', '/u/cms/www/201610/10112814u17l.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('106', '0', '/u/cms/www/201610/101130257966.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('107', '0', '/u/cms/www/201610/101131571wkz.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('108', '0', '/u/cms/www/201610/101133341nc3.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('109', '0', '/u/cms/www/201610/10113459gvbx.zip', '演示.zip', null, '0');
-INSERT INTO `jc_content_attachment` VALUES ('110', '0', '/u/cms/www/201610/101136270k36.zip', '演示.zip', null, '0');
 
 -- ----------------------------
 -- Table structure for jc_content_attr
@@ -1105,10 +1327,6 @@ CREATE TABLE `jc_content_attr` (
 -- ----------------------------
 INSERT INTO `jc_content_attr` VALUES ('14', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('14', 'pic2', '');
-INSERT INTO `jc_content_attr` VALUES ('11', 'pic1', '');
-INSERT INTO `jc_content_attr` VALUES ('11', 'pic2', '');
-INSERT INTO `jc_content_attr` VALUES ('12', 'pic1', '');
-INSERT INTO `jc_content_attr` VALUES ('12', 'pic2', '');
 INSERT INTO `jc_content_attr` VALUES ('23', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('23', 'pic2', '');
 INSERT INTO `jc_content_attr` VALUES ('27', 'pic1', '');
@@ -1117,91 +1335,8 @@ INSERT INTO `jc_content_attr` VALUES ('28', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('28', 'pic2', '');
 INSERT INTO `jc_content_attr` VALUES ('29', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('29', 'pic2', '');
-INSERT INTO `jc_content_attr` VALUES ('30', 'pic1', '');
-INSERT INTO `jc_content_attr` VALUES ('30', 'pic2', '');
 INSERT INTO `jc_content_attr` VALUES ('32', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('32', 'pic2', '');
-INSERT INTO `jc_content_attr` VALUES ('43', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('43', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('43', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('43', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('43', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('43', 'salary', '5000-8000');
-INSERT INTO `jc_content_attr` VALUES ('43', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('43', 'workplace', '南昌');
-INSERT INTO `jc_content_attr` VALUES ('43', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('44', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('44', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('44', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('44', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('44', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('44', 'salary', '3000-5000');
-INSERT INTO `jc_content_attr` VALUES ('44', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('44', 'workplace', '上海');
-INSERT INTO `jc_content_attr` VALUES ('44', 'nums', '3-5人');
-INSERT INTO `jc_content_attr` VALUES ('45', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('45', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('45', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('45', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('45', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('45', 'salary', '1500-2000');
-INSERT INTO `jc_content_attr` VALUES ('45', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('45', 'workplace', '北京');
-INSERT INTO `jc_content_attr` VALUES ('45', 'nums', '5-10人');
-INSERT INTO `jc_content_attr` VALUES ('46', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('46', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('46', 'hasmanage', '要求');
-INSERT INTO `jc_content_attr` VALUES ('46', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('46', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('46', 'salary', '面议');
-INSERT INTO `jc_content_attr` VALUES ('46', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('46', 'workplace', '广州');
-INSERT INTO `jc_content_attr` VALUES ('46', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('47', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('47', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('47', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('47', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('47', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('47', 'salary', '1500-2000');
-INSERT INTO `jc_content_attr` VALUES ('47', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('47', 'workplace', '重庆');
-INSERT INTO `jc_content_attr` VALUES ('47', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('48', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('48', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('48', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('48', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('48', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('48', 'salary', '5000-8000');
-INSERT INTO `jc_content_attr` VALUES ('48', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('48', 'workplace', '杭州');
-INSERT INTO `jc_content_attr` VALUES ('48', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('49', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('49', 'nature', '兼职');
-INSERT INTO `jc_content_attr` VALUES ('49', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('49', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('49', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('49', 'salary', '1500-2000');
-INSERT INTO `jc_content_attr` VALUES ('49', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('49', 'workplace', '重庆');
-INSERT INTO `jc_content_attr` VALUES ('49', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('50', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('50', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('50', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('50', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('50', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('50', 'salary', '1500-2000');
-INSERT INTO `jc_content_attr` VALUES ('50', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('50', 'workplace', '南京');
-INSERT INTO `jc_content_attr` VALUES ('50', 'nums', '1-3人');
-INSERT INTO `jc_content_attr` VALUES ('51', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('51', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('51', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('51', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('51', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('51', 'salary', '2000-3000');
-INSERT INTO `jc_content_attr` VALUES ('51', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('51', 'workplace', '西安');
-INSERT INTO `jc_content_attr` VALUES ('51', 'nums', '1-3人');
 INSERT INTO `jc_content_attr` VALUES ('53', 'Starring', '');
 INSERT INTO `jc_content_attr` VALUES ('53', 'Video', '正片');
 INSERT INTO `jc_content_attr` VALUES ('53', 'Director', '');
@@ -1223,121 +1358,9 @@ INSERT INTO `jc_content_attr` VALUES ('63', 'Director', '');
 INSERT INTO `jc_content_attr` VALUES ('67', 'em', '经管营销');
 INSERT INTO `jc_content_attr` VALUES ('68', 'hy', 'DOC');
 INSERT INTO `jc_content_attr` VALUES ('68', 'em', '人文社科');
-INSERT INTO `jc_content_attr` VALUES ('69', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('69', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('69', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('69', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('69', 'edition', '8.3.18038.0');
-INSERT INTO `jc_content_attr` VALUES ('69', 'system', 'WinXP/Win2003/Vista/Win7/Win8');
-INSERT INTO `jc_content_attr` VALUES ('69', 'size', '54.3M');
-INSERT INTO `jc_content_attr` VALUES ('69', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('71', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('71', 'system', 'win8/win7/vista/win2003/winxp');
-INSERT INTO `jc_content_attr` VALUES ('71', 'size', '10.9 MB');
-INSERT INTO `jc_content_attr` VALUES ('71', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('71', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('71', 'edition', 'V5.2.7');
-INSERT INTO `jc_content_attr` VALUES ('71', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('71', 'bit', '32位');
-INSERT INTO `jc_content_attr` VALUES ('72', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('72', 'system', 'WinXP(SP2以上) / Vista / Win7 / Win8 / Win8.1');
-INSERT INTO `jc_content_attr` VALUES ('72', 'size', '112M');
-INSERT INTO `jc_content_attr` VALUES ('72', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('72', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('72', 'edition', '360杀毒V5.0.0.7092');
-INSERT INTO `jc_content_attr` VALUES ('72', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('72', 'bit', '32/64');
 INSERT INTO `jc_content_attr` VALUES ('67', 'hy', 'DOC');
 INSERT INTO `jc_content_attr` VALUES ('74', 'hy', 'PPT');
 INSERT INTO `jc_content_attr` VALUES ('74', 'em', '教育');
-INSERT INTO `jc_content_attr` VALUES ('100', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('100', 'system', 'win8/win7/vista/win2003/winxp');
-INSERT INTO `jc_content_attr` VALUES ('100', 'size', '298.68 MB');
-INSERT INTO `jc_content_attr` VALUES ('100', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('100', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('100', 'edition', '3.00.401');
-INSERT INTO `jc_content_attr` VALUES ('100', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('100', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('101', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('101', 'system', 'WinXP/Win2003/Vista/Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('101', 'size', '40.4M');
-INSERT INTO `jc_content_attr` VALUES ('101', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('101', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('101', 'edition', '9.0.16.408');
-INSERT INTO `jc_content_attr` VALUES ('101', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('101', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('102', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('102', 'system', 'Win2000 WinXP Win2003 Vista Win8 Win7 Win10');
-INSERT INTO `jc_content_attr` VALUES ('102', 'size', '1.29MB');
-INSERT INTO `jc_content_attr` VALUES ('102', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('102', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('102', 'edition', '10.3.0.2009 官方正式版');
-INSERT INTO `jc_content_attr` VALUES ('102', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('102', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('103', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('103', 'system', 'WinXP/Win2003/Vista/Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('103', 'size', '37.5M');
-INSERT INTO `jc_content_attr` VALUES ('103', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('103', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('103', 'edition', '8.0.0.8381');
-INSERT INTO `jc_content_attr` VALUES ('103', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('103', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('104', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('104', 'system', 'WinXP/Win2003/Vista/Win7/Win8');
-INSERT INTO `jc_content_attr` VALUES ('104', 'size', '22.6M');
-INSERT INTO `jc_content_attr` VALUES ('104', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('104', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('104', 'edition', '8.13.0.0');
-INSERT INTO `jc_content_attr` VALUES ('104', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('104', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('105', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('105', 'system', 'WinXP/Win2003/Vista/Win7/Win8');
-INSERT INTO `jc_content_attr` VALUES ('105', 'size', '61.4M');
-INSERT INTO `jc_content_attr` VALUES ('105', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('105', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('105', 'edition', '2.0.0.1');
-INSERT INTO `jc_content_attr` VALUES ('105', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('105', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('106', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('106', 'system', 'WinXP/Win2003/Vista/Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('106', 'size', '33.3M');
-INSERT INTO `jc_content_attr` VALUES ('106', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('106', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('106', 'edition', '4.3.3.27');
-INSERT INTO `jc_content_attr` VALUES ('106', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('106', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('107', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('107', 'system', 'Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('107', 'size', '46.5M');
-INSERT INTO `jc_content_attr` VALUES ('107', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('107', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('107', 'edition', '53.0.2785.143');
-INSERT INTO `jc_content_attr` VALUES ('107', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('107', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('108', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('108', 'system', 'Win7/WinVista/WinXP/Win8兼容软件');
-INSERT INTO `jc_content_attr` VALUES ('108', 'size', '9.7M');
-INSERT INTO `jc_content_attr` VALUES ('108', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('108', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('108', 'edition', '8.1');
-INSERT INTO `jc_content_attr` VALUES ('108', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('108', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('109', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('109', 'system', 'Win2000/WinXP/Win2003/Vista/Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('109', 'size', '32.7M');
-INSERT INTO `jc_content_attr` VALUES ('109', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('109', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('109', 'edition', '版本：3.7.0.0011');
-INSERT INTO `jc_content_attr` VALUES ('109', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('109', 'bit', '32/64');
-INSERT INTO `jc_content_attr` VALUES ('110', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('110', 'system', 'WinXP/Win2003/Vista/Win7/Win8/Win10');
-INSERT INTO `jc_content_attr` VALUES ('110', 'size', '32.5M');
-INSERT INTO `jc_content_attr` VALUES ('110', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('110', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('110', 'edition', '9.15.1596.0');
-INSERT INTO `jc_content_attr` VALUES ('110', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('110', 'bit', '32/64');
 INSERT INTO `jc_content_attr` VALUES ('114', 'pic1', '');
 INSERT INTO `jc_content_attr` VALUES ('114', 'pic2', '');
 INSERT INTO `jc_content_attr` VALUES ('114', 'pic3', '');
@@ -1391,15 +1414,6 @@ INSERT INTO `jc_content_attr` VALUES ('138', 'hy', 'DOC');
 INSERT INTO `jc_content_attr` VALUES ('138', 'em', '经管营销');
 INSERT INTO `jc_content_attr` VALUES ('139', 'hy', 'PDF');
 INSERT INTO `jc_content_attr` VALUES ('139', 'em', '教育');
-INSERT INTO `jc_content_attr` VALUES ('140', 'education', '专科');
-INSERT INTO `jc_content_attr` VALUES ('140', 'nature', '全职');
-INSERT INTO `jc_content_attr` VALUES ('140', 'hasmanage', '不要求');
-INSERT INTO `jc_content_attr` VALUES ('140', 'deadline', '');
-INSERT INTO `jc_content_attr` VALUES ('140', 'experience', '1-3年');
-INSERT INTO `jc_content_attr` VALUES ('140', 'salary', '1500-2000');
-INSERT INTO `jc_content_attr` VALUES ('140', 'category', '项目主管');
-INSERT INTO `jc_content_attr` VALUES ('140', 'workplace', '重庆');
-INSERT INTO `jc_content_attr` VALUES ('140', 'nums', '1-3人');
 
 -- ----------------------------
 -- Table structure for jc_content_buy
@@ -1444,29 +1458,20 @@ CREATE TABLE `jc_content_channel` (
 -- ----------------------------
 INSERT INTO `jc_content_channel` VALUES ('76', '2');
 INSERT INTO `jc_content_channel` VALUES ('76', '7');
-INSERT INTO `jc_content_channel` VALUES ('75', '11');
-INSERT INTO `jc_content_channel` VALUES ('75', '12');
+INSERT INTO `jc_content_channel` VALUES ('96', '11');
+INSERT INTO `jc_content_channel` VALUES ('96', '12');
 INSERT INTO `jc_content_channel` VALUES ('76', '13');
-INSERT INTO `jc_content_channel` VALUES ('75', '14');
-INSERT INTO `jc_content_channel` VALUES ('75', '23');
-INSERT INTO `jc_content_channel` VALUES ('75', '27');
-INSERT INTO `jc_content_channel` VALUES ('75', '28');
-INSERT INTO `jc_content_channel` VALUES ('75', '29');
-INSERT INTO `jc_content_channel` VALUES ('75', '30');
-INSERT INTO `jc_content_channel` VALUES ('75', '32');
-INSERT INTO `jc_content_channel` VALUES ('75', '33');
-INSERT INTO `jc_content_channel` VALUES ('75', '36');
-INSERT INTO `jc_content_channel` VALUES ('75', '37');
-INSERT INTO `jc_content_channel` VALUES ('75', '39');
-INSERT INTO `jc_content_channel` VALUES ('79', '43');
-INSERT INTO `jc_content_channel` VALUES ('79', '44');
-INSERT INTO `jc_content_channel` VALUES ('79', '45');
-INSERT INTO `jc_content_channel` VALUES ('79', '46');
-INSERT INTO `jc_content_channel` VALUES ('79', '47');
-INSERT INTO `jc_content_channel` VALUES ('79', '48');
-INSERT INTO `jc_content_channel` VALUES ('79', '49');
-INSERT INTO `jc_content_channel` VALUES ('79', '50');
-INSERT INTO `jc_content_channel` VALUES ('79', '51');
+INSERT INTO `jc_content_channel` VALUES ('96', '14');
+INSERT INTO `jc_content_channel` VALUES ('96', '23');
+INSERT INTO `jc_content_channel` VALUES ('96', '27');
+INSERT INTO `jc_content_channel` VALUES ('96', '28');
+INSERT INTO `jc_content_channel` VALUES ('96', '29');
+INSERT INTO `jc_content_channel` VALUES ('96', '30');
+INSERT INTO `jc_content_channel` VALUES ('96', '32');
+INSERT INTO `jc_content_channel` VALUES ('96', '33');
+INSERT INTO `jc_content_channel` VALUES ('96', '36');
+INSERT INTO `jc_content_channel` VALUES ('96', '37');
+INSERT INTO `jc_content_channel` VALUES ('96', '39');
 INSERT INTO `jc_content_channel` VALUES ('77', '53');
 INSERT INTO `jc_content_channel` VALUES ('77', '55');
 INSERT INTO `jc_content_channel` VALUES ('77', '57');
@@ -1475,24 +1480,10 @@ INSERT INTO `jc_content_channel` VALUES ('77', '61');
 INSERT INTO `jc_content_channel` VALUES ('77', '63');
 INSERT INTO `jc_content_channel` VALUES ('81', '67');
 INSERT INTO `jc_content_channel` VALUES ('81', '68');
-INSERT INTO `jc_content_channel` VALUES ('90', '69');
-INSERT INTO `jc_content_channel` VALUES ('91', '71');
-INSERT INTO `jc_content_channel` VALUES ('90', '72');
 INSERT INTO `jc_content_channel` VALUES ('81', '74');
-INSERT INTO `jc_content_channel` VALUES ('93', '100');
-INSERT INTO `jc_content_channel` VALUES ('91', '101');
-INSERT INTO `jc_content_channel` VALUES ('90', '102');
-INSERT INTO `jc_content_channel` VALUES ('90', '103');
-INSERT INTO `jc_content_channel` VALUES ('93', '104');
-INSERT INTO `jc_content_channel` VALUES ('91', '105');
-INSERT INTO `jc_content_channel` VALUES ('91', '106');
-INSERT INTO `jc_content_channel` VALUES ('91', '107');
-INSERT INTO `jc_content_channel` VALUES ('91', '108');
-INSERT INTO `jc_content_channel` VALUES ('91', '109');
-INSERT INTO `jc_content_channel` VALUES ('91', '110');
-INSERT INTO `jc_content_channel` VALUES ('75', '111');
-INSERT INTO `jc_content_channel` VALUES ('75', '112');
-INSERT INTO `jc_content_channel` VALUES ('75', '113');
+INSERT INTO `jc_content_channel` VALUES ('96', '111');
+INSERT INTO `jc_content_channel` VALUES ('96', '112');
+INSERT INTO `jc_content_channel` VALUES ('96', '113');
 INSERT INTO `jc_content_channel` VALUES ('76', '114');
 INSERT INTO `jc_content_channel` VALUES ('76', '115');
 INSERT INTO `jc_content_channel` VALUES ('76', '116');
@@ -1509,9 +1500,9 @@ INSERT INTO `jc_content_channel` VALUES ('77', '126');
 INSERT INTO `jc_content_channel` VALUES ('77', '127');
 INSERT INTO `jc_content_channel` VALUES ('77', '128');
 INSERT INTO `jc_content_channel` VALUES ('77', '129');
-INSERT INTO `jc_content_channel` VALUES ('75', '130');
-INSERT INTO `jc_content_channel` VALUES ('75', '131');
-INSERT INTO `jc_content_channel` VALUES ('75', '132');
+INSERT INTO `jc_content_channel` VALUES ('96', '130');
+INSERT INTO `jc_content_channel` VALUES ('96', '131');
+INSERT INTO `jc_content_channel` VALUES ('96', '132');
 INSERT INTO `jc_content_channel` VALUES ('81', '133');
 INSERT INTO `jc_content_channel` VALUES ('81', '134');
 INSERT INTO `jc_content_channel` VALUES ('81', '135');
@@ -1519,8 +1510,35 @@ INSERT INTO `jc_content_channel` VALUES ('81', '136');
 INSERT INTO `jc_content_channel` VALUES ('81', '137');
 INSERT INTO `jc_content_channel` VALUES ('81', '138');
 INSERT INTO `jc_content_channel` VALUES ('81', '139');
-INSERT INTO `jc_content_channel` VALUES ('79', '140');
 INSERT INTO `jc_content_channel` VALUES ('76', '141');
+INSERT INTO `jc_content_channel` VALUES ('94', '142');
+INSERT INTO `jc_content_channel` VALUES ('94', '143');
+INSERT INTO `jc_content_channel` VALUES ('94', '144');
+INSERT INTO `jc_content_channel` VALUES ('94', '145');
+INSERT INTO `jc_content_channel` VALUES ('94', '146');
+INSERT INTO `jc_content_channel` VALUES ('94', '147');
+INSERT INTO `jc_content_channel` VALUES ('94', '148');
+INSERT INTO `jc_content_channel` VALUES ('94', '149');
+INSERT INTO `jc_content_channel` VALUES ('94', '150');
+INSERT INTO `jc_content_channel` VALUES ('94', '151');
+INSERT INTO `jc_content_channel` VALUES ('94', '152');
+INSERT INTO `jc_content_channel` VALUES ('94', '153');
+INSERT INTO `jc_content_channel` VALUES ('94', '154');
+INSERT INTO `jc_content_channel` VALUES ('94', '155');
+INSERT INTO `jc_content_channel` VALUES ('94', '156');
+INSERT INTO `jc_content_channel` VALUES ('94', '157');
+INSERT INTO `jc_content_channel` VALUES ('95', '158');
+INSERT INTO `jc_content_channel` VALUES ('95', '159');
+INSERT INTO `jc_content_channel` VALUES ('95', '160');
+INSERT INTO `jc_content_channel` VALUES ('95', '161');
+INSERT INTO `jc_content_channel` VALUES ('95', '162');
+INSERT INTO `jc_content_channel` VALUES ('95', '163');
+INSERT INTO `jc_content_channel` VALUES ('95', '164');
+INSERT INTO `jc_content_channel` VALUES ('95', '165');
+INSERT INTO `jc_content_channel` VALUES ('95', '166');
+INSERT INTO `jc_content_channel` VALUES ('95', '167');
+INSERT INTO `jc_content_channel` VALUES ('95', '168');
+INSERT INTO `jc_content_channel` VALUES ('95', '169');
 
 -- ----------------------------
 -- Table structure for jc_content_charge
@@ -1544,7 +1562,35 @@ CREATE TABLE `jc_content_charge` (
 -- ----------------------------
 -- Records of jc_content_charge
 -- ----------------------------
-INSERT INTO `jc_content_charge` VALUES ('130', '0.01', '0.00', '0.00', '0.00', '0.00', null, '1', '0.00', '0.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('130', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('142', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('143', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('144', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('145', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('146', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('147', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('148', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('149', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('150', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('151', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('152', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('153', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('154', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('155', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('156', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('157', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('158', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('159', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('160', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('161', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('162', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('163', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('164', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('165', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('166', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('167', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('168', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
+INSERT INTO `jc_content_charge` VALUES ('169', '0.00', '0.00', '0.00', '0.00', '0.00', null, '0', '0.01', '1.00', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_check
@@ -1582,15 +1628,6 @@ INSERT INTO `jc_content_check` VALUES ('33', '-1', null, '0', '1', '2016-09-28 1
 INSERT INTO `jc_content_check` VALUES ('36', '-1', null, '0', '1', '2016-09-28 14:17:37');
 INSERT INTO `jc_content_check` VALUES ('37', '-1', null, '0', '1', '2016-09-28 14:17:37');
 INSERT INTO `jc_content_check` VALUES ('39', '-1', null, '0', '1', '2016-09-28 14:17:37');
-INSERT INTO `jc_content_check` VALUES ('43', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('44', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('45', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('46', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('47', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('48', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('49', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('50', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('51', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('53', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('55', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('57', '3', null, '0', null, null);
@@ -1599,21 +1636,7 @@ INSERT INTO `jc_content_check` VALUES ('61', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('63', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('67', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('68', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('69', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('71', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('72', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('74', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('100', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('101', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('102', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('103', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('104', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('105', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('106', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('107', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('108', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('109', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('110', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('111', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('112', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('113', '3', null, '0', null, null);
@@ -1643,8 +1666,35 @@ INSERT INTO `jc_content_check` VALUES ('136', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('137', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('138', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('139', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('140', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('141', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('142', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('143', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('144', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('145', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('146', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('147', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('148', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('149', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('150', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('151', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('152', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('153', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('154', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('155', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('156', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('157', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('158', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('159', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('160', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('161', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('162', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('163', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('164', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('165', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('166', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('167', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('168', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('169', '3', null, '0', null, null);
 
 -- ----------------------------
 -- Table structure for jc_content_count
@@ -1692,85 +1742,89 @@ CREATE TABLE `jc_content_count` (
 -- ----------------------------
 -- Records of jc_content_count
 -- ----------------------------
-INSERT INTO `jc_content_count` VALUES ('2', '14', '13', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('7', '38', '33', '17', '17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('11', '21', '20', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('12', '10', '10', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('13', '20', '15', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('14', '58', '44', '21', '21', '0', '0', '0', '0', '0', '0', '0', '0', '14', '14', '14', '14', '0');
-INSERT INTO `jc_content_count` VALUES ('23', '16', '16', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '12', '12', '0');
-INSERT INTO `jc_content_count` VALUES ('27', '9', '9', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '2', '2', '0');
-INSERT INTO `jc_content_count` VALUES ('28', '9', '9', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '2', '2', '0');
-INSERT INTO `jc_content_count` VALUES ('29', '3', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0');
-INSERT INTO `jc_content_count` VALUES ('30', '63', '63', '54', '54', '1', '1', '1', '1', '0', '0', '0', '0', '44', '44', '44', '44', '0');
-INSERT INTO `jc_content_count` VALUES ('32', '5', '5', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '1', '1', '1');
-INSERT INTO `jc_content_count` VALUES ('33', '54', '54', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '18', '18', '18', '18', '0');
+INSERT INTO `jc_content_count` VALUES ('2', '14', '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('7', '39', '34', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('11', '21', '20', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('12', '10', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('13', '21', '16', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('14', '59', '45', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '14', '14', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('23', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('27', '9', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('28', '9', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('29', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('30', '75', '75', '12', '12', '1', '1', '0', '0', '0', '0', '0', '0', '44', '44', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('32', '5', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '1');
+INSERT INTO `jc_content_count` VALUES ('33', '54', '54', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18', '18', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('36', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('37', '12', '12', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '1', '1', '0');
-INSERT INTO `jc_content_count` VALUES ('39', '34', '34', '27', '27', '1', '1', '1', '1', '0', '0', '0', '0', '17', '17', '17', '17', '0');
-INSERT INTO `jc_content_count` VALUES ('43', '3', '3', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('44', '2', '2', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('45', '19', '19', '17', '17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('46', '19', '19', '17', '17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('47', '16', '16', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('48', '3', '3', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('49', '18', '18', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('50', '16', '16', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('51', '17', '17', '5', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('53', '3', '3', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('37', '12', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('39', '34', '34', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '17', '17', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('53', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('55', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('57', '4', '4', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('59', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('61', '2', '2', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('63', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('67', '28', '28', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('68', '51', '51', '3', '3', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('69', '48', '48', '16', '16', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('71', '5', '5', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('72', '6', '6', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('74', '59', '59', '12', '12', '3', '3', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('100', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('101', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('102', '16', '16', '16', '16', '0', '0', '0', '0', '40', '40', '1', '40', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('103', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('104', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('105', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('106', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('107', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('108', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('109', '16', '16', '16', '16', '0', '0', '0', '0', '21', '21', '1', '21', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('110', '4', '4', '4', '4', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('111', '16', '16', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '12', '12', '0');
-INSERT INTO `jc_content_count` VALUES ('112', '17', '17', '17', '17', '0', '0', '0', '0', '0', '0', '0', '0', '16', '16', '16', '16', '0');
-INSERT INTO `jc_content_count` VALUES ('113', '29', '29', '29', '29', '0', '0', '0', '0', '0', '0', '0', '0', '13', '13', '13', '13', '0');
-INSERT INTO `jc_content_count` VALUES ('114', '18', '18', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('115', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('116', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('117', '18', '18', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('118', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('119', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('120', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('121', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('122', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('123', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('124', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('125', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('126', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('127', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('128', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('129', '18', '18', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('130', '22', '22', '22', '22', '1', '1', '1', '1', '0', '0', '0', '0', '12', '12', '12', '12', '0');
-INSERT INTO `jc_content_count` VALUES ('131', '17', '17', '17', '17', '0', '0', '0', '0', '0', '0', '0', '0', '15', '15', '15', '15', '0');
-INSERT INTO `jc_content_count` VALUES ('132', '7', '7', '7', '7', '2', '2', '2', '2', '0', '0', '0', '0', '1', '1', '1', '1', '0');
-INSERT INTO `jc_content_count` VALUES ('133', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('134', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('135', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('136', '3', '3', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('137', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('138', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('139', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('140', '18', '18', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('141', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('57', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('59', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('61', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('63', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('67', '28', '28', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('68', '51', '51', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('74', '59', '59', '0', '0', '3', '3', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('111', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('112', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '16', '16', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('113', '29', '29', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '13', '13', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('114', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('115', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('116', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('117', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('118', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('119', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('120', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('121', '3', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('122', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('123', '13', '13', '10', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('124', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('125', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('126', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('127', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('128', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('129', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('130', '24', '24', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('131', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '15', '15', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('132', '7', '7', '0', '0', '2', '2', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('133', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('134', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('135', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('136', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('137', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('138', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('139', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('141', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('142', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('143', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('144', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('145', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('146', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('147', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('148', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('149', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('150', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('151', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('152', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('153', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('154', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('155', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('156', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('157', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('158', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('159', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('160', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('161', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('162', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('163', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('164', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('165', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('166', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('167', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('168', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('169', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_doc
@@ -1839,29 +1893,20 @@ CREATE TABLE `jc_content_ext` (
 -- ----------------------------
 INSERT INTO `jc_content_ext` VALUES ('2', '法国尼斯发生汽车冲撞事故 已致75人死上百人伤', null, null, null, null, null, '2016-07-15 14:47:24', null, null, null, '0', null, null, '/u/cms/www/201607/15154249ucra.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('7', '震撼的视角！2016年度无人机摄影大赛佳作大赏', null, null, null, null, null, '2016-07-15 15:33:26', null, null, null, '0', null, null, '/u/cms/www/201607/151530033koq.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('11', '全国28省遭灾 已投入抗洪抢险777万人次', '全国28省遭灾 已投入抗洪抢险777万人次', null, null, null, '据初步统计，截至7月13日，长江中下游湖北、湖南、江西、安徽、江苏等5省堤防巡查防守和抢险共投入62.2万人(含部队3.08万人)，6月30日以来已累计投入抗洪抢险777万人次。', '2016-07-15 16:23:32', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('12', '习近平就法国尼斯恐袭事件向法总统致慰问电', null, null, null, null, '当地时间2016年7月14日，法国国庆日，据法国媒体报道，法国尼斯一辆货车突然冲击人群发动恐怖袭击，据最新消息称，有84人丧生，目前事故原因仍在进一步调查之中。', '2016-07-15 17:22:47', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('11', '全国28省遭灾 已投入抗洪抢险777万人次', '全国28省遭灾 已投入抗洪抢险777万人次', null, null, null, '据初步统计，截至7月13日，长江中下游湖北、湖南、江西、安徽、江苏等5省堤防巡查防守和抢险共投入62.2万人(含部队3.08万人)，6月30日以来已累计投入抗洪抢险777万人次。', '2016-07-15 16:23:32', null, null, null, '0', null, null, '/u/cms/www/201701/160016148i9t.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('12', '习近平就法国尼斯恐袭事件向法总统致慰问电', null, null, null, null, '当地时间2016年7月14日，法国国庆日，据法国媒体报道，法国尼斯一辆货车突然冲击人群发动恐怖袭击，据最新消息称，有84人丧生，目前事故原因仍在进一步调查之中。', '2016-07-15 17:22:47', null, null, null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('13', '中国空军航空兵赴南海常态化战斗巡航', null, null, null, null, null, '2016-07-19 14:12:48', null, null, null, '0', null, null, '/u/cms/www/201607/19141129f6g4.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('14', '习近平宁夏考察第一天：长征永远在路上', null, null, null, null, '习近平考察宁夏首站到固原，冒雨向红军长征会师纪念碑敬献花篮。', '2016-07-19 14:26:30', null, null, null, '0', null, null, '/u/cms/www/201607/19142033fu5h.jpg', null, null, '0', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('23', '“十一”黄金周凯里地区文化旅游活动精彩纷呈', null, null, '黔东南新闻网', 'http://qdnrbs.cn/htmls/shzh/20160913/137451.html', null, '2016-09-13 17:16:04', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('27', '“一带一路”：习近平打开的“筑梦空间”', null, null, null, null, '【学习进行时】在不久前举行的推进“一带一路”建设工作座谈会上，习近平要求：“以钉钉子精神抓下去，一步一步把‘一带一路’建设推向前进，让‘一带一路’建设造福沿线各国人民。”', '2016-09-22 16:30:13', null, 'CK', null, '0', null, null, '/u/cms/www/201609/23150119m7z0.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('28', '加拿大同意与中国协商引渡条约 转变抵制态度', null, null, null, null, '该项目声明，“中国专家将被邀请协助核查不被允许从中国内地来加拿大的人员的身份，”以便将他们遣返回国。', '2016-09-22 16:56:46', null, 'CK', null, '0', null, null, '/u/cms/www/201609/22165418ezkw.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('29', '深圳二手房卖主悔约不服判决 纠集60余人冲击法院', null, null, null, null, '新华社深圳9月22日专电（记者孙飞）记者22日从深圳市公安局福田分局获悉，深圳数名二手房卖主，因房价上涨不愿履行协议与买家发生纠纷，并对深圳市中院相关判决不满，聚集60余人前往深圳市中院闹访。', '2016-09-23 09:07:33', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('30', '不实名手机号停机在即 移动：不对任何社会渠道授权网络售卡', null, null, null, null, '中新网北京9月23日电 (吴涛)中新网从三大运营商处获悉，此前传北京地区未实名手机用户10月15日将被停机，实际是分批执行，10月15日开始，最晚至10月31日截止。', '2016-09-23 09:09:41', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('30', '不实名手机号停机在即 移动：不对任何社会渠道授权网络售卡', null, null, null, null, '中新网北京9月23日电 (吴涛)中新网从三大运营商处获悉，此前传北京地区未实名手机用户10月15日将被停机，实际是分批执行，10月15日开始，最晚至10月31日截止。', '2016-09-23 09:09:41', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('32', '台北故宫将拆除成龙所捐12兽首复制品 成龙回应', null, null, null, null, '成龙捐给台北故宫(微博)南院的12生肖兽首，面临斩首命运。', '2016-09-23 09:19:38', null, 'CK', null, '0', null, null, '/u/cms/www/201609/23091850z61y.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('33', '亚马逊股价首破800美元大关 市值稳居全球上市公司第四', null, null, null, null, '亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软', '2016-09-23 09:23:39', null, 'CK', null, '0', null, null, '/u/cms/www/201609/23092240hxg8.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('36', '海银系接盘匹凸匹谜局待解：P2P业务惨淡收场 多次被调查', null, null, null, null, '9月20日，匹凸匹投资者索赔案开庭，有十多位投资者向匹凸匹发起索赔。今年3月，匹凸匹公告，因未及时披露多项对外重大担保、重大诉讼事项及2013年年报中未披露对外重大事项，证监会对匹凸匹处40万元罚款，对鲜言处30万元罚款。前述投资者认为因虚假陈述行为而受到损失。', '2016-09-23 09:40:21', null, 'CK', null, '0', null, null, '/u/cms/www/201609/23093922giys.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('37', '苹果研发神秘新设备：体积类似Apple TV 支持NFC蓝牙', null, null, null, null, '近日，美国联邦通信委员会意外曝光了苹果正在研发的一款新设备，其体积类似于苹果机顶盒（Apple TV），具体的用途尚不得而知。', '2016-09-23 09:43:34', null, 'CK', null, '0', null, null, '/u/cms/www/201609/230942139uh5.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('39', '四川理塘县发生4.9级地震 震源深度19千米', null, null, null, null, '中国地震台网正式测定：09月23日00时47分在四川甘孜州理塘县（北纬30.09度，东经99.64度）发生4.9级地震，震源深度19千米。', '2016-09-23 09:54:17', null, 'CK', null, '0', null, null, '/u/cms/www/201609/23095358y6s6.jpg', null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('43', 'web前端开发人员', null, null, null, null, null, '2016-09-26 09:33:15', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('44', 'asp.net开发工程师', null, null, null, null, null, '2016-09-26 09:34:35', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('45', '文案编辑', null, null, null, null, null, '2016-09-26 09:38:39', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('46', '项目经理', null, null, null, null, null, '2016-09-26 09:45:02', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('47', '3k计算机实习生双休', null, null, null, null, null, '2016-09-26 09:47:54', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('48', '急聘Android开发', null, null, null, null, null, '2016-09-26 09:50:04', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('49', 'IT公司招软件工程师助理', null, null, null, null, null, '2016-09-26 09:51:13', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('50', '聘网页前端设计3K双休', null, null, null, null, null, '2016-09-26 09:54:56', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('51', '诚聘微信推广专员', null, null, null, null, null, '2016-09-26 09:56:01', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('53', '北京天安门广场“祝福祖国”大花篮吊装完毕', null, null, null, null, null, '2016-09-26 10:19:13', '/u/cms/www/201610/08150638q3zr.mp4', 'CK', null, '0', null, null, '/u/cms/www/201609/26101908i5ds.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('55', '墨西哥一油轮失火', null, null, null, null, null, '2016-09-26 10:20:11', '/u/cms/www/201610/08150638q3zr.mp4', 'CK', null, '0', null, null, '/u/cms/www/201609/26102008qcao.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('57', '本网记者体验360行之【183】另类“复制”', null, null, null, null, null, '2016-09-26 10:21:19', '/u/cms/www/201610/08150638q3zr.mp4', 'CK', null, '0', null, null, '/u/cms/www/201609/26102115joze.jpg', null, null, '1', null, null, null);
@@ -1870,21 +1915,7 @@ INSERT INTO `jc_content_ext` VALUES ('61', '莫斯科举办国际灯光节', nul
 INSERT INTO `jc_content_ext` VALUES ('63', '宇航员拍摄地球夜景：灯火辉煌灿烂 海水平滑如镜', null, null, null, null, null, '2016-09-26 10:30:05', '/u/cms/www/201610/08150638q3zr.mp4', 'CK', null, '0', null, null, '/u/cms/www/201609/26103003hrib.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('67', '2014全行业运营数据分析报告', null, null, null, null, '洞察运营数据360行，行行有研究！', '2016-09-26 14:08:56', null, null, null, '0', null, null, '/u/cms/www/201609/301143025tdb.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('68', '乌镇自助游经典攻略', null, null, null, null, '乌镇是典型的中国江南地区水乡古镇，有“鱼米之乡，丝绸之府”之称，是“江南六大古镇”之一。', '2016-09-26 14:34:34', null, null, null, '0', null, null, '/u/cms/www/201609/30114226529k.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('69', '腾讯QQ', null, null, null, null, null, '2016-09-26 16:37:28', null, null, null, '0', '/u/cms/www/201609/26164039i3uv.jpg', '/u/cms/www/201609/261640457r2n.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('71', '百度云管家', null, null, null, null, '百度公司推出的一款云服务产品。支持便捷地查看、上传、下载百度云端各类数据。通过百度云管家存入的文件，不会占用本地空间。上传、下载文件过程更稳定。', '2016-09-27 09:47:27', null, null, null, '0', '/u/cms/www/201609/27095816s3y8.jpg', '/u/cms/www/201609/270958122ljv.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('72', '360杀毒 5.0.0.7092 官方正式版', '360杀毒', null, null, null, '专业防护，专心为您。\r\n增强敲诈者病毒查杀，最新木马一网打尽;\r\n优化白名单机制，减少打扰;\r\n完善文件实时防护用户体验。', '2016-09-27 10:18:46', null, null, null, '0', '/u/cms/www/201609/27101524dxj7.jpg', '/u/cms/www/201609/27101514u0i9.jpg', '/u/cms/www/201609/27101510bh0o.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('74', '2013年国家公务员考试备战资料', null, null, null, null, '文库联合中公教育为您准备了2013年国家公务员考试文档。包括备考总攻略、行测-言语理解、行测-数量关系、行测-判断推理、行测-资料分析、行测-常识判断、申论-归纳概括、申论-分析原因、申论-提出对策、申论-文章写作、历年真题、模拟试题。祝您考试顺利。', '2016-09-29 09:28:56', null, null, null, '0', null, null, '/u/cms/www/201609/29093250bbit.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('100', '诺亚传说', '诺亚传说', null, null, null, '《诺亚传说》是尚游游戏自主研发的大型角色扮演网游，新资料片《诺亚传说前传-亚特兰蒂斯》火爆发布。', '2016-10-10 11:09:06', null, null, null, '0', '/u/cms/www/201610/10110634gxcz.jpg', '/u/cms/www/201610/10110628vfwz.jpg', '/u/cms/www/201610/10110654vib6.jpg', null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('101', '迅雷9', null, null, null, null, '迅雷9是“深圳市迅雷网络技术有限公司”于2016年推出的“迅雷”系列下载软件的最新换代产品。迅雷9采用全新下载引擎，对百兆光纤宽带网络环境进行诸多针对性的优化，让用户获得更卓越的下载体验；全新的界面功能布局，承载了更丰富的内容，打造找、下、用的一站式娱乐消费平台。', '2016-10-10 11:16:31', null, null, null, '0', '/u/cms/www/201610/10111618rhdk.jpg', '/u/cms/www/201610/10111549rupn.jpg', '/u/cms/www/201610/101116034e14.jpg', null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('102', '360安全卫士', null, null, null, null, null, '2016-10-10 11:19:18', null, null, null, '0', '/u/cms/www/201610/101119092w8r.jpg', '/u/cms/www/201610/101119026ukx.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('103', '搜狗输入法', null, null, null, null, null, '2016-10-10 11:21:37', null, null, null, '0', '/u/cms/www/201610/101120330mpz.jpg', '/u/cms/www/201610/10112023kqfp.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('104', 'YY语音', null, null, null, null, null, '2016-10-10 11:27:17', null, null, null, '0', '/u/cms/www/201610/10112706jiii.jpg', '/u/cms/www/201610/10112657zklb.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('105', '阿里旺旺', null, null, null, null, null, '2016-10-10 11:28:52', null, null, null, '0', '/u/cms/www/201610/10112845wryq.jpg', '/u/cms/www/201610/10112839cvwx.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('106', '爱奇艺视频', null, null, null, null, null, '2016-10-10 11:30:54', null, null, null, '0', '/u/cms/www/201610/101130399dbt.jpg', '/u/cms/www/201610/10113032zu0k.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('107', '谷歌浏览器', null, null, null, null, null, '2016-10-10 11:32:35', null, null, null, '0', '/u/cms/www/201610/10113226knhj.jpg', '/u/cms/www/201610/10113218ya2p.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('108', '360浏览器', null, null, null, null, null, '2016-10-10 11:34:05', null, null, null, '0', '/u/cms/www/201610/10113400utfn.jpg', '/u/cms/www/201610/10113354g71e.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('109', 'PPTV聚力', null, null, null, null, null, '2016-10-10 11:35:26', null, null, null, '0', '/u/cms/www/201610/1011351336l0.jpg', '/u/cms/www/201610/10113506jz07.jpg', null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('110', '腾讯视频', null, null, null, null, null, '2016-10-10 11:36:32', null, null, null, '0', '/u/cms/www/201610/101135560ne4.jpg', '/u/cms/www/201610/10113551yru8.jpg', null, null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('111', '专访百度科学家徐伟：百度比谷歌的人工智能平台更易上手', null, null, null, null, '“开发者在使用时，学习成本较低，这是我们平台易用性的体现。”负责搭建百度深度学习平台PaddlePaddle的百度美国研究院科学家徐伟22日在接受腾讯科技专访时表示。', '2016-10-10 11:45:47', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('112', '电信诈骗多发产生“蝴蝶效应”虚拟运营商融资受波及', null, null, null, null, '自2013年12月首批企业获牌以来，虚拟运营商发展迅速，目前已有42家企业获得牌照。9月22日，在“ICT中国· 2016高层论坛”移动转售分论坛上，中国通信企业协会披露，目前移动转售业务用户数已超3500万，占全国移动用户人数2.67%。', '2016-10-10 11:48:08', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114704dsba.jpg', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('113', '李克强联合国承诺援助难民：这是责任和道义的担当', null, null, null, null, '李克强总理首赴联合国，首场活动便是出席由联合国倡议举行的联大解决难移民大规模流动问题高级别会议。', '2016-10-10 11:50:03', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
@@ -1904,9 +1935,9 @@ INSERT INTO `jc_content_ext` VALUES ('126', '西北第一村白哈巴的早秋',
 INSERT INTO `jc_content_ext` VALUES ('127', '美国金秋不止红叶', null, null, null, null, null, '2016-10-10 13:46:26', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/101346227ayf.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('128', '德国举行南瓜称重比赛 763公斤南瓜获得加冕', null, null, null, null, null, '2016-10-10 13:46:52', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/101346473kic.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('129', '北京特战队员魔鬼周训练 挑战50项最严苛极限项目', null, null, null, null, null, '2016-10-10 13:47:24', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/10134720z8a5.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('130', '党中央推进民族工作创新发展纪实', null, null, null, null, '奏响新形势下民族工作新乐章（治国理政新思想新实践）党的十八大以来以习近平同志为总书记的党中央推进民族工作创新发展纪实。', '2016-10-10 13:51:07', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('131', '楼市调控应跳出周期性怪圈', null, null, null, null, '每一轮调控政策都是为稳定住房价格，但调控过后，总有一轮快速上涨行情，越让普通百姓感叹房子越来越买不起了。显然，目前楼市调控实质已陷入越调越高和政府“助涨”的尴尬局面。', '2016-10-10 13:54:05', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
-INSERT INTO `jc_content_ext` VALUES ('132', '黄金接连下跌难道又等大妈来托盘', null, null, null, null, '三年前，中国大妈们抢购黄金的记忆还历历在目，没想到如今的黄金又开始了一轮又一轮的下跌。', '2016-10-10 13:55:46', null, 'CK', null, '0', null, null, null, null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('130', '党中央推进民族工作创新发展纪实', null, null, null, null, '奏响新形势下民族工作新乐章（治国理政新思想新实践）党的十八大以来以习近平同志为总书记的党中央推进民族工作创新发展纪实。', '2016-10-10 13:51:07', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('131', '楼市调控应跳出周期性怪圈', null, null, null, null, '每一轮调控政策都是为稳定住房价格，但调控过后，总有一轮快速上涨行情，越让普通百姓感叹房子越来越买不起了。显然，目前楼市调控实质已陷入越调越高和政府“助涨”的尴尬局面。', '2016-10-10 13:54:05', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('132', '黄金接连下跌难道又等大妈来托盘', null, null, null, null, '三年前，中国大妈们抢购黄金的记忆还历历在目，没想到如今的黄金又开始了一轮又一轮的下跌。', '2016-10-10 13:55:46', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('133', '2016高考状元笔记', null, null, null, null, '分科分章巧复习，内含状元做题方法总结', '2016-10-10 14:08:28', null, null, null, '0', null, null, '/u/cms/www/201610/1014082583ov.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('134', '2015年1季度国民经济开局平稳', null, null, null, null, '初步核算，一季度国内生产总值140667亿元，按可比价格计算，同比增长7.0%。分产业看，第一产业增加值7770亿元，同比增长3.2%；第二产业增加值60292亿元，增长6.4%；第三产业增加值72605亿元，增长7.9%。从环比看，一季度国内生产总值增长1.3%。', '2016-10-10 14:11:44', null, null, null, '0', null, null, '/u/cms/www/201610/10141115d2dm.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('135', '中国法院信息化第三方评估报告', null, null, null, null, '首部法院信息化第三方评估报告发布  全国法院向“智慧法院”升级', '2016-10-10 14:13:55', null, null, null, '0', null, null, '/u/cms/www/201610/10141350dw2t.jpg', null, null, '1', null, null, null);
@@ -1914,8 +1945,35 @@ INSERT INTO `jc_content_ext` VALUES ('136', '《习近平的国家治理现代�
 INSERT INTO `jc_content_ext` VALUES ('137', '宇宙系统的神秘设计', null, null, null, null, '电影《火星救援》的上映，《科学》杂志匪夷所思的新发现“黑洞吃太阳”，大大掀起一股宇宙热潮。如果再不补充知识，以后恐怕连科幻片都看不懂了。', '2016-10-10 14:17:16', null, null, null, '0', null, null, '/u/cms/www/201610/101415435gn1.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('138', '2015各地区毕业生薪酬报告', null, null, null, null, '各地区、学历毕业生薪酬独家曝光！', '2016-10-10 14:19:56', null, null, null, '0', null, null, '/u/cms/www/201610/10141936fd0q.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('139', 'QRcode国际标准', null, null, null, null, 'QRcode国际标准', '2016-10-10 14:24:49', null, null, null, '0', null, null, '/u/cms/www/201610/10142436t9pe.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('140', '安卓游戏开发5险1金', null, null, null, null, null, '2016-10-10 14:27:44', null, null, null, '0', null, null, null, null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('141', '乌兰布统牧歌秋韵', null, null, null, null, null, '2016-10-11 09:44:23', null, null, null, '0', null, null, '/u/cms/www/201610/11093237z5e8.jpg', null, null, '1', null, null, null);
+INSERT INTO `jc_content_ext` VALUES ('142', '四川政府采购近三年改革成效明显 政府采购透明度四川最优', '政府采购改革成效明显 透明度四川最优', null, null, null, null, '2017-01-15 23:13:58', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('143', '入常8个月又退常 南昌“总经理”有了新消息', '入常8个月又退常，“微信书记”有了新消息', null, null, null, null, '2017-01-15 23:38:31', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('144', '一声一声案说法的盛大的发售', null, null, null, null, null, '2017-01-15 23:41:09', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('145', '按时发达身份证照V型在v', null, null, null, null, null, '2017-01-15 23:41:39', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('146', '撒娇发阿萨德飞洒发武器二千万人气', null, null, null, null, null, '2017-01-15 23:42:15', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('147', 'qwerqwrasfdasfasfa', null, null, null, null, null, '2017-01-15 23:42:42', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('148', '玩玩儿去玩儿去文如其人', null, null, null, null, null, '2017-01-15 23:43:10', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('149', '姐姐姐姐姐姐了', null, null, null, null, null, '2017-01-15 23:43:51', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('150', 'ggggggggggggggg', null, null, null, null, null, '2017-01-16 00:23:57', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('151', '的发生大发啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊', null, null, null, null, null, '2017-01-16 00:24:48', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_411.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('152', 'up噢速度发普爱刷屏的发顺丰', null, null, null, null, null, '2017-01-16 00:25:17', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('153', '阿斯顿发沙发舒服撒发生', null, null, null, null, '咋速度发沙发沙发', '2017-01-16 00:25:38', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('154', '啊是的顶顶顶顶顶顶顶顶顶顶的顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶', null, null, null, null, null, '2017-01-16 00:26:09', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_411.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('155', '大事发生的发生发生', null, null, null, null, null, '2017-01-16 00:26:45', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('156', '呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵', null, null, null, null, null, '2017-01-16 00:27:10', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_411.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('157', '快快快快快快快快快快快快快快快快快快快快快', null, null, null, null, '速度发沙发沙发', '2017-01-16 00:27:48', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('158', '就发顺丰卡死了发送', null, null, null, null, null, '2017-01-16 00:28:46', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_411.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('159', '快快快快快快快快快快快快快快快快快快快快快', null, null, null, null, null, '2017-01-16 00:29:10', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_411.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('160', '大法师打发阿萨德法师法师的法师法', null, null, null, null, null, '2017-01-16 00:29:38', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('161', '啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦', null, null, null, null, null, '2017-01-16 00:30:14', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('162', '啊啊啊啊啊啊啊啊啊啊啊是的发生', null, null, null, null, null, '2017-01-16 00:30:39', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('163', '啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿斯蒂芬', null, null, null, null, null, '2017-01-16 00:31:10', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('164', '在嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻谢谢', null, null, null, null, null, '2017-01-16 00:31:44', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('165', '啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦是放大师傅', null, null, null, null, null, '2017-01-16 00:32:09', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('166', 'vczxcvzxv啊啊阿斯顿发生', null, null, null, null, null, '2017-01-16 00:32:37', null, 'CK', null, '0', null, null, '/u/cms/www/201610/10114452yjhh.jpg', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('167', '阿事实上事实上事实上是是是试试沙发舒服撒', null, null, null, null, null, '2017-01-16 00:33:11', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('168', '啊啊啊啊啊啊啊啊啊啊啊啊啊阿斯顿发顺丰撒发顺丰暗示法萨芬', null, null, null, null, null, '2017-01-16 00:33:38', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('169', '安抚阿斯顿发顺丰1而沙发沙发舒服撒发生法萨芬', null, null, null, null, null, '2017-01-16 00:34:14', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 
 -- ----------------------------
 -- Table structure for jc_content_group_view
@@ -2020,11 +2078,69 @@ CREATE TABLE `jc_content_record` (
   PRIMARY KEY (`content_record_id`),
   KEY `fk_index_jc_content_record_content` (`content_id`),
   KEY `fk_index_jc_content_record_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
 
 -- ----------------------------
 -- Records of jc_content_record
 -- ----------------------------
+INSERT INTO `jc_content_record` VALUES ('25', '111', '1', '2017-01-15 00:01:53', '1');
+INSERT INTO `jc_content_record` VALUES ('26', '37', '1', '2017-01-15 00:02:17', '1');
+INSERT INTO `jc_content_record` VALUES ('27', '130', '1', '2017-01-15 00:09:25', '4');
+INSERT INTO `jc_content_record` VALUES ('28', '132', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('29', '131', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('30', '113', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('31', '112', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('32', '111', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('33', '39', '1', '2017-01-15 00:09:26', '4');
+INSERT INTO `jc_content_record` VALUES ('34', '37', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('35', '36', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('36', '33', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('37', '32', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('38', '30', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('39', '29', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('40', '28', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('41', '27', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('42', '23', '1', '2017-01-15 00:09:27', '4');
+INSERT INTO `jc_content_record` VALUES ('43', '14', '1', '2017-01-15 00:09:28', '4');
+INSERT INTO `jc_content_record` VALUES ('44', '12', '1', '2017-01-15 00:09:28', '4');
+INSERT INTO `jc_content_record` VALUES ('45', '11', '1', '2017-01-15 00:09:28', '4');
+INSERT INTO `jc_content_record` VALUES ('46', '142', '1', '2017-01-15 23:13:59', '0');
+INSERT INTO `jc_content_record` VALUES ('47', '142', '1', '2017-01-15 23:35:39', '1');
+INSERT INTO `jc_content_record` VALUES ('48', '143', '1', '2017-01-15 23:38:31', '0');
+INSERT INTO `jc_content_record` VALUES ('49', '144', '1', '2017-01-15 23:41:09', '0');
+INSERT INTO `jc_content_record` VALUES ('50', '145', '1', '2017-01-15 23:41:39', '0');
+INSERT INTO `jc_content_record` VALUES ('51', '146', '1', '2017-01-15 23:42:15', '0');
+INSERT INTO `jc_content_record` VALUES ('52', '147', '1', '2017-01-15 23:42:42', '0');
+INSERT INTO `jc_content_record` VALUES ('53', '148', '1', '2017-01-15 23:43:10', '0');
+INSERT INTO `jc_content_record` VALUES ('54', '149', '1', '2017-01-15 23:43:51', '0');
+INSERT INTO `jc_content_record` VALUES ('55', '130', '1', '2017-01-16 00:14:30', '1');
+INSERT INTO `jc_content_record` VALUES ('56', '132', '1', '2017-01-16 00:14:54', '1');
+INSERT INTO `jc_content_record` VALUES ('57', '131', '1', '2017-01-16 00:15:17', '1');
+INSERT INTO `jc_content_record` VALUES ('58', '30', '1', '2017-01-16 00:15:46', '1');
+INSERT INTO `jc_content_record` VALUES ('59', '11', '1', '2017-01-16 00:16:21', '1');
+INSERT INTO `jc_content_record` VALUES ('60', '12', '1', '2017-01-16 00:16:44', '1');
+INSERT INTO `jc_content_record` VALUES ('61', '150', '1', '2017-01-16 00:23:57', '0');
+INSERT INTO `jc_content_record` VALUES ('62', '151', '1', '2017-01-16 00:24:48', '0');
+INSERT INTO `jc_content_record` VALUES ('63', '152', '1', '2017-01-16 00:25:18', '0');
+INSERT INTO `jc_content_record` VALUES ('64', '153', '1', '2017-01-16 00:25:39', '0');
+INSERT INTO `jc_content_record` VALUES ('65', '154', '1', '2017-01-16 00:26:09', '0');
+INSERT INTO `jc_content_record` VALUES ('66', '155', '1', '2017-01-16 00:26:45', '0');
+INSERT INTO `jc_content_record` VALUES ('67', '156', '1', '2017-01-16 00:27:10', '0');
+INSERT INTO `jc_content_record` VALUES ('68', '157', '1', '2017-01-16 00:27:48', '0');
+INSERT INTO `jc_content_record` VALUES ('69', '158', '1', '2017-01-16 00:28:46', '0');
+INSERT INTO `jc_content_record` VALUES ('70', '159', '1', '2017-01-16 00:29:11', '0');
+INSERT INTO `jc_content_record` VALUES ('71', '160', '1', '2017-01-16 00:29:38', '0');
+INSERT INTO `jc_content_record` VALUES ('72', '161', '1', '2017-01-16 00:30:14', '0');
+INSERT INTO `jc_content_record` VALUES ('73', '162', '1', '2017-01-16 00:30:39', '0');
+INSERT INTO `jc_content_record` VALUES ('74', '163', '1', '2017-01-16 00:31:10', '0');
+INSERT INTO `jc_content_record` VALUES ('75', '164', '1', '2017-01-16 00:31:44', '0');
+INSERT INTO `jc_content_record` VALUES ('76', '165', '1', '2017-01-16 00:32:09', '0');
+INSERT INTO `jc_content_record` VALUES ('77', '166', '1', '2017-01-16 00:32:37', '0');
+INSERT INTO `jc_content_record` VALUES ('78', '167', '1', '2017-01-16 00:33:11', '0');
+INSERT INTO `jc_content_record` VALUES ('79', '168', '1', '2017-01-16 00:33:39', '0');
+INSERT INTO `jc_content_record` VALUES ('80', '169', '1', '2017-01-16 00:34:14', '0');
+INSERT INTO `jc_content_record` VALUES ('81', '157', '1', '2017-01-16 00:37:12', '1');
+INSERT INTO `jc_content_record` VALUES ('82', '153', '1', '2017-01-16 00:37:35', '1');
 
 -- ----------------------------
 -- Table structure for jc_content_reward_fix
@@ -2073,11 +2189,105 @@ CREATE TABLE `jc_content_tag` (
   `ref_counter` int(11) NOT NULL DEFAULT '1' COMMENT '被引用的次数',
   PRIMARY KEY (`tag_id`),
   UNIQUE KEY `ak_tag_name` (`tag_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS内容TAG表';
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='CMS内容TAG表';
 
 -- ----------------------------
 -- Records of jc_content_tag
 -- ----------------------------
+INSERT INTO `jc_content_tag` VALUES ('1', '四川', '2');
+INSERT INTO `jc_content_tag` VALUES ('2', '政府', '2');
+INSERT INTO `jc_content_tag` VALUES ('3', '采购', '2');
+INSERT INTO `jc_content_tag` VALUES ('4', '近三年', '1');
+INSERT INTO `jc_content_tag` VALUES ('5', '改革', '1');
+INSERT INTO `jc_content_tag` VALUES ('6', '成效', '1');
+INSERT INTO `jc_content_tag` VALUES ('7', '明显', '1');
+INSERT INTO `jc_content_tag` VALUES ('8', '透明度', '1');
+INSERT INTO `jc_content_tag` VALUES ('9', '最优', '1');
+INSERT INTO `jc_content_tag` VALUES ('10', '入', '1');
+INSERT INTO `jc_content_tag` VALUES ('11', '常', '2');
+INSERT INTO `jc_content_tag` VALUES ('12', '8', '1');
+INSERT INTO `jc_content_tag` VALUES ('13', '个月', '1');
+INSERT INTO `jc_content_tag` VALUES ('14', '退', '1');
+INSERT INTO `jc_content_tag` VALUES ('15', '南昌', '1');
+INSERT INTO `jc_content_tag` VALUES ('16', '总经理', '1');
+INSERT INTO `jc_content_tag` VALUES ('17', '有', '1');
+INSERT INTO `jc_content_tag` VALUES ('18', '新消息', '1');
+INSERT INTO `jc_content_tag` VALUES ('19', '一声', '2');
+INSERT INTO `jc_content_tag` VALUES ('20', '案', '1');
+INSERT INTO `jc_content_tag` VALUES ('21', '说法', '1');
+INSERT INTO `jc_content_tag` VALUES ('22', '盛大', '1');
+INSERT INTO `jc_content_tag` VALUES ('23', '发售', '1');
+INSERT INTO `jc_content_tag` VALUES ('24', '按时', '1');
+INSERT INTO `jc_content_tag` VALUES ('25', '发达', '1');
+INSERT INTO `jc_content_tag` VALUES ('26', '身份', '1');
+INSERT INTO `jc_content_tag` VALUES ('27', '证照', '1');
+INSERT INTO `jc_content_tag` VALUES ('28', 'v', '2');
+INSERT INTO `jc_content_tag` VALUES ('29', '型', '1');
+INSERT INTO `jc_content_tag` VALUES ('30', '撒娇', '1');
+INSERT INTO `jc_content_tag` VALUES ('31', '发', '9');
+INSERT INTO `jc_content_tag` VALUES ('32', '阿', '4');
+INSERT INTO `jc_content_tag` VALUES ('33', '萨', '4');
+INSERT INTO `jc_content_tag` VALUES ('34', '德', '1');
+INSERT INTO `jc_content_tag` VALUES ('35', '飞洒', '1');
+INSERT INTO `jc_content_tag` VALUES ('36', '武器', '1');
+INSERT INTO `jc_content_tag` VALUES ('37', '二千万', '1');
+INSERT INTO `jc_content_tag` VALUES ('38', '人气', '1');
+INSERT INTO `jc_content_tag` VALUES ('39', 'qwerqwrasfdasfasfa', '1');
+INSERT INTO `jc_content_tag` VALUES ('40', '玩', '1');
+INSERT INTO `jc_content_tag` VALUES ('41', '玩儿', '2');
+INSERT INTO `jc_content_tag` VALUES ('42', '去', '2');
+INSERT INTO `jc_content_tag` VALUES ('43', '文如其人', '1');
+INSERT INTO `jc_content_tag` VALUES ('44', '姐姐', '3');
+INSERT INTO `jc_content_tag` VALUES ('45', 'ggggggggggggggg', '1');
+INSERT INTO `jc_content_tag` VALUES ('46', '发生', '8');
+INSERT INTO `jc_content_tag` VALUES ('47', '大发', '1');
+INSERT INTO `jc_content_tag` VALUES ('48', '啊啊', '7');
+INSERT INTO `jc_content_tag` VALUES ('49', '啊啊啊', '16');
+INSERT INTO `jc_content_tag` VALUES ('50', 'up', '1');
+INSERT INTO `jc_content_tag` VALUES ('51', '噢', '1');
+INSERT INTO `jc_content_tag` VALUES ('52', '速度', '1');
+INSERT INTO `jc_content_tag` VALUES ('53', '普', '1');
+INSERT INTO `jc_content_tag` VALUES ('54', '爱', '1');
+INSERT INTO `jc_content_tag` VALUES ('55', '刷屏', '1');
+INSERT INTO `jc_content_tag` VALUES ('56', '顺', '5');
+INSERT INTO `jc_content_tag` VALUES ('57', '丰', '5');
+INSERT INTO `jc_content_tag` VALUES ('58', '阿斯顿', '4');
+INSERT INTO `jc_content_tag` VALUES ('59', '沙发', '4');
+INSERT INTO `jc_content_tag` VALUES ('60', '舒服', '3');
+INSERT INTO `jc_content_tag` VALUES ('61', '撒', '4');
+INSERT INTO `jc_content_tag` VALUES ('62', '啊', '1');
+INSERT INTO `jc_content_tag` VALUES ('63', '是的', '2');
+INSERT INTO `jc_content_tag` VALUES ('64', '顶顶', '2');
+INSERT INTO `jc_content_tag` VALUES ('65', '顶顶顶', '7');
+INSERT INTO `jc_content_tag` VALUES ('66', '大事', '1');
+INSERT INTO `jc_content_tag` VALUES ('67', '呵呵', '16');
+INSERT INTO `jc_content_tag` VALUES ('68', '呵', '1');
+INSERT INTO `jc_content_tag` VALUES ('69', '快快', '20');
+INSERT INTO `jc_content_tag` VALUES ('70', '快', '2');
+INSERT INTO `jc_content_tag` VALUES ('71', '卡', '1');
+INSERT INTO `jc_content_tag` VALUES ('72', '死了', '1');
+INSERT INTO `jc_content_tag` VALUES ('73', '发送', '1');
+INSERT INTO `jc_content_tag` VALUES ('74', '大法师', '1');
+INSERT INTO `jc_content_tag` VALUES ('75', '打发', '1');
+INSERT INTO `jc_content_tag` VALUES ('76', '德法', '1');
+INSERT INTO `jc_content_tag` VALUES ('77', '师', '1');
+INSERT INTO `jc_content_tag` VALUES ('78', '法师', '1');
+INSERT INTO `jc_content_tag` VALUES ('79', '法', '3');
+INSERT INTO `jc_content_tag` VALUES ('80', '师法', '1');
+INSERT INTO `jc_content_tag` VALUES ('81', '啦', '24');
+INSERT INTO `jc_content_tag` VALUES ('82', '斯蒂芬', '1');
+INSERT INTO `jc_content_tag` VALUES ('83', '嘻嘻', '7');
+INSERT INTO `jc_content_tag` VALUES ('84', '嘻', '1');
+INSERT INTO `jc_content_tag` VALUES ('85', '谢谢', '1');
+INSERT INTO `jc_content_tag` VALUES ('86', '放大', '1');
+INSERT INTO `jc_content_tag` VALUES ('87', '师傅', '1');
+INSERT INTO `jc_content_tag` VALUES ('88', 'vczxcvzxv', '1');
+INSERT INTO `jc_content_tag` VALUES ('89', '事实上', '3');
+INSERT INTO `jc_content_tag` VALUES ('90', '试试', '1');
+INSERT INTO `jc_content_tag` VALUES ('91', '暗示', '1');
+INSERT INTO `jc_content_tag` VALUES ('92', '芬', '2');
+INSERT INTO `jc_content_tag` VALUES ('93', '安抚', '1');
+INSERT INTO `jc_content_tag` VALUES ('94', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_content_topic
@@ -2119,12 +2329,12 @@ INSERT INTO `jc_content_topic` VALUES ('132', '1');
 INSERT INTO `jc_content_topic` VALUES ('141', '1');
 INSERT INTO `jc_content_topic` VALUES ('2', '2');
 INSERT INTO `jc_content_topic` VALUES ('7', '2');
-INSERT INTO `jc_content_topic` VALUES ('11', '2');
-INSERT INTO `jc_content_topic` VALUES ('12', '2');
 INSERT INTO `jc_content_topic` VALUES ('13', '2');
 INSERT INTO `jc_content_topic` VALUES ('14', '2');
+INSERT INTO `jc_content_topic` VALUES ('23', '2');
 INSERT INTO `jc_content_topic` VALUES ('27', '2');
 INSERT INTO `jc_content_topic` VALUES ('28', '2');
+INSERT INTO `jc_content_topic` VALUES ('29', '2');
 INSERT INTO `jc_content_topic` VALUES ('32', '2');
 INSERT INTO `jc_content_topic` VALUES ('112', '2');
 INSERT INTO `jc_content_topic` VALUES ('113', '2');
@@ -2135,14 +2345,11 @@ INSERT INTO `jc_content_topic` VALUES ('117', '2');
 INSERT INTO `jc_content_topic` VALUES ('118', '2');
 INSERT INTO `jc_content_topic` VALUES ('119', '2');
 INSERT INTO `jc_content_topic` VALUES ('120', '2');
-INSERT INTO `jc_content_topic` VALUES ('131', '2');
-INSERT INTO `jc_content_topic` VALUES ('132', '2');
 INSERT INTO `jc_content_topic` VALUES ('2', '3');
 INSERT INTO `jc_content_topic` VALUES ('7', '3');
-INSERT INTO `jc_content_topic` VALUES ('11', '3');
-INSERT INTO `jc_content_topic` VALUES ('12', '3');
 INSERT INTO `jc_content_topic` VALUES ('13', '3');
 INSERT INTO `jc_content_topic` VALUES ('14', '3');
+INSERT INTO `jc_content_topic` VALUES ('23', '3');
 INSERT INTO `jc_content_topic` VALUES ('27', '3');
 INSERT INTO `jc_content_topic` VALUES ('28', '3');
 INSERT INTO `jc_content_topic` VALUES ('32', '3');
@@ -2155,8 +2362,10 @@ INSERT INTO `jc_content_topic` VALUES ('117', '3');
 INSERT INTO `jc_content_topic` VALUES ('118', '3');
 INSERT INTO `jc_content_topic` VALUES ('119', '3');
 INSERT INTO `jc_content_topic` VALUES ('120', '3');
-INSERT INTO `jc_content_topic` VALUES ('131', '3');
-INSERT INTO `jc_content_topic` VALUES ('132', '3');
+INSERT INTO `jc_content_topic` VALUES ('37', '4');
+INSERT INTO `jc_content_topic` VALUES ('111', '4');
+INSERT INTO `jc_content_topic` VALUES ('142', '4');
+INSERT INTO `jc_content_topic` VALUES ('143', '4');
 
 -- ----------------------------
 -- Table structure for jc_content_txt
@@ -2188,36 +2397,40 @@ INSERT INTO `jc_content_txt` VALUES ('33', '<p style=\"text-align: center;\"><im
 INSERT INTO `jc_content_txt` VALUES ('36', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201609/230939278x02.jpg\" title=\"138679965.jpg\" alt=\"138679965.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">9月20日，匹凸匹投资者索赔案开庭，有十多位投资者向匹凸匹发起索赔。今年3月，匹凸匹公告，因未及时披露多项对外重大担保、重大诉讼事项及2013年年报中未披露对外重大事项，证监会对匹凸匹处40万元罚款，对鲜言处30万元罚款。前述投资者认为因虚假陈述行为而受到损失。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">事实上，这也是匹凸匹原实际控制人鲜言给“海银系”掌门人韩宏伟的遗留问题。去年底，“海银系”以五牛基金为主力从鲜言手中接盘饱受争议的匹凸匹。韩宏伟与韩啸系父子关系。大半年过去，韩氏父子与鲜言的关系也从起初的甜蜜期走到如今对簿公堂。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">对于有着同窗情谊的两者是真翻脸还是另有图谋，投资者更为关心的是，韩氏父子掌控的“海银系”对匹凸匹未来发展有怎样的考虑，是否会注入资产让匹凸匹改头换面，而不是再次陷入“资本漩涡”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\"><strong>实控人背后关联重重</strong><br/></p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在资本市场叱咤风云的“海银系”为何要染指匹凸匹。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">近三年来，匹凸匹（原多伦股份）及鲜言在资本市场可谓劣迹斑斑，先后被证监会两次立案调查、两次公开谴责，1次警告、1次罚款，1次行政监管，并多次收到上交所的问询函。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">对于上海一中院开庭审理的十多位投资者诉匹凸匹案，上述投资者的代理律师上海市华荣律师事务所许峰对中国证券报记者表示，通过庭审判断，投资者最终获赔概率较大。其法律依据主要是，去年年底证监会针对匹凸匹未及时披露多项对外重大担保、重大诉讼事项做出了处罚。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">事实上，7月份，中证中小投资者服务中心代理散户起诉匹凸匹，将鲜言及原其他七名高管及匹凸匹公司作为共同被告诉至法院，诉请判令鲜言赔偿经济损失37万余元，其余八被告承担连带赔偿责任。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">有投行人士还对中国证券报记者透露，2014年11月底，鲜言拟将上市公司实际控制权转让给自然人殷群，最终因对方未付款而夭折。在五牛基金入主匹凸匹之前，资本大鳄吴鸣霄也与鲜言谈过买壳，但最终不知为何没有谈拢。值得注意的是，目前颇受关注的ST慧球(13.300, 0.01, 0.08%)第一大自然人股东就是吴鸣霄，而ST慧球被指背后的实际控制人是鲜言。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">上述人士指出，在历经陈隆基、李勇鸿、鲜言的多次进进出出。多伦股份主营业务变更不断，从房地产、金融又回到房产，唯一不变的是业绩不见起色，并一步步走向“空壳”状态。</p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('37', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201609/23094218axhy.jpg\" title=\"138679463.jpg\" alt=\"138679463.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">近日，美国联邦通信委员会意外曝光了苹果正在研发的一款新设备，其体积类似于苹果机顶盒（Apple TV），具体的用途尚不得而知。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据美国科技新闻网站AppleInsider报道，联邦通信委员会的数据库中出现了这款苹果尚未对外宣布的新产品，其螺丝位置和设备外壳的大小，类似于第四代苹果机顶盒。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">苹果一直拥有对外保密的传统，而在这款新设备中，苹果也要求不对外泄漏相关信息，因此媒体无法判断到底作何用途。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这款设备使用的型号A1844，目前并未被苹果发售的商品使用过。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据称，该设备的电源参数为5.5V到13.2V,输出电流为100毫安，峰值为700毫安。这些参数有别于苹果最新的机顶盒，其电源参数为12V、920毫安。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这款设备还具有蓝牙通信和NFC（近场通信）功能，美国联邦通信委员会也对这些通信功能进行了测试，相关的无线电通信功能也是这款设备提交到该机构进行测试的原因。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这一设备没有进行Wi-Fi通信测试，可能意味着会采用目前某个设备的Wi-Fi通信技术，或者根本就不具备Wi-Fi通信功能。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">此前，外部机构曾经对苹果第四代机顶盒进行过拆解，相关的螺丝位置，和此次对外披露的设备有类似之处。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">近些年，苹果的研发资源集中在了智能手机、平板电脑等领域，传统的机顶盒似乎受到了冷落。去年，在长期不更新之后，苹果推出了全新第四代的机顶盒，苹果推出了专有的机顶盒操作系统，在遥控器中植入了语音操控工具Siri。库克也表示，电视的未来是应用软件。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">苹果也围绕机顶盒构建了一个客厅互联网的生态系统，许多第三方开发商正在为苹果机顶盒开发电视端的应用软件。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em; text-align: center;\"><img src=\"/u/cms/www/201609/230943156ihf.jpg\" title=\"138679317.jpg\" alt=\"138679317.jpg\"/></p><p style=\"text-indent: 2em; text-align: center;\">第四代苹果机顶盒</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">此次披露的设备，是否是未来第五代的苹果机顶盒，仍无法判断。</p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('39', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201609/230954058tco.jpg\" title=\"138678243.jpg\" alt=\"138678243.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">中国地震台网正式测定：09月23日00时47分在四川甘孜州理塘县（北纬30.09度，东经99.64度）发生4.9级地震，震源深度19千米。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('43', '<p>工作职责：<br/>1、负责Web前端多终端产品的整体框架设计；<br/>2、引导前沿技术的预研与实施，通用模块的搭建与维护；<br/>3、负责Web前端开发规范与流程的指定；<br/>4、负责团队成员的技术发展方向及成长；<br/>5、与相关业务部门沟通，协调内部资源，管理前端外包团队。<br/><br/>任职资格：<br/>1、计算机科学或相关专毕业，5年以上工作经验；<br/>2、精通JavaScript、Html5、Css3、NodeJS等Web开发技术；<br/>3、关注Web前端前沿技术发展，具有根据项目情况进行技术选型的能力；<br/>4、熟悉W3C标准，对表现与数据分离、Web语义化等有深刻理解；<br/>5、具有软件工程意识，对数据结构和算法设计有充分理解；<br/>6、具有良好的沟通能力和团队合作精神、优秀的分析问题和解决问题的能力；<br/>7、熟悉Linux平台，掌握一种后端开发语言（PHPJavaCC++Python等）。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('44', '<p>基本要求：&nbsp;<br/>1、精通ASP.NET（C#），熟悉三层架构，精通Web　Services开发，良好的面向对象开发经验；&nbsp;<br/>2、精通AJAX技术运用；<br/>3、精通SqlServer，熟练编写存储过程；&nbsp;<br/>4、精通div,css前端布局；&nbsp;<br/>5、必须有一年以上ASP.NET开发经验，有3个以上完整div＋css、asp.net网站制作或系统研发作品。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('45', '<p>岗位职责：</p><p>1、大专及以上学历，新闻采编相关专业毕业；</p><p>2、1年以上工作经历，有较好的文字功底；</p><p>3、认真务实，态度端正。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('46', '<p>岗位职责：<br/>1、负责电信天网工程项目；<br/>2、负责施工小队工程进度、质量管理<br/>3、负责甲方、监理及相关方协调；<br/><br/>任职资格：<br/>1、专科以上学历，有工程管理经验者优先，熟悉电信流程者优先</p><p>2、良好的理解和表达能力，善于沟通，很好的团队合作意识。<br/></p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('47', '<p>1、大专或大专以上应往届毕业生&nbsp;</p><p>2、理工类毕业生，计算机相关专业优先<br/></p><p>3、对软件行业有强烈的兴趣<br/></p><p>4、有良好的执行力，致力于软件行业发展<br/></p><p>5、后期发展从事网页设计，网站美工，网站开发，互联网系统开发等方向</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('48', '<p>岗位职责：<br/>1、负责Android互联网应用的开发及维护；<br/>2、根据项目需要快速学习并掌握新技术；<br/><br/>职位描述：<br/>1、具有扎实的Java基础，熟练掌握J2ME、J2SE等相关技术及代码优化技巧（容量、内存、速度）；<br/>2、熟悉TCP/IP通信机制，对Socket通信和HTTP通信有较深刻的理解和经验，有网络编程经验；<br/>3、熟悉Android操作系统和AndirodSDK,有一年以上Andriod开发经验优先&nbsp;<br/>4、具备良好的沟通能力和优秀的团队协作能力；<br/>5、优秀的文档编写和语言表达能力，良好的中英文阅读水平；<br/>6、诚恳、踏实、谨慎细致，对工作充满热情，优秀的学习能力，具有良好的自律意识和上进心；<br/>7、有嵌入式LinuxC/C++开发经验优先 ；<br/>8、熟悉MS SQL数据库开发。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('49', '<p>岗位条件：<br/>1、年龄18-28周岁；<br/>2、学历大专及以上，理工科专业毕业优先录用；<br/>3、对互联网行业感兴趣（非销售、非保险岗位），懂编程语言优先考虑，但是也可以接收零基础求职者，有项目经理带团队；<br/>4、工作认真、细致、敬业，责任心强；<br/>5、想获得一份有长远发展、稳定、有晋升空间的工作。</p><p><br/>待遇：<br/>1、转正基本薪资3500起，另有项目奖金和提成；<br/>2、五险一金，双休、法定节假日，正常休息；<br/>3、公司工作环境优雅、氛围好，同事关系融洽，生日派对、聚餐等活动丰富；<br/>4、公司注重员工培养，给予晋升机会，管理层主要员工中培养、提拔；</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('50', '<p>岗位要求：</p><p>1、喜欢从事计算机设计行业；</p><p>2、想获得一份稳定的工作；</p><p>3、好学、细心，喜欢发现事物当中的不足，责任心强。</p><p><br/></p><p>任职要求：</p><p>1、能够尽快入职、长期稳定工作。</p><p>2、大专及大专以上学历。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('51', '<p>岗位职责：<br/>1.熟悉微信的各项功能应用，擅长企业微信的日常操作以及维护<br/>2.根据企业的受众群体可以养成数据分析能力，善于通过数据分析掌握时间段与顾客互动.更新及维护公司企业微信内容，提高各项关注度，提升转化率。&nbsp;<br/>3.负责企业微信的运营策略、活动、话题的制定及策划方案和活动创意、活动宣传，完成微信营销。&nbsp;<br/>4.挖掘和分析粉丝使用习惯，情感及体验感受，及时掌握新闻热点，与用户进行互动。&nbsp;<br/>5.具有一定的市场分析及判断能力，具有良好的客户服务意识，具有亲和力。&nbsp;<br/>6.跟踪微信推广效果，分析数据并反馈，分享微信推广经验，推动及提高团队的网络推广能力。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('69', '<p>腾讯推出的即时通讯工具。支持在线聊天、视频电话、点对点断点续传文件、共享文件、网络硬盘、自定义面板、QQ邮箱等多种功能。免费的通讯平台，QQ2015年给您带来更多沟通乐趣。</p><p><br/></p><p>开发商：腾讯</p><p><br/></p><p>新版特征</p><p>1.文件共享，便捷分享本地文件；</p><p>2.群组通话管理，有序发言，掌控全场；</p><p>3.团队通讯录，快速查看群成员电话。</p><p><br/></p><p><strong>下载说明</strong></p><p><br/></p><p>1、推荐使用迅雷等下载工具下载本站软件，使用 WinRAR v3.10 以上版本解压本站软件。<br/></p><p>2、如果该软件不能下载，请留言报告错误,谢谢合作。</p><p>3、下载本站资源时，如果遇到服务器忙暂不能下载的情况，请过一段时间重试。</p><p>4、如果您有任何意见或建议，欢迎给我们留言，我们将提供更多 、更好的资源。</p><p>5、本站提供的一些商业软件是供学习研究之用，如用于商业用途，请购买正版。</p><p><strong><br/></strong><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('71', '<p>百度公司推出的一款云服务产品。支持便捷地查看、上传、下载百度云端各类数据。通过百度云管家存入的文件，不会占用本地空间。上传、下载文件过程更稳定。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('72', '<p>360杀毒软件下载2016官方下载版是永久免费杀毒软件,360杀毒软件下载免费版开创了杀毒软件免费杀毒的先河.本站提供360杀毒软件下载2016官方下载.360杀毒通过对用户反馈的持续关注与分析，我们进一步改进了针对浏览器不能上网的问题的扫描和自动修复逻辑。您通过快速或是全盘扫描就能够对该类问题进行快速修复!还有大幅优化了开机过程中对CPU和IO的占用，大大减少了对系统开机过程的影响。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('100', '<p>《诺亚传说》是尚游游戏自主研发的大型角色扮演网游，新资料片《诺亚传说前传-亚特兰蒂斯》火爆发布。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('101', '<p>迅雷9是“深圳市迅雷网络技术有限公司”于2016年推出的“迅雷”系列下载软件的最新换代产品。迅雷9采用全新下载引擎，对百兆光纤宽带网络环境进行诸多针对性的优化，让用户获得更卓越的下载体验；全新的界面功能布局，承载了更丰富的内容，打造找、下、用的一站式娱乐消费平台。</p><p>开发商：深圳市迅雷网络技术有限公司</p><p>软件官网：&nbsp;http://xl9.xunlei.com</p><p>新版特征</p><p>1、全新上线资源评论功能，进入资源详情页，参与精彩讨论；<br/>2、新增磁盘缓存设置功能；<br/>3、个性化中心新增“人气”“精品”“超级会员”提示，帮你找到个性化皮肤和头像。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('102', '<p>软件介绍：<br/>&nbsp; 1.360安全卫士是一款由奇虎360公司推出的功能强、效果好、受用户欢迎的安全杀毒软件<br/>&nbsp; 2.目前4.2亿中国网民中，首选安装360的已超过3亿<br/>&nbsp; 3.拥有查杀木马、清理插件、修复漏洞、电脑体检、电脑救援、保护隐私，电脑专家，清理垃圾，清理痕迹多种功能<br/>&nbsp; 4.独创了&amp;ldquo;木马防火墙&quot;&amp;ldquo;360密盘&amp;rdquo;等功能<br/>&nbsp; 5.依靠抢先侦测和云端鉴别，可全面、智能地拦截各类木马，保护用户的帐号、隐私等重要信息<br/>&nbsp; 6.内含的360软件管家还可帮助用户轻松下载、升级和强力卸载各种应用软件</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('103', '<p>搜狗（sougou）拼音输入法是一款Windows平台下的汉字拼音输入法。搜狗拼音输入法是基于搜索引擎技术的、特别适合网民使用的、新一代的输入法产品，用户可以通过互联网备份自己的个性化词库和配置信息。</p><p>开发商：搜狗</p><p>软件官网：&nbsp;http://pinyin.sogou.com/</p><p>新版特征</p><p>升级日志：<br/>1、标点补全：对（）、“”等成对的符号自动补全；<br/>2、图片表情：<br/>a）更新emoji资源和候选位置；<br/>b）支持表情包名搜索；<br/>3、拆分输入：增加更多拆分输入数据；<br/>4、网址直达：增加更多的网址数据；<br/>5、工具箱：更新工具箱图标，界面更美观；<br/>6、解决自定义短语、固定首位等删除之后同步又出现的问题。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('104', '<p>歪歪语音是广州多玩信息技术有限公司研发的一款基于Internet 团队语音通信平台，功能强大、音质清晰、安全稳定、不占资源、适应游戏玩家的免费语音软件。在网络上通常用YY表示。</p><p>开发商：多玩游戏</p><p>软件官网：&nbsp;http://www.yy.com/index/t/download</p><p>新版特征</p><p>优化了部分内容。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('105', '<p>阿里旺旺专为淘宝会员量身定做的个人交易沟通软件，方便买家和卖家在交易过程实时进行沟通。可以进行文字聊天、语音聊天、视频聊天、文件传输、发送离线文件等。有了它，用户就算有万水千山阻隔亦可零距离地与卖家交流宝贝细节，尽情“砍价”了！</p><p>开发商：阿里巴巴</p><p>软件官网：&nbsp;http://www.taobao.com/wangwang/</p><p>新版特征</p><p>1. 全新界面，清晰的圆形头像、轻薄的图标设计、界面结构更加简洁；<br/>2. 全新会话面板，汇总各类消息提醒，处理更高效；&nbsp;<br/>3. 皮肤设置升级，新增多款皮肤主题，带给你全新感觉；<br/>4. 拟物化登陆动画，简洁、灵动，一试难忘；<br/>5. 新增”星标好友“分组，方便找到重要联系人；<br/>6. 主面板新增快捷店铺入口，快速访问好友店铺；<br/>7. 消息管理器优化，重新梳理消息类型和菜单项，分类清晰.查找便捷；<br/>8. 旺旺个人资料和名片全新设计，支持设置个性背景图；<br/>9. 软件升级优化，让您第一时间了解新版本的功能；<br/>10. 文件发送完成后自动关闭发送框，在聊天窗口中实时穿透传输结果；<br/>11. 聊天窗口合并优化，同时和多人聊天更方便；<br/>12. 应用平台全新升级，访问更便捷，应用消息更直观。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('106', '<p>爱奇艺视频桌面版3.0是一款专注视频播放的客户端软件，免费下载安装，观看高清正版影视，可在线享受爱奇艺网站内全部免费高清正版视频、最新影视大片、最独家的综艺、旅游、纪录片，支持全网搜索，是最个性化、时尚化的视频客户端。</p><p>开发商：北京爱奇艺科技有限公司</p><p>软件官网：&nbsp;http://www.iqiyi.com/</p><p>新版特征</p><p>1. 提升系统稳定性。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('107', '<p>谷歌浏览器稳定版（Chrome）是一个由Google（谷歌）公司开发的开放原始码网页浏览器。该浏览器是基于其他开放原始码软件所撰写，包括WebKit和Mozilla，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。</p><p>开发商：谷歌</p><p>软件官网：&nbsp;http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html</p><p>新版特征</p><p>1. 修复了部分bug问题。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('108', '<p>360浏览器是互联网上最好用、最安全的新一代浏览器，和360安全卫士、360杀毒等软件等产品一同成为360安全中心的系列产品。木马已经取代病毒成为当前互联网上最大的威胁，90%的木马用挂马网站通过普通浏览器入侵，每天有200万用户访问挂马网站中毒。360安全浏览器拥有全国最大的恶意网址库，采用恶意网址拦截技术，可自动拦截挂马、欺诈、网银仿冒等恶意网址。独创沙箱技术，在隔离模式即使访问木马也不会感染。除了在安全方面的特性，360安全浏览器在速度、资源占用、防假死不崩溃等基础特性上表现同样优异，在功能方面拥有翻译、截图、鼠标手势、广告过滤等几十种实用功能，在外观上设计典雅精致，是外观设计最好的浏览器，已成为广大网民使用浏览器的第一选择。</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('109', '<p>PPTV网络电视是PPLive旗下产品，一款安装量大的P2P网络电视软件，支持对海量高清影视内容的直播+点播功能。可在线观看电影、电视剧、动漫、综艺、体育直播、游戏竞技、财经资讯等丰富视频娱乐节目。P2P传输，越多人看越流畅、完全免费，是广受网友推崇的上网装机必备软件。</p><p>开发商：上海聚力传媒技术有限公司</p><p>软件官网：&nbsp;http://www.pptv.com</p><p>新版特征</p><p>1、直播回看无限制，想看哪里看哪里；<br/>2、调整注册方式，手机注册更方便；<br/>3、程序猿们日夜兼程，保证您观影更流畅</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('110', '<p>腾讯视频播放器是腾讯视频旗下的客户端产品，是一款支持丰富内容的在线点播及电视台直播的软件。它采用了先进的P2P流媒体播放技术，可以确保在大量用户同时观看节目的情况下，节目依然流畅清晰；同时具有很强的防火墙穿透能力，为用户在任何网络环境下收看流畅的视频节目提供了有力保障。</p><p>开发商：腾讯</p><p>软件官网：&nbsp;http://v.qq.com/index.html</p><p>新版特征</p><p>1. 客户端专享1080P蓝光画质，全员免费观看和下载；<br/>2. 鼠标停留在播放进度条上可看到预览画面；<br/>3. 启动时提示上次观看内容；<br/>4. 优化了搜索的体验；<br/>5. 精选频道点击栏目标题可跳转；<br/>6. 优化了VIP会员频道的分类筛选。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('111', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114510l7x1.jpg\" title=\"138683743.jpg\" alt=\"138683743.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">本月初的百度世界大会上，百度正式对外宣布，开源其深度学习平台PaddlePaddle，这也让百度成为国内首家开放深度学习技术平台的科技公司。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟表示，百度希望通过开放深度学习平台的方式，营造开发者社区，推动人工智能行业的发展。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据徐伟介绍，该平台最初是百度研发的深度学习内部平台，项目于2013年启动，主要用于支持的百度产品，目前百度有超过30个产品应用到该深度学习平台，包括预测外卖送达时间、图文问答、商家好感度模型等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在行业开放的大趋势下，百度决定将这一平台开源，现在所有的从事深度学习开发的开发人员均可以下载安装并使用百度的这一深度学习工具。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">除了百度以外，谷歌(微博)在去年底宣布开放其深度学习平台Tensorflow，此外，业内主流的深度学习平台还包括Facebook的Torch，加州伯克利大学的Caffe等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟说，百度的PaddlePaddle平台具备易用、高效、灵活、可伸缩等特点，能够满足多种不同的应用开发需求。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在接受采访时，徐伟重点强调了该平台的易用性特征，他表示，相比谷歌的Tensorflow来说，开发者在使用PaddlePaddle时更容易上手，尤其是对于序列输入、稀疏输入和大规模数据的模型训练有着良好的支持，支持GPU运算、数据并行和模型并行，仅需少量代码就能训练深度学习模型，大大降低了用户使用深度学习技术的成本。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟说，让开发者决定使用哪个平台进行开发的决定因素主要包含几个方面，首先是该平台能否实现自己想实现的功能，其次是使用某平台实现起来的难度有多大，最后是效率有多高。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">本月底，PaddlePaddle将迎来开源后的首次重大更新，徐伟介绍称，此次更新主要是进一步完善对不同操作系统的支持、进一步完善说明文档以及解决不同安全环境下的问题等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">百度开源人工智能技术引起了开发者社区的关注，Facebook深度学习研究员、曾参与谷歌Tensorflow研发的贾扬清评价称，PaddlePaddle有高质量的GPU代码、非常好的RNN（回归神经网络）设计，并且设计很干净，没有太多的抽象表达，这一点比Tensorflow好很多。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟表示，正式开源后，下一步的目标是进一步完善平台的易用性和性能，并增强与开发者群体的沟通，了解他们的需求。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在谈到人工智能行业的发展时，他认为，人工智能行业这两年出现爆发式增长，主要在语音识别、图像识别等领域出现了显著的突破。在谈到人工智能未来发展时，他表示乐观，并认为，未来可能的突破点在于自然语言识别、理解和处理以及机器翻译等方面，另外基于人工智能的”人工助手”的智能化程度也有望进一步加强。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('112', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114715p0as.jpg\" title=\"138679801.jpg\" alt=\"138679801.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">自2013年12月首批企业获牌以来，虚拟运营商发展迅速，目前已有42家企业获得牌照。9月22日，在“ICT中国· 2016高层论坛”移动转售分论坛上，中国通信企业协会披露，目前移动转售业务用户数已超3500万，占全国移动用户人数2.67%。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">不过，移动转售行业也因实名制未落实到位出现诸多“乱象”，尤其“170”号段诈骗多发遭诟病，在“徐玉玉受骗致死”案等多个热点事件的舆论声讨中，虚拟运营商声誉受到重大打击，其融资也受到影响。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\"><strong>虚拟运营商“很受伤”</strong></p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">3年前，第一批企业获得牌照进入试点，中国移动(微博)虚拟运营业方缓缓起步，而经过几年的发展，这一行业已小有规模，不过“成长的烦恼”也使其备受困扰。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">中国通信企业协会披露的数据显示，移动转售业的发展速度有所下降。自2015年3月起，移动通信转售业务月净增超过100万户，其中2015年10月起连续6个月净增达到200万，然而自2016年1月以来，增速有所放缓，甚至出现“停滞”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">增速降低与行业乱象不无关联。女大学生徐玉玉被骗后昏聩致死使得社会的目光投向虚拟运营商，尤其是因为“实名制”再次被推上风口浪尖。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据央广网2016年8月报道，工信部网络安全管理局对虚拟运营商新入网电话用户实名登记工作暗访，暗访的26家转售企业的109个营销网点中，37个网点存在违规行为，违规占比超三成。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">虚拟运营商“实名制”漏洞也成了舆论谴责的“靶子”。中兴视通显然备受折磨，其CEO邓慕超向与会者“倒苦水”，称自己有时“夜不能寐、梦不能求”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">巴士在线CEO王献蜀在业内摸爬滚打多年，也叫苦不迭，“170贴了一个标签，就是诈骗，虚商也变成了诈骗公司。”王献蜀表示，这让虚拟运营商要“很受伤”，并呼吁业内外应给予虚拟运营商“容错空间”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\"><strong>声誉受损融资受波及</strong></p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">中国虚拟运营业起步晚于发达国家，而虚拟运营商们盈利困难早已不是新闻，而今，命途多舛的它们又遇“拦路虎”，这也让资本市场对其发展前景打了个问号，虚拟运营商直接受到冲击。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">王献蜀称，“170”号段的问题影响了虚拟运营的融资。“我们很少听到说哪一家虚商拿了多少融资，然后怎么样，多么风光，虚商这个行业几乎都是每一家虚商，每一个老板，每一个企业真金白银自己从口袋里面往外掏钱。”王献蜀表示，从业几年来，他自己已经投入了1.8亿元。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">蜗牛移动CEO陈艳也深有体会，在她看来，虚拟运营商还是个“婴儿”，她表示，英国发展虚拟运营已有18年，虚拟运营的比例占到全行业的12%，而中国发展2、3年达到2.67%，未来还有很大发展空间，但她却感受到了行业内的恐慌。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">融资困境及舆论压力促进了虚拟运营商的反思。9月22日的论坛上，虚拟运营企业代表均坦承，虚拟运营商也是诈骗案的受害者，落实实名制可促使虚拟运营业健康发展。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">今年4月份，工信部发布了《关于加强规范管理，促进移动通信转售业务健康发展》的通知，向移动转售企业提出了落实移动用户实名登记要求的有关具体规定。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据中国通信企业协会常务副会长兼秘书长苗建华介绍，整治以来，虚拟运营商采用系统整改、完善手段、有奖举报等一系列措施取得了一定的成效。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('113', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114919rtom.jpg\" title=\"641.jpg\" alt=\"641.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">李克强总理首赴联合国，首场活动便是出席由联合国倡议举行的联大解决难移民大规模流动问题高级别会议。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这是自联合国成立以来，首次召开的应对难移民问题的高级别会议。同时尤其值得注意的是，这也是中国领导人首次在此种国际场合阐述对于难移民问题的主张。总理的首场与联合国的首次，两者碰撞出怎样的火花?</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">人道主义的价值观，这是李克强主张的要旨。在联合国的讲台上，中国总理的视野超越国别和地域。他将难民和移民问题视为一场“拷问人类社会良知”的人道主义危机，因此郑重向国际社会发出呼吁：“每一个人的生命都是宝贵的，每一个人的尊严都应得到维护，人道主义精神必须弘扬。”中国传统政治伦理中有着人道主义的丰沛思想资源，李克强将其带到联合国讲台上，从而丰富了中国当代外交与政治的实践。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">与此相应，在联合国这个庄严的讲台上，李克强代表中国宣布的3项举措，实打实地彰显了基于人道主义的国际政治理念。中国将这样做：在原有援助规模的基础上，向有关国家和国际组织提供1亿美元的人道主义援助;积极研究把中国-联合国和平与发展基金的部分资金用于支持发展中国家难民移民工作;积极探讨同有关国际机构和发展中国家开展三方合作。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">怎么做，真金白银，某种意义上比怎么说更触及实质。然而这里面有一个厘清“责任观”的问题。中国作为联合国常任理事国，在难移民这一全球性议题上当然有义不容辞的责任。该出手时就出手，正如李克强在当天会议上所言，中国把人道主义援助视为“道义之举”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">同时，中国经济虽有了很大发展，但仍是发展中国家，愿意承担与自身能力相适应的责任。李克强在联合国所承诺的援助资金，是中国的量力而为，我们决不放空炮;所承诺的援助方式，比如使用和平与发展基金的部分资金、开展三方合作等，也是真正的“务实之举”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">更关键的是，李克强的“说”与“做”，在一个更高层面上实现了统一，那就是发展。战乱冲突、贫穷落后是难移民问题的主要根源，实现真正的包容性增长方为治本之策。中国的主张和举措，牢牢把握住了解决问题最关键点——长远和根本地看，出路还蕴藏在发展这一主题中。这也是李克强一直以来在国际外交舞台上所强调的，以发展弥合伤痕、促进平衡、共同向前。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在联合国的首场活动，阐述理念、承诺硬招，李克强总理在这个最高的国际场合，展示了中国“软实力”。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('130', '<p style=\"text-indent: 2em;\">细心的人会观察到，在发表2016年新年贺词的镜头中，习近平总书记办公室有了新变化：新添的7张照片中，有3张记录着总书记和民族地区各族干部群众一起谋发展、话小康的难忘瞬间。</p><p style=\"text-indent: 2em;\"><br/></p><p>　　民族工作关乎大局。党的十八大以来，以习近平同志为总书记的党中央高度重视民族工作，多次深入民族地区调研，体察少数民族群众冷暖。先后召开第二次中央新疆工作座谈会、中央民族工作会议、中央第六次西藏工作座谈会等，对民族工作作出全面部署，力度之大、频次之高、涉面之广、阐述之深，前所未有，一曲新形势下民族工作新乐章在中华大地奏响。</p><p><br/></p><p>　　保持定力：坚持走中国特色解决民族问题的正确道路</p><p><br/></p><p>　　2014年9月，中央民族工作会议在京召开。会上，习近平总书记在坚持党的民族理论政策基本原则的基础上，提出了一系列新思想新观点新举措，为新形势下民族工作提供了行动指南和基本遵循：</p><p><br/></p><p>　　——我国历史演进的这个特点，造就了我国各民族在分布上的交错杂居、文化上的兼收并蓄、经济上的相互依存、情感上的相互亲近，形成了你中有我、我中有你、谁也离不开谁的多元一体格局。</p><p><br/></p><p>　　——新中国成立65年来，党的民族理论和方针政策是正确的，中国特色解决民族问题的道路是正确的，我国民族关系总体是和谐的。</p><p><br/></p><p>　　——同世界上其他国家相比，我国民族工作做得都是最成功的。</p><p><br/></p><p>　　——中华民族和各民族的关系，形象地说，是一个大家庭和家庭成员的关系，各民族的关系是一个大家庭里不同成员的关系。</p><p><br/></p><p>　　——坚持中国特色解决民族问题的正确道路。</p><p><br/></p><p>　　——坚持和完善民族区域自治制度，要做到坚持统一和自治相结合，坚持民族因素和区域因素相结合。</p><p><br/></p><p>　　——做好民族工作，最关键的是搞好民族团结，最管用的是争取人心。</p><p><br/></p><p>　　——城市民族工作要把着力点放在社区，推动建立相互嵌入式的社会结构和社区环境。</p><p><br/></p><p>　　——加强中华民族大团结，长远和根本的是增强文化认同，建设各民族共有精神家园，积极培养中华民族共同体意识。</p><p><br/></p><p>　　——尊重差异、包容多样，通过扩大交往交流交融，创造各族群众共居、共学、共事、共乐的社会条件，让各民族在中华民族大家庭中手足相亲、守望相助。</p><p>　　……</p><p>　　中央民族工作会议的召开，统一思想、坚定信心，在新的历史起点上推动民族团结进步事业踏上新的时代征程。</p><p><br/></p><p>　　大政方针已定，关键就在落实。中央民族工作会议以来，以理论创新为先导，民族工作的政策创新、制度创新、实践创新不断推进。</p><p><br/></p><p>　　——出台贯彻落实《中共中央、国务院关于加强和改进新形势下民族工作的意见》的重要举措分工方案，包括16项47条，条条都是硬举措。相关部委组成联合督查组督促中央民族工作会议精神的贯彻落实。</p><p><br/></p><p>　　——时隔13年召开全国民族教育工作会议，首次召开全国城市民族工作会议……中央民族工作会议精神逐一贯彻，渐次落实。</p><p><br/></p><p>　　——全国31个省、自治区、直辖市和新疆生产建设兵团相继召开贯彻落实中央民族工作会议精神的会议，出台了相关配套文件。</p><p><br/></p><p>　　——为支持民族地区加快发展，输送“真金白银”，研究制定差别化政策：第一次对川甘青交界地区，对南疆四地州，对怒江、凉山、临夏等三个特困自治州，专门制定政策举措。</p><p><br/></p><p>　　——明确少数民族学生高考加分政策，对国家通用语言文字已经普及、教育水平大体相同的地区，逐步缩小差距，逐步做到一律平等；对语言文化差异较大、教育质量还不高的一些地区少数民族学生，除大力普及双语教育、调整专业设置、提高教学质量外，仍是实行高考加分政策，支持少数民族学生取得较好教育水平。</p><p><br/></p><p>　　两年来，中央民族工作会议精神在各地生根发芽、开花结果。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('131', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/101353469a1k.jpg\" title=\"3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg\" alt=\"3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">今年的国庆节注定是个不平凡的节日，北京、广州、深圳、苏州、合肥等20个一二线城市相继出台楼市限购限贷政策，“深八条”、“沪六条”等严厉调控措施相继出笼，犹豫在中国大地上引爆了无数颗原子弹，看得人眼花缭乱、心惊肉跳，让人感受到了中国楼市调控“变脸术”之快、之严。&nbsp;</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">社会各界姑且会猜测，这些调控措施付诸实施之后能否成为医治楼市癫狂的灵丹妙药？房地产业服了这些调控药之后是否能走上理性、健康发展轨道？中国民众是否从此不再有楼市猛涨带来的恐慌之虞？回答无疑是否定的。因为这些调控之“药”依然没有摆脱行政窠臼，其结局也就很难跳出行政调控怪圈：“严格管制房价暂时趋缓—放松管制房价暴涨”。也就是说，出台调控措施的这些城市，楼市价格上涨趋势可能暂时会缓一缓，但过后可能又将迎来新一轮量价齐涨周期。因为中国从2005年3月底的“国八条”算起，短短十年间，中国房地产市场虽经历过无数次调控，无论是国务院的各项“通知”，还是九部委、七部委的各种“意见”，都没能阻挡住房价上涨的步伐；不少城市的房价比2005年翻了几番甚至十番都不止。每一轮调控政策都是为稳定住房价格，但调控过后，总有一轮快速上涨行情，越让普通百姓感叹房子越来越买不起了。显然，目前楼市调控实质已陷入越调越高和政府“助涨”的尴尬局面。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这是为什么呢？道理其实很简单，因为我们楼市调控政策存在严重问题：一是没有理顺楼市调控的目的到底是什么，是控制住房价让老百姓买得起房，还是不要过于严厉让房地产开发商能有钱赚和地方财政有收入可进？正因为楼市调控政策总是处于摇摆不定状态，忽而严厉、忽而放松，缺乏长久可持续调控政策措施，让房地产开发商及各级地方政府形成了“耐药性”，使调控功效被抵消。二是没有割断地方政府与房地产业发展之间的各种利益关系，是让楼市调控步入市场运行机制、让市场充分发挥自发调节作用，还是继续伸出行政权力之手来生硬地管制房价或分割利益？由于这种利益关系没理顺，使一些地方政府难下决心认真调控，致使调控政策得不到认真落实走形变样；同时也会更加诱发一些地方政府竭力追求土地财政、推高房价获得足够收入搞高楼房、宽马路等城市形象政绩工程建设，使调控陷入了“死胡同”。三是没有足够底牌或也不愿意拿出有效手段来对冲楼市上涨带来的压力，使楼市调控政策软弱无力。比如保障房、经济适用房等建设速度缓慢、数量严重短缺，把一大批城市中低收入人群也逼向商品房购买行列，更加剧了楼市非理性上涨；也让政府对楼市非正常上涨现象缺乏必要平抑措施，只能望楼市价格上涨兴叹。四是对楼市上涨失控城市政府调控不力、楼市中存在各种违规行为及投机炒作行为缺乏必要法治惩治手段，使楼市失常状况难得到及时扭转。如调控政策出台之后，没有一个地方政府领导因楼市调控措施落实不力受到严肃问责，丢下官帽；没有一个开发商因弄虚作假、违规开发而被罚得倾家荡产；更没有一个楼市投机炒作者被追究刑责入狱。于是地方政府调控措施执行不力已司空见惯，开发商违规行为让人熟视无睹，投机商哄抬房价打乱楼市现象更是让人见怪不怪。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">由此，目前中国一二线城市楼市调控政策不能只求一时轰动效应，而应把追求实实在在的长久调控效果放在首位，推动楼市调控彻底走出“屡涨屡调，屡调屡涨”怪圈：首先，制定富有弹性的楼市调控政策，确立楼市调控近期目标、中期目标和长远目标，分阶段实施，消除狂风暴雨式调控模式；把楼市调控政策制定要交给各级地方政府，建立目标考核责任制，将其纳入施政目标，让民众来打分评价，对民众不满意或房价涨幅过大的地方政府领导实施行政降级、行政记过、诫勉谈话等问责处罚，增强楼市调控政策的严肃性。其次，进一步厘清行政干预与市场调节的界限，确立地方政府在房地产市场中的责任；将房地产市场纳入法治监管轨道，对楼市调控不力的地方政府、违法违规的房地产开发及哄抬房价扰乱楼市秩序的投机商追究刑事责任，增强楼市调控的法治威慑力。再次，应尽快终结土地财政，加快税收制度改革步伐，将中央政府与地方政府事权与财权改革到位，消除地方政府对土地财政的依赖，楼市疯狂暴涨和挤泡沫才真正有希望。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('132', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10135526bcqb.jpg\" title=\"908fa0ec08fa513da2f6fc21356d55fbb3fbd9f5.jpg\" alt=\"908fa0ec08fa513da2f6fc21356d55fbb3fbd9f5.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">三年前，中国大妈们抢购黄金的记忆还历历在目，没想到如今的黄金又开始了一轮又一轮的下跌。接连的破位下跌，再次有人开始蠢蠢欲动，想着投资抄底，再加上中国房地产市场的调控力度不断加大，那么会不会有一部分投资热钱也会进入到黄金市场呢？其实，投资市场历来有句名言是买涨不买跌。不过，对于黄金这种相对常见的避险投资工具来说，很多人买了就是资产配置和“囤货”，并不是简单的投资或者快速的出手，她们持有的耐心和时间更长，因此任何一个低价的出现，都有可能成为触发市场投资的一种诱惑。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">连续下跌，何时是个头？</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">今年的“十一黄金周”期间，黄金价格已经跌破1,300美元/盎司的重要支撑。10月1日～7日，纽约商业交易所（COMEX）黄金大跌4.5%，创下一年来最大单周跌幅，其中上周二跌幅超过3.3%，也创下了2013年12月以来单日最大跌幅。10月4日，现货金价一度跌破1270美元/盎司关口，白银一度跌破18美元关口，跌幅超过5%，多次刷新英国脱欧公投以来最低。市场对欧佩克限产协议不断炒作，原油看涨情绪升温。这都使黄金的价格不被看好。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">市场对全球央行货币政策转向，担忧流动性逆转是黄金下跌的主要原因。其实在8月份之后，全球资本市场人士普遍猜测，各国将统一行动，主要在结构性改革、财政政策上发力，货币政策可能接近极限，全球的流动性将很快出现逆转。黄金价格的剧烈波动，就是对这一猜测的又一次市场反应。如果全球货币宽松走到尽头，那么利率将缓慢上升，全球的债券牛市也将终结。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">摩根大通统计的数据显示，今年英国退欧公投后，欧英日三大央行的季度资产购买规模连创新高。目前美欧英日四大央行的资产负债表已高达13万亿美元之巨，已占全球GDP的40%。预计在今年最后一个季度，欧英日三大央行将“加印”5060亿美元在市场上购买资产，创2009年美联储首推QE以来的最大季度规模。高盛表示，基于全球经济增长仍面临持续下行风险，同时市场可能仍在质疑货币政策应对任何经济潜在冲击的能力。因此，金价跌破每盎司1250美元可能是一个战略性的购买机会。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">值得关注的是，中国央行一直是购买黄金的主力。最新数据显示，截至9月末，国内黄金储备从2014年6月的1054.1吨大幅增加74%至1838.53吨。据中国黄金协会报导，2015年中国生产黄金515.88吨，黄金产量连续九年保持世界第一，黄金消费量连续三年保持世界第一。今年有望继续保持这一势头。不过，今年的黄金需求较往年有明显的回落。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">来自Wind数据统计显示，目前，共有4家拥有黄金业务的上市公司发布了公司的前三季度业绩预报，而从预报结果来看，金价的变化，让这些公司的投资者暂时松了口气。“预计前三季度归属于上市公司股东的净利润变动幅度为增长350.00%至400.00%；同期归属于上市公司股东的净利润变动区间为9847.85万元至10942.05万元；业绩变动的原因是成本下降，黄金价格上升。”</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('140', '<p>任职资格:<br/>1、大专及以上学历，计算机相关专业<br/>2、有一年及以上Java或者安卓开发经验者优先考虑<br/>3、有责任心，能独立思考问题</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('142', '<p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年，1095天，四川政府采购大步向前：建章立制——搭建起制度框架；扩面增量——夯实政采地基；强化监管——为日常工作立柱架梁。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2014年以来，四川政府采购的改革创新成果，体现在一个个具体的数字上。而数字的背后，是四川政府采购工作的3年改革答卷——阳光透明，物有所值。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">□子融</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">省财政厅负责人谈政府采购</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：怎样评价我省近年来政府采购改革？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：近年来，我省政府采购法制体系已经基本建立，国家和地方出台的70多项制度构成了四川特色的制度体系。2015年，政府采购规模（财政部口径）达到1376亿元，已经居于全国第四位，2016年又突破2000亿元。依法监管、规范采购、公平竞争、诚信履约的政府采购运行机制显著改善。政府购买服务、PPP项目采购、批量集中采购、全面创新改革、简政放权、公共资源交易改革等各类改革快速推进。政府采购环境大幅改善，社会对政府采购的认可度明显提高。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">特别是在建章立制方面，我省率先在全国取消通用货物协议供货，推行网上竞价和商场（城）直购采购制度，有力遏制通用货物采购质次价高问题；建立采购项目需求论证和履约验收机制，全面落实采购人主体责任；建立政府采购当事人诚信管理机制和行贿犯罪记录查询机制，全面推进诚信体系建设；建立采购需求、评审评分情况、履约验收、绩效评价、质疑答复等关键信息全面公开机制，实现真正阳光采购；建立“三位一体”监督检查、考核和绩效评价机制，多维度考验政府采购执行等，皆走在全国的前列或为首创。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：当前政府采购监管面临怎样的形势？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：随着经济社会发展方式转变，政府采购监管所面临的形势也发生变化。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">一是经济发展方式转变对政府采购机制提出新要求。党的十八届五中全会提出创新、协调、绿色、开放、共享“五大发展理念”。政府采购制度作为政府调控经济、促进经济社会发展的重要政策工具，须不断改革创新。这要求我们要积极发挥政府采购政策作用，服务我省经济社会发展。去年以来，我省为推进“全面创新改革”，建立了促进中小企业发展和创新产品远期约定政府购买两项制度，就是政府采购政策服务于发展大局的重要体现。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">二是政府市场关系定位对政府采购管理提出新要求。党的十八届三中全会提出,要处理好政府和市场的关系，使市场在资源配置中起决定性作用。政府采购一头连接政府，一头连接市场，我们要按照“三公一诚信”的基本原则,更好发挥“裁判员”作用，制定和落实好比赛规则,维护好公平公正的市场秩序。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">三是依法治国法治理念对政府采购运行提出新要求。党的十八届四中全会提出，建设中国特色社会主义法治体系。这使得增强政府采购法制在采购活动中的约束力的要求更加明确。政府采购要防止权力干预、权力滥用，增强政府采购法制的约束力；要管住政府采购中想乱伸的权力之手，这就要求我们在工作中发挥各方面的监督制约机制，将内部监督、法定监督和社会监督相结合。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">财政部门作为政府采购制度改革的主导者、操刀人，要努力在构建规范透明、公平竞争、监督到位、严格问责的工作机制方面下功夫。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">四是全面深化改革任务对政府采购监督提出新要求。政府采购制度改革作为财政支出改革“三驾马车”之一，已进入全面深化改革的新阶段，啃硬骨头、趟深水区的事情会越来越多。这要求我们积极发挥公共财政管理综合职能；发挥政府采购监督合力，要与监察、审计等监督部门建立联合监督工作机制；发挥第三方社会监督作用，用社会的力量促进政府采购良性发展。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购改革需要把握哪些重点？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：当前,我省各项改革快速推进,政府采购改革要顺应这种变化，重点要把握好以下三方面关系。一是把握好依法行政和加强服务意识的关系，坚持“法定职责必须为、法无授权不可为”。二是把握好简政放权和加强监督管理的关系，坚持“抓大放小，有所为有所不为”。三是把握好基础工作和加强改革创新的关系，要“干好基础工作，不断推陈出新”。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：为加强政府采购监管，省财政厅下一步将有哪些打算？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：一是认真贯彻落实现有的政府采购法律制度，并在实践中不断创新完善。二是切实加强采购人、采购代理机构内部控制管理制度建设。三是积极深入推进政府采购信息化建设。将政府采购信息化建设工作纳入财政信息化建设的总体部署,进一步加强政府采购管理交易系统与部门预算、国库集中支付、资产管理等信息系统的衔接贯通。四是大力支持公共资源交易平台整合。按照国务院方案、14部委39号令、财政部的规定,落实好依法恢复集中采购机构的独立法人地位、积极参与制定本地区公共资源交易平台整合的具体实施方案、统一政府采购交易规则体系等工作要求。五是着力加强政府采购事中事后监管。六是着力加强政府采购机构队伍建设。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">政府采购政策解读</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：是不是公开招标才叫政府采购？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：公开招标与政府采购不是同一概念，公开招标只是政府采购方式之一。一个采购项目究竟适用于哪种采购方式，应当根据采购项目的具体需求和特点来定，不能一概而论。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">不同的采购方式，需要的时间不一。从发布采购公告到可以签订政府采购合同所需法定时间计算，公开招标约28天；邀请招标约34天；竞争性谈判约13天；竞争性磋商约18天；询价约13天；单一来源采购没有明确的时间限制，一般情况约7天。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：国有企业采购是政府采购吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：根据《政府采购法》的规定，政府采购是指各级国家机关、事业单位和团体组织，使用财政性资金采购依法制定的集中采购目录以内的或者采购限额标准以上的货物、工程和服务的行为。一个采购项目，必须采购主体、采购资金、采购范围、采购对象同时符合有关规定，才纳入政府采购管理。我国政府采购的主体是各级国家机关、事业单位和团体组织。因此，任何组织形式的企业采购都不属于政府采购范畴。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购的资金是财政性资金，是不是就是财政拨款的资金？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：根据《政府采购法实施条例》的规定，财政性资金是指纳入预算管理的资金。因此，不能将财政性资金等同于财政拨款的资金，财政性资金的范围要比财政拨款资金的范围大得多。比如，医院医疗收费、学校教育收费及其他事业单位的收费，都是纳入预算管理的，都属于政府采购财政性资金的范畴，这些资金就不是财政拨款资金。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：采购人在政府采购中是何种角色？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：是名副其实的“主角”。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：采购人是政府采购活动中的主体，是名副其实的主角。按照《政府采购法》及其实施条例、《党政机关厉行节约反对浪费条例》、《中华人民共和国政府信息公开条例》等法规，明确了采购人在采购需求制定、履约情况验收、内控机制建设、政策的落实、采购信息公开五个方面的主体责任。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：分散采购，就是单位自行随意采购吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：分散采购也是政府采购，应当按照《政府采购法》规定的方式和程序执行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">此外，政府采购中的自行采购，指的是采购人按照政府采购有关规定，自行组织采购，并不是自行随意购买。自行组织采购，通俗地说，就是采购单位既要干采购人的活，又要干采购代理机构的活，两个活，一肩挑。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购可优先采购本地企业产品吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不可以。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：政府采购市场是全国统一自由市场，阻挠和限制供应商自由进入本地区和本行业政府采购市场的行为是违法的。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政府采购应当有助于实现国家的经济和社会发展政策目标，政府采购政策包含多方面内容，其功能主要包括节约能源、保护环境、扶持不发达地区和少数民族地区、促进中小企业发展以及采购本国货物、工程和服务等。目前，没有优先采购本地企业产品这类政策。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购只受财政部门的监督吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：除了财政部门，监察机关和审计部门等依法负有行政监督职责的政府有关部门也是政府采购监督部门。按照《政府采购法》规定，各级人民政府财政部门是负责政府采购监督管理的部门，依法履行对政府采购活动的监督管理职责；各级人民政府其他有关部门依法履行与政府采购活动有关的监督管理职责。审计机关对政府采购进行审计监督，监察机关对参与政府采购活动的有关人员实施监察监督，总的来说就是各部门依据各自法定职责对政府采购中的“人”“财”“事”进行监督。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">26项制度</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　扎紧政策笼子</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">在国务院《政府采购法实施条例》、财政部《政府采购非招标采购方式管理办法》等法规制度的基础上，通过连续3年系统性建章立制，我省政府采购已构建起比较健全完善的政府采购制度体系，基本做到了事事有法可依、有章可循，进一步扎紧了制度的笼子。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省共计制定出台了《关于创新政府采购机制 加强政府采购监管工作的意见》《关于贯彻落实&lt;中华人民共和国政府采购法实施条例&gt;的若干规定》《四川省政府采购当事人诚信管理办法》《四川省政府采购项目需求论证和履约验收管理办法》《四川省政府采购促进中小企业发展的若干规定》等26项制度。<!--中华人民共和国政府采购法实施条例--></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">同时，结合“放管服”改革要求，主要厘清财政部门、采购单位、采购代理机构和评审专家在政府采购活动中的职责和义务，提出加强采购单位和采购代理机构内部控制管理的指导意见，做到权责清晰。明确政府采购计划备案、采购需求论证、采购文件编制、采购评审、履约验收、采购方式变更和进口产品审核等采购重点环节的执行要求，简化审核流程。建立对采购代理机构监督检查和考核、政府采购项目绩效评价等事后监督机制，强化事后监管。按照全面创新改革要求，为落实创新产品采购和促进中小企业发展等政府采购政策提供有力的制度保障。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">充分尊重和发挥了市场对资源配置的决定性作用，转变了围绕规范采购程序进行制度设计的传统思维,以有利于结果导向进行制度重构，注重政府采购透明度建设，引入第三方监督机制，推行法定监督和社会监督相结合的监督模式，使制度在实践中得到了良好的执行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">突破2000亿元</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　采购规模快速增长</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2016年我省政府采购规模达到2009.1亿元，较2015年增加632.6亿元，增长46%；较2013年增加1671.1亿元，同比增长208.7%，年均增幅达45.6%，占公共财政支出的比重较2013年提高19.9个百分点。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省政府采购改革逐步推进，范围不断扩大，同时各级财政部门严格执行“无预算、无计划、不采购”的原则，通过强化政府采购预算审查，推行政府采购计划备案管理，加强宣传培训，积极纠错纠偏，采购单位的政府采购意识不断提高，政府采购规模实现快速增长。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">资金节约率33.2%</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">我省从2015年正式推行批量集中采购，采购规模不断增加，采购单位不断增多，规模效应的优势凸显。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">据统计，2016年全省批量集中采购2.5亿元，资金节约率为33.2%；其中，省级批量集中采购3954万元，资金节约率达62.7%，执行批量集中采购的单位84家，较2015年增加16家。执行批量集中采购的产品价格普遍低于同期市场价格20%左右，个别项目甚至近50%。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">实践证明，批量集中采购是一种既能充分体现政府集中采购规模效应，又能让采购人普遍接受的一种创新方式。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　进口产品审核减少77项</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　简政放权 审核事项递减</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">进口商品采购方面，省级和部分市（州）已经推行进口产品“清单制”，单位采购清单内进口产品无需再单独向财政部门申请。据了解，有很多市县直接参照省级的做法和清单范围，在本地推行，这些做法，大大简化了审核程序，提高了采购效率。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">以省级为例，2016年，省财政厅审核进口产品148项，较2015年同期减少77项。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">简政放权对发挥政府采购政策作用、降低创新风险、激发创新活力、促进中小企业发展有着积极的作用。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　No.1</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　政府采购透明度四川最优</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2016年11月1日，国家智库——中国社科院发布中国首个《政府采购透明度评估报告(2016)》。《评估报告》反映，我省批量集中采购模式得分为90.4分、投诉处理结果及违规处罚结果得分为100分，总分为92.15分。四川省级政府采购透明度全国第一。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，采购人、采购代理机构、评审专家、供应商等政府采购活动的当事人和参与者，对于政府采购的评价也在逐渐发生变化。以前常听到的“质次价高”“效率低”这样的话，现在已经少有负面的评价。这些现象说明政府采购环境在向好的方面发展。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">3669个项目</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　接受监督检查</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　规模和质量全国领先</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，各级财政部门依法处理政府采购投诉、举报案件1452件；对违反政府采购法律法规的47家采购人、41家采购代理机构、310家供应商、76名评审专家进行了行政处罚。同时，动态淘汰不合格评审专家1500多名。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">自2015年起，采取省市县三级联动、同步推进的方式，对政府采购代理机构的执业情况进行监督检查。2016年，创新性地将政府采购代理机构监督检查、考核以及政府采购执行情况绩效评价整合，对社会代理机构及其代理的政府采购项目开展全方位、多角度、解剖式的检查、考核和评价，全省共计检查政府采购代理机构446家，检查政府采购项目3669个，涉及采购金额810.6亿元，检查规模和质量在全国各省（市）中排名第一，受到财政部的高度评价。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">通过监督检查、考核和绩效评价，发现了政府采购活动中存在的问题和不足，明确了财政部门今后的重点监管方向。同时，通过对发现的违法违规行为的处理，震慑了政府采购当事人，也进一步规范了政府采购活动。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　30393人次</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　参加我省政府采购培训</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">近年来，我省为提高政府采购从业人员法制意识和执业能力，促进政府采购质量和效率提升，进行了多轮次法制政策和业务操作培训。据统计，2014年-2016年，省财政厅共举办各类培训班84期，采购人培训1500多人次、代理机构培训7500多人次、政府采购评审专家培训20593人次、政府采购监督管理工作人员培训800多人次。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">这些培训，于采购人而言，提高了认识及业务水平，推动了政府采购改革工作的深化；于代理机构而言，强化了从业人员的专业素质，提升了工作质量，促进了政府采购代理的规范化、专业化；于评审专家而言，提高了专业素质及政府采购评审工作质量，促进了政府采购的公平、公正；于监管人员而言，真正达到了统一思想、明确任务、振奋信心、提高本领的目的。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">探索政府采购政策宣传和执业教育新模式，针对不同的政府采购当事人和参与者，实现了对象全覆盖。同时，根据内容的不同，采取不同的方法、不同的形式，使宣传教育效果明显提高。通过宣传教育，使政府采购人、采购代理机构、评审专家、供应商等直接参与者明白了政府采购的“规矩”，也进一步扩大了政府采购的社会认知和认同，营造了良好的改革环境。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　378716条公告</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　政府采购信息全面公开</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省不断加大政府采购信息公开力度，全省在四川政府采购网发布采购公告137608条、采购结果公告132394条、变更公告36766条、采购合同公告55575条、投诉处理决定公告945条、进口产品审核前公示3346条、单一来源采购审核前公示8652条、采购需求论证公示2422条、质疑答复公示1008条，广泛接受社会监督，让政府采购活动在阳光下运行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">正是不断完善政府采购信息公开制度，进一步强化监督管理，我省政府采购工作得到了社会广泛的肯定和认可。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政府采购信息公开，无论是对政府采购制度建设，还是社会公众、采购人、供应商来说，都是受益者。政府采购信息公开可以提高政府采购的透明度，方便社会公众监督，减少采购人的信息公告支出，便于供应商公平地获得采购信息。</p><p><br/></p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('143', '<p class=\"f_center\" style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: center; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"http://cms-bucket.nosdn.127.net/2520b467d3574df1877a5c412bf2990f20170115202118.png?imageView&thumbnail=550x0\" alt=\"undefined\"/></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">在退出省委常委班子两个月后，江西省省委原常委、宣传部原部长陈俊卿的新去向披露。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">据《江西日报》报道，昨日（1月14日）召开的省政协十一届二十二次常委会议上，年近54岁的陈俊卿被增补为省政协委员。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">政知圈的朋友圈里，好几位同行都转发了这条消息。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">曾主政南昌和上饶这两个江西重量级城市的陈俊卿曾受到众多媒体关注，他乐于与媒体打交道，也被媒体贴上了南昌“总经理”、“微博达人”和“微信书记”等富有个人特色的标签。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\"><strong>退常两个月后</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">公开履历显示，年近54岁的陈俊卿是福建南安人，曾在西安冶金建筑学院工业与民用建筑专业求学。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">21岁大学毕业后，他便南下，到毗邻福建的江西工作。先是进入中国有色金属工业总公司直管正厅级事业单位南昌有色冶金设计研究院，一路从助理工程师、工程师、深圳分院副院长、深圳分院院长拾级而上。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">2001年，年仅38岁的陈俊卿担任南昌有色冶金设计研究院副院长，主持全院行政工作。约一年后，陈俊卿被提拔为正厅级干部，担任南昌有色冶金设计研究院院长。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">2007年，在研究院工作了近23年的陈俊卿，出任江西省建设厅党组书记、厅长，正式踏入仕途。之后又担任改组后的江西省住房和城乡建设厅党组书记、厅长。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">2010年，47岁的陈俊卿开始主政江西省会南昌，先后担任中共南昌市委副书记、市人民政府副市长、南昌市市长。在主政南昌近三年后，陈俊卿在2013年8月调任江西东北部重镇上饶，担任上饶市委书记。2016年3月，他进入江西省委常委班子，并在一个月后兼任省委宣传部部长，直至2016年11月在省委班子换届中卸任这两个职务。彼时，距离他“入常”仅有8个月时间。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; color: rgb(64, 64, 64); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);\">这一变动颇让政知圈感到意外。党委换届前“入常”，往往是为党代会做必要的铺垫和准备，这样的官员大多数换届时能留任，并在下一步明确分工。不过除了陈俊卿，还有云南省委原副书记钟勉都在换届时“退常”，继而在一段时间后明确新去处。钟勉调任贵州省副省长，未进入该省常委班子；而陈俊卿增补为政协委员后，是否有新动向仍有待披露。</p><p><br/></p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('144', '<p>阿萨德发的发送到发送到发送到发送到法师法师法师打发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('145', '<p>啥方法沙发沙发舒服撒发生的方法反反复复凤飞飞反复反复反复反复反复反复</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('146', '<p>asfasfaszzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzsadfasfd</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('147', '<p>阿斯顿发顺丰大沙发大法师的法师辅导</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('148', '<p>在vxvxzcvxzcvzxvx</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('149', '<p>阿士大夫撒飞洒发萨芬撒飞洒发生法撒旦法师法师分散</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('150', '<p>爱上大法师的法师法三法师打发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('151', '<p>十分撒旦法师法撒旦法师法师打发的飞洒发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('152', '<p>沙发是的发生发生的发生</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('153', '<p>是的发生法法师法师的法师法师打发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('154', '<p>撒旦法师法师的顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶大大大发顺丰的</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('155', '<p>阿斯顿发沙发沙发沙发沙发沙发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('156', '<p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿士大夫撒发生</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('157', '<p>asdfa阿斯顿发沙发沙发沙发沙发斯蒂芬</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('158', '<p>阿事实上事实上事实上事实上事实上事实上事实上</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('159', '<p>阿斯顿发沙发沙发沙发沙发沙发</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('160', '<p>附件急急急急急急急急急急急急急急急急急急急急急急急急急急急急急急急急急</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('161', '<p>阿事实上事实上事实上事实上事实上事实上事实上事实上</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('162', '<p>快快快快快快快快快快快快快快快快快快快快快快快快卡卡是的发生法</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('163', '<p>积极急急急急急急急急急急急急急急急急急急急急急急急急</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('164', '<p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦了</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('165', '<p>在啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧重中之重</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('166', '<p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('167', '<p>啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧啧vzxv</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('168', '<p>徐州续写操作vzxvxzvz啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊大师傅</p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('169', '<p>阿斯顿发沙发沙发沙发沙发沙发是否案说法撒</p>', null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_content_type
@@ -2324,7 +2537,7 @@ CREATE TABLE `jc_file` (
 -- ----------------------------
 -- Records of jc_file
 -- ----------------------------
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201607/19141129f6g4.jpg', 'qweq.jpg', '1', '13');
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201607/19141129f6g4.jpg', 'qweq.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201607/19141205t5d9.jpg', 'MAIN201607190815465375224112529.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201607/19142033fu5h.jpg', 'zxc.jpg', '1', '14');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201608/30174757ffr0.jpg', '255901999.jpg', '0', null);
@@ -2370,23 +2583,8 @@ INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/26102115joze.jpg', 'video06.jpg
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/261022192w54.jpg', 'video08.jpg', '1', '59');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/26102904f2l8.jpg', 'video12.jpg', '1', '61');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/26103003hrib.jpg', 'video11.jpg', '1', '63');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/261635496465.zip', '演示.zip', '1', '69');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/26164039i3uv.jpg', 'dl-QQ.jpg', '1', '69');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/261640457r2n.jpg', 'dl_top.jpg', '1', '69');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27094715plsz.jpg', 'download02.jpg', '0', '71');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/270953566xxw.jpg', 'content-bdy.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27095528bd43.jpg', 'download02.jpg', '0', null);
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/270958122ljv.jpg', 'content-bdy.jpg', '1', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27095816s3y8.jpg', 'dl-bdy.jpg', '1', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/271002022fag.zip', '演示.zip', '1', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27101510bh0o.jpg', 'download03.jpg', '1', '72');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27101514u0i9.jpg', 'content-360sd.jpg', '1', '72');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27101524dxj7.jpg', 'dl-360shadu.jpg', '1', '72');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27102743993k.zip', '演示.zip', '1', '72');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27103024lgp2.jpg', 'download02.jpg', '0', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/271031297jwc.jpg', 'download02.jpg', '0', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27103421zh99.jpg', 'download04.jpg', '0', '71');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/27103503tm30.jpg', 'download04.jpg', '0', '71');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/29093250bbit.jpg', 'a0a3201e6a6ca24c4c918f56bbb212d5.jpg', '1', '74');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/30114226529k.jpg', 'wenku_item02.jpg', '1', '68');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201609/301143025tdb.jpg', 'wenku_item03.jpg', '1', '67');
@@ -2404,42 +2602,7 @@ INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10100951y2xy.jpg', 'topic_title
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/1010095517rc.jpg', 'topic02.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101010021q7v.jpg', 'topic_title01.jpg', '1', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10101006fqv3.jpg', 'topic01.jpg', '0', null);
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10110628vfwz.jpg', 'content-nycs.jpg', '1', '100');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10110634gxcz.jpg', 'dl-nycs.jpg', '1', '100');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10110654vib6.jpg', 'download01.jpg', '1', '100');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10110756cg7o.zip', '演示.zip', '1', '100');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10111518cqda.zip', '演示.zip', '1', '101');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10111549rupn.jpg', 'content-xunlei.jpg', '1', '101');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101116034e14.jpg', 'download05.jpg', '1', '101');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10111618rhdk.jpg', 'dl-xunlei7.jpg', '1', '101');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10111758q1kj.zip', '演示.zip', '1', '102');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101119026ukx.jpg', 'content-360safe.jpg', '1', '102');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101119092w8r.jpg', 'dl-360safe.jpg', '1', '102');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112023kqfp.jpg', 'content-sougou.jpg', '1', '103');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101120330mpz.jpg', 'dl-sougou.jpg', '1', '103');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101120397iez.zip', '演示.zip', '1', '103');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112554wirt.zip', '演示.zip', '1', '104');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112657zklb.jpg', 'content-yy.jpg', '1', '104');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112706jiii.jpg', 'dl-YY.jpg', '1', '104');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112814u17l.zip', '演示.zip', '1', '105');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112839cvwx.jpg', 'content-ali.jpg', '1', '105');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10112845wryq.jpg', 'dl-aliwwmaijia.jpg', '1', '105');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101130257966.zip', '演示.zip', '1', '106');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113032zu0k.jpg', 'content-iqy.jpg', '1', '106');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101130399dbt.jpg', 'dl-QIY.jpg', '1', '106');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101131571wkz.zip', '演示.zip', '1', '107');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113218ya2p.jpg', 'content-google.jpg', '1', '107');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113226knhj.jpg', 'dl-google.jpg', '1', '107');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101133341nc3.zip', '演示.zip', '1', '108');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113354g71e.jpg', 'content-360exp.jpg', '1', '108');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113400utfn.jpg', 'dl-360exp.jpg', '1', '108');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113459gvbx.zip', '演示.zip', '1', '109');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113506jz07.jpg', 'content-pptv.jpg', '1', '109');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/1011351336l0.jpg', 'dl-PPTV.jpg', '1', '109');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10113551yru8.jpg', 'content-txsp.jpg', '1', '110');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101135560ne4.jpg', 'dl-txsp.jpg', '1', '110');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101136270k36.zip', '演示.zip', '1', '110');
-INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10114452yjhh.jpg', 'zxcvx.jpg', '1', '111');
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10114452yjhh.jpg', 'zxcvx.jpg', '1', '166');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/10114704dsba.jpg', 'cb.jpg', '1', '112');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101308178wzr.jpg', 'df.jpg', '1', '114');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/101314450fs1.jpg', 'banner02.jpg', '1', '115');
@@ -2484,6 +2647,7 @@ INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/111121133pnh.mp4', '/u/cms/www/
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/111121213xss.docx', '测试.docx', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/11112910l4qa.jpg', '3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/11113157dh9e.jpg', '0.jpg', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201701/160016148i9t.jpg', '1.jpg', '1', '11');
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093458gynd.jpg', '22093458gynd.jpg', '1', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093502mmft.jpg', '22093502mmft.jpg', '1', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093506l8pv.jpg', '22093506l8pv.jpg', '1', null);
@@ -2678,17 +2842,13 @@ CREATE TABLE `jc_friendlink` (
   KEY `fk_jc_friendlink_site` (`site_id`),
   CONSTRAINT `fk_jc_ctg_friendlink` FOREIGN KEY (`friendlinkctg_id`) REFERENCES `jc_friendlink_ctg` (`friendlinkctg_id`),
   CONSTRAINT `fk_jc_friendlink_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMS友情链接';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMS友情链接';
 
 -- ----------------------------
 -- Records of jc_friendlink
 -- ----------------------------
-INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', 'caihongyixue官网', 'http://www.caihongyixue.com', null, 'caihongyixue@163.com', 'caihongyixue是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '35', '1', '1');
-INSERT INTO `jc_friendlink` VALUES ('2', '1', '1', 'JEEBBS论坛', 'http://bbs.caihongyixue.com', null, 'caihongyixue@163.com', 'JEEBBS论坛', '5', '1', '10');
-INSERT INTO `jc_friendlink` VALUES ('3', '1', '2', '京东商城', 'http://www.360buy.com/', '/u/cms/www/201112/1910271036lr.gif', '', '', '4', '1', '10');
-INSERT INTO `jc_friendlink` VALUES ('4', '1', '2', '当当网', 'http://www.dangdang.com/', '/u/cms/www/201112/191408344rwj.gif', '', '', '1', '1', '10');
-INSERT INTO `jc_friendlink` VALUES ('5', '1', '2', '亚马逊', 'http://www.amazon.cn/', '/u/cms/www/201112/19141012lh2q.gif', '', '', '2', '1', '10');
-INSERT INTO `jc_friendlink` VALUES ('6', '1', '2', 'ihush', 'http://www.ihush.com/', '/u/cms/www/201112/19141255yrfb.gif', '', '', '1', '1', '10');
+INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', '彩虹医学网官网', 'http://www.caihongyixue.com', null, 'caihongyixue@163.com', 'caihongyixue是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '0', '1', '1');
+INSERT INTO `jc_friendlink` VALUES ('2', '1', '1', '中华人民共和国国家卫生和计划生育委员会', 'http://www.nhfpc.gov.cn/', null, '', '中华人民共和国国家卫生和计划生育委员会', '1', '1', '2');
 
 -- ----------------------------
 -- Table structure for jc_friendlink_ctg
@@ -2728,13 +2888,13 @@ CREATE TABLE `jc_group` (
   `allow_file_size` int(11) NOT NULL DEFAULT '4096' COMMENT '每个上传文库的文件大小限制kB',
   `allow_file_total` int(11) NOT NULL DEFAULT '0' COMMENT '上传总数限制(0没有限制)',
   PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='CMS会员组表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMS会员组表';
 
 -- ----------------------------
 -- Records of jc_group
 -- ----------------------------
 INSERT INTO `jc_group` VALUES ('1', '普通会员', '2', '1', '1', '0', '0', '', '1', '1024', '10');
-INSERT INTO `jc_group` VALUES ('2', '医生组', '10', '1', '1', '0', '0', '', '0', '4096', '0');
+INSERT INTO `jc_group` VALUES ('2', '认证医生', '10', '1', '1', '0', '0', '', '0', '4096', '0');
 
 -- ----------------------------
 -- Table structure for jc_guestbook
@@ -2891,7 +3051,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -2910,6 +3070,87 @@ INSERT INTO `jc_log` VALUES ('11', '1', null, '1', '2017-01-14 03:12:53', '127.0
 INSERT INTO `jc_log` VALUES ('12', '1', '1', '3', '2017-01-14 03:30:04', '127.0.0.1', '/admin/cms/group/o_delete.do', '删除会员组', 'id=3;name=vip');
 INSERT INTO `jc_log` VALUES ('13', '1', '1', '3', '2017-01-14 03:30:23', '127.0.0.1', '/admin/cms/group/o_update.do', '修改会员组', 'id=2;name=医生');
 INSERT INTO `jc_log` VALUES ('14', '1', '1', '3', '2017-01-14 03:30:36', '127.0.0.1', '/admin/cms/group/o_update.do', '修改会员组', 'id=2;name=医生组');
+INSERT INTO `jc_log` VALUES ('15', '1', '1', '3', '2017-01-14 13:25:58', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=75;name=空中课堂');
+INSERT INTO `jc_log` VALUES ('16', '1', '1', '3', '2017-01-14 13:26:16', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=76;name=专家团队');
+INSERT INTO `jc_log` VALUES ('17', '1', '1', '3', '2017-01-14 13:26:57', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=77;name=在线论坛');
+INSERT INTO `jc_log` VALUES ('18', '1', '1', '3', '2017-01-14 13:27:28', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=78;name=预约会诊');
+INSERT INTO `jc_log` VALUES ('19', '1', '1', '3', '2017-01-14 13:27:59', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=79;name=新闻资讯');
+INSERT INTO `jc_log` VALUES ('20', '1', '1', '3', '2017-01-14 13:28:13', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=81;name=关于我们');
+INSERT INTO `jc_log` VALUES ('21', '1', '1', '3', '2017-01-14 13:28:21', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=80;title=null');
+INSERT INTO `jc_log` VALUES ('22', '1', '1', '3', '2017-01-14 15:33:50', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=92;title=null');
+INSERT INTO `jc_log` VALUES ('23', '1', '1', '3', '2017-01-14 15:39:38', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=93;title=null');
+INSERT INTO `jc_log` VALUES ('24', '1', '1', '3', '2017-01-14 15:39:40', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=91;title=null');
+INSERT INTO `jc_log` VALUES ('25', '1', '1', '3', '2017-01-14 15:39:43', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=90;title=null');
+INSERT INTO `jc_log` VALUES ('26', '1', '1', '3', '2017-01-14 15:56:12', '127.0.0.1', '/admin/cms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/include/footer.html');
+INSERT INTO `jc_log` VALUES ('27', '1', '1', '3', '2017-01-14 16:13:45', '127.0.0.1', '/admin/cms/site_config/o_base_update.do', '站点基本设置', null);
+INSERT INTO `jc_log` VALUES ('28', '1', '1', '3', '2017-01-14 16:14:27', '127.0.0.1', '/admin/cms/config/o_system_update.do', '修改系统设置', null);
+INSERT INTO `jc_log` VALUES ('29', '1', '1', '3', '2017-01-14 16:20:09', '127.0.0.1', '/admin/cms/config/o_login_update.do', '修改登录设置', null);
+INSERT INTO `jc_log` VALUES ('30', '1', '1', '3', '2017-01-14 16:21:57', '127.0.0.1', '/admin/cms/config/o_login_update.do', '修改登录设置', null);
+INSERT INTO `jc_log` VALUES ('31', '1', '1', '3', '2017-01-14 16:51:54', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=75;name=新闻资讯');
+INSERT INTO `jc_log` VALUES ('32', '1', '1', '3', '2017-01-14 16:53:02', '127.0.0.1', '/admin/cms/channel/o_delete.do', '删除栏目', 'id=79;title=null');
+INSERT INTO `jc_log` VALUES ('33', '1', '1', '3', '2017-01-14 16:53:34', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=77;name=空中课堂');
+INSERT INTO `jc_log` VALUES ('34', '1', '1', '3', '2017-01-14 18:21:32', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=81;name=关于我们');
+INSERT INTO `jc_log` VALUES ('35', '1', '1', '3', '2017-01-14 18:23:08', '127.0.0.1', '/admin/cms/friendlink/o_update.do', '修改友情链接', 'id=1;name=彩虹医学网官网');
+INSERT INTO `jc_log` VALUES ('36', '1', '1', '3', '2017-01-14 18:23:21', '127.0.0.1', '/admin/cms/friendlink/o_delete.do', '删除友情链接', 'id=6;name=ihush');
+INSERT INTO `jc_log` VALUES ('37', '1', '1', '3', '2017-01-14 18:23:23', '127.0.0.1', '/admin/cms/friendlink/o_delete.do', '删除友情链接', 'id=5;name=亚马逊');
+INSERT INTO `jc_log` VALUES ('38', '1', '1', '3', '2017-01-14 18:23:26', '127.0.0.1', '/admin/cms/friendlink/o_delete.do', '删除友情链接', 'id=4;name=当当网');
+INSERT INTO `jc_log` VALUES ('39', '1', '1', '3', '2017-01-14 18:23:28', '127.0.0.1', '/admin/cms/friendlink/o_delete.do', '删除友情链接', 'id=3;name=京东商城');
+INSERT INTO `jc_log` VALUES ('40', '1', '1', '3', '2017-01-14 19:14:06', '127.0.0.1', '/admin/cms/friendlink/o_update.do', '修改友情链接', 'id=2;name=中华人民共和国国家卫生和计划生育委员会');
+INSERT INTO `jc_log` VALUES ('41', '1', '1', '3', '2017-01-14 19:14:14', '127.0.0.1', '/admin/cms/friendlink/o_update.do', '修改友情链接', 'id=1;name=彩虹医学网官网');
+INSERT INTO `jc_log` VALUES ('42', '1', null, '1', '2017-01-14 23:09:11', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('43', '1', '1', '3', '2017-01-14 23:12:56', '127.0.0.1', '/admin/cms/topic/o_save.do', '增加专题', 'id=4;name=专题共读');
+INSERT INTO `jc_log` VALUES ('44', '1', '1', '3', '2017-01-14 23:13:03', '127.0.0.1', '/admin/cms/topic/o_update.do', '修改专题', 'id=4;name=专题共读');
+INSERT INTO `jc_log` VALUES ('45', '1', '1', '3', '2017-01-14 23:15:24', '127.0.0.1', '/admin/cms/topic/o_update.do', '修改专题', 'id=4;name=专题共读');
+INSERT INTO `jc_log` VALUES ('46', '1', '1', '3', '2017-01-14 23:54:33', '127.0.0.1', '/admin/cms/template/o_delete_single.do', '删除模板', 'filename=/WEB-INF/t/cms/www/default/about');
+INSERT INTO `jc_log` VALUES ('47', '1', '1', '3', '2017-01-15 00:01:53', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=111;title=专访百度科学家徐伟：百度比谷歌的人工智能平台更易上手');
+INSERT INTO `jc_log` VALUES ('48', '1', '1', '3', '2017-01-15 00:02:18', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=37;title=苹果研发神秘新设备：体积类似Apple TV 支持NFC蓝牙');
+INSERT INTO `jc_log` VALUES ('49', '1', '1', '3', '2017-01-15 00:06:06', '127.0.0.1', '/admin/cms/channel/o_save.do', '增加栏目', 'id=94;title=null');
+INSERT INTO `jc_log` VALUES ('50', '1', '1', '3', '2017-01-15 00:07:04', '127.0.0.1', '/admin/cms/channel/o_save.do', '增加栏目', 'id=95;title=null');
+INSERT INTO `jc_log` VALUES ('51', '1', '1', '3', '2017-01-15 00:07:30', '127.0.0.1', '/admin/cms/channel/o_save.do', '增加栏目', 'id=96;title=null');
+INSERT INTO `jc_log` VALUES ('52', '1', '1', '3', '2017-01-15 00:08:22', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=94;name=医生论坛');
+INSERT INTO `jc_log` VALUES ('53', '1', '1', '3', '2017-01-15 00:08:48', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=96;name=网站新闻');
+INSERT INTO `jc_log` VALUES ('54', '1', '1', '3', '2017-01-15 00:08:57', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=95;name=患者园地');
+INSERT INTO `jc_log` VALUES ('55', '1', '1', '3', '2017-01-15 00:59:57', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=81;name=关于我们');
+INSERT INTO `jc_log` VALUES ('56', '1', '1', '3', '2017-01-15 01:00:49', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=81;name=关于我们');
+INSERT INTO `jc_log` VALUES ('57', '1', '1', '3', '2017-01-15 10:59:18', '127.0.0.1', '/admin/cms/group/o_update.do', '修改会员组', 'id=2;name=认证医生');
+INSERT INTO `jc_log` VALUES ('58', '1', '1', '3', '2017-01-15 10:59:49', '127.0.0.1', '/admin/cms/member/o_save.do', '增加会员', 'id=2;username=caihong');
+INSERT INTO `jc_log` VALUES ('59', '1', '1', '3', '2017-01-15 23:14:00', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=142;title=四川政府采购近三年改革成效明显 政府采购透明度四川最优');
+INSERT INTO `jc_log` VALUES ('60', '1', '1', '3', '2017-01-15 23:35:39', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=142;title=四川政府采购近三年改革成效明显 政府采购透明度四川最优');
+INSERT INTO `jc_log` VALUES ('61', '1', '1', '3', '2017-01-15 23:38:32', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=143;title=入常8个月又退常 南昌“总经理”有了新消息');
+INSERT INTO `jc_log` VALUES ('62', '1', '1', '3', '2017-01-15 23:41:10', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=144;title=一声一声案说法的盛大的发售');
+INSERT INTO `jc_log` VALUES ('63', '1', '1', '3', '2017-01-15 23:41:39', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=145;title=按时发达身份证照V型在v');
+INSERT INTO `jc_log` VALUES ('64', '1', '1', '3', '2017-01-15 23:42:15', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=146;title=撒娇发阿萨德飞洒发武器二千万人气');
+INSERT INTO `jc_log` VALUES ('65', '1', '1', '3', '2017-01-15 23:42:42', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=147;title=qwerqwrasfdasfasfa');
+INSERT INTO `jc_log` VALUES ('66', '1', '1', '3', '2017-01-15 23:43:10', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=148;title=玩玩儿去玩儿去文如其人');
+INSERT INTO `jc_log` VALUES ('67', '1', '1', '3', '2017-01-15 23:43:51', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=149;title=姐姐姐姐姐姐了');
+INSERT INTO `jc_log` VALUES ('68', '1', '1', '3', '2017-01-16 00:14:30', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=130;title=党中央推进民族工作创新发展纪实');
+INSERT INTO `jc_log` VALUES ('69', '1', '1', '3', '2017-01-16 00:14:54', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=132;title=黄金接连下跌难道又等大妈来托盘');
+INSERT INTO `jc_log` VALUES ('70', '1', '1', '3', '2017-01-16 00:15:17', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=131;title=楼市调控应跳出周期性怪圈');
+INSERT INTO `jc_log` VALUES ('71', '1', '1', '3', '2017-01-16 00:15:46', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=30;title=不实名手机号停机在即 移动：不对任何社会渠道授权网络售卡');
+INSERT INTO `jc_log` VALUES ('72', '1', '1', '3', '2017-01-16 00:16:21', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=11;title=全国28省遭灾 已投入抗洪抢险777万人次');
+INSERT INTO `jc_log` VALUES ('73', '1', '1', '3', '2017-01-16 00:16:44', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=12;title=习近平就法国尼斯恐袭事件向法总统致慰问电');
+INSERT INTO `jc_log` VALUES ('74', '1', '1', '3', '2017-01-16 00:23:57', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=150;title=ggggggggggggggg');
+INSERT INTO `jc_log` VALUES ('75', '1', '1', '3', '2017-01-16 00:24:48', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=151;title=的发生大发啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊');
+INSERT INTO `jc_log` VALUES ('76', '1', '1', '3', '2017-01-16 00:25:18', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=152;title=up噢速度发普爱刷屏的发顺丰');
+INSERT INTO `jc_log` VALUES ('77', '1', '1', '3', '2017-01-16 00:25:39', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=153;title=阿斯顿发沙发舒服撒发生');
+INSERT INTO `jc_log` VALUES ('78', '1', '1', '3', '2017-01-16 00:26:09', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=154;title=啊是的顶顶顶顶顶顶顶顶顶顶的顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶');
+INSERT INTO `jc_log` VALUES ('79', '1', '1', '3', '2017-01-16 00:26:45', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=155;title=大事发生的发生发生');
+INSERT INTO `jc_log` VALUES ('80', '1', '1', '3', '2017-01-16 00:27:10', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=156;title=呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵');
+INSERT INTO `jc_log` VALUES ('81', '1', '1', '3', '2017-01-16 00:27:48', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=157;title=快快快快快快快快快快快快快快快快快快快快快');
+INSERT INTO `jc_log` VALUES ('82', '1', '1', '3', '2017-01-16 00:28:46', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=158;title=就发顺丰卡死了发送');
+INSERT INTO `jc_log` VALUES ('83', '1', '1', '3', '2017-01-16 00:29:11', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=159;title=快快快快快快快快快快快快快快快快快快快快快');
+INSERT INTO `jc_log` VALUES ('84', '1', '1', '3', '2017-01-16 00:29:38', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=160;title=大法师打发阿萨德法师法师的法师法');
+INSERT INTO `jc_log` VALUES ('85', '1', '1', '3', '2017-01-16 00:30:14', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=161;title=啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦');
+INSERT INTO `jc_log` VALUES ('86', '1', '1', '3', '2017-01-16 00:30:40', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=162;title=啊啊啊啊啊啊啊啊啊啊啊是的发生');
+INSERT INTO `jc_log` VALUES ('87', '1', '1', '3', '2017-01-16 00:31:10', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=163;title=啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿斯蒂芬');
+INSERT INTO `jc_log` VALUES ('88', '1', '1', '3', '2017-01-16 00:31:44', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=164;title=在嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻谢谢');
+INSERT INTO `jc_log` VALUES ('89', '1', '1', '3', '2017-01-16 00:32:10', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=165;title=啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦是放大师傅');
+INSERT INTO `jc_log` VALUES ('90', '1', '1', '3', '2017-01-16 00:32:38', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=166;title=vczxcvzxv啊啊阿斯顿发生');
+INSERT INTO `jc_log` VALUES ('91', '1', '1', '3', '2017-01-16 00:33:11', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=167;title=阿事实上事实上事实上是是是试试沙发舒服撒');
+INSERT INTO `jc_log` VALUES ('92', '1', '1', '3', '2017-01-16 00:33:39', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=168;title=啊啊啊啊啊啊啊啊啊啊啊啊啊阿斯顿发顺丰撒发顺丰暗示法萨芬');
+INSERT INTO `jc_log` VALUES ('93', '1', '1', '3', '2017-01-16 00:34:14', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=169;title=安抚阿斯顿发顺丰1而沙发沙发舒服撒发生法萨芬');
+INSERT INTO `jc_log` VALUES ('94', '1', '1', '3', '2017-01-16 00:37:12', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=157;title=快快快快快快快快快快快快快快快快快快快快快');
+INSERT INTO `jc_log` VALUES ('95', '1', '1', '3', '2017-01-16 00:37:35', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=153;title=阿斯顿发沙发舒服撒发生');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3508,7 +3749,7 @@ CREATE TABLE `jc_search_words` (
   `is_recommend` tinyint(1) NOT NULL DEFAULT '0' COMMENT '推荐',
   `site_id` int(11) NOT NULL DEFAULT '1' COMMENT '站点',
   PRIMARY KEY (`word_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='搜索热词';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='搜索热词';
 
 -- ----------------------------
 -- Records of jc_search_words
@@ -3538,6 +3779,8 @@ INSERT INTO `jc_search_words` VALUES ('38', '高考减招', '22', '10', 'gkjz', 
 INSERT INTO `jc_search_words` VALUES ('39', '1234＃/', '1', '10', '1234＃/', '0', '1');
 INSERT INTO `jc_search_words` VALUES ('40', '李克强', '1', '10', 'lkq', '0', '1');
 INSERT INTO `jc_search_words` VALUES ('41', '年', '1', '10', 'n', '0', '1');
+INSERT INTO `jc_search_words` VALUES ('42', '嘻嘻嘻', '1', '10', 'xxx', '0', '1');
+INSERT INTO `jc_search_words` VALUES ('43', '按地方撒', '1', '10', 'adfs', '0', '1');
 
 -- ----------------------------
 -- Table structure for jc_sensitivity
@@ -3607,7 +3850,7 @@ CREATE TABLE `jc_site` (
 -- ----------------------------
 -- Records of jc_site
 -- ----------------------------
-INSERT INTO `jc_site` VALUES ('1', '1', null, 'localhost', 'www', '彩虹医学网', '彩虹医学网', 'http://', '.jhtml', '.html', '/html', '0', '0', 'zh_CN', 'zh_CN', 'default', '3', '3', '0', '1', '', '', '1', null, '', '', '彩虹医学网|病理精诊诊断中心', '彩虹医学网', 'mobile', '/wap', '0', null, '0', '0');
+INSERT INTO `jc_site` VALUES ('1', '1', null, 'www.caihongyixue.com', 'www', '彩虹医学网', '彩虹医学网', 'http://', '.jhtml', '.html', '/html', '0', '0', 'zh_CN', 'zh_CN', 'default', '3', '3', '0', '1', '', '', '1', null, '', '', '彩虹医学网|病理精诊诊断中心', '彩虹医学网', 'mobile', '/wap', '0', null, '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_site_access
@@ -3634,14 +3877,24 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
 -- ----------------------------
-INSERT INTO `jc_site_access` VALUES ('8', '1EFFA2DD2A54DF29EE19008FB47A99E6', '1', '01:37:26', '2017-01-14', '127.0.0.1', '', '外部链接', 'http://www.caihongyixue.com', null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '438', '7', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('9', '9DE3825954530B4F5116598DBFEDA797', '1', '01:44:44', '2017-01-14', '127.0.0.1', '', '外部链接', 'http://www.caihongyixue.com', null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '23', '2', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('10', '633A16E9B06AC6107E9ECF3813AD6473', '1', '02:46:44', '2017-01-14', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '4', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('18', 'FC65C1004E8C7635EEF35B50C2A34D8D', '1', '00:12:17', '2017-01-15', '192.168.1.101', '', '外部链接', 'http://192.168.1.104:2021', null, 'http://192.168.1.104:2021/news/index.jhtml', 'http://192.168.1.104:2021/education/index.jhtml', '1350', '9', 'MAC', 'safari 10', '');
+INSERT INTO `jc_site_access` VALUES ('19', '78F735A0134F23364C2CE7AB541B50E3', '1', '00:19:35', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/gywm.jhtml', '4780', '58', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('20', 'BFFB37AF7239A77C418CB54E64491801', '1', '01:50:08', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '80', '3', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('21', '008F99B2B0172B3B13A51F4A9589845B', '1', '10:45:42', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/education/index.jhtml', 'http://www.caihongyixue.com/', '2351', '3', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('22', 'AEB88FBF67875AC3069321B0EDB2E5B6', '1', '11:44:20', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', '1351', '16', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('23', '63E33CF81DB0C4C8CFC5DC0577CE4D5F', '1', '16:54:44', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('24', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '1', '18:30:43', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index.jhtml', '1642', '11', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('25', '75A721380D707531087F997CA1CE740B', '1', '19:32:49', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index.jhtml', '1183', '33', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('26', '7EE6A610661BABCC03D3940766E686E0', '1', '20:22:56', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/education/index.jhtml', 'http://www.caihongyixue.com/', '2916', '26', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('27', 'B7C4179C5EA271709CF6EE246576C215', '1', '21:34:48', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '761', '17', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('28', '6075BABF7CA98AD85E05155234A7E4DE', '1', '21:48:43', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('29', 'C435E0A922FD5F12773E2607CB5D6793', '1', '21:55:05', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '2915', '36', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('30', '585F096E8B3F9AE8FE4EC66110A67A6C', '1', '23:18:58', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/wzxw/30.jhtml', '-79686', '69', 'Win 7', 'chrome 53', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -3656,7 +3909,7 @@ CREATE TABLE `jc_site_access_count` (
   PRIMARY KEY (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`),
   CONSTRAINT `fk_jc_access_count_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=272 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
+) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
 
 -- ----------------------------
 -- Records of jc_site_access_count
@@ -3664,6 +3917,13 @@ CREATE TABLE `jc_site_access_count` (
 INSERT INTO `jc_site_access_count` VALUES ('269', '2', '3', '2017-01-13', '1');
 INSERT INTO `jc_site_access_count` VALUES ('270', '1', '2', '2017-01-13', '1');
 INSERT INTO `jc_site_access_count` VALUES ('271', '3', '2', '2017-01-13', '1');
+INSERT INTO `jc_site_access_count` VALUES ('272', '4', '3', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('273', '2', '2', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('274', '1', '1', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('275', '7', '1', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('276', '17', '1', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('277', '25', '1', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('278', '81', '1', '2017-01-14', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_pages
@@ -3680,19 +3940,208 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
 -- ----------------------------
-INSERT INTO `jc_site_access_pages` VALUES ('6', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:37:27', '10', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('7', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:38:10', '27', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('8', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:37:37', '33', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('9', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:38:37', '0', '4', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('10', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:39:47', '297', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('11', 'http://www.caihongyixue.com/', '1EFFA2DD2A54DF29EE19008FB47A99E6', '2017-01-14', '01:38:37', '70', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('12', 'http://www.caihongyixue.com/', '9DE3825954530B4F5116598DBFEDA797', '2017-01-14', '01:44:44', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('13', 'http://www.caihongyixue.com/', '633A16E9B06AC6107E9ECF3813AD6473', '2017-01-14', '02:46:44', '0', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('91', 'http://www.caihongyixue.com/zjtd/7.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:03:23', '0', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('92', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:10:07', '0', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('93', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:12:17', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('94', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:10:10', '23', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('95', 'http://192.168.1.104:2021/education/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:22:42', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('96', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:27:52', '77', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('97', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:29:09', '333', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('98', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:34:42', '0', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('99', 'http://www.caihongyixue.com/education/123.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:55:21', '340', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('100', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:01:01', '0', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('101', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:04:55', '0', '24', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('102', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:03:43', '72', '23', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('103', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:16', '80', '33', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('104', 'http://www.caihongyixue.com/education/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:08:48', '12', '30', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('105', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:10:36', '3', '34', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('106', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:00', '11', '31', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('107', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:11', '5', '32', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('108', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:10:39', '73', '35', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('109', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:52', '3', '36', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('110', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:12:08', '72', '39', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('111', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:57', '11', '38', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('112', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:55', '2', '37', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('113', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:13:20', '2', '40', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('114', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:13:22', '0', '41', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('115', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:22:29', '8', '45', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('116', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:20:30', '119', '44', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('117', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:23:30', '31', '48', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('118', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:23:21', '9', '47', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('119', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:22:37', '44', '46', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('120', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:05', '4', '51', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('121', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:09', '36', '52', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('122', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:02', '3', '50', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('123', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:45', '186', '53', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('124', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:01', '1', '49', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('125', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:27:51', '74', '54', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('126', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:29:05', '0', '55', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('127', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:50:12', '76', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('128', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:50:09', '3', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('129', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:51:28', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('130', 'http://www.caihongyixue.com/education/index.jhtml', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '10:45:43', '2350', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('131', 'http://www.caihongyixue.com/education/index.jhtml', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '10:45:43', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('132', 'http://www.caihongyixue.com/', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '11:24:53', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('133', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:44:20', '1', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('134', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:56:15', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('135', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:59:20', '276', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('136', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:03:56', '51', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('137', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:04:47', '31', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('138', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:18', '15', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('139', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:05', '2', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('140', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:56', '2', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('141', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:07', '41', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('142', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:33', '18', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('143', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:58', '7', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('144', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:48', '0', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('145', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:51', '5', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('146', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:30:44', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('147', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:36:36', '424', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('148', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:43:40', '0', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('149', 'http://www.caihongyixue.com/education/index.jhtml', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:47:16', '0', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('150', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:41:28', '70', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('151', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:41:06', '22', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('152', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:40:47', '19', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('153', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:38', '6', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('154', 'http://www.caihongyixue.com/zjtd/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:47', '3', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('155', 'http://www.caihongyixue.com/yyhz/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:50', '1', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('156', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:43:05', '78', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('157', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:44', '3', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('158', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:51', '5', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('159', 'http://www.caihongyixue.com/zjtd/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:56', '9', '16', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('160', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:44:23', '31', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('161', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:45:15', '39', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('162', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:44:54', '21', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('163', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:45:54', '44', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('164', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:38', '5', '22', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('165', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:57', '118', '24', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('166', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:43', '14', '23', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('167', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:55', '3', '25', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('168', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:45', '1', '28', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('169', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:59', '106', '27', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('170', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:58', '1', '26', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('171', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:56', '5', '30', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('172', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:51:01', '89', '31', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('173', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:52:30', '0', '32', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('174', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:46', '10', '29', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('175', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:26:43', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('176', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:27:10', '20', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('177', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:29', '3', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('178', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:32', '19', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('179', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:58:36', '35', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('180', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:58:29', '7', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('181', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:51', '38', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('182', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:46', '205', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('183', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:11', '3', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('184', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:14', '32', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('185', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:11', '5', '16', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('186', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:04:28', '30', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('187', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:16', '31', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('188', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:47', '41', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('189', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:05:40', '61', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('190', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:04:58', '42', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('191', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:06:41', '26', '22', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('192', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:07:49', '0', '24', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('193', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:07:07', '42', '23', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('194', 'http://www.caihongyixue.com/', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:35:10', '191', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('195', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:38:21', '73', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('196', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:39:34', '31', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('197', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:00', '17', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('198', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:40:05', '55', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('199', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:17', '17', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('200', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:34', '28', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('201', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:02', '34', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('202', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:36', '3', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('203', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:43:13', '112', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('204', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:39', '13', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('205', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:52', '21', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('206', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:45:05', '0', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('207', 'http://www.caihongyixue.com/', '6075BABF7CA98AD85E05155234A7E4DE', '2017-01-15', '21:48:43', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('208', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '21:51:51', '211', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('209', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '21:55:22', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('210', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:02:00', '114', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('211', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:03:54', '426', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('212', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:00', '3', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('213', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:08', '17', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('214', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:03', '5', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('215', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:25', '49', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('216', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:12:14', '0', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('217', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:23:15', '0', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('218', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:27:55', '555', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('219', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:37:10', '0', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('220', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:40:04', '4', '27', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('221', 'http://www.caihongyixue.com/news/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:40:08', '74', '28', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('222', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:22', '5', '29', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('223', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:27', '10', '30', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('224', 'http://www.caihongyixue.com/news/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:37', '34', '31', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('225', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:42:26', '55', '33', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('226', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:42:11', '15', '32', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('227', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:43:21', '10', '34', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('228', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:43:31', '0', '35', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('229', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:14', '22', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('230', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:18:58', '16', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('231', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:36', '16', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('232', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:52', '26', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('233', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:18', '5', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('234', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:59', '27', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('235', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:31', '23', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('236', 'http://www.caihongyixue.com/education/121.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:23', '8', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('237', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:26', '6', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('238', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:54', '5', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('239', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:59', '5', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('240', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:50', '4', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('241', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:54', '5', '16', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('242', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:46', '4', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('243', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:29', '168', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('244', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:22', '7', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('245', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:45', '1', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('246', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:32', '13', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('247', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:04', '18', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('248', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:25:17', '29', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('249', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:25:46', '43', '22', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('250', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:26:29', '25', '23', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('251', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:18', '8', '25', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('252', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:26', '13', '26', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('253', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:26:54', '24', '24', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('254', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:39', '34', '27', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('255', 'http://www.caihongyixue.com/education/122.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:25', '29', '30', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('256', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:16', '9', '29', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('257', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:13', '3', '28', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('258', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:54', '188', '31', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('259', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:02', '2', '32', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('260', 'http://www.caihongyixue.com/wzxw/14.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:43', '25', '37', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('261', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:11', '7', '35', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('262', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:33:08', '1085', '38', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('263', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:18', '25', '36', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('264', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:04', '2', '33', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('265', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:06', '5', '34', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('266', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:51:13', '-85196', '39', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('267', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:11:17', '52', '40', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('268', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:12:42', '0', '42', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('269', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:12:09', '33', '41', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('270', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:17:59', '211', '46', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('271', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:21:30', '282', '47', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('272', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:26:12', '64', '48', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('273', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:27:16', '0', '49', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('274', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:32:44', '172', '52', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('275', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:35:36', '35', '53', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('276', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:36:11', '66', '54', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('277', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:37:17', '0', '55', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('278', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:41:00', '0', '57', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('279', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:56:28', '17', '60', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('280', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:56:45', '24', '61', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('281', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:57:38', '1', '63', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('282', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:57:09', '29', '62', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('283', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:58:21', '22', '66', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('284', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:58:11', '10', '65', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('285', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:58:43', '727', '67', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('286', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:57:39', '32', '64', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('287', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '01:10:50', '0', '68', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -3712,13 +4161,18 @@ CREATE TABLE `jc_site_access_statistic` (
   PRIMARY KEY (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`),
   CONSTRAINT `fk_jc_access_statistic_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=364 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
 
 -- ----------------------------
 -- Records of jc_site_access_statistic
 -- ----------------------------
 INSERT INTO `jc_site_access_statistic` VALUES ('357', '2017-01-13', '14', '1', '7', '2', '27', '1', 'all', '');
 INSERT INTO `jc_site_access_statistic` VALUES ('358', '2017-01-13', '14', '1', '7', '2', '27', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('359', '2017-01-14', '144', '1', '10', '14', '-6801', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('360', '2017-01-14', '99', '1', '6', '16', '2100', '1', 'source', '外部链接');
+INSERT INTO `jc_site_access_statistic` VALUES ('361', '2017-01-14', '48', '1', '4', '12', '-20142', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('362', '2017-01-14', '4', '1', '1', '4', '1408', '1', 'link', 'http://bbs.caihongyixue.com');
+INSERT INTO `jc_site_access_statistic` VALUES ('363', '2017-01-14', '95', '1', '5', '19', '2238', '1', 'link', 'http://www.caihongyixue.com');
 
 -- ----------------------------
 -- Table structure for jc_site_attr
@@ -3735,16 +4189,16 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '16');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '10');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '323');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '34');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppkey', '0');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppSecret', '0');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '8');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '3');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '16');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '16');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '10');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '10');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '24');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '0');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '224');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '323');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '34');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '16');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -3932,7 +4386,7 @@ CREATE TABLE `jc_topic` (
   PRIMARY KEY (`topic_id`),
   KEY `fk_jc_topic_channel` (`channel_id`),
   CONSTRAINT `fk_jc_topic_channel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='CMS专题表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='CMS专题表';
 
 -- ----------------------------
 -- Records of jc_topic
@@ -3940,6 +4394,7 @@ CREATE TABLE `jc_topic` (
 INSERT INTO `jc_topic` VALUES ('1', null, ' 2016饲料英才网络招聘会', '饲料英才网络招聘会', '', '', '/u/cms/www/201610/10100951y2xy.jpg', '/u/cms/www/201610/11092540p27t.jpg', '', '11', '1');
 INSERT INTO `jc_topic` VALUES ('2', null, '互联网+与传统产业升级之道', '互联网+', '', '', '/u/cms/www/201610/10100842hqdk.jpg', '/u/cms/www/201610/110911592mxa.jpg', '', '10', '1');
 INSERT INTO `jc_topic` VALUES ('3', null, '2015全国两会', '2015全国两会', '', '', '/u/cms/www/201610/101010021q7v.jpg', '/u/cms/www/201610/11092148co74.jpg', '', '10', '1');
+INSERT INTO `jc_topic` VALUES ('4', null, '专题共读', '专题共读', '', '专题共读', '/r/cms/www/default/img/index_27.png', '/r/cms/www/default/img/banner-about.png', '', '10', '1');
 
 -- ----------------------------
 -- Table structure for jc_topic_channel
@@ -3996,7 +4451,8 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', 'aa@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-14 03:12:53', '127.0.0.1', '2286', '9', '334164', '0', '2016-10-15', '1', '0', '0', '0', '4', '103', 'EA6BF7DA1BFDA8952EB2BD8005E7A92A');
+INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-15 21:55:04', '127.0.0.1', '2299', '9', '334178', '14', '2017-01-16', '1', '0', '0', '0', '4', '103', 'C435E0A922FD5F12773E2607CB5D6793');
+INSERT INTO `jc_user` VALUES ('2', '2', null, 'caihong', '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 10:59:48', '127.0.0.1', '2', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '0', '168EB913FE4CF9BAF92663A4829D07D6');
 
 -- ----------------------------
 -- Table structure for jc_user_account
@@ -4081,7 +4537,8 @@ CREATE TABLE `jc_user_ext` (
 -- ----------------------------
 -- Records of jc_user_ext
 -- ----------------------------
-INSERT INTO `jc_user_ext` VALUES ('1', 'caihongyixue', '1', '2015-04-09 00:00:00', null, '南昌', null, null, '1110999', '121212', '/user/images/201609/191017527cv9.jpg', '');
+INSERT INTO `jc_user_ext` VALUES ('1', '彩虹医学网', '1', '2015-04-09 00:00:00', null, '四川', null, null, '1110999', '121212', '/user/images/201701/1416103162re.jpg', '');
+INSERT INTO `jc_user_ext` VALUES ('2', '彩虹', '1', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_user_menu
@@ -4259,8 +4716,8 @@ CREATE TABLE `jc_vote_record` (
   PRIMARY KEY (`voterecored_id`),
   KEY `fk_jc_vote_record_topic` (`votetopic_id`),
   KEY `fk_jc_voterecord_user` (`user_id`),
-  CONSTRAINT `fk_jc_voterecord_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
-  CONSTRAINT `fk_jc_vote_record_topic` FOREIGN KEY (`votetopic_id`) REFERENCES `jc_vote_topic` (`votetopic_id`)
+  CONSTRAINT `fk_jc_vote_record_topic` FOREIGN KEY (`votetopic_id`) REFERENCES `jc_vote_topic` (`votetopic_id`),
+  CONSTRAINT `fk_jc_voterecord_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8 COMMENT='CMS投票记录';
 
 -- ----------------------------
@@ -4881,15 +5338,15 @@ CREATE TABLE `jo_config` (
 INSERT INTO `jo_config` VALUES ('email_encoding', '');
 INSERT INTO `jo_config` VALUES ('email_host', 'smtp.qq.com');
 INSERT INTO `jo_config` VALUES ('email_password', 'dycbaby0713');
-INSERT INTO `jo_config` VALUES ('email_personal', '');
+INSERT INTO `jo_config` VALUES ('email_personal', '彩虹医学网');
 INSERT INTO `jo_config` VALUES ('email_port', '25');
 INSERT INTO `jo_config` VALUES ('email_username', '77219569@qq.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval', '30');
 INSERT INTO `jo_config` VALUES ('login_error_times', '3');
 INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject', '找回彩虹医学网密码');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用彩虹医学网系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost:2021/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用彩虹医学网系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://www.caihongyixue.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
 INSERT INTO `jo_config` VALUES ('message_register_subject', '欢迎您注册彩虹医学网用户');
-INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册彩虹医学网系统会员\r\n请点击以下链接进行激活\r\nhttp://localhost:2021/active.jspx?username=${username}&key=${activationCode}');
+INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册彩虹医学网系统会员\r\n请点击以下链接进行激活\r\nhttp://www.caihongyixue.com/active.jspx?username=${username}&key=${activationCode}');
 INSERT INTO `jo_config` VALUES ('message_subject', '彩虹医学网会员密码找回信息');
 INSERT INTO `jo_config` VALUES ('message_text', '感谢您使用彩虹医学网系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 
@@ -4970,9 +5427,10 @@ CREATE TABLE `jo_user` (
   `activation_code` char(32) DEFAULT NULL COMMENT '激活码',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('1', 'admin', 'aa@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-14 03:12:53', '127.0.0.1', '1161', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('1', 'admin', 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-15 21:55:04', '127.0.0.1', '1168', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('2', 'caihong', '', 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 10:59:48', '127.0.0.1', '0', null, null, null, '0', null, '1', null);

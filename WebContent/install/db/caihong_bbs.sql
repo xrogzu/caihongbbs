@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhsot
-Source Server Version : 50703
+Source Server         : localhost
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : caihong_bbs
 
 Target Server Type    : MYSQL
-Target Server Version : 50703
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-01-14 11:44:57
+Date: 2017-01-16 01:12:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,7 +32,7 @@ CREATE TABLE `attachment` (
   PRIMARY KEY (`attachment_id`),
   KEY `FK_attachment_post` (`post_id`),
   CONSTRAINT `FK_attachment_post` FOREIGN KEY (`post_id`) REFERENCES `bbs_post` (`POST_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of attachment
@@ -312,9 +312,9 @@ CREATE TABLE `bbs_forum` (
 -- ----------------------------
 -- Records of bbs_forum
 -- ----------------------------
-INSERT INTO `bbs_forum` VALUES ('1', '1', '1', null, null, 'jsfx', '技术交流', '', '技术交流', '', '10', '0', '0', '0', '', '5', '0', '100', null, '0', 'admin', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', '1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO `bbs_forum` VALUES ('2', '1', '1', null, null, 'blyj', '病理研究', '病理研究', 'blyj', '病理研究', '10', '0', '0', '0', '', '5', '0', '100', null, '0', 'admin', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,', '1', '1', '1', '0', '1', '2', '3', '0');
-INSERT INTO `bbs_forum` VALUES ('3', '2', '1', '186', '5', 'sjbl', '神经病理', '', '', '', '10', '1', '1', '1', '', '5', '0', '100', '2017-01-14 01:13:05', '0', '', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', '1', '1', '1', '0', '1', '2', '3', '0');
+INSERT INTO `bbs_forum` VALUES ('1', '1', '1', null, null, 'jsfx', '技术交流', '', '技术交流', '', '10', '0', '0', '0', '', '5', '0', '100', null, '0', 'admin', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', '1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `bbs_forum` VALUES ('2', '1', '1', null, null, 'blyj', '病理研究', '病理研究', 'blyj', '病理研究', '10', '0', '0', '0', '', '5', '0', '100', null, '0', 'admin', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', '1', '1', '1', '0', '1', '2', '3', '0');
+INSERT INTO `bbs_forum` VALUES ('3', '2', '1', '186', '5', 'sjbl', '神经病理', '', '', '', '10', '1', '1', '0', '', '5', '0', '100', '2017-01-14 01:13:05', '0', '', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', ',14,1,2,3,4,5,6,7,8,9,10,11,12,13,', '1', '1', '1', '0', '1', '2', '3', '0');
 
 -- ----------------------------
 -- Table structure for bbs_forum_group_reply
@@ -451,7 +451,7 @@ CREATE TABLE `bbs_login_log` (
   PRIMARY KEY (`id`),
   KEY `fk_bbs_login_log_user` (`user_id`),
   CONSTRAINT `fk_bbs_login_log_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=883 DEFAULT CHARSET=utf8 COMMENT='登录日志';
+) ENGINE=InnoDB AUTO_INCREMENT=887 DEFAULT CHARSET=utf8 COMMENT='登录日志';
 
 -- ----------------------------
 -- Records of bbs_login_log
@@ -476,6 +476,10 @@ INSERT INTO `bbs_login_log` VALUES ('879', '5', '2017-01-14 01:38:06', null, '0:
 INSERT INTO `bbs_login_log` VALUES ('880', '5', '2017-01-14 01:38:28', null, '127.0.0.1');
 INSERT INTO `bbs_login_log` VALUES ('881', '5', '2017-01-14 01:39:36', null, '127.0.0.1');
 INSERT INTO `bbs_login_log` VALUES ('882', '5', '2017-01-14 01:44:54', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('883', '5', '2017-01-14 19:36:39', null, '192.168.1.101');
+INSERT INTO `bbs_login_log` VALUES ('884', '5', '2017-01-14 19:52:53', null, '192.168.1.101');
+INSERT INTO `bbs_login_log` VALUES ('885', '5', '2017-01-15 10:58:30', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('886', '6', '2017-01-15 11:00:41', null, '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for bbs_magic_config
@@ -659,6 +663,17 @@ INSERT INTO `bbs_permission` VALUES ('12', 'topic_manage', 'true');
 INSERT INTO `bbs_permission` VALUES ('12', 'topic_shield', 'true');
 INSERT INTO `bbs_permission` VALUES ('12', 'topic_top', '3');
 INSERT INTO `bbs_permission` VALUES ('12', 'view_ip', 'true');
+INSERT INTO `bbs_permission` VALUES ('13', 'allow_attach', 'true');
+INSERT INTO `bbs_permission` VALUES ('13', 'attach_max_size', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'attach_per_day', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'attach_type', '');
+INSERT INTO `bbs_permission` VALUES ('13', 'edit_limit_minute', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'favorite_count', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'msg_count', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'msg_interval', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'msg_per_day', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'post_interval', '0');
+INSERT INTO `bbs_permission` VALUES ('13', 'post_per_day', '0');
 
 -- ----------------------------
 -- Table structure for bbs_post
@@ -833,17 +848,12 @@ CREATE TABLE `bbs_session` (
   PRIMARY KEY (`sid`),
   KEY `fk_session_user` (`user_id`),
   CONSTRAINT `fk_session_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1281 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
+) ENGINE=InnoDB AUTO_INCREMENT=1339 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
 
 -- ----------------------------
 -- Records of bbs_session
 -- ----------------------------
-INSERT INTO `bbs_session` VALUES ('1275', '45C4EB4CDD0679289B3167C0F5C75A18', null, '127.0.0.1', '2017-01-14 03:03:56', '2017-01-14 03:03:56');
-INSERT INTO `bbs_session` VALUES ('1276', '0505AE94226F5A9BA525A6BB4E5A1B34', null, '127.0.0.1', '2017-01-14 03:09:44', '2017-01-14 03:09:44');
-INSERT INTO `bbs_session` VALUES ('1277', '2E27B4727105B0764CAAFF2896BDEBFD', null, '127.0.0.1', '2017-01-14 03:09:47', '2017-01-14 03:09:47');
-INSERT INTO `bbs_session` VALUES ('1278', 'D2CFA159C41C23F579E511D2912512B8', null, '127.0.0.1', '2017-01-14 03:12:29', '2017-01-14 03:12:29');
-INSERT INTO `bbs_session` VALUES ('1279', 'DAA743DFB53E8D8BB6938F49F2963981', null, '127.0.0.1', '2017-01-14 03:12:44', '2017-01-14 03:12:44');
-INSERT INTO `bbs_session` VALUES ('1280', '0B8BFDE48D1D226F0980E16445B59FEB', null, '127.0.0.1', '2017-01-14 03:13:44', '2017-01-14 03:13:44');
+INSERT INTO `bbs_session` VALUES ('1338', 'CC9C00E17CF859AB7A61CCF8B553476D', '5', '127.0.0.1', '2017-01-15 23:32:08', '2017-01-15 23:32:08');
 
 -- ----------------------------
 -- Table structure for bbs_third_account
@@ -918,7 +928,7 @@ CREATE TABLE `bbs_topic` (
 -- ----------------------------
 -- Records of bbs_topic
 -- ----------------------------
-INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '2', '2', '2', '0');
+INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '7', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '5', '5', '0');
 
 -- ----------------------------
 -- Table structure for bbs_topic_text
@@ -988,7 +998,7 @@ INSERT INTO `bbs_user_group` VALUES ('9', '1', '探花', '1', '9', '32000', '0',
 INSERT INTO `bbs_user_group` VALUES ('10', '1', '榜眼', '1', '10', '64000', '0', '0', '0');
 INSERT INTO `bbs_user_group` VALUES ('11', '1', '状元', '1', '11', '128000', '0', '0', '0');
 INSERT INTO `bbs_user_group` VALUES ('12', '1', '版主', '2', '21', '0', '0', '0', '0');
-INSERT INTO `bbs_user_group` VALUES ('13', '1', 'VIP会员', '3', '10', '0', '0', '0', '0');
+INSERT INTO `bbs_user_group` VALUES ('13', '1', '认证医生会员', '3', '10', '0', '0', '0', '0');
 INSERT INTO `bbs_user_group` VALUES ('14', '1', '游客', '0', '1', '0', '0', '0', '0');
 
 -- ----------------------------
@@ -1005,12 +1015,13 @@ CREATE TABLE `bbs_user_online` (
   `online_total` double(10,2) DEFAULT NULL COMMENT '总在线时长',
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_bbs_user_online_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=gbk COMMENT='用户在线时长统计';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=gbk COMMENT='用户在线时长统计';
 
 -- ----------------------------
 -- Records of bbs_user_online
 -- ----------------------------
-INSERT INTO `bbs_user_online` VALUES ('5', '0.00', '0.00', '0.01', '0.01', '0.01', '379.16');
+INSERT INTO `bbs_user_online` VALUES ('5', '0.00', '0.00', '0.00', '0.01', '0.01', '379.16');
+INSERT INTO `bbs_user_online` VALUES ('6', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for bbs_vote_item
@@ -1097,11 +1108,12 @@ CREATE TABLE `bbs_webservice_call_record` (
   PRIMARY KEY (`record_id`),
   KEY `fk_webservice_record_auth` (`auth_id`),
   CONSTRAINT `fk_webservice_record_auth` FOREIGN KEY (`auth_id`) REFERENCES `bbs_webservice_auth` (`auth_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
 
 -- ----------------------------
 -- Records of bbs_webservice_call_record
 -- ----------------------------
+INSERT INTO `bbs_webservice_call_record` VALUES ('1', 'user_add', '1', '2017-01-15 00:00:00');
 
 -- ----------------------------
 -- Table structure for bbs_webservice_param
@@ -1154,7 +1166,7 @@ CREATE TABLE `jb_friendship` (
   KEY `fk_jb_friendship_user` (`user_id`),
   CONSTRAINT `jb_friendship_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`),
   CONSTRAINT `jb_friendship_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jb_friendship
@@ -1253,7 +1265,8 @@ CREATE TABLE `jb_user` (
 -- ----------------------------
 -- Records of jb_user
 -- ----------------------------
-INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'qianfo_713@163.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-14 01:44:54', '127.0.0.1', '952', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', '41FCE65041EAD4AEE55F4B4D760FF298', '3', '0');
+INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'qianfo_713@163.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-15 10:58:30', '127.0.0.1', '966', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', 'C435E0A922FD5F12773E2607CB5D6793', '3', '0');
+INSERT INTO `jb_user` VALUES ('6', '1', 'caihong', '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 11:00:41', '127.0.0.1', '2', '0', '0', '2017-01-15', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', '168EB913FE4CF9BAF92663A4829D07D6', '1', '0');
 
 -- ----------------------------
 -- Table structure for jb_user_attr
@@ -1294,6 +1307,7 @@ CREATE TABLE `jb_user_ext` (
 -- Records of jb_user_ext
 -- ----------------------------
 INSERT INTO `jb_user_ext` VALUES ('5', 'abc', '1', null, null, '简介2222', null, null, null, null, null);
+INSERT INTO `jb_user_ext` VALUES ('6', '彩虹', '1', null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_config
@@ -1336,7 +1350,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-14', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-15', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -1395,7 +1409,7 @@ CREATE TABLE `jc_config_item` (
   PRIMARY KEY (`modelitem_id`),
   KEY `pk_jc_item_config` (`config_id`),
   CONSTRAINT `fk_jb_item_config` FOREIGN KEY (`config_id`) REFERENCES `jc_config` (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMS配置模型项表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS配置模型项表';
 
 -- ----------------------------
 -- Records of jc_config_item
@@ -1532,16 +1546,16 @@ CREATE TABLE `jo_config` (
 -- ----------------------------
 INSERT INTO `jo_config` VALUES ('email_encoding', 'utf-8');
 INSERT INTO `jo_config` VALUES ('email_host', 'smtp.qq.com');
-INSERT INTO `jo_config` VALUES ('email_password', '1212');
-INSERT INTO `jo_config` VALUES ('email_personal', 'jeecms');
-INSERT INTO `jo_config` VALUES ('email_port', null);
-INSERT INTO `jo_config` VALUES ('email_username', '221@qq.com');
+INSERT INTO `jo_config` VALUES ('email_password', 'dycbaby0713');
+INSERT INTO `jo_config` VALUES ('email_personal', '彩虹医学网');
+INSERT INTO `jo_config` VALUES ('email_port', '25');
+INSERT INTO `jo_config` VALUES ('email_username', '77219569@qq.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval', '30');
 INSERT INTO `jo_config` VALUES ('login_error_times', '3');
 INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject', '彩虹医学网会员密码找回信息');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用彩虹医学网系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost:2020/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用彩虹医学网系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://bbs.caihongyixue.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 INSERT INTO `jo_config` VALUES ('message_register_subject', '彩虹医学网会员注册信息');
-INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册彩虹医学网系统会员\r\n请点击以下链接进行激活\r\nhttp://localhost:2020/active.jspx?username=${username}&key=${activationCode}\r\n');
+INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册彩虹医学网系统会员\r\n请点击以下链接进行激活\r\nhttp://bbs.caihongyixue.com/active.jspx?username=${username}&key=${activationCode}\r\n');
 INSERT INTO `jo_config` VALUES ('message_serviceexpiration_subject', 'JEECMS商业服务到期');
 INSERT INTO `jo_config` VALUES ('message_serviceexpiration_text', '感谢您使用JEECMS系列产品，您的服务已到期，如需得到我司服务，您可以到电话联系售前人员购买支持服务，联系方式在官网可以查询：http://www.jeecms.com');
 INSERT INTO `jo_config` VALUES ('message_subject', 'JEECMS会员密码找回信息');
@@ -1624,9 +1638,10 @@ CREATE TABLE `jo_user` (
   `error_ip` varchar(50) DEFAULT NULL COMMENT '登录错误IP',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('5', 'admin', 'qianfo_713@163.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-14 01:44:54', '127.0.0.1', '1701', null, null, '1', null, null, '0', null);
+INSERT INTO `jo_user` VALUES ('5', 'admin', 'qianfo_713@163.com', '3368b12faf2b59d96f01fe3dc664c9b5', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-15 10:58:30', '127.0.0.1', '1704', null, null, '1', null, '2017-01-15 21:48:18', '5', '127.0.0.1');
+INSERT INTO `jo_user` VALUES ('6', 'caihong', '', 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 11:00:41', '127.0.0.1', '1', null, null, '1', null, null, '0', null);
