@@ -37,7 +37,7 @@ a:hover{text-decoration:underline;color:#0070AF; }
 #head{width:1000px;margin:0 auto;} /*头部*/
 .head-wrap{ background: url(../img/headbg.png) repeat-x left bottom}
 #main{width:1000px;margin:0 auto 0;min-width:1000px;max-width:1000px;}  /*内容*/
-.main-wrap{background: url(../img/) left top repeat-x ; margin:0; padding-top:0 }
+.main-wrap{ margin:0; padding-top:0 }
 
 /*按钮*/
 .btn{border-color: #039dd5 #014ac6 #014ac6 #039dd5;margin-right:1em;color:#fff;background:#017fc6;}
@@ -263,9 +263,9 @@ input.yan{width:100px;height:18px;border:none;background:url(../img/yan_bg.jpg) 
 
 /**/
 .wrapper {margin: 0 auto;width: 1000px; background: url(../img/top/menu-list-bg-index.gif) 0 0 no-repeat; height:52px; }
-.dhlheader {background: url(../img/top/header-bg.gif) 0 0 no-repeat;}
+.dhlheader {}
 #index-body .dhlheader { background: none;}
-.dhlheader .dhlmenu {z-index: 500; width:1000px;height: 52px;background: url(../img/top/menu-list-bg.gif) 0 0 no-repeat;}
+.dhlheader .dhlmenu {z-index: 500; width:1000px;height: 52px;}
 #index-body .dhlheader .dhlmenu {background: url(../img/top/menu-list-bg-index.gif) 0 0 no-repeat; margin-top:12px;height:52px;}
 .dhlheader .dhlmenu a.logo {position: relative;float: left; _display: inline; margin: 1px 0 0 20px; width: 160px; height: 40px; background: url(../img/top/logo.png) no-repeat;}
 #index-body .dhlheader .dhlmenu a.logo {background: url(../img/top/logo.png) no-repeat;}
@@ -281,8 +281,8 @@ input.yan{width:100px;height:18px;border:none;background:url(../img/yan_bg.jpg) 
 }
 .dhlheader .dhlmenu ul.dhlmenu-list li a span { display: block;_display: inline-block;padding: 1px 2px 0 0;_width: 100%;cursor: pointer;}
 .dhlheader .dhlmenu ul.dhlmenu-list li.current {background: url(../img/top/menu-list-current-li-bg.gif) center top no-repeat;}
-.dhlheader .dhlmenu ul.dhlmenu-list li.current a { color: #fff;font-weight: bold;text-decoration: none; background: url(../img/top/menu-list-current-bg.gif) left top no-repeat;}
-.dhlheader .dhlmenu ul.dhlmenu-list li.current a span {background: url(../img/top/menu-list-current-bg.gif) right top no-repeat;}
+.dhlheader .dhlmenu ul.dhlmenu-list li.current a { color: #fff;font-weight: bold;text-decoration: none;}
+.dhlheader .dhlmenu ul.dhlmenu-list li.current a span {}
 .dhlheader .dhlmenu ul.dhlmenu-list li a.hover, 
 .dhlheader .dhlmenu ul.dhlmenu-list li a:hover {color: #fff;text-decoration: none;white-space: nowrap;background: url(../img/top/menu-list-hover-bg.gif) left 2px no-repeat;}
 .dhlheader .dhlmenu ul.dhlmenu-list li a.hover span, 
