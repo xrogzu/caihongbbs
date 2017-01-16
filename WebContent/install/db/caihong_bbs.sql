@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50717
+Source Server         : localhsot
+Source Server Version : 50703
 Source Host           : localhost:3306
 Source Database       : caihong_bbs
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-01-16 01:12:21
+Date: 2017-01-16 20:13:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -451,7 +451,7 @@ CREATE TABLE `bbs_login_log` (
   PRIMARY KEY (`id`),
   KEY `fk_bbs_login_log_user` (`user_id`),
   CONSTRAINT `fk_bbs_login_log_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=887 DEFAULT CHARSET=utf8 COMMENT='登录日志';
+) ENGINE=InnoDB AUTO_INCREMENT=888 DEFAULT CHARSET=utf8 COMMENT='登录日志';
 
 -- ----------------------------
 -- Records of bbs_login_log
@@ -480,6 +480,7 @@ INSERT INTO `bbs_login_log` VALUES ('883', '5', '2017-01-14 19:36:39', null, '19
 INSERT INTO `bbs_login_log` VALUES ('884', '5', '2017-01-14 19:52:53', null, '192.168.1.101');
 INSERT INTO `bbs_login_log` VALUES ('885', '5', '2017-01-15 10:58:30', null, '127.0.0.1');
 INSERT INTO `bbs_login_log` VALUES ('886', '6', '2017-01-15 11:00:41', null, '127.0.0.1');
+INSERT INTO `bbs_login_log` VALUES ('887', '5', '2017-01-16 18:33:52', null, '192.168.1.147');
 
 -- ----------------------------
 -- Table structure for bbs_magic_config
@@ -848,12 +849,12 @@ CREATE TABLE `bbs_session` (
   PRIMARY KEY (`sid`),
   KEY `fk_session_user` (`user_id`),
   CONSTRAINT `fk_session_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1339 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
+) ENGINE=InnoDB AUTO_INCREMENT=1499 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
 
 -- ----------------------------
 -- Records of bbs_session
 -- ----------------------------
-INSERT INTO `bbs_session` VALUES ('1338', 'CC9C00E17CF859AB7A61CCF8B553476D', '5', '127.0.0.1', '2017-01-15 23:32:08', '2017-01-15 23:32:08');
+INSERT INTO `bbs_session` VALUES ('1498', '1154570901FFBD11D0F24E65809B1148', null, '127.0.0.1', '2017-01-16 19:51:47', '2017-01-16 19:51:47');
 
 -- ----------------------------
 -- Table structure for bbs_third_account
@@ -928,7 +929,7 @@ CREATE TABLE `bbs_topic` (
 -- ----------------------------
 -- Records of bbs_topic
 -- ----------------------------
-INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '7', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '5', '5', '0');
+INSERT INTO `bbs_topic` VALUES ('65', '3', null, '186', '1', '5', '5', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '2017-01-14 01:13:05', '8', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '6', '6', '6', '0');
 
 -- ----------------------------
 -- Table structure for bbs_topic_text
@@ -1015,13 +1016,14 @@ CREATE TABLE `bbs_user_online` (
   `online_total` double(10,2) DEFAULT NULL COMMENT '总在线时长',
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_bbs_user_online_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=gbk COMMENT='用户在线时长统计';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=gbk COMMENT='用户在线时长统计';
 
 -- ----------------------------
 -- Records of bbs_user_online
 -- ----------------------------
 INSERT INTO `bbs_user_online` VALUES ('5', '0.00', '0.00', '0.00', '0.01', '0.01', '379.16');
 INSERT INTO `bbs_user_online` VALUES ('6', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
+INSERT INTO `bbs_user_online` VALUES ('7', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for bbs_vote_item
@@ -1108,12 +1110,15 @@ CREATE TABLE `bbs_webservice_call_record` (
   PRIMARY KEY (`record_id`),
   KEY `fk_webservice_record_auth` (`auth_id`),
   CONSTRAINT `fk_webservice_record_auth` FOREIGN KEY (`auth_id`) REFERENCES `bbs_webservice_auth` (`auth_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
 
 -- ----------------------------
 -- Records of bbs_webservice_call_record
 -- ----------------------------
 INSERT INTO `bbs_webservice_call_record` VALUES ('1', 'user_add', '1', '2017-01-15 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('2', 'user_add', '1', '2017-01-16 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('3', 'user_update', '1', '2017-01-16 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('4', 'user_update', '1', '2017-01-16 00:00:00');
 
 -- ----------------------------
 -- Table structure for bbs_webservice_param
@@ -1265,8 +1270,9 @@ CREATE TABLE `jb_user` (
 -- ----------------------------
 -- Records of jb_user
 -- ----------------------------
-INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'qianfo_713@163.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-15 10:58:30', '127.0.0.1', '966', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', 'C435E0A922FD5F12773E2607CB5D6793', '3', '0');
+INSERT INTO `jb_user` VALUES ('5', '12', 'admin', 'caihongyixue@qq.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-16 18:33:52', '192.168.1.147', '970', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '302', null, '简介2222', '01.gif', '0', '62', '114', '0', '176', null, '8', '0', '30DF2D76FC2EB2327B366A76E274008A', '3', '0');
 INSERT INTO `jb_user` VALUES ('6', '1', 'caihong', '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 11:00:41', '127.0.0.1', '2', '0', '0', '2017-01-15', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', '168EB913FE4CF9BAF92663A4829D07D6', '1', '0');
+INSERT INTO `jb_user` VALUES ('7', '1', 'caihong1', '77219569@qq.com', '2017-01-16 17:41:24', '127.0.0.1', '2017-01-16 17:41:24', '127.0.0.1', '0', '0', '0', '2017-01-16', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '2', '0');
 
 -- ----------------------------
 -- Table structure for jb_user_attr
@@ -1306,8 +1312,9 @@ CREATE TABLE `jb_user_ext` (
 -- ----------------------------
 -- Records of jb_user_ext
 -- ----------------------------
-INSERT INTO `jb_user_ext` VALUES ('5', 'abc', '1', null, null, '简介2222', null, null, null, null, null);
+INSERT INTO `jb_user_ext` VALUES ('5', null, null, null, null, '简介2222', null, null, null, null, null);
 INSERT INTO `jb_user_ext` VALUES ('6', '彩虹', '1', null, null, null, null, null, null, null, null);
+INSERT INTO `jb_user_ext` VALUES ('7', null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_config
@@ -1350,7 +1357,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-15', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-01-16', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -1376,8 +1383,8 @@ INSERT INTO `jc_config_attr` VALUES ('1', 'qqID', '101194204');
 INSERT INTO `jc_config_attr` VALUES ('1', 'qqKey', 'd4e1583fabe2a2db6e44bbcc8a2c24e8');
 INSERT INTO `jc_config_attr` VALUES ('1', 'sinaID', '');
 INSERT INTO `jc_config_attr` VALUES ('1', 'qqWeboID', '');
-INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopnum', '13');
-INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopday', '2017-1-14');
+INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopnum', '22');
+INSERT INTO `jc_config_attr` VALUES ('1', 'useronlinetopday', '2017-1-16');
 INSERT INTO `jc_config_attr` VALUES ('1', 'changeGroup', '10');
 INSERT INTO `jc_config_attr` VALUES ('1', 'autoChangeGroup', 'false');
 INSERT INTO `jc_config_attr` VALUES ('1', 'serviceExpirationEmailNotice', 'true');
@@ -1638,10 +1645,11 @@ CREATE TABLE `jo_user` (
   `error_ip` varchar(50) DEFAULT NULL COMMENT '登录错误IP',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('5', 'admin', 'qianfo_713@163.com', '3368b12faf2b59d96f01fe3dc664c9b5', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-15 10:58:30', '127.0.0.1', '1704', null, null, '1', null, '2017-01-15 21:48:18', '5', '127.0.0.1');
+INSERT INTO `jo_user` VALUES ('5', 'admin', 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-16 18:33:52', '192.168.1.147', '1705', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('6', 'caihong', '', 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 11:00:41', '127.0.0.1', '1', null, null, '1', null, null, '0', null);
+INSERT INTO `jo_user` VALUES ('7', 'caihong1', '77219569@qq.com', '4297f44b13955235245b2497399d7a93', '2017-01-16 17:41:24', '127.0.0.1', '2017-01-16 17:41:24', '127.0.0.1', '0', null, null, '1', null, null, '0', null);

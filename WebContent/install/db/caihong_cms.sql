@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50717
+Source Server         : localhsot
+Source Server Version : 50703
 Source Host           : localhost:3306
 Source Database       : caihong_cms
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2017-01-16 01:11:52
+Date: 2017-01-16 20:14:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -473,15 +473,15 @@ CREATE TABLE `jc_channel_count` (
 -- ----------------------------
 -- Records of jc_channel_count
 -- ----------------------------
-INSERT INTO `jc_channel_count` VALUES ('75', '447', '5', '5', '5', '50', '20', '28', '28', '28');
-INSERT INTO `jc_channel_count` VALUES ('76', '207', '6', '6', '6', '11', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('77', '81', '43', '43', '43', '15', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('75', '462', '20', '20', '20', '50', '20', '28', '28', '28');
+INSERT INTO `jc_channel_count` VALUES ('76', '219', '18', '18', '18', '11', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('77', '86', '48', '48', '48', '15', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('78', '28', '3', '3', '3', '0', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('81', '73', '1', '1', '1', '10', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('81', '74', '2', '2', '2', '10', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('82', '6', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('94', '0', '0', '0', '0', '16', '16', '16', '16', '16');
 INSERT INTO `jc_channel_count` VALUES ('95', '0', '0', '0', '0', '12', '12', '12', '12', '12');
-INSERT INTO `jc_channel_count` VALUES ('96', '3', '3', '3', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('96', '29', '29', '29', '29', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_channel_department
@@ -560,9 +560,9 @@ CREATE TABLE `jc_channel_ext` (
 -- ----------------------------
 -- Records of jc_channel_ext
 -- ----------------------------
-INSERT INTO `jc_channel_ext` VALUES ('75', '新闻资讯', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '1', '1', '/WEB-INF/t/cms/www/mobile/channel/news.html');
+INSERT INTO `jc_channel_ext` VALUES ('75', '新闻资讯', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '510', '288', '310', '310', '2', '0', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
 INSERT INTO `jc_channel_ext` VALUES ('76', '专家团队', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('77', '空中课堂', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '1', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('77', '空中课堂', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '1', '0', '510', '288', '310', '310', '2', '0', '0', null, null, null, '0', '0', '');
 INSERT INTO `jc_channel_ext` VALUES ('78', '预约会诊', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
 INSERT INTO `jc_channel_ext` VALUES ('81', '关于我们', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/alone/alone_about.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/alone/alone_about.html');
 INSERT INTO `jc_channel_ext` VALUES ('82', '留言板', null, null, '0', '0', '0', '0', '10', null, null, '/guestbook.jspx', null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
@@ -784,7 +784,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-01-16', '2017-01-16 00:36:11', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice4', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-01-16', '2017-01-16');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-01-16', '2017-01-16 16:07:03', 'caihongyixue', '12', null, null, null, null, null, '1', '/opt/openoffice4', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-01-16', '2017-01-16');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -956,8 +956,8 @@ INSERT INTO `jc_content` VALUES ('14', '96', '1', '2', '1', '1', '2016-07-19 14:
 INSERT INTO `jc_content` VALUES ('23', '96', '1', '1', '1', '1', '2016-09-13 17:16:04', '0', '0', '0', '2', '0', '0', '0', '0', '11', '1');
 INSERT INTO `jc_content` VALUES ('27', '96', '1', '2', '1', '1', '2016-09-22 16:30:13', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
 INSERT INTO `jc_content` VALUES ('28', '96', '1', '2', '1', '1', '2016-09-22 16:56:46', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
-INSERT INTO `jc_content` VALUES ('29', '96', '1', '1', '1', '1', '2016-09-23 09:07:33', '0', '0', '0', '2', '0', '0', '0', '0', '1', '1');
-INSERT INTO `jc_content` VALUES ('30', '96', '1', '2', '1', '1', '2016-09-23 09:09:41', '0', '0', '0', '2', '1', '0', '0', '0', '41', '1');
+INSERT INTO `jc_content` VALUES ('29', '96', '1', '1', '1', '1', '2016-09-23 09:07:33', '0', '0', '0', '2', '1', '0', '0', '0', '1', '1');
+INSERT INTO `jc_content` VALUES ('30', '96', '1', '2', '1', '1', '2016-09-23 09:09:41', '0', '0', '0', '2', '70', '0', '0', '0', '41', '1');
 INSERT INTO `jc_content` VALUES ('32', '96', '1', '2', '1', '1', '2016-09-23 09:19:38', '0', '0', '0', '2', '0', '0', '0', '0', '2', '1');
 INSERT INTO `jc_content` VALUES ('33', '96', '1', '2', '1', '1', '2016-09-23 09:23:39', '0', '0', '0', '2', '0', '0', '0', '0', '18', '1');
 INSERT INTO `jc_content` VALUES ('36', '96', '1', '2', '1', '1', '2016-09-23 09:40:21', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
@@ -976,13 +976,13 @@ INSERT INTO `jc_content` VALUES ('111', '96', '1', '2', '1', '1', '2016-10-10 11
 INSERT INTO `jc_content` VALUES ('112', '96', '1', '2', '1', '1', '2016-10-10 11:48:08', '0', '0', '0', '2', '0', '0', '0', '0', '18', '1');
 INSERT INTO `jc_content` VALUES ('113', '96', '1', '4', '1', '1', '2016-10-10 11:50:03', '0', '0', '0', '2', '0', '0', '0', '0', '11', '1');
 INSERT INTO `jc_content` VALUES ('114', '76', '1', '2', '5', '1', '2016-10-10 13:11:12', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('115', '76', '1', '2', '5', '1', '2016-10-10 13:15:37', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('115', '76', '1', '2', '5', '1', '2016-10-10 13:15:37', '0', '0', '1', '2', '1', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('116', '76', '1', '2', '5', '1', '2016-10-10 13:19:22', '0', '0', '1', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('117', '76', '1', '2', '5', '1', '2016-10-10 13:22:07', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('118', '76', '1', '2', '5', '1', '2016-10-10 13:23:50', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('119', '76', '1', '2', '5', '1', '2016-10-10 13:26:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('120', '76', '1', '2', '5', '1', '2016-10-10 13:35:17', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('121', '77', '1', '2', '6', '1', '2016-10-10 13:38:11', '1', '1', '1', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('121', '77', '1', '2', '6', '1', '2016-10-10 13:38:11', '1', '1', '1', '2', '1', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('122', '77', '1', '2', '6', '1', '2016-10-10 13:40:05', '0', '1', '1', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('123', '77', '1', '2', '6', '1', '2016-10-10 13:41:03', '0', '1', '1', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('124', '77', '1', '2', '6', '1', '2016-10-10 13:42:48', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
@@ -991,7 +991,7 @@ INSERT INTO `jc_content` VALUES ('126', '77', '1', '2', '6', '1', '2016-10-10 13
 INSERT INTO `jc_content` VALUES ('127', '77', '1', '2', '6', '1', '2016-10-10 13:46:26', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('128', '77', '1', '2', '6', '1', '2016-10-10 13:46:52', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('129', '77', '1', '2', '6', '1', '2016-10-10 13:47:24', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('130', '96', '1', '2', '1', '1', '2016-10-10 13:51:07', '1', '0', '0', '2', '0', '0', '0', '0', '12', '1');
+INSERT INTO `jc_content` VALUES ('130', '96', '1', '2', '1', '1', '2016-10-10 13:51:07', '1', '0', '0', '2', '2', '0', '0', '0', '12', '1');
 INSERT INTO `jc_content` VALUES ('131', '96', '1', '2', '1', '1', '2016-10-10 13:54:05', '0', '0', '0', '2', '0', '0', '0', '0', '13', '1');
 INSERT INTO `jc_content` VALUES ('132', '96', '1', '2', '1', '1', '2016-10-10 13:55:46', '0', '0', '0', '2', '0', '0', '0', '0', '1', '1');
 INSERT INTO `jc_content` VALUES ('133', '81', '1', '2', '9', '1', '2016-10-10 14:08:28', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
@@ -1748,11 +1748,11 @@ INSERT INTO `jc_content_count` VALUES ('11', '21', '20', '0', '0', '0', '0', '0'
 INSERT INTO `jc_content_count` VALUES ('12', '10', '10', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('13', '21', '16', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('14', '59', '45', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '14', '14', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('23', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('23', '17', '17', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('27', '9', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('28', '9', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('29', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('30', '75', '75', '12', '12', '1', '1', '0', '0', '0', '0', '0', '0', '44', '44', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('29', '4', '4', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('30', '133', '133', '70', '70', '1', '1', '0', '0', '0', '0', '0', '0', '44', '44', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('32', '5', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '1');
 INSERT INTO `jc_content_count` VALUES ('33', '54', '54', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '18', '18', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('36', '4', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
@@ -1769,24 +1769,24 @@ INSERT INTO `jc_content_count` VALUES ('68', '51', '51', '0', '0', '0', '0', '0'
 INSERT INTO `jc_content_count` VALUES ('74', '59', '59', '0', '0', '3', '3', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('111', '16', '16', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('112', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '16', '16', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('113', '29', '29', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '13', '13', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('114', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('115', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('113', '30', '30', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '13', '13', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('114', '19', '19', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('115', '4', '4', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('116', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('117', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('118', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('119', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('120', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('121', '3', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('121', '5', '5', '3', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('122', '2', '2', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('123', '13', '13', '10', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('124', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('125', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('126', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('127', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('128', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('128', '2', '2', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('129', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('130', '24', '24', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('130', '29', '29', '5', '5', '1', '1', '0', '0', '0', '0', '0', '0', '12', '12', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('131', '18', '18', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '15', '15', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('132', '7', '7', '0', '0', '2', '2', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('133', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
@@ -1822,9 +1822,9 @@ INSERT INTO `jc_content_count` VALUES ('163', '0', '0', '0', '0', '0', '0', '0',
 INSERT INTO `jc_content_count` VALUES ('164', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('165', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('166', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('167', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('167', '2', '2', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('168', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('169', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('169', '5', '5', '5', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_doc
@@ -3051,7 +3051,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -3151,6 +3151,22 @@ INSERT INTO `jc_log` VALUES ('92', '1', '1', '3', '2017-01-16 00:33:39', '127.0.
 INSERT INTO `jc_log` VALUES ('93', '1', '1', '3', '2017-01-16 00:34:14', '127.0.0.1', '/admin/cms/content/o_save.do', '增加文章', 'id=169;title=安抚阿斯顿发顺丰1而沙发沙发舒服撒发生法萨芬');
 INSERT INTO `jc_log` VALUES ('94', '1', '1', '3', '2017-01-16 00:37:12', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=157;title=快快快快快快快快快快快快快快快快快快快快快');
 INSERT INTO `jc_log` VALUES ('95', '1', '1', '3', '2017-01-16 00:37:35', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=153;title=阿斯顿发沙发舒服撒发生');
+INSERT INTO `jc_log` VALUES ('96', '1', null, '1', '2017-01-16 11:05:07', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('97', '1', '1', '3', '2017-01-16 11:09:50', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=75;name=新闻资讯');
+INSERT INTO `jc_log` VALUES ('98', '1', '1', '3', '2017-01-16 11:10:19', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=77;name=空中课堂');
+INSERT INTO `jc_log` VALUES ('99', '1', '1', '3', '2017-01-16 11:10:34', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=75;name=新闻资讯');
+INSERT INTO `jc_log` VALUES ('100', '1', '1', '3', '2017-01-16 11:17:17', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=77;name=空中课堂');
+INSERT INTO `jc_log` VALUES ('101', '1', '1', '3', '2017-01-16 11:17:32', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=75;name=新闻资讯');
+INSERT INTO `jc_log` VALUES ('102', '1', null, '1', '2017-01-16 15:49:42', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('103', '1', null, '1', '2017-01-16 15:57:15', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('104', '1', null, '1', '2017-01-16 17:14:16', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('105', '1', '1', '3', '2017-01-16 17:15:10', '127.0.0.1', '/admin/cms/config/o_system_update.do', '修改系统设置', null);
+INSERT INTO `jc_log` VALUES ('106', null, null, '2', '2017-01-16 17:24:42', '127.0.0.1', '/admin/cms/login.do', 'login failure', 'username=77219569@qq.com');
+INSERT INTO `jc_log` VALUES ('107', '1', null, '1', '2017-01-16 17:24:49', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('108', '1', '1', '3', '2017-01-16 17:29:18', '127.0.0.1', '/admin/cms/config/o_login_update.do', '修改登录设置', null);
+INSERT INTO `jc_log` VALUES ('109', '1', null, '1', '2017-01-16 17:40:21', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('110', '1', '1', '3', '2017-01-16 17:40:45', '127.0.0.1', '/admin/cms/config/o_login_update.do', '修改登录设置', null);
+INSERT INTO `jc_log` VALUES ('111', '1', '1', '3', '2017-01-16 17:44:59', '127.0.0.1', '/admin/cms/config/o_login_update.do', '修改登录设置', null);
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3759,7 +3775,7 @@ INSERT INTO `jc_search_words` VALUES ('5', '楼市', '64', '2', 'ls', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('6', '四川', '2', '11', 'sc', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('7', '黄金接连下跌', '13', '10', 'hjjlxd', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('8', '里约奥运会', '2', '12', 'lyayh', '1', '1');
-INSERT INTO `jc_search_words` VALUES ('9', '电信诈骗', '23', '10', 'dxzp', '1', '1');
+INSERT INTO `jc_search_words` VALUES ('9', '电信诈骗', '24', '10', 'dxzp', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('10', '雷洋案', '12', '11', 'lya', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('13', '2015各行业平均工资', '9', '10', '2015gxypjgz', '1', '1');
 INSERT INTO `jc_search_words` VALUES ('14', '太阳的后裔', '10', '10', 'tydhy', '1', '1');
@@ -3877,24 +3893,22 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
 -- ----------------------------
-INSERT INTO `jc_site_access` VALUES ('18', 'FC65C1004E8C7635EEF35B50C2A34D8D', '1', '00:12:17', '2017-01-15', '192.168.1.101', '', '外部链接', 'http://192.168.1.104:2021', null, 'http://192.168.1.104:2021/news/index.jhtml', 'http://192.168.1.104:2021/education/index.jhtml', '1350', '9', 'MAC', 'safari 10', '');
-INSERT INTO `jc_site_access` VALUES ('19', '78F735A0134F23364C2CE7AB541B50E3', '1', '00:19:35', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/gywm.jhtml', '4780', '58', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('20', 'BFFB37AF7239A77C418CB54E64491801', '1', '01:50:08', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '80', '3', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('21', '008F99B2B0172B3B13A51F4A9589845B', '1', '10:45:42', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/education/index.jhtml', 'http://www.caihongyixue.com/', '2351', '3', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('22', 'AEB88FBF67875AC3069321B0EDB2E5B6', '1', '11:44:20', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', '1351', '16', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('23', '63E33CF81DB0C4C8CFC5DC0577CE4D5F', '1', '16:54:44', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('24', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '1', '18:30:43', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index.jhtml', '1642', '11', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('25', '75A721380D707531087F997CA1CE740B', '1', '19:32:49', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index.jhtml', '1183', '33', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('26', '7EE6A610661BABCC03D3940766E686E0', '1', '20:22:56', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/education/index.jhtml', 'http://www.caihongyixue.com/', '2916', '26', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('27', 'B7C4179C5EA271709CF6EE246576C215', '1', '21:34:48', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '761', '17', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('28', '6075BABF7CA98AD85E05155234A7E4DE', '1', '21:48:43', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('29', 'C435E0A922FD5F12773E2607CB5D6793', '1', '21:55:05', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '2915', '36', 'Win 7', 'chrome 53', '');
-INSERT INTO `jc_site_access` VALUES ('30', '585F096E8B3F9AE8FE4EC66110A67A6C', '1', '23:18:58', '2017-01-15', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/wzxw/30.jhtml', '-79686', '69', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('31', 'B625F1211B2E6FA5C1F75977DE5185DF', '1', '11:10:44', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '6164', '10', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('32', '3762CF7119EAE9F9C0D6064FF3DE8666', '1', '11:12:47', '2017-01-16', '192.168.1.147', '', '外部链接', 'http://192.168.1.185:2021', null, 'http://192.168.1.185:2021/news/index.jhtml', 'http://192.168.1.185:2021/zjtd/index.jhtml#', '383', '8', 'Linux', 'chrome 40', '');
+INSERT INTO `jc_site_access` VALUES ('33', '4B9F3A3AD98662AE84638347ED076D0E', '1', '12:55:59', '2017-01-16', '127.0.0.1', '', '外部链接', 'http://bbs.caihongyixue.com', null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/zjtd/index.jhtml', '9561', '85', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('34', 'C5B3B780DABB26FE9E24A13E96544B67', '1', '15:57:25', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/wzxw/30.jhtml', 'http://www.caihongyixue.com/zjtd/index.jhtml', '4309', '110', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('35', '51341509BA903C07BBACD216CA17C115', '1', '16:35:14', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/education/index.jhtml', '135', '4', 'Win 7', 'firefox 50', '');
+INSERT INTO `jc_site_access` VALUES ('36', '66EB2E1CD7673498772EBC8F194D5FCD', '1', '17:19:49', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('37', '752C274C9AC0A9C9399CEBB27F933009', '1', '17:41:43', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '305', '6', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('38', 'CF202098AACB05C9DD5A51B6BA9762E1', '1', '17:49:25', '2017-01-16', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '2313', '8', 'Win 7', 'chrome 55', '');
+INSERT INTO `jc_site_access` VALUES ('39', 'EB777ED6CCC83A370A37149335B70A54', '1', '18:06:39', '2017-01-16', '192.168.1.147', '', '外部链接', 'http://192.168.1.185:2021', null, 'http://192.168.1.185:2021/education/index.jhtml', 'http://192.168.1.185:2021/zjtd/index.jhtml', '1517', '22', 'MAC', 'safari 10', '');
+INSERT INTO `jc_site_access` VALUES ('40', '5D96A63EA91EBE368C27D397526F6A84', '1', '18:41:02', '2017-01-16', '192.168.1.147', '', '外部链接', 'http://192.168.1.185:2021', null, 'http://192.168.1.185:2021/education/index.jhtml', 'http://192.168.1.185:2021/education/index.jhtml', '20', '2', 'MAC', 'safari 10', '');
+INSERT INTO `jc_site_access` VALUES ('41', 'D324207F889D5846DED34F89C1D4E6C7', '1', '19:53:44', '2017-01-16', '192.168.1.147', '', '外部链接', 'http://192.168.1.185:2021', null, 'http://192.168.1.185:2021/education/index.jhtml', 'http://192.168.1.185:2021/education/index.jhtml', '0', '1', 'MAC', 'safari 10', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -3909,7 +3923,7 @@ CREATE TABLE `jc_site_access_count` (
   PRIMARY KEY (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`),
   CONSTRAINT `fk_jc_access_count_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
+) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
 
 -- ----------------------------
 -- Records of jc_site_access_count
@@ -3924,6 +3938,17 @@ INSERT INTO `jc_site_access_count` VALUES ('275', '7', '1', '2017-01-14', '1');
 INSERT INTO `jc_site_access_count` VALUES ('276', '17', '1', '2017-01-14', '1');
 INSERT INTO `jc_site_access_count` VALUES ('277', '25', '1', '2017-01-14', '1');
 INSERT INTO `jc_site_access_count` VALUES ('278', '81', '1', '2017-01-14', '1');
+INSERT INTO `jc_site_access_count` VALUES ('279', '1', '2', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('280', '3', '2', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('281', '16', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('282', '17', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('283', '26', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('284', '33', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('285', '36', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('286', '58', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('287', '69', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('288', '9', '1', '2017-01-15', '1');
+INSERT INTO `jc_site_access_count` VALUES ('289', '11', '1', '2017-01-15', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_pages
@@ -3940,187 +3965,11 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=469 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
 -- ----------------------------
-INSERT INTO `jc_site_access_pages` VALUES ('91', 'http://www.caihongyixue.com/zjtd/7.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:03:23', '0', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('92', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:10:07', '0', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('93', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:12:17', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('94', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:10:10', '23', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('95', 'http://192.168.1.104:2021/education/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:22:42', '0', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('96', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:27:52', '77', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('97', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:29:09', '333', '7', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('98', 'http://192.168.1.104:2021/news/index.jhtml', 'FC65C1004E8C7635EEF35B50C2A34D8D', '2017-01-15', '00:34:42', '0', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('99', 'http://www.caihongyixue.com/education/123.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '00:55:21', '340', '19', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('100', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:01:01', '0', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('101', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:04:55', '0', '24', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('102', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:03:43', '72', '23', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('103', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:16', '80', '33', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('104', 'http://www.caihongyixue.com/education/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:08:48', '12', '30', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('105', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:10:36', '3', '34', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('106', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:00', '11', '31', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('107', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:09:11', '5', '32', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('108', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:10:39', '73', '35', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('109', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:52', '3', '36', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('110', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:12:08', '72', '39', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('111', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:57', '11', '38', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('112', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:11:55', '2', '37', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('113', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:13:20', '2', '40', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('114', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:13:22', '0', '41', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('115', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:22:29', '8', '45', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('116', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:20:30', '119', '44', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('117', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:23:30', '31', '48', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('118', 'http://www.caihongyixue.com/zjtd/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:23:21', '9', '47', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('119', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:22:37', '44', '46', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('120', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:05', '4', '51', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('121', 'http://www.caihongyixue.com/news/index.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:09', '36', '52', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('122', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:02', '3', '50', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('123', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:45', '186', '53', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('124', 'http://www.caihongyixue.com/gywm.jhtml', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:24:01', '1', '49', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('125', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:27:51', '74', '54', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('126', 'http://www.caihongyixue.com/', '78F735A0134F23364C2CE7AB541B50E3', '2017-01-15', '01:29:05', '0', '55', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('127', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:50:12', '76', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('128', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:50:09', '3', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('129', 'http://www.caihongyixue.com/', 'BFFB37AF7239A77C418CB54E64491801', '2017-01-15', '01:51:28', '0', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('130', 'http://www.caihongyixue.com/education/index.jhtml', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '10:45:43', '2350', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('131', 'http://www.caihongyixue.com/education/index.jhtml', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '10:45:43', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('132', 'http://www.caihongyixue.com/', '008F99B2B0172B3B13A51F4A9589845B', '2017-01-15', '11:24:53', '0', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('133', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:44:20', '1', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('134', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:56:15', '0', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('135', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '11:59:20', '276', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('136', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:03:56', '51', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('137', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:04:47', '31', '7', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('138', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:18', '15', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('139', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:05', '2', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('140', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:56', '2', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('141', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:07', '41', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('142', 'http://www.caihongyixue.com/', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:33', '18', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('143', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:58', '7', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('144', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:06:48', '0', '15', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('145', 'http://www.caihongyixue.com/education/index.jhtml', 'AEB88FBF67875AC3069321B0EDB2E5B6', '2017-01-15', '12:05:51', '5', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('146', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:30:44', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('147', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:36:36', '424', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('148', 'http://www.caihongyixue.com/', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:43:40', '0', '4', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('149', 'http://www.caihongyixue.com/education/index.jhtml', 'FB68C59C798F4CFFFA1FD7289E4FC01F', '2017-01-15', '18:47:16', '0', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('150', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:41:28', '70', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('151', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:41:06', '22', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('152', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:40:47', '19', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('153', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:38', '6', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('154', 'http://www.caihongyixue.com/zjtd/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:47', '3', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('155', 'http://www.caihongyixue.com/yyhz/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:50', '1', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('156', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:43:05', '78', '17', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('157', 'http://www.caihongyixue.com/education/index_2.jspx?q=&channelId=77', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:44', '3', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('158', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:51', '5', '15', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('159', 'http://www.caihongyixue.com/zjtd/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:42:56', '9', '16', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('160', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:44:23', '31', '18', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('161', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:45:15', '39', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('162', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:44:54', '21', '19', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('163', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:45:54', '44', '21', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('164', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:38', '5', '22', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('165', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:57', '118', '24', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('166', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:46:43', '14', '23', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('167', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:55', '3', '25', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('168', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:45', '1', '28', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('169', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:59', '106', '27', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('170', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:48:58', '1', '26', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('171', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:56', '5', '30', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('172', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:51:01', '89', '31', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('173', 'http://www.caihongyixue.com/', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:52:30', '0', '32', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('174', 'http://www.caihongyixue.com/education/index.jhtml', '75A721380D707531087F997CA1CE740B', '2017-01-15', '19:50:46', '10', '29', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('175', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:26:43', '0', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('176', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:27:10', '20', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('177', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:29', '3', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('178', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:32', '19', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('179', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:58:36', '35', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('180', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:58:29', '7', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('181', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:57:51', '38', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('182', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:46', '205', '15', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('183', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:11', '3', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('184', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '20:59:14', '32', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('185', 'http://www.caihongyixue.com/', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:11', '5', '16', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('186', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:04:28', '30', '19', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('187', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:16', '31', '17', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('188', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:03:47', '41', '18', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('189', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:05:40', '61', '21', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('190', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:04:58', '42', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('191', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:06:41', '26', '22', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('192', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:07:49', '0', '24', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('193', 'http://www.caihongyixue.com/education/index.jhtml', '7EE6A610661BABCC03D3940766E686E0', '2017-01-15', '21:07:07', '42', '23', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('194', 'http://www.caihongyixue.com/', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:35:10', '191', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('195', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:38:21', '73', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('196', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:39:34', '31', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('197', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:00', '17', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('198', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:40:05', '55', '4', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('199', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:17', '17', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('200', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:41:34', '28', '7', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('201', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:02', '34', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('202', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:36', '3', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('203', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:43:13', '112', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('204', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:39', '13', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('205', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:42:52', '21', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('206', 'http://www.caihongyixue.com/education/index.jhtml', 'B7C4179C5EA271709CF6EE246576C215', '2017-01-15', '21:45:05', '0', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('207', 'http://www.caihongyixue.com/', '6075BABF7CA98AD85E05155234A7E4DE', '2017-01-15', '21:48:43', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('208', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '21:51:51', '211', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('209', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '21:55:22', '0', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('210', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:02:00', '114', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('211', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:03:54', '426', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('212', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:00', '3', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('213', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:08', '17', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('214', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:03', '5', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('215', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:11:25', '49', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('216', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:12:14', '0', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('217', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:23:15', '0', '17', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('218', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:27:55', '555', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('219', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:37:10', '0', '21', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('220', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:40:04', '4', '27', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('221', 'http://www.caihongyixue.com/news/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:40:08', '74', '28', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('222', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:22', '5', '29', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('223', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:27', '10', '30', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('224', 'http://www.caihongyixue.com/news/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:41:37', '34', '31', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('225', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:42:26', '55', '33', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('226', 'http://www.caihongyixue.com/', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:42:11', '15', '32', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('227', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:43:21', '10', '34', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('228', 'http://www.caihongyixue.com/education/index.jhtml', 'C435E0A922FD5F12773E2607CB5D6793', '2017-01-15', '22:43:31', '0', '35', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('229', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:14', '22', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('230', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:18:58', '16', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('231', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:36', '16', '4', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('232', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:19:52', '26', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('233', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:18', '5', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('234', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:59', '27', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('235', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:31', '23', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('236', 'http://www.caihongyixue.com/education/121.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:23', '8', '7', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('237', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:26', '6', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('238', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:20:54', '5', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('239', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:59', '5', '17', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('240', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:50', '4', '15', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('241', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:54', '5', '16', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('242', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:46', '4', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('243', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:29', '168', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('244', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:22', '7', '19', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('245', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:45', '1', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('246', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:21:32', '13', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('247', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:22:04', '18', '18', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('248', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:25:17', '29', '21', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('249', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:25:46', '43', '22', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('250', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:26:29', '25', '23', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('251', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:18', '8', '25', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('252', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:26', '13', '26', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('253', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:26:54', '24', '24', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('254', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:27:39', '34', '27', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('255', 'http://www.caihongyixue.com/education/122.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:25', '29', '30', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('256', 'http://www.caihongyixue.com/education/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:16', '9', '29', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('257', 'http://www.caihongyixue.com/education/123.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:13', '3', '28', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('258', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:28:54', '188', '31', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('259', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:02', '2', '32', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('260', 'http://www.caihongyixue.com/wzxw/14.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:43', '25', '37', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('261', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:11', '7', '35', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('262', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:33:08', '1085', '38', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('263', 'http://www.caihongyixue.com/news/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:18', '25', '36', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('264', 'http://www.caihongyixue.com/zjtd/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:04', '2', '33', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('265', 'http://www.caihongyixue.com/yyhz/index.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:32:06', '5', '34', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('266', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-15', '23:51:13', '-85196', '39', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('267', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:11:17', '52', '40', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('268', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:12:42', '0', '42', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('269', 'http://www.caihongyixue.com/', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:12:09', '33', '41', '1');
@@ -4142,6 +3991,187 @@ INSERT INTO `jc_site_access_pages` VALUES ('284', 'http://www.caihongyixue.com/w
 INSERT INTO `jc_site_access_pages` VALUES ('285', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:58:43', '727', '67', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('286', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '00:57:39', '32', '64', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('287', 'http://www.caihongyixue.com/wzxw/30.jhtml', '585F096E8B3F9AE8FE4EC66110A67A6C', '2017-01-16', '01:10:50', '0', '68', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('288', 'http://www.caihongyixue.com/', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:10:48', '5', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('289', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:11:07', '8', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('290', 'http://192.168.1.185:2021/news/index.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:12:47', '74', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('291', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:10:53', '14', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('292', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:11:15', '336', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('293', 'http://192.168.1.185:2021/wzxw/130.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:14:01', '70', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('294', 'http://192.168.1.185:2021/wzxw/130.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:15:11', '49', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('295', 'http://www.caihongyixue.com/', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:16:51', '49', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('296', 'http://192.168.1.185:2021/education/index.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:16:00', '109', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('297', 'http://www.caihongyixue.com/', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:17:40', '2', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('298', 'http://www.caihongyixue.com/education/index.jhtml', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:17:42', '104', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('299', 'http://192.168.1.185:2021/education/index.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:17:49', '27', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('300', 'http://192.168.1.185:2021/education/121.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:18:16', '35', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('301', 'http://www.caihongyixue.com/', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '11:19:26', '0', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('302', 'http://192.168.1.185:2021/zjtd/index.jhtml#', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:19:10', '0', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('303', 'http://192.168.1.185:2021/zjtd/index.jhtml', '3762CF7119EAE9F9C0D6064FF3DE8666', '2017-01-16', '11:18:51', '19', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('304', 'http://www.caihongyixue.com/', 'B625F1211B2E6FA5C1F75977DE5185DF', '2017-01-16', '12:53:28', '0', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('305', 'http://www.caihongyixue.com/', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:55:59', '83', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('306', 'http://www.caihongyixue.com/', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:57:22', '19', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('307', 'http://www.caihongyixue.com/news/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:57:41', '32', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('308', 'http://www.caihongyixue.com/news/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:58:16', '3', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('309', 'http://www.caihongyixue.com/', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:58:13', '3', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('310', 'http://www.caihongyixue.com/', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:58:35', '3468', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('311', 'http://www.caihongyixue.com/education/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '12:58:19', '16', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('312', 'http://www.caihongyixue.com/education/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '13:56:23', '0', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('313', 'http://www.caihongyixue.com/zjtd/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '14:09:52', '0', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('314', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '14:17:08', '0', '26', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('315', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:01:01', '91', '34', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('316', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:02:32', '12', '35', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('317', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:02:44', '36', '36', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('318', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:04:06', '0', '38', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('319', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:03:20', '46', '37', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('320', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:08:39', '49', '45', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('321', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:08:16', '23', '44', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('322', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:09:28', '142', '46', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('323', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:11:50', '6', '47', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('324', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:12:46', '19', '50', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('325', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:13:05', '59', '51', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('326', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:12:24', '22', '49', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('327', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:11:56', '28', '48', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('328', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:14:32', '23', '53', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('329', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:14:04', '28', '52', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('330', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:16:49', '6', '55', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('331', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:14:55', '114', '54', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('332', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:18:01', '3', '57', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('333', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:16:55', '66', '56', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('334', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:18:04', '21', '58', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('335', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:18:34', '64', '60', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('336', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:19:38', '95', '61', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('337', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:18:25', '9', '59', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('338', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:21:13', '5', '62', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('339', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:21:42', '52', '65', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('340', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:21:36', '6', '64', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('341', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:21:18', '18', '63', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('342', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:22:34', '0', '66', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('343', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:22:40', '43', '67', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('344', 'http://www.caihongyixue.com/', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:24:57', '5', '70', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('345', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:23:26', '91', '69', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('346', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:23:23', '3', '68', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('347', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:25:49', '47', '72', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('348', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:25:02', '47', '71', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('349', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:26:36', '305', '73', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('350', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:31:41', '116', '74', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('351', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:33:37', '3', '75', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('352', 'http://www.caihongyixue.com/zjtd/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:36', '16', '83', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('353', 'http://www.caihongyixue.com/education/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:21', '2', '80', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('354', 'http://www.caihongyixue.com/news/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:18', '3', '79', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('355', 'http://www.caihongyixue.com/news/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:23', '8', '81', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('356', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:00', '7', '77', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('357', 'http://www.caihongyixue.com/education/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:52', '0', '84', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('358', 'http://www.caihongyixue.com/education/index.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:31', '5', '82', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('359', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:34:07', '11', '78', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('360', 'http://www.caihongyixue.com/wzxw/30.jhtml', '4B9F3A3AD98662AE84638347ED076D0E', '2017-01-16', '15:33:40', '20', '76', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('361', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:57:25', '23', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('362', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:57:48', '9', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('363', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:58:08', '37', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('364', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:58:54', '0', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('365', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:57:57', '11', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('366', 'http://www.caihongyixue.com/wzxw/30.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '15:58:45', '9', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('367', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:01:54', '0', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('368', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:05:37', '4', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('369', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:04:01', '96', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('370', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:05:41', '14', '16', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('371', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:05:55', '21', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('372', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:06:16', '44', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('373', 'http://www.caihongyixue.com/zjtd/index_2.jspx?q=&channelId=76', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:07:00', '0', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('374', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:09:47', '0', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('375', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:15:03', '29', '27', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('376', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:15:32', '0', '28', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('377', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:16:21', '91', '30', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('378', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:17:52', '9', '31', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('379', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:46', '11', '36', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('380', 'http://www.caihongyixue.com/news/index_5.jspx?q=&channelId=94,95,96', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:01', '11', '32', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('381', 'http://www.caihongyixue.com/wzxw/23.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:12', '5', '33', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('382', 'http://www.caihongyixue.com/hzyd/167.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:27', '19', '35', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('383', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:17', '10', '34', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('384', 'http://www.caihongyixue.com/wzxw/113.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:18:57', '49', '37', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('385', 'http://www.caihongyixue.com/hzyd/167.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:20:12', '0', '39', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('386', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:19:46', '26', '38', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('387', 'http://www.caihongyixue.com/news/index_2.jspx?q=&channelId=94,95,96', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:08', '4', '42', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('388', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:45', '8', '45', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('389', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:53', '2', '46', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('390', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:55', '10', '47', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('391', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:24:05', '27', '48', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('392', 'http://www.caihongyixue.com/hzyd/169.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:12', '30', '43', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('393', 'http://www.caihongyixue.com/hzyd/169.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:23:42', '3', '44', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('394', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:24:32', '8', '49', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('395', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:24:40', '22', '50', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('396', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:25:08', '2', '53', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('397', 'http://www.caihongyixue.com/education/121.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:25:05', '3', '52', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('398', 'http://www.caihongyixue.com/hzyd/169.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:26:28', '0', '55', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('399', 'http://www.caihongyixue.com/hzyd/169.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:25:10', '78', '54', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('400', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:25:02', '3', '51', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('401', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:30:24', '63', '66', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('402', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:29:18', '66', '65', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('403', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:29:13', '5', '64', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('404', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:29:11', '2', '63', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('405', 'http://www.caihongyixue.com/education/128.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:31:27', '188', '67', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('406', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:36:07', '4', '69', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('407', 'http://www.caihongyixue.com/', '51341509BA903C07BBACD216CA17C115', '2017-01-16', '16:35:15', '124', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('408', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:36:11', '54', '70', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('409', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:37:05', '69', '71', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('410', 'http://www.caihongyixue.com/education/index.jhtml', '51341509BA903C07BBACD216CA17C115', '2017-01-16', '16:37:19', '10', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('411', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:38:25', '1113', '74', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('412', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:38:14', '5', '72', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('413', 'http://www.caihongyixue.com/', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:38:19', '6', '73', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('414', 'http://www.caihongyixue.com/education/index.jhtml', '51341509BA903C07BBACD216CA17C115', '2017-01-16', '16:37:29', '0', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('415', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:56:58', '7', '75', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('416', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:05', '7', '76', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('417', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:12', '4', '77', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('418', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:01', '6', '84', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('419', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:45', '16', '83', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('420', 'http://www.caihongyixue.com/wzxw/130.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:44', '1', '82', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('421', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:36', '2', '80', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('422', 'http://www.caihongyixue.com/wzxw/130.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:38', '6', '81', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('423', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:33', '3', '79', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('424', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:57:16', '17', '78', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('425', 'http://www.caihongyixue.com/zjtd/index_2.jspx?q=&channelId=76', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:26', '83', '90', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('426', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:59:49', '0', '91', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('427', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:07', '8', '85', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('428', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:15', '4', '86', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('429', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:19', '4', '87', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('430', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:24', '2', '89', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('431', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '16:58:23', '1', '88', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('432', 'http://www.caihongyixue.com/search.jspx?q=%E5%9B%9B%E5%B7%9D', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:13', '6', '103', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('433', 'http://www.caihongyixue.com/search.jspx?q=%E4%B9%A0%E8%BF%91%E5%B9%B3', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:19', '7', '104', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('434', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:55', '18', '108', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('435', 'http://www.caihongyixue.com/education/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:09:13', '0', '109', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('436', 'http://www.caihongyixue.com/news/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:44', '11', '107', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('437', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:36', '8', '106', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('438', 'http://www.caihongyixue.com/zjtd/index.jhtml', 'C5B3B780DABB26FE9E24A13E96544B67', '2017-01-16', '17:08:26', '10', '105', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('439', 'http://www.caihongyixue.com/', '66EB2E1CD7673498772EBC8F194D5FCD', '2017-01-16', '17:19:49', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('440', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:41:43', '97', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('441', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:43:20', '31', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('442', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:43:51', '19', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('443', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:44:10', '81', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('444', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:45:31', '77', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('445', 'http://www.caihongyixue.com/', '752C274C9AC0A9C9399CEBB27F933009', '2017-01-16', '17:46:48', '0', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('446', 'http://www.caihongyixue.com/', 'CF202098AACB05C9DD5A51B6BA9762E1', '2017-01-16', '17:49:32', '11', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('447', 'http://www.caihongyixue.com/', 'CF202098AACB05C9DD5A51B6BA9762E1', '2017-01-16', '17:51:27', '0', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('448', 'http://www.caihongyixue.com/', 'CF202098AACB05C9DD5A51B6BA9762E1', '2017-01-16', '17:49:43', '104', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('449', 'http://192.168.1.185:2021/education/index.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:06:40', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('450', 'http://192.168.1.185:2021/education/index.jhtml#0', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:09:11', '128', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('451', 'http://192.168.1.185:2021/education/index.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:11:19', '73', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('452', 'http://192.168.1.185:2021/education/index.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:12:32', '0', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('453', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:17:45', '20', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('454', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:17:32', '13', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('455', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:18:05', '30', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('456', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:18:59', '28', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('457', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:18:35', '3', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('458', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:18:38', '4', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('459', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:18:42', '17', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('460', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:19:27', '100', '16', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('461', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:21:07', '13', '17', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('462', 'http://192.168.1.185:2021/education/index.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:23:08', '99', '19', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('463', 'http://192.168.1.185:2021/gywm.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:21:20', '108', '18', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('464', 'http://192.168.1.185:2021/zjtd/index.jhtml', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:24:47', '409', '20', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('465', 'http://www.caihongyixue.com/', 'CF202098AACB05C9DD5A51B6BA9762E1', '2017-01-16', '18:27:58', '0', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('466', 'http://192.168.1.185:2021/zjtd/index.jhtml#0', 'EB777ED6CCC83A370A37149335B70A54', '2017-01-16', '18:31:36', '0', '21', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('467', 'http://192.168.1.185:2021/education/index.jhtml', '7D394AA727DDEEE23B05B872E6FAD803', '2017-01-16', '19:27:19', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('468', 'http://192.168.1.185:2021/education/index.jhtml', 'D324207F889D5846DED34F89C1D4E6C7', '2017-01-16', '19:54:09', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -4161,7 +4191,7 @@ CREATE TABLE `jc_site_access_statistic` (
   PRIMARY KEY (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`),
   CONSTRAINT `fk_jc_access_statistic_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=364 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=368 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
 
 -- ----------------------------
 -- Records of jc_site_access_statistic
@@ -4173,6 +4203,10 @@ INSERT INTO `jc_site_access_statistic` VALUES ('360', '2017-01-14', '99', '1', '
 INSERT INTO `jc_site_access_statistic` VALUES ('361', '2017-01-14', '48', '1', '4', '12', '-20142', '1', 'source', '直接访问');
 INSERT INTO `jc_site_access_statistic` VALUES ('362', '2017-01-14', '4', '1', '1', '4', '1408', '1', 'link', 'http://bbs.caihongyixue.com');
 INSERT INTO `jc_site_access_statistic` VALUES ('363', '2017-01-14', '95', '1', '5', '19', '2238', '1', 'link', 'http://www.caihongyixue.com');
+INSERT INTO `jc_site_access_statistic` VALUES ('364', '2017-01-15', '283', '2', '13', '21', '-4642', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('365', '2017-01-15', '9', '1', '1', '9', '1350', '1', 'source', '外部链接');
+INSERT INTO `jc_site_access_statistic` VALUES ('366', '2017-01-15', '274', '1', '12', '22', '-5142', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('367', '2017-01-15', '9', '1', '1', '9', '1350', '1', 'link', 'http://192.168.1.104:2021');
 
 -- ----------------------------
 -- Table structure for jc_site_attr
@@ -4189,16 +4223,16 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '323');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '34');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '529');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '48');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppkey', '0');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppSecret', '0');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '24');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '0');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '224');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '323');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '34');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '16');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '230');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '14');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '430');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '529');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '48');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '30');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -4451,8 +4485,9 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-15 21:55:04', '127.0.0.1', '2299', '9', '334178', '14', '2017-01-16', '1', '0', '0', '0', '4', '103', 'C435E0A922FD5F12773E2607CB5D6793');
+INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-16 19:53:40', '192.168.1.147', '2310', '9', '334178', '14', '2017-01-16', '1', '0', '0', '0', '4', '103', 'D324207F889D5846DED34F89C1D4E6C7');
 INSERT INTO `jc_user` VALUES ('2', '2', null, 'caihong', '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 10:59:48', '127.0.0.1', '2', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '0', '168EB913FE4CF9BAF92663A4829D07D6');
+INSERT INTO `jc_user` VALUES ('3', '1', null, 'caihong1', '77219569@qq.com', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-16 18:12:28', '192.168.1.147', '1', '0', '0', '0', '2017-01-16', '0', '0', '0', '0', '0', '0', 'EB777ED6CCC83A370A37149335B70A54');
 
 -- ----------------------------
 -- Table structure for jc_user_account
@@ -4539,6 +4574,7 @@ CREATE TABLE `jc_user_ext` (
 -- ----------------------------
 INSERT INTO `jc_user_ext` VALUES ('1', '彩虹医学网', '1', '2015-04-09 00:00:00', null, '四川', null, null, '1110999', '121212', '/user/images/201701/1416103162re.jpg', '');
 INSERT INTO `jc_user_ext` VALUES ('2', '彩虹', '1', null, null, null, null, null, null, null, null, null);
+INSERT INTO `jc_user_ext` VALUES ('3', null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_user_menu
@@ -5336,11 +5372,11 @@ CREATE TABLE `jo_config` (
 -- Records of jo_config
 -- ----------------------------
 INSERT INTO `jo_config` VALUES ('email_encoding', '');
-INSERT INTO `jo_config` VALUES ('email_host', 'smtp.qq.com');
-INSERT INTO `jo_config` VALUES ('email_password', 'dycbaby0713');
+INSERT INTO `jo_config` VALUES ('email_host', 'smtp.126.com');
+INSERT INTO `jo_config` VALUES ('email_password', 'caihongyixue888');
 INSERT INTO `jo_config` VALUES ('email_personal', '彩虹医学网');
 INSERT INTO `jo_config` VALUES ('email_port', '25');
-INSERT INTO `jo_config` VALUES ('email_username', '77219569@qq.com');
+INSERT INTO `jo_config` VALUES ('email_username', 'rishiding@126.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval', '30');
 INSERT INTO `jo_config` VALUES ('login_error_times', '3');
 INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject', '找回彩虹医学网密码');
@@ -5427,10 +5463,11 @@ CREATE TABLE `jo_user` (
   `activation_code` char(32) DEFAULT NULL COMMENT '激活码',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('1', 'admin', 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-15 21:55:04', '127.0.0.1', '1168', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('1', 'admin', 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-01-16 19:53:40', '192.168.1.147', '1179', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('2', 'caihong', '', 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-15 10:59:48', '127.0.0.1', '0', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('3', 'caihong1', '77219569@qq.com', 'd33759a5e72e88539209976572d78b62', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-16 18:12:28', '192.168.1.147', '1', null, null, null, '0', null, '1', null);
