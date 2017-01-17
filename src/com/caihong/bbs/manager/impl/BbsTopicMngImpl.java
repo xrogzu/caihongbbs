@@ -580,13 +580,17 @@ public class BbsTopicMngImpl implements BbsTopicMng {
 	private BbsTopic createTopic(Integer category,Integer categoryType) {
 		if (category != null ) {
 			if(category == TOPIC_VOTE){
-				if(categoryType==1){
-					BbsVoteTopic topic = new BbsVoteTopic();
-					return topic;
-				}else if(categoryType==2){
-					BbsVoteTopicSingle topic=new BbsVoteTopicSingle();
-					return topic;
+				if(categoryType!=null){
+					if(categoryType==1){
+						BbsVoteTopic topic = new BbsVoteTopic();
+						return topic;
+					}else if(categoryType==2){
+						BbsVoteTopicSingle topic=new BbsVoteTopicSingle();
+						return topic;
+					}
 				}
+				BbsVoteTopic topic=new BbsVoteTopic();
+				return topic;
 			}
 		}
 		return new BbsTopic();
