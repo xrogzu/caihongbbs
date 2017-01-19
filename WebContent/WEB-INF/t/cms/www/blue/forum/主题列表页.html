@@ -35,7 +35,7 @@
 		$('#title'+id).hide();
 		$('#link'+id).text(title).show();
 	}
-	function manageTopic(url) {
+	function manageTopic(url,msg) {
 		var batchChecks = document.getElementsByName('topicIds');
 		var hasChecked = false;
 		for(var i=0; i<batchChecks.length; i++) {
@@ -45,10 +45,10 @@
 			}
 		}
 		if(!hasChecked) {
-			alert('请选择要操作的数据！');
+			alert('请选择'+msg+'要操作的数据！');
 			return;
 		}
-		if(!confirm("确认删除主题吗?")) {
+		if(!confirm("确认"+msg+"主题吗?")) {
 			return;
 		}
 		var form = document.getElementById('jvForm');
@@ -277,21 +277,21 @@
           <td colspan="4" style="line-height: 23px; text-align: left">
    [#if uptop]
    <input id="checkAll" type="checkbox" onclick="checkall();" value="on" />全选
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_upTopInput.jspx');" value="置顶" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_upTopInput.jspx','置顶');" value="置顶" />
   [/#if]
   [#if manager]
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_primeInput.jspx');" value="精华" />
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_highlightInput.jspx');" value="加亮" />
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_lockInput.jspx');" value="锁定/打开" />
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_upordownInput.jspx');" value="提升/下沉" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_primeInput.jspx','精华');" value="精华" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_highlightInput.jspx','加亮');" value="加亮" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_lockInput.jspx','锁定/打开');" value="锁定/打开" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_upordownInput.jspx','提升/下沉');" value="提升/下沉" />
   [/#if]
   [#if sheild]
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_moveInput.jspx');" value="移动" />
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_shieldInput.jspx');" value="屏蔽" />
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_shieldInput.jspx');" value="解除屏蔽" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_moveInput.jspx','移动');" value="移动" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_shieldInput.jspx','屏蔽');" value="屏蔽" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/v_shieldInput.jspx','解除屏蔽');" value="解除屏蔽" />
   [/#if]
   [#if moderators]
-  <input class="bta" type="button" onclick="manageTopic('${base}/topic/o_delete.jspx');" value="删除" />
+  <input class="bta" type="button" onclick="manageTopic('${base}/topic/o_delete.jspx','删除');" value="删除" />
   [/#if]          </td>
 		</tr>		
 		[/#if]

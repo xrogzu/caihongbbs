@@ -153,7 +153,7 @@ function VoteResult(){
           <th class="r_one" id="td_tpc" valign="top" height="100%" style="border-top-width: 0pt; padding-right: 0px; padding-left: 0px; border-left-width: 0pt; border-bottom-width: 0pt; padding-bottom: 0px; overflow: hidden; padding-top: 0px; border-right-width: 0pt">
           <div class="tiptop"><span class="fl"><span class="b">${post.indexCount}#</span></span> <span class="fl gray" style="white-space: nowrap">&nbsp; 发表于:${post.createTime?string('yyyy-MM-dd HH:mm:ss')}&nbsp; IP:[#if user??&&user.moderator]${post.posterIp!}[#else][#list post.posterIp?split('.') as x][#if x_index%2==0]${x}.[/#if][/#list]*.*[/#if]
 		  </span>
-          <div class="fr black" style="overflow: hidden"><a href="${topic.url}">显示全部</a> <a href="#">只看该作者</a></div>
+          <div class="fr black" style="overflow: hidden"><a href="${topic.url}">显示全部</a> </div>
           <div class="c"></div>
           </div>
           <div class="c"></div>
@@ -281,7 +281,7 @@ function VoteResult(){
           <div class="fl readbot">
           [#if user??]
           [#if moderators||user.id==creater.id]
-          <a href="${base}/post/v_edit${post.id!}.jspx">编辑</a>
+          <a href="${base}/post/v_edit${post.id!}.jspx">编辑</a>          
           [/#if]
           [#if moderators]
           [#if !post.shield]<a href="${base}/post/v_shield${post.id!}_${-1}.jspx">屏蔽[#else]<a href="${base}/post/v_shield${post.id!}_${0}.jspx">取消屏蔽[/#if]</a> 

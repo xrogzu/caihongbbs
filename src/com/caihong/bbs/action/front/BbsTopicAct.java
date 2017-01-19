@@ -521,6 +521,15 @@ public class BbsTopicAct {
 		}
 		return "redirect:" + forum.getRedirectUrl();
 	}
+	
+	@RequestMapping("/topic/o_delete{id}.jspx")
+	public String deleteById(@PathVariable Integer id, Integer pageNo,
+			HttpServletRequest request, ModelMap model) {
+		BbsTopic bean = manager.deleteById(id);
+		log.info("delete BbsTopic id={}", bean.getId());
+		
+		return null;
+	}
 
 	@RequestMapping("/topic/vote_result.jspx")
 	public String result(Integer tid, HttpServletRequest request,
