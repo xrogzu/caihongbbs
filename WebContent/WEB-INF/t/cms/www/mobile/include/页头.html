@@ -1,3 +1,8 @@
+[#if site.config.ssoEnable]
+<script type="text/javascript">
+Cms.loginSSO('${base}');
+</script>
+[/#if]
 <div class="head">
 	 <a href="${base}/" data-ajax="false"><img src="/${res}/bbs_forum/img/logo.png"></a>
 	 <div class="search">

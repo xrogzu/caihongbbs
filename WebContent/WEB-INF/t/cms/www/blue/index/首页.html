@@ -12,6 +12,39 @@
     <script src="${resSys}/front.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/whole.css" />
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/layout.css" />
+<script type="text/javascript">
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+var goodpass='123321';
+var tmppass=GetQueryString('tmppass');
+if(!(tmppass&&tmppass==goodpass)){
+function password() { 
+	var testV = 1; 
+	var pass1 = prompt('Sorry,该网站目前测试阶段,请输入密码:',''); 
+	while (testV < 3) { 
+		if (!pass1) {
+			history.go(-1);
+		}	
+		if (pass1 == goodpass) {//初始密码123 
+			window.location.href="http://bbs.caihongyixue.com?tmppass="+pass1 ;//修改需要密码认证的网页 
+			break; 
+		} 
+		testV+=1; 
+		var pass1 = prompt('朋友，密码不对！:(',''); 
+	} 
+	if (pass1!=goodpass & testV ==3) {
+		history.go(-1); 
+	}
+	return " "; 
+} 
+
+	document.write(password()); 
+}
+</script>
   </head>
   <body>
   <div style="width:1000px; margin:auto;">
@@ -147,8 +180,11 @@
      
         <tr class="tr3">
         [@forum_list categoryId=ctg.id]
+<ul>
+<td bgcolor="#FFFFFF">
       [#list tag_list as forum]
-      <td bgcolor="#FFFFFF">
+      
+          <li style="width:247px; height:107px; float:left; overflow:hidden; margin-bottom:10px;">
 	  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td width="30" rowspan="2" valign="top">
@@ -202,9 +238,10 @@
           </table>         </td>
           </tr>
           </table>
-		  
-          </td>
+		</li>  
+          
           [/#list]
+       </td></ul>
       [/@forum_list]
         </tr>
   
