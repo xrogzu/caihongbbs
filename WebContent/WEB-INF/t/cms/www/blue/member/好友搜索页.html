@@ -60,9 +60,10 @@
 	 	<div id="suggest" style="border: 1px solid rgb(148, 148, 148); width: 130px;display:none"></div>
     	[@friend_page username=kw count=10]
     	[#list tag_pagination.list as friend]
+    	[#if user.id!=friend.id]
     		${friend.username!}----------
     		<span id="u${friend.id}">
-    		[#if user.id!=friend.id]
+    		
     		[@friendship userId=user.id friendId=friend.id]
     		[#if tag_bean??]
     			[#if tag_bean.status==0]
@@ -76,10 +77,11 @@
     		<a href="javascript:apply('${friend.id}','${friend.username}')">加为好友</a>
     		[/#if]
     		[/@friendship]
-    		[/#if]
+    		
     		</span>
     		<a href="${base}/member/sendMsg.jhtml?username=${friend.username!}&type=3">打招呼</a>
     		<br/>
+    	[/#if]
     	[/#list]
    	  	[/@friend_page]
      </div>
