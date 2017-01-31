@@ -292,7 +292,7 @@ function VoteResult(){
           <div class="fl readbot">
           [#if user??]
           [#if moderators||user.id==creater.id]
-          <a href="${base}/post/v_edit${post.id!}.jspx">编辑</a>
+          <a href="${base}/post/v_edit${post.id!}.jspx">编辑</a>         
           [/#if]
           [#if moderators]
           [#if !post.shield]<a href="${base}/post/v_shield${post.id!}_${-1}.jspx">屏蔽[#else]<a href="${base}/post/v_shield${post.id!}_${0}.jspx">取消屏蔽[/#if]</a> 

@@ -136,6 +136,14 @@ public class BbsPostAct {
 		return FrontUtils.getTplPath(request, site,
 				TPLDIR_POST, TPL_POSTEDIT);
 	}
+	
+	@RequestMapping("/post/v_delete{id}.jspx")
+	public String delete(@PathVariable Integer id, Integer pageNo,
+			HttpServletRequest request, ModelMap model) {
+		BbsPost bean=manager.deleteById(id);
+		log.info("delete BbsPost id={}", bean.getId());
+		return null;
+	}
 
 	@RequestMapping("/post/o_save.jspx")
 	public String save(BbsPost bean, Integer topicId, Integer postTypeId,String title,
