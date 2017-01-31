@@ -40,6 +40,7 @@ public abstract class BaseBbsUser implements Serializable {
 	public static String PROP_REGISTER_IP = "registerIp";
 	public static String PROP_POST_TODAY = "postToday";
 	public static String PROP_USERNAME = "username";
+	public static String PROP_TELPHONE = "telphone";
 	public static String PROP_LAST_POST_TIME = "lastPostTime";
 
 	// constructors
@@ -100,6 +101,7 @@ public abstract class BaseBbsUser implements Serializable {
 
 	// fields
 	private java.lang.String username;
+	private java.lang.String telphone;
 	private java.lang.String email;
 	private java.util.Date registerTime;
 	private java.lang.String registerIp;
@@ -788,6 +790,14 @@ public abstract class BaseBbsUser implements Serializable {
 
 	public String toString() {
 		return super.toString();
+	}
+
+	public java.lang.String getTelphone() {
+		return telphone;
+	}
+
+	public void setTelphone(java.lang.String telphone) {
+		this.telphone = telphone;
 	}
 
 }

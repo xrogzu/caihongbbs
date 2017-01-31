@@ -26,7 +26,7 @@ public abstract class BaseUnifiedUser  implements Serializable {
 	public static String PROP_ID = "id";
 	public static String PROP_REGISTER_IP = "registerIp";
 	public static String PROP_USERNAME = "username";
-
+	public static String PROP_TELPHONE = "telphone";
 
 	// constructors
 	public BaseUnifiedUser () {
@@ -72,6 +72,7 @@ public abstract class BaseUnifiedUser  implements Serializable {
 
 	// fields
 	private java.lang.String username;
+	private java.lang.String telphone;
 	private java.lang.String email;
 	private java.lang.String password;
 	private java.util.Date registerTime;
@@ -127,6 +128,14 @@ public abstract class BaseUnifiedUser  implements Serializable {
 		this.username = username;
 	}
 
+
+	public java.lang.String getTelphone() {
+		return telphone;
+	}
+
+	public void setTelphone(java.lang.String telphone) {
+		this.telphone = telphone;
+	}
 
 	/**
 	 * Return the value associated with the column: email
