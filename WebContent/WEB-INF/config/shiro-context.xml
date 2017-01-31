@@ -7,7 +7,7 @@
 	
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl" value="/login.jspx" />
+		<property name="loginUrl" value="http://www.caihongyixue.com/login.jspx" />
 		<property name="successUrl" value="/" />
 		<property name="filters">
 			<util:map>
