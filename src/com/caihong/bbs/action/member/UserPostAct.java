@@ -148,6 +148,7 @@ public class UserPostAct {
 		model.put("user", user);
 		model.addAttribute("items", items);
 		FrontUtils.frontPageData(request, model);
+		model.put("msg", "保存成功");
 		return FrontUtils.getTplPath(request, site,
 				TPLDIR_MEMBER, MEMBER_INFORM);
 	}
