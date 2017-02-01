@@ -89,7 +89,7 @@ public class RegisterAct {
 	}
 
 	@RequestMapping(value = "/register.jspx", method = RequestMethod.POST)
-	public String submit(String username, String email, String password,
+	public String submit(String username, String email,String telphone, String password,
 			BbsUserExt userExt, String captcha, String nextUrl,
 			HttpServletRequest request, HttpServletResponse response,
 			ModelMap model) throws IOException {
@@ -124,9 +124,9 @@ public class RegisterAct {
 				model.addAttribute("status", 5);
 			} else {
 				try {
-					user = bbsUserMng.registerMember(username, email, password, ip,
+					user = bbsUserMng.registerMember(username, email, telphone,password, ip,
 							groupId, userExt,attrs, false, sender, msgTpl);
-					callWebService(username, password, email, userExt);
+					callWebService(username, password, email, telphone,groupId+"",userExt);
 					bbsConfigEhCache.setBbsConfigCache(0, 0, 0, 1, user, site.getId());
 					model.addAttribute("status", 0);
 				} catch (Exception e) {
@@ -148,9 +148,9 @@ public class RegisterAct {
 			}
 		}else{ 
 			try {
-				user = bbsUserMng.registerMember(username, email, false,password,
+				user = bbsUserMng.registerMember(username, email,telphone, false,password,
 						  ip, groupId, userExt,attrs);
-				callWebService(username, password, email, userExt);
+				callWebService(username, password, email,telphone,groupId+"", userExt);
 			} catch (Exception e) {
 				model.addAttribute("status", 200);
 				model.addAttribute("message", e.getMessage());
@@ -168,7 +168,7 @@ public class RegisterAct {
 	
 	
 	@RequestMapping(value = "/appregister.jspx")
-	public void appsubmit(String username, String email, String password,
+	public void appsubmit(String username, String email,String telphone,String password,
 			HttpServletRequest request, HttpServletResponse response,
 			ModelMap model) throws JSONException {
 		String callback = request.getParameter("callback"); 
@@ -186,7 +186,7 @@ public class RegisterAct {
 			    BbsUser user = null; 
 			    try {
 			    	BbsUserExt userExt = new BbsUserExt();
-					user = bbsUserMng.registerMember(username, email,false, password,ip, groupId, userExt,attrs);
+					user = bbsUserMng.registerMember(username, email,telphone,false, password,ip, groupId, userExt,attrs);
 			    } catch (Exception e) {
 					log.error("send email exception.", e);
 				}
@@ -269,13 +269,17 @@ public class RegisterAct {
 		ResponseUtils.renderJson(response, "true");
 	}
 	
-	private void callWebService(String username,String password,String email,BbsUserExt userExt){
+	private void callWebService(String username,String password,String email,String telphone,String groupId,BbsUserExt userExt){
 		if(bbsWebserviceMng.hasWebservice(BbsWebservice.SERVICE_TYPE_ADD_USER)){
 			Map<String,String>paramsValues=new HashMap<String, String>();
 			paramsValues.put("username", username);
 			paramsValues.put("password", password);
+			
 			if(StringUtils.isNotBlank(email)){
 				paramsValues.put("email", email);
+			}
+			if(StringUtils.isNotBlank(telphone)){
+				paramsValues.put("telphone", telphone);
 			}
 			if(StringUtils.isNotBlank(userExt.getRealname())){
 				paramsValues.put("realname", userExt.getRealname());
@@ -285,6 +289,9 @@ public class RegisterAct {
 			}
 			if(StringUtils.isNotBlank(userExt.getMoble())){
 				paramsValues.put("tel",userExt.getMoble());
+			}
+			if(StringUtils.isNotBlank(groupId)){
+				paramsValues.put("groupId", groupId);
 			}
 			bbsWebserviceMng.callWebService(BbsWebservice.SERVICE_TYPE_ADD_USER, paramsValues);
 		}

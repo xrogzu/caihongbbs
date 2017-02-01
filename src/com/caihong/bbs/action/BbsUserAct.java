@@ -137,12 +137,12 @@ public class BbsUserAct {
 
 	@RequestMapping("/user/o_save.do")
 	public String save(BbsUser bean, BbsUserExt ext, String username,Boolean official,
-			String email, String password, Integer groupId,
+			String email, String telphone,String password, Integer groupId,
 			HttpServletRequest request, ModelMap model) throws UnsupportedEncodingException, MessagingException {
 		String ip = RequestUtils.getIpAddr(request);
 		Map<String,String>attrs=RequestUtils.getRequestMap(request, "attr_");
-		bean = manager.registerMember(username, email,official, password, ip, groupId,ext,attrs);
-		callWebService(username, password, email, ext,BbsWebservice.SERVICE_TYPE_ADD_USER);
+		bean = manager.registerMember(username, email,telphone,official, password, ip, groupId,ext,attrs);
+		callWebService(username, password, email,telphone, groupId,ext,BbsWebservice.SERVICE_TYPE_ADD_USER);
 		if(official!=null&&official){
 			return "redirect:v_officialuser_list.do";
 		}else{
@@ -151,12 +151,12 @@ public class BbsUserAct {
 	}
 
 	@RequestMapping("/user/o_update.do")
-	public String update(Integer id, String email, String password,
+	public String update(Integer id, String email,String telphone, String password,
 			Boolean disabled, BbsUserExt ext, Integer groupId,
 			HttpServletRequest request, ModelMap model) {
 		Map<String,String>attrs=RequestUtils.getRequestMap(request, "attr_");
-		BbsUser bean=manager.updateMember(id, email, password, disabled, null, null, ext,attrs,groupId);
-		callWebService(bean.getUsername(), password, email, ext,BbsWebservice.SERVICE_TYPE_UPDATE_USER);
+		BbsUser bean=manager.updateMember(id, email, telphone,password, disabled, null, null, ext,attrs,groupId);
+		callWebService(bean.getUsername(), password, email, telphone,groupId,ext,BbsWebservice.SERVICE_TYPE_UPDATE_USER);
 		if(bean.getOfficial()!=null&&bean.getOfficial()){
 			return "redirect:v_officialuser_list.do";
 		}else{
@@ -181,13 +181,16 @@ public class BbsUserAct {
 		}
 	}
 	
-	private void callWebService(String username,String password,String email,BbsUserExt userExt,String operate){
+	private void callWebService(String username,String password,String email,String telphone,Integer groupId,BbsUserExt userExt,String operate){
 		if(bbsWebserviceMng.hasWebservice(operate)){
 			Map<String,String>paramsValues=new HashMap<String, String>();
 			paramsValues.put("username", username);
 			paramsValues.put("password", password);
 			if(StringUtils.isNotBlank(email)){
 				paramsValues.put("email", email);
+			}
+			if(StringUtils.isNotBlank(telphone)){
+				paramsValues.put("telphone", telphone);
 			}
 			if(StringUtils.isNotBlank(userExt.getRealname())){
 				paramsValues.put("realname", userExt.getRealname());
@@ -197,6 +200,9 @@ public class BbsUserAct {
 			}
 			if(StringUtils.isNotBlank(userExt.getMoble())){
 				paramsValues.put("tel",userExt.getMoble());
+			}
+			if(groupId!=null){
+				paramsValues.put("groupId",groupId+"");
 			}
 			bbsWebserviceMng.callWebService(operate, paramsValues);
 		}

@@ -77,9 +77,9 @@ public class BbsUserMngImpl implements BbsUserMng {
 		return entity;
 	}
 
-	public BbsUser registerMember(String username, String email,Boolean official,
+	public BbsUser registerMember(String username, String email,String telphone,Boolean official,
 			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr) throws UnsupportedEncodingException, MessagingException {
-		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,
+		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,telphone,
 				password, ip);
 		BbsUser user = new BbsUser();
 		user.forMember(unifiedUser);
@@ -109,10 +109,10 @@ public class BbsUserMngImpl implements BbsUserMng {
 		return user;
 	}
 
-	public BbsUser registerMember(String username, String email,
+	public BbsUser registerMember(String username, String email,String telphone,
 			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr,
 			Boolean activation, EmailSender sender, MessageTemplate msgTpl) throws UnsupportedEncodingException, MessagingException {
-		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,
+		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,telphone,
 				password, ip, activation, sender, msgTpl);
 		BbsUser user = new BbsUser();
 		user.forMember(unifiedUser);
@@ -166,14 +166,14 @@ public class BbsUserMngImpl implements BbsUserMng {
 		return unifiedUserMng.isPasswordValid(id, password);
 	}
 
-	public void updatePwdEmail(Integer id, String password, String email) {
+	public void updatePwdEmail(Integer id, String password, String email,String telphone) {
 		BbsUser user = findById(id);
 		if (!StringUtils.isBlank(email)) {
 			user.setEmail(email);
 		} else {
 			user.setEmail(null);
 		}
-		unifiedUserMng.update(id, password, email);
+		unifiedUserMng.update(id, password, email,telphone);
 	}
 	
 	public void updateGroup(Integer id, Integer groupId){
@@ -181,12 +181,12 @@ public class BbsUserMngImpl implements BbsUserMng {
 		user.setGroup(bbsUserGroupMng.findById(groupId));
 	}
 
-	public BbsUser saveAdmin(String username, String email, String password,
+	public BbsUser saveAdmin(String username, String email, String telphone,String password,
 			String ip, boolean viewOnly, boolean selfAdmin, int rank,
 			Integer groupId, Integer[] roleIds, Integer[] channelIds,
 			Integer[] siteIds, Byte[] steps, Boolean[] allChannels,
 			BbsUserExt userExt) throws UnsupportedEncodingException, MessagingException {
-		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,
+		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,telphone,
 				password, ip);
 		BbsUser user = new BbsUser();
 		user.forAdmin(unifiedUser, viewOnly, selfAdmin, rank);
@@ -217,11 +217,11 @@ public class BbsUserMngImpl implements BbsUserMng {
 		BbsUser user = dao.updateByUpdater(updater);
 		user.setGroup(bbsUserGroupMng.findById(groupId));
 		bbsUserExtMng.update(ext, user);
-		unifiedUserMng.update(bean.getId(), password, bean.getEmail());
+		unifiedUserMng.update(bean.getId(), password, bean.getEmail(),bean.getTelphone());
 		return user;
 	}
 
-	public BbsUser updateMember(Integer id, String email, String password,
+	public BbsUser updateMember(Integer id, String email,String telphone, String password,
 			Boolean isDisabled, String signed, String avatar, BbsUserExt ext,Map<String,String>attr,
 			Integer groupId) {
 		BbsUser entity = findById(id);
@@ -247,21 +247,24 @@ public class BbsUserMngImpl implements BbsUserMng {
 			attrOrig.putAll(attr);
 		}
 		bbsUserExtMng.update(ext, entity);
-		unifiedUserMng.update(id, password, email);
+		unifiedUserMng.update(id, password, email,telphone);
 		return entity;
 	}
 	
-	public BbsUser updateMember(Integer id, String email, String password,String realname,Boolean gender,String tel){
+	public BbsUser updateMember(Integer id, String email,String telphone, String password,String realname,Boolean gender,String tel,Integer groupId){
 		BbsUser entity = findById(id);
 		if (!StringUtils.isBlank(email)) {
 			entity.setEmail(email);
+		}
+		if (groupId != null) {
+			entity.setGroup(bbsUserGroupMng.findById(groupId));
 		}
 		BbsUserExt ext = entity.getUserExt();
 		ext.setRealname(realname);
 		ext.setGender(gender);
 		ext.setMoble(tel);
 		bbsUserExtMng.update(ext, entity);
-		unifiedUserMng.update(id, password, email);
+		unifiedUserMng.update(id, password, email,telphone);
 		return entity;
 	}
 

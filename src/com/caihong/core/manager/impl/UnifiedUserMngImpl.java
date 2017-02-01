@@ -219,11 +219,11 @@ public class UnifiedUserMngImpl implements UnifiedUserMng {
 		return entity;
 	}
 
-	public UnifiedUser save(String username, String email, String password,
+	public UnifiedUser save(String username, String email,String telphone, String password,
 			String ip) throws UnsupportedEncodingException, MessagingException {
-		return save(username, email, password, ip, true, null, null);
+		return save(username, email,telphone, password, ip, true, null, null);
 	}
-	public UnifiedUser save(String username, String email, String password,
+	public UnifiedUser save(String username, String email, String telphone,String password,
 			String ip, Boolean activation, EmailSender sender,
 			MessageTemplate msgTpl) throws UnsupportedEncodingException, MessagingException {
 		Date now = new Timestamp(System.currentTimeMillis());
@@ -238,6 +238,7 @@ public class UnifiedUserMngImpl implements UnifiedUserMng {
 		user.setLoginCount(0);
 		user.setActivation(activation);
 		user.setErrorCount(0);
+		user.setTelphone(telphone);
 		dao.save(user);
 		if (!activation) {
 			String uuid = StringUtils.remove(UUID.randomUUID().toString(), '-');
@@ -250,12 +251,17 @@ public class UnifiedUserMngImpl implements UnifiedUserMng {
 	/**
 	 * @see UnifiedUserMng#update(Integer, String, String)
 	 */
-	public UnifiedUser update(Integer id, String password, String email) {
+	public UnifiedUser update(Integer id, String password, String email,String telphone) {
 		UnifiedUser user = findById(id);
 		if (!StringUtils.isBlank(email)) {
 			user.setEmail(email);
 		} else {
 			user.setEmail(null);
+		}
+		if (!StringUtils.isBlank(telphone)) {
+			user.setTelphone(telphone);
+		} else {
+			user.setTelphone(null);
 		}
 		if (!StringUtils.isBlank(password)) {
 			user.setPassword(pwdEncoder.encodePassword(password));

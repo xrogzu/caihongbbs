@@ -363,6 +363,7 @@ public class BbsUser extends BaseBbsUser implements PriorityInterface {
 		setId(u.getId());
 		setUsername(u.getUsername());
 		setEmail(u.getEmail());
+		setTelphone(u.getTelphone());
 		setRegisterIp(u.getRegisterIp());
 		setRegisterTime(u.getRegisterTime());
 		setLastLoginIp(u.getLastLoginIp());

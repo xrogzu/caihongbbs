@@ -26,7 +26,7 @@ public class PersonalAct {
 	}
 
 	@RequestMapping("/personal/o_profile.do")
-	public String profileUpdate(String origPwd, String newPwd, String email,
+	public String profileUpdate(String origPwd, String newPwd, String email,String telphone,
 			String realname, HttpServletRequest request, ModelMap model) {
 		BbsUser user = CmsUtils.getUser(request);
 		WebErrors errors = validatePasswordSubmit(user.getId(), origPwd,
@@ -37,7 +37,7 @@ public class PersonalAct {
 		BbsUserExt ext = user.getUserExt();
 		ext.setRealname(realname);
 		bbsUserExtMng.update(ext, user);
-		bbsUserMng.updatePwdEmail(user.getId(), newPwd, email);
+		bbsUserMng.updatePwdEmail(user.getId(), newPwd, email,telphone);
 		model.addAttribute("message", "global.success");
 		return profileEdit(request, model);
 	}

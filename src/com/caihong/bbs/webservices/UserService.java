@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import com.caihong.bbs.cache.BbsConfigEhCache;
 import com.caihong.bbs.entity.BbsUser;
 import com.caihong.bbs.entity.BbsUserExt;
 import com.caihong.bbs.entity.BbsUserGroup;
@@ -31,13 +32,26 @@ public class UserService  extends SpringBeanAutowiringSupport{
 	private static final String RESPONSE_CODE_USER_DELETE_ERROR="106";
 	private static final String LOCAL_IP="127.0.0.1";
 	
-	public String addUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel) {
+	private static final Integer SITE_ID=1;
+	private static final Integer GROUP_DOCTOR_ID=13; //认证医生group id
+	private static final Integer CMS_GROUP_DOCTOR_ID=2; //网站认证医生group id
+	
+	
+	public String addUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel,String telphone,String groupId) {
 		String responseCode=RESPONSE_CODE_AUTH_ERROR;
 		if(validate(auth_username, auth_password)){
 			if(StringUtils.isBlank(username)||StringUtils.isBlank(password)){
 				responseCode=RESPONSE_CODE_PARAM_REQUIRED;
 			}else{
-				BbsUserGroup group = bbsConfigMng.get().getRegisterGroup();
+				BbsUserGroup group =null;
+				Integer group_id;
+				
+				if(groupId!=null&&new Integer(groupId).equals(CMS_GROUP_DOCTOR_ID)){
+					group_id=GROUP_DOCTOR_ID;
+				}else{
+					group=bbsConfigMng.get().getRegisterGroup();
+					group_id=group.getId();
+				}
 				BbsUserExt userExt=new BbsUserExt();
 				userExt.setRealname(realname);
 				if(StringUtils.isNotBlank(sex)){
@@ -49,9 +63,10 @@ public class UserService  extends SpringBeanAutowiringSupport{
 				}
 				userExt.setMoble(tel);
 				try {
-					bbsUserMng.registerMember(username, email,false, password, LOCAL_IP, group.getId(), userExt, null);
+					BbsUser user=bbsUserMng.registerMember(username, email,telphone,false, password, LOCAL_IP, group_id, userExt, null);
 					responseCode=RESPONSE_CODE_SUCCESS;
 					bbsWebserviceCallRecordMng.save(auth_username, SERVICE_CODE_USER_ADD);
+					bbsConfigEhCache.setBbsConfigCache(0, 0, 0, 1, user, SITE_ID);
 				} catch (Exception e) {
 					responseCode=RESPONSE_CODE_USER_ADD_ERROR;
 				}
@@ -60,10 +75,10 @@ public class UserService  extends SpringBeanAutowiringSupport{
 		return responseCode;
 	}
 	
-	public String updateUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel) {
+	public String updateUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel,String telphone,String groupId) {
 		String responseCode=RESPONSE_CODE_AUTH_ERROR;
 		if(validate(auth_username, auth_password)){
-			if(StringUtils.isBlank(username)||StringUtils.isBlank(password)||StringUtils.isBlank(username)){
+			if(StringUtils.isBlank(username)){
 				responseCode=RESPONSE_CODE_PARAM_REQUIRED;
 			}else{
 				BbsUser user=bbsUserMng.findByUsername(username);
@@ -77,7 +92,13 @@ public class UserService  extends SpringBeanAutowiringSupport{
 								sexBoolean=false;
 							}
 						}
-						bbsUserMng.updateMember(user.getId(), email, password, realname, sexBoolean, tel);
+						Integer group_id=null;
+						if(groupId!=null&&new Integer(groupId).equals(CMS_GROUP_DOCTOR_ID)){
+							group_id=GROUP_DOCTOR_ID;
+						}else{
+							group_id=bbsConfigMng.get().getRegisterGroup().getId();
+						}
+						bbsUserMng.updateMember(user.getId(), email,telphone, password, realname, sexBoolean, tel,group_id);
 						responseCode=RESPONSE_CODE_SUCCESS;
 						bbsWebserviceCallRecordMng.save(auth_username, SERVICE_CODE_USER_UPDATE);
 					} catch (Exception e) {
@@ -127,6 +148,9 @@ public class UserService  extends SpringBeanAutowiringSupport{
 	private BbsUserMng bbsUserMng;
 	@Autowired
 	private BbsConfigMng bbsConfigMng;
+	
+	@Autowired
+	private BbsConfigEhCache bbsConfigEhCache;
 	@Autowired
 	private BbsWebserviceAuthMng bbsWebserviceAuthMng;
 	@Autowired

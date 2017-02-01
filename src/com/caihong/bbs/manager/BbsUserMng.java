@@ -26,23 +26,23 @@ public interface BbsUserMng {
 
 	public BbsUser findByUsername(String username);
 	
-	public BbsUser registerMember(String username, String email,Boolean official,
+	public BbsUser registerMember(String username, String email,String telphone,Boolean official,
 			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr) throws UnsupportedEncodingException, MessagingException;
 	
-	public BbsUser registerMember(String username, String email,
+	public BbsUser registerMember(String username, String email,String telphone,
 			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr, Boolean activation , EmailSender sender, MessageTemplate msgTpl) throws UnsupportedEncodingException, MessagingException ;
 
 	public void updateLoginInfo(Integer userId, String ip,Date loginTime,String sessionId);
 
 	public void updateUploadSize(Integer userId, Integer size);
 
-	public void updatePwdEmail(Integer id, String password, String email);
+	public void updatePwdEmail(Integer id, String password, String email,String telphone);
 	
 	public void updateGroup(Integer id, Integer groupId);
 
 	public boolean isPasswordValid(Integer id, String password);
 
-	public BbsUser saveAdmin(String username, String email, String password,
+	public BbsUser saveAdmin(String username, String email,String telphone, String password,
 			String ip, boolean viewOnly, boolean selfAdmin, int rank,
 			Integer groupId, Integer[] roleIds, Integer[] channelIds,
 			Integer[] siteIds, Byte[] steps, Boolean[] allChannels,
@@ -52,11 +52,11 @@ public interface BbsUserMng {
 			Integer groupId, Integer[] roleIds, Integer[] channelIds,
 			Integer[] siteIds, Byte[] steps, Boolean[] allChannels);
 
-	public BbsUser updateMember(Integer id, String email, String password,
+	public BbsUser updateMember(Integer id, String email, String telphone,String password,
 			Boolean isDisabled, String signed, String avatar, BbsUserExt ext,Map<String,String>attr,
 			Integer groupId);
 	
-	public BbsUser updateMember(Integer id, String email, String password,String realname,Boolean gender,String tel);
+	public BbsUser updateMember(Integer id, String email,String telphone, String password,String realname,Boolean gender,String tel,Integer groupId);
 
 	public BbsUser deleteById(Integer id);
 

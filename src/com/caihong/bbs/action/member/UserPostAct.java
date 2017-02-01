@@ -99,7 +99,7 @@ public class UserPostAct {
 	}
 	
 	@RequestMapping("/member/updateUserImg.jhtml")
-	public String updateUserImg(String email,
+	public String updateUserImg(String email,String telphone,
 			String newPassword, String signed, String avatar, BbsUserExt ext,
 			HttpServletRequest request,HttpServletResponse response, ModelMap model) {
 		CmsSite site = CmsUtils.getSite(request);
@@ -114,7 +114,7 @@ public class UserPostAct {
 			return FrontUtils.getTplPath(request, site,
 					TPLDIR_TOPIC, TPL_NO_VIEW);
 		}
-		manager.updateMember(user.getId(), email, newPassword, null, signed,
+		manager.updateMember(user.getId(), email,telphone, newPassword, null, signed,
 				avatar, ext, null,null);
 		model.put("user", user);
 		FrontUtils.frontPageData(request, model);
@@ -122,7 +122,7 @@ public class UserPostAct {
 	}
 
 	@RequestMapping("/member/update.jspx")
-	public String informationSubmit(String email,
+	public String informationSubmit(String email,String telphone,
 			String newPassword, String signed, String avatar, BbsUserExt ext,
 			HttpServletRequest request,HttpServletResponse response, ModelMap model) {
 		CmsSite site = CmsUtils.getSite(request);
@@ -142,7 +142,7 @@ public class UserPostAct {
 			return FrontUtils.showError(request, response, model, errors);
 		}
 		Map<String,String>attrs=RequestUtils.getRequestMap(request, "attr_");
-		user = manager.updateMember(user.getId(), email, newPassword, null, signed,
+		user = manager.updateMember(user.getId(), email, telphone,newPassword, null, signed,
 				avatar, ext,attrs, null);
 		List<CmsConfigItem>items=cmsConfigItemMng.getList(site.getConfig().getId(), CmsConfigItem.CATEGORY_REGISTER);
 		model.put("user", user);
@@ -328,7 +328,7 @@ public class UserPostAct {
 					user.setPoint(user.getPoint()+creditIn);
 				}
 				//此处更新用户积分彩虹币信息
-				manager.updatePwdEmail(user.getId(), password, user.getEmail());
+				manager.updatePwdEmail(user.getId(), password, user.getEmail(),user.getTelphone());
 			}
 		}
 		try {
@@ -367,7 +367,7 @@ public class UserPostAct {
 			errors.addErrorCode("member.update.pwd.error");
 			return FrontUtils.showError(request, response, model, errors);
 		}
-		manager.updatePwdEmail(user.getId(), password, null);
+		manager.updatePwdEmail(user.getId(), password, null,null);
 		return pwd(request, model);
 	}
 	
