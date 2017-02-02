@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : rds
-Source Server Version : 50629
-Source Host           : localhost:3301
+Source Server         : localhost
+Source Server Version : 50717
+Source Host           : localhost:3306
 Source Database       : caihong_cms
 
 Target Server Type    : MYSQL
-Target Server Version : 50629
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-02-01 11:17:53
+Date: 2017-02-03 00:50:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -124,7 +124,7 @@ CREATE TABLE `jc_acquisition` (
 -- ----------------------------
 -- Records of jc_acquisition
 -- ----------------------------
-INSERT INTO `jc_acquisition` VALUES ('1', '1', '75', '1', '1', '测试采集', null, null, '0', '0', '0', '0', '500', 'UTF-8', 'http://roll.news.sina.com.cn/s/channel.php?ch=01#col=91&spec=&type=&ch=01&k=&offset_page=0&offset_num=0&num=60&asc=&page=3', '', '2', '10', '<div class=\"d_list_txt\" id=\"d_list\">', '<div class=\"pagebox\">', '<span class=\"c_tit\"><a href=\"', '\" target=\"_blank\">', '<meta property=\"og:title\" content=\"', '\" />', null, null, '', '', '<div class=\"article article_16\" id=\"artibody\">', '<p class=\"article-editor\">', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '');
+INSERT INTO `jc_acquisition` VALUES ('1', '1', '75', '1', '1', '测试采集', '2017-02-01 13:35:59', '2017-02-01 13:36:10', '0', '0', '0', '0', '500', 'UTF-8', 'http://roll.news.sina.com.cn/s/channel.php?ch=01#col=91&spec=&type=&ch=01&k=&offset_page=0&offset_num=0&num=60&asc=&page=3', '', '2', '10', '<div class=\"d_list_txt\" id=\"d_list\">', '<div class=\"pagebox\">', '<span class=\"c_tit\"><a href=\"', '\" target=\"_blank\">', '<meta property=\"og:title\" content=\"', '\" />', null, null, '', '', '<div class=\"article article_16\" id=\"artibody\">', '<p class=\"article-editor\">', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '');
 
 -- ----------------------------
 -- Table structure for jc_acquisition_history
@@ -141,7 +141,7 @@ CREATE TABLE `jc_acquisition_history` (
   PRIMARY KEY (`history_id`),
   KEY `fk_acquisition_history_acquisition` (`acquisition_id`),
   CONSTRAINT `fk_jc_history_acquisition` FOREIGN KEY (`acquisition_id`) REFERENCES `jc_acquisition` (`acquisition_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='采集历史记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='采集历史记录表';
 
 -- ----------------------------
 -- Records of jc_acquisition_history
@@ -163,7 +163,7 @@ CREATE TABLE `jc_acquisition_temp` (
   PRIMARY KEY (`temp_id`),
   KEY `fk_jc_temp_site` (`site_id`),
   CONSTRAINT `fk_jc_temp_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='采集进度临时表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='采集进度临时表';
 
 -- ----------------------------
 -- Records of jc_acquisition_temp
@@ -475,12 +475,12 @@ CREATE TABLE `jc_channel_count` (
 -- ----------------------------
 INSERT INTO `jc_channel_count` VALUES ('75', '472', '0', '0', '0', '50', '20', '28', '28', '28');
 INSERT INTO `jc_channel_count` VALUES ('76', '236', '0', '0', '0', '11', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('77', '118', '1', '3', '1', '15', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('77', '118', '1', '3', '0', '15', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('78', '33', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('81', '76', '0', '0', '0', '10', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('82', '6', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('94', '11', '0', '0', '0', '16', '16', '16', '16', '16');
-INSERT INTO `jc_channel_count` VALUES ('95', '0', '0', '0', '0', '12', '12', '12', '12', '12');
+INSERT INTO `jc_channel_count` VALUES ('95', '1', '1', '1', '0', '12', '12', '12', '12', '12');
 INSERT INTO `jc_channel_count` VALUES ('96', '30', '0', '0', '0', '0', '0', '0', '0', '0');
 
 -- ----------------------------
@@ -499,6 +499,15 @@ CREATE TABLE `jc_channel_department` (
 -- ----------------------------
 -- Records of jc_channel_department
 -- ----------------------------
+INSERT INTO `jc_channel_department` VALUES ('75', '1');
+INSERT INTO `jc_channel_department` VALUES ('76', '1');
+INSERT INTO `jc_channel_department` VALUES ('77', '1');
+INSERT INTO `jc_channel_department` VALUES ('78', '1');
+INSERT INTO `jc_channel_department` VALUES ('81', '1');
+INSERT INTO `jc_channel_department` VALUES ('82', '1');
+INSERT INTO `jc_channel_department` VALUES ('94', '1');
+INSERT INTO `jc_channel_department` VALUES ('95', '1');
+INSERT INTO `jc_channel_department` VALUES ('96', '1');
 
 -- ----------------------------
 -- Table structure for jc_channel_depart_control
@@ -516,6 +525,15 @@ CREATE TABLE `jc_channel_depart_control` (
 -- ----------------------------
 -- Records of jc_channel_depart_control
 -- ----------------------------
+INSERT INTO `jc_channel_depart_control` VALUES ('75', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('76', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('77', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('78', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('81', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('82', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('94', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('95', '1');
+INSERT INTO `jc_channel_depart_control` VALUES ('96', '1');
 
 -- ----------------------------
 -- Table structure for jc_channel_ext
@@ -784,7 +802,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-02-01', '2017-02-01 10:31:48', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-02-01', '2017-01-16');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-02-02', '2017-02-02 23:40:07', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-02-02', '2017-01-16');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -1025,7 +1043,7 @@ INSERT INTO `jc_content` VALUES ('161', '95', '1', '2', '1', '1', '2017-01-16 00
 INSERT INTO `jc_content` VALUES ('162', '95', '1', '2', '1', '1', '2017-01-16 00:30:39', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('163', '95', '1', '2', '1', '1', '2017-01-16 00:31:10', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('164', '95', '1', '2', '1', '1', '2017-01-16 00:31:44', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('165', '95', '1', '2', '1', '1', '2017-01-16 00:32:09', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('165', '95', '1', '2', '1', '1', '2017-01-16 00:32:09', '0', '0', '0', '2', '1', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('166', '95', '1', '2', '1', '1', '2017-01-16 00:32:37', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('167', '95', '1', '2', '1', '1', '2017-01-16 00:33:11', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('168', '95', '1', '2', '1', '1', '2017-01-16 00:33:38', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
@@ -1820,7 +1838,7 @@ INSERT INTO `jc_content_count` VALUES ('161', '0', '0', '0', '0', '0', '0', '0',
 INSERT INTO `jc_content_count` VALUES ('162', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('163', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('164', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('165', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('165', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('166', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('167', '3', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('168', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
@@ -1935,7 +1953,7 @@ INSERT INTO `jc_content_ext` VALUES ('126', '西北第一村白哈巴的早秋',
 INSERT INTO `jc_content_ext` VALUES ('127', '美国金秋不止红叶', null, null, null, null, null, '2016-10-10 13:46:26', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/101346227ayf.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('128', '德国举行南瓜称重比赛 763公斤南瓜获得加冕', null, null, null, null, null, '2016-10-10 13:46:52', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/101346473kic.jpg', null, null, '1', null, null, null);
 INSERT INTO `jc_content_ext` VALUES ('129', '北京特战队员魔鬼周训练 挑战50项最严苛极限项目', null, null, null, null, null, '2016-10-10 13:47:24', '/u/cms/www/201610/101338015yhf.mp4', 'CK', null, '0', null, null, '/u/cms/www/201610/10134720z8a5.jpg', null, null, '1', null, null, null);
-INSERT INTO `jc_content_ext` VALUES ('130', '党中央推进民族工作创新发展纪实', null, null, null, null, '奏响新形势下民族工作新乐章（治国理政新思想新实践）党的十八大以来以习近平同志为总书记的党中央推进民族工作创新发展纪实。', '2016-10-10 13:51:07', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
+INSERT INTO `jc_content_ext` VALUES ('130', '党中央推进民族工作创新发展纪实', null, null, null, null, '奏响新形势下民族工作新乐章（治国理政新思想新实践）党的十八大以来以习近平同志为总书记的党中央推进民族工作创新发展纪实。', '2016-10-10 13:51:07', null, 'CK', null, '0', null, null, '/u/cms/www/201702/012124176acx.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('131', '楼市调控应跳出周期性怪圈', null, null, null, null, '每一轮调控政策都是为稳定住房价格，但调控过后，总有一轮快速上涨行情，越让普通百姓感叹房子越来越买不起了。显然，目前楼市调控实质已陷入越调越高和政府“助涨”的尴尬局面。', '2016-10-10 13:54:05', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('132', '黄金接连下跌难道又等大妈来托盘', null, null, null, null, '三年前，中国大妈们抢购黄金的记忆还历历在目，没想到如今的黄金又开始了一轮又一轮的下跌。', '2016-10-10 13:55:46', null, 'CK', null, '0', null, null, '/r/cms/www/default/img/index_381.png', null, null, '1', '', null, null);
 INSERT INTO `jc_content_ext` VALUES ('133', '2016高考状元笔记', null, null, null, null, '分科分章巧复习，内含状元做题方法总结', '2016-10-10 14:08:28', null, null, null, '0', null, null, '/u/cms/www/201610/1014082583ov.jpg', null, null, '1', null, null, null);
@@ -2078,7 +2096,7 @@ CREATE TABLE `jc_content_record` (
   PRIMARY KEY (`content_record_id`),
   KEY `fk_index_jc_content_record_content` (`content_id`),
   KEY `fk_index_jc_content_record_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
 
 -- ----------------------------
 -- Records of jc_content_record
@@ -2144,6 +2162,8 @@ INSERT INTO `jc_content_record` VALUES ('82', '153', '1', '2017-01-16 00:37:35',
 INSERT INTO `jc_content_record` VALUES ('83', '130', '1', '2017-01-17 22:35:13', '1');
 INSERT INTO `jc_content_record` VALUES ('84', '125', '1', '2017-01-18 18:44:17', '6');
 INSERT INTO `jc_content_record` VALUES ('85', '59', '1', '2017-01-18 18:44:17', '6');
+INSERT INTO `jc_content_record` VALUES ('86', '130', '1', '2017-02-01 21:25:12', '1');
+INSERT INTO `jc_content_record` VALUES ('87', '130', '1', '2017-02-01 21:27:28', '1');
 
 -- ----------------------------
 -- Table structure for jc_content_reward_fix
@@ -2403,7 +2423,7 @@ INSERT INTO `jc_content_txt` VALUES ('39', '<p style=\"text-align: center;\"><im
 INSERT INTO `jc_content_txt` VALUES ('111', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114510l7x1.jpg\" title=\"138683743.jpg\" alt=\"138683743.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">本月初的百度世界大会上，百度正式对外宣布，开源其深度学习平台PaddlePaddle，这也让百度成为国内首家开放深度学习技术平台的科技公司。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟表示，百度希望通过开放深度学习平台的方式，营造开发者社区，推动人工智能行业的发展。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据徐伟介绍，该平台最初是百度研发的深度学习内部平台，项目于2013年启动，主要用于支持的百度产品，目前百度有超过30个产品应用到该深度学习平台，包括预测外卖送达时间、图文问答、商家好感度模型等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在行业开放的大趋势下，百度决定将这一平台开源，现在所有的从事深度学习开发的开发人员均可以下载安装并使用百度的这一深度学习工具。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">除了百度以外，谷歌(微博)在去年底宣布开放其深度学习平台Tensorflow，此外，业内主流的深度学习平台还包括Facebook的Torch，加州伯克利大学的Caffe等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟说，百度的PaddlePaddle平台具备易用、高效、灵活、可伸缩等特点，能够满足多种不同的应用开发需求。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在接受采访时，徐伟重点强调了该平台的易用性特征，他表示，相比谷歌的Tensorflow来说，开发者在使用PaddlePaddle时更容易上手，尤其是对于序列输入、稀疏输入和大规模数据的模型训练有着良好的支持，支持GPU运算、数据并行和模型并行，仅需少量代码就能训练深度学习模型，大大降低了用户使用深度学习技术的成本。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟说，让开发者决定使用哪个平台进行开发的决定因素主要包含几个方面，首先是该平台能否实现自己想实现的功能，其次是使用某平台实现起来的难度有多大，最后是效率有多高。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">本月底，PaddlePaddle将迎来开源后的首次重大更新，徐伟介绍称，此次更新主要是进一步完善对不同操作系统的支持、进一步完善说明文档以及解决不同安全环境下的问题等。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">百度开源人工智能技术引起了开发者社区的关注，Facebook深度学习研究员、曾参与谷歌Tensorflow研发的贾扬清评价称，PaddlePaddle有高质量的GPU代码、非常好的RNN（回归神经网络）设计，并且设计很干净，没有太多的抽象表达，这一点比Tensorflow好很多。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">徐伟表示，正式开源后，下一步的目标是进一步完善平台的易用性和性能，并增强与开发者群体的沟通，了解他们的需求。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在谈到人工智能行业的发展时，他认为，人工智能行业这两年出现爆发式增长，主要在语音识别、图像识别等领域出现了显著的突破。在谈到人工智能未来发展时，他表示乐观，并认为，未来可能的突破点在于自然语言识别、理解和处理以及机器翻译等方面，另外基于人工智能的”人工助手”的智能化程度也有望进一步加强。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('112', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114715p0as.jpg\" title=\"138679801.jpg\" alt=\"138679801.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">自2013年12月首批企业获牌以来，虚拟运营商发展迅速，目前已有42家企业获得牌照。9月22日，在“ICT中国· 2016高层论坛”移动转售分论坛上，中国通信企业协会披露，目前移动转售业务用户数已超3500万，占全国移动用户人数2.67%。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">不过，移动转售行业也因实名制未落实到位出现诸多“乱象”，尤其“170”号段诈骗多发遭诟病，在“徐玉玉受骗致死”案等多个热点事件的舆论声讨中，虚拟运营商声誉受到重大打击，其融资也受到影响。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\"><strong>虚拟运营商“很受伤”</strong></p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">3年前，第一批企业获得牌照进入试点，中国移动(微博)虚拟运营业方缓缓起步，而经过几年的发展，这一行业已小有规模，不过“成长的烦恼”也使其备受困扰。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">中国通信企业协会披露的数据显示，移动转售业的发展速度有所下降。自2015年3月起，移动通信转售业务月净增超过100万户，其中2015年10月起连续6个月净增达到200万，然而自2016年1月以来，增速有所放缓，甚至出现“停滞”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">增速降低与行业乱象不无关联。女大学生徐玉玉被骗后昏聩致死使得社会的目光投向虚拟运营商，尤其是因为“实名制”再次被推上风口浪尖。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据央广网2016年8月报道，工信部网络安全管理局对虚拟运营商新入网电话用户实名登记工作暗访，暗访的26家转售企业的109个营销网点中，37个网点存在违规行为，违规占比超三成。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">虚拟运营商“实名制”漏洞也成了舆论谴责的“靶子”。中兴视通显然备受折磨，其CEO邓慕超向与会者“倒苦水”，称自己有时“夜不能寐、梦不能求”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">巴士在线CEO王献蜀在业内摸爬滚打多年，也叫苦不迭，“170贴了一个标签，就是诈骗，虚商也变成了诈骗公司。”王献蜀表示，这让虚拟运营商要“很受伤”，并呼吁业内外应给予虚拟运营商“容错空间”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\"><strong>声誉受损融资受波及</strong></p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">中国虚拟运营业起步晚于发达国家，而虚拟运营商们盈利困难早已不是新闻，而今，命途多舛的它们又遇“拦路虎”，这也让资本市场对其发展前景打了个问号，虚拟运营商直接受到冲击。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">王献蜀称，“170”号段的问题影响了虚拟运营的融资。“我们很少听到说哪一家虚商拿了多少融资，然后怎么样，多么风光，虚商这个行业几乎都是每一家虚商，每一个老板，每一个企业真金白银自己从口袋里面往外掏钱。”王献蜀表示，从业几年来，他自己已经投入了1.8亿元。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">蜗牛移动CEO陈艳也深有体会，在她看来，虚拟运营商还是个“婴儿”，她表示，英国发展虚拟运营已有18年，虚拟运营的比例占到全行业的12%，而中国发展2、3年达到2.67%，未来还有很大发展空间，但她却感受到了行业内的恐慌。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">融资困境及舆论压力促进了虚拟运营商的反思。9月22日的论坛上，虚拟运营企业代表均坦承，虚拟运营商也是诈骗案的受害者，落实实名制可促使虚拟运营业健康发展。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">今年4月份，工信部发布了《关于加强规范管理，促进移动通信转售业务健康发展》的通知，向移动转售企业提出了落实移动用户实名登记要求的有关具体规定。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">据中国通信企业协会常务副会长兼秘书长苗建华介绍，整治以来，虚拟运营商采用系统整改、完善手段、有奖举报等一系列措施取得了一定的成效。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('113', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10114919rtom.jpg\" title=\"641.jpg\" alt=\"641.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">李克强总理首赴联合国，首场活动便是出席由联合国倡议举行的联大解决难移民大规模流动问题高级别会议。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这是自联合国成立以来，首次召开的应对难移民问题的高级别会议。同时尤其值得注意的是，这也是中国领导人首次在此种国际场合阐述对于难移民问题的主张。总理的首场与联合国的首次，两者碰撞出怎样的火花?</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">人道主义的价值观，这是李克强主张的要旨。在联合国的讲台上，中国总理的视野超越国别和地域。他将难民和移民问题视为一场“拷问人类社会良知”的人道主义危机，因此郑重向国际社会发出呼吁：“每一个人的生命都是宝贵的，每一个人的尊严都应得到维护，人道主义精神必须弘扬。”中国传统政治伦理中有着人道主义的丰沛思想资源，李克强将其带到联合国讲台上，从而丰富了中国当代外交与政治的实践。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">与此相应，在联合国这个庄严的讲台上，李克强代表中国宣布的3项举措，实打实地彰显了基于人道主义的国际政治理念。中国将这样做：在原有援助规模的基础上，向有关国家和国际组织提供1亿美元的人道主义援助;积极研究把中国-联合国和平与发展基金的部分资金用于支持发展中国家难民移民工作;积极探讨同有关国际机构和发展中国家开展三方合作。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">怎么做，真金白银，某种意义上比怎么说更触及实质。然而这里面有一个厘清“责任观”的问题。中国作为联合国常任理事国，在难移民这一全球性议题上当然有义不容辞的责任。该出手时就出手，正如李克强在当天会议上所言，中国把人道主义援助视为“道义之举”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">同时，中国经济虽有了很大发展，但仍是发展中国家，愿意承担与自身能力相适应的责任。李克强在联合国所承诺的援助资金，是中国的量力而为，我们决不放空炮;所承诺的援助方式，比如使用和平与发展基金的部分资金、开展三方合作等，也是真正的“务实之举”。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">更关键的是，李克强的“说”与“做”，在一个更高层面上实现了统一，那就是发展。战乱冲突、贫穷落后是难移民问题的主要根源，实现真正的包容性增长方为治本之策。中国的主张和举措，牢牢把握住了解决问题最关键点——长远和根本地看，出路还蕴藏在发展这一主题中。这也是李克强一直以来在国际外交舞台上所强调的，以发展弥合伤痕、促进平衡、共同向前。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">在联合国的首场活动，阐述理念、承诺硬招，李克强总理在这个最高的国际场合，展示了中国“软实力”。</p><p><br/></p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('130', '<p style=\"text-indent: 2em;\">细心的人会观察到，在发表2016年新年贺词的镜头中，习近平总书记办公室有了新变化：新添的7张照片中，有3张记录着总书记和民族地区各族干部群众一起谋发展、话小康的难忘瞬间。</p><p style=\"text-indent: 2em;\"><br/></p><p>　　民族工作关乎大局。党的十八大以来，以习近平同志为总书记的党中央高度重视民族工作，多次深入民族地区调研，体察少数民族群众冷暖。先后召开第二次中央新疆工作座谈会、中央民族工作会议、中央第六次西藏工作座谈会等，对民族工作作出全面部署，力度之大、频次之高、涉面之广、阐述之深，前所未有，一曲新形势下民族工作新乐章在中华大地奏响。</p><p><br/></p><p>　　保持定力：坚持走中国特色解决民族问题的正确道路</p><p><br/></p><p>　　2014年9月，中央民族工作会议在京召开。会上，习近平总书记在坚持党的民族理论政策基本原则的基础上，提出了一系列新思想新观点新举措，为新形势下民族工作提供了行动指南和基本遵循：</p><p><br/></p><p>　　——我国历史演进的这个特点，造就了我国各民族在分布上的交错杂居、文化上的兼收并蓄、经济上的相互依存、情感上的相互亲近，形成了你中有我、我中有你、谁也离不开谁的多元一体格局。</p><p><br/></p><p>　　——新中国成立65年来，党的民族理论和方针政策是正确的，中国特色解决民族问题的道路是正确的，我国民族关系总体是和谐的。</p><p><img src=\"/u/cms/www/201701/17223507vhfd.jpg\" title=\"1.jpg\" alt=\"1.jpg\"/></p><p>　　——同世界上其他国家相比，我国民族工作做得都是最成功的。</p><p><br/></p><p>　　——中华民族和各民族的关系，形象地说，是一个大家庭和家庭成员的关系，各民族的关系是一个大家庭里不同成员的关系。</p><p><br/></p><p>　　——坚持中国特色解决民族问题的正确道路。</p><p><br/></p><p>　　——坚持和完善民族区域自治制度，要做到坚持统一和自治相结合，坚持民族因素和区域因素相结合。</p><p><br/></p><p>　　——做好民族工作，最关键的是搞好民族团结，最管用的是争取人心。</p><p><br/></p><p>　　——城市民族工作要把着力点放在社区，推动建立相互嵌入式的社会结构和社区环境。</p><p><br/></p><p>　　——加强中华民族大团结，长远和根本的是增强文化认同，建设各民族共有精神家园，积极培养中华民族共同体意识。</p><p><br/></p><p>　　——尊重差异、包容多样，通过扩大交往交流交融，创造各族群众共居、共学、共事、共乐的社会条件，让各民族在中华民族大家庭中手足相亲、守望相助。</p><p>　　……</p><p>　　中央民族工作会议的召开，统一思想、坚定信心，在新的历史起点上推动民族团结进步事业踏上新的时代征程。</p><p><br/></p><p>　　大政方针已定，关键就在落实。中央民族工作会议以来，以理论创新为先导，民族工作的政策创新、制度创新、实践创新不断推进。</p><p><br/></p><p>　　——出台贯彻落实《中共中央、国务院关于加强和改进新形势下民族工作的意见》的重要举措分工方案，包括16项47条，条条都是硬举措。相关部委组成联合督查组督促中央民族工作会议精神的贯彻落实。</p><p><br/></p><p>　　——时隔13年召开全国民族教育工作会议，首次召开全国城市民族工作会议……中央民族工作会议精神逐一贯彻，渐次落实。</p><p><br/></p><p>　　——全国31个省、自治区、直辖市和新疆生产建设兵团相继召开贯彻落实中央民族工作会议精神的会议，出台了相关配套文件。</p><p><br/></p><p>　　——为支持民族地区加快发展，输送“真金白银”，研究制定差别化政策：第一次对川甘青交界地区，对南疆四地州，对怒江、凉山、临夏等三个特困自治州，专门制定政策举措。</p><p><br/></p><p>　　——明确少数民族学生高考加分政策，对国家通用语言文字已经普及、教育水平大体相同的地区，逐步缩小差距，逐步做到一律平等；对语言文化差异较大、教育质量还不高的一些地区少数民族学生，除大力普及双语教育、调整专业设置、提高教学质量外，仍是实行高考加分政策，支持少数民族学生取得较好教育水平。</p><p><br/></p><p>　　两年来，中央民族工作会议精神在各地生根发芽、开花结果。</p><p><br/></p>', null, null, null);
+INSERT INTO `jc_content_txt` VALUES ('130', '<p style=\"text-indent: 2em;\">细心的人会观察到，在发表2016年新年贺词的镜头中，习近平总书记办公室有了新变化：新添的7张照片中，有3张记录着总书记和民族地区各族干部群众一起谋发展、话小康的难忘瞬间。</p><p style=\"text-indent: 2em;\"><br/></p><p>　　民族工作关乎大局。党的十八大以来，以习近平同志为总书记的党中央高度重视民族工作，多次深入民族地区调研，体察少数民族群众冷暖。先后召开第二次中央新疆工作座谈会、中央民族工作会议、中央第六次西藏工作座谈会等，对民族工作作出全面部署，力度之大、频次之高、涉面之广、阐述之深，前所未有，一曲新形势下民族工作新乐章在中华大地奏响。</p><p><br/></p><p>　　保持定力：坚持走中国特色解决民族问题的正确道路</p><p><br/></p><p>　　2014年9月，中央民族工作会议在京召开。会上，习近平总书记在坚持党的民族理论政策基本原则的基础上，提出了一系列新思想新观点新举措，为新形势下民族工作提供了行动指南和基本遵循：</p><p><br/></p><p>　　——我国历史演进的这个特点，造就了我国各民族在分布上的交错杂居、文化上的兼收并蓄、经济上的相互依存、情感上的相互亲近，形成了你中有我、我中有你、谁也离不开谁的多元一体格局。</p><p><br/></p><p>　　——新中国成立65年来，党的民族理论和方针政策是正确的，中国特色解决民族问题的道路是正确的，我国民族关系总体是和谐的。</p><p><br/></p><p>　　——同世界上其他国家相比，我国民族工作做得都是最成功的。</p><p><br/></p><p>　　——中华民族和各民族的关系，形象地说，是一个大家庭和家庭成员的关系，各民族的关系是一个大家庭里不同成员的关系。</p><p><br/></p><p>　　——坚持中国特色解决民族问题的正确道路。</p><p><br/></p><p>　　——坚持和完善民族区域自治制度，要做到坚持统一和自治相结合，坚持民族因素和区域因素相结合。</p><p><br/></p><p>　　——做好民族工作，最关键的是搞好民族团结，最管用的是争取人心。</p><p><br/></p><p>　　——城市民族工作要把着力点放在社区，推动建立相互嵌入式的社会结构和社区环境。</p><p><br/></p><p>　　——加强中华民族大团结，长远和根本的是增强文化认同，建设各民族共有精神家园，积极培养中华民族共同体意识。</p><p><br/></p><p>　　——尊重差异、包容多样，通过扩大交往交流交融，创造各族群众共居、共学、共事、共乐的社会条件，让各民族在中华民族大家庭中手足相亲、守望相助。</p><p>　　……</p><p>　　中央民族工作会议的召开，统一思想、坚定信心，在新的历史起点上推动民族团结进步事业踏上新的时代征程。</p><p><br/></p><p>　　大政方针已定，关键就在落实。中央民族工作会议以来，以理论创新为先导，民族工作的政策创新、制度创新、实践创新不断推进。</p><p><br/></p><p>　　——出台贯彻落实《中共中央、国务院关于加强和改进新形势下民族工作的意见》的重要举措分工方案，包括16项47条，条条都是硬举措。相关部委组成联合督查组督促中央民族工作会议精神的贯彻落实。</p><p><br/></p><p>　　——时隔13年召开全国民族教育工作会议，首次召开全国城市民族工作会议……中央民族工作会议精神逐一贯彻，渐次落实。</p><p><br/></p><p>　　——全国31个省、自治区、直辖市和新疆生产建设兵团相继召开贯彻落实中央民族工作会议精神的会议，出台了相关配套文件。</p><p><br/></p><p>　　——为支持民族地区加快发展，输送“真金白银”，研究制定差别化政策：第一次对川甘青交界地区，对南疆四地州，对怒江、凉山、临夏等三个特困自治州，专门制定政策举措。</p><p><br/></p><p>　　——明确少数民族学生高考加分政策，对国家通用语言文字已经普及、教育水平大体相同的地区，逐步缩小差距，逐步做到一律平等；对语言文化差异较大、教育质量还不高的一些地区少数民族学生，除大力普及双语教育、调整专业设置、提高教学质量外，仍是实行高考加分政策，支持少数民族学生取得较好教育水平。</p><p><br/></p><p>　　两年来，中央民族工作会议精神在各地生根发芽、开花结果。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('131', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/101353469a1k.jpg\" title=\"3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg\" alt=\"3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">今年的国庆节注定是个不平凡的节日，北京、广州、深圳、苏州、合肥等20个一二线城市相继出台楼市限购限贷政策，“深八条”、“沪六条”等严厉调控措施相继出笼，犹豫在中国大地上引爆了无数颗原子弹，看得人眼花缭乱、心惊肉跳，让人感受到了中国楼市调控“变脸术”之快、之严。&nbsp;</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">社会各界姑且会猜测，这些调控措施付诸实施之后能否成为医治楼市癫狂的灵丹妙药？房地产业服了这些调控药之后是否能走上理性、健康发展轨道？中国民众是否从此不再有楼市猛涨带来的恐慌之虞？回答无疑是否定的。因为这些调控之“药”依然没有摆脱行政窠臼，其结局也就很难跳出行政调控怪圈：“严格管制房价暂时趋缓—放松管制房价暴涨”。也就是说，出台调控措施的这些城市，楼市价格上涨趋势可能暂时会缓一缓，但过后可能又将迎来新一轮量价齐涨周期。因为中国从2005年3月底的“国八条”算起，短短十年间，中国房地产市场虽经历过无数次调控，无论是国务院的各项“通知”，还是九部委、七部委的各种“意见”，都没能阻挡住房价上涨的步伐；不少城市的房价比2005年翻了几番甚至十番都不止。每一轮调控政策都是为稳定住房价格，但调控过后，总有一轮快速上涨行情，越让普通百姓感叹房子越来越买不起了。显然，目前楼市调控实质已陷入越调越高和政府“助涨”的尴尬局面。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">这是为什么呢？道理其实很简单，因为我们楼市调控政策存在严重问题：一是没有理顺楼市调控的目的到底是什么，是控制住房价让老百姓买得起房，还是不要过于严厉让房地产开发商能有钱赚和地方财政有收入可进？正因为楼市调控政策总是处于摇摆不定状态，忽而严厉、忽而放松，缺乏长久可持续调控政策措施，让房地产开发商及各级地方政府形成了“耐药性”，使调控功效被抵消。二是没有割断地方政府与房地产业发展之间的各种利益关系，是让楼市调控步入市场运行机制、让市场充分发挥自发调节作用，还是继续伸出行政权力之手来生硬地管制房价或分割利益？由于这种利益关系没理顺，使一些地方政府难下决心认真调控，致使调控政策得不到认真落实走形变样；同时也会更加诱发一些地方政府竭力追求土地财政、推高房价获得足够收入搞高楼房、宽马路等城市形象政绩工程建设，使调控陷入了“死胡同”。三是没有足够底牌或也不愿意拿出有效手段来对冲楼市上涨带来的压力，使楼市调控政策软弱无力。比如保障房、经济适用房等建设速度缓慢、数量严重短缺，把一大批城市中低收入人群也逼向商品房购买行列，更加剧了楼市非理性上涨；也让政府对楼市非正常上涨现象缺乏必要平抑措施，只能望楼市价格上涨兴叹。四是对楼市上涨失控城市政府调控不力、楼市中存在各种违规行为及投机炒作行为缺乏必要法治惩治手段，使楼市失常状况难得到及时扭转。如调控政策出台之后，没有一个地方政府领导因楼市调控措施落实不力受到严肃问责，丢下官帽；没有一个开发商因弄虚作假、违规开发而被罚得倾家荡产；更没有一个楼市投机炒作者被追究刑责入狱。于是地方政府调控措施执行不力已司空见惯，开发商违规行为让人熟视无睹，投机商哄抬房价打乱楼市现象更是让人见怪不怪。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">由此，目前中国一二线城市楼市调控政策不能只求一时轰动效应，而应把追求实实在在的长久调控效果放在首位，推动楼市调控彻底走出“屡涨屡调，屡调屡涨”怪圈：首先，制定富有弹性的楼市调控政策，确立楼市调控近期目标、中期目标和长远目标，分阶段实施，消除狂风暴雨式调控模式；把楼市调控政策制定要交给各级地方政府，建立目标考核责任制，将其纳入施政目标，让民众来打分评价，对民众不满意或房价涨幅过大的地方政府领导实施行政降级、行政记过、诫勉谈话等问责处罚，增强楼市调控政策的严肃性。其次，进一步厘清行政干预与市场调节的界限，确立地方政府在房地产市场中的责任；将房地产市场纳入法治监管轨道，对楼市调控不力的地方政府、违法违规的房地产开发及哄抬房价扰乱楼市秩序的投机商追究刑事责任，增强楼市调控的法治威慑力。再次，应尽快终结土地财政，加快税收制度改革步伐，将中央政府与地方政府事权与财权改革到位，消除地方政府对土地财政的依赖，楼市疯狂暴涨和挤泡沫才真正有希望。</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('132', '<p style=\"text-align: center;\"><img src=\"/u/cms/www/201610/10135526bcqb.jpg\" title=\"908fa0ec08fa513da2f6fc21356d55fbb3fbd9f5.jpg\" alt=\"908fa0ec08fa513da2f6fc21356d55fbb3fbd9f5.jpg\"/></p><p><br/></p><p style=\"text-indent: 2em;\">三年前，中国大妈们抢购黄金的记忆还历历在目，没想到如今的黄金又开始了一轮又一轮的下跌。接连的破位下跌，再次有人开始蠢蠢欲动，想着投资抄底，再加上中国房地产市场的调控力度不断加大，那么会不会有一部分投资热钱也会进入到黄金市场呢？其实，投资市场历来有句名言是买涨不买跌。不过，对于黄金这种相对常见的避险投资工具来说，很多人买了就是资产配置和“囤货”，并不是简单的投资或者快速的出手，她们持有的耐心和时间更长，因此任何一个低价的出现，都有可能成为触发市场投资的一种诱惑。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">连续下跌，何时是个头？</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">今年的“十一黄金周”期间，黄金价格已经跌破1,300美元/盎司的重要支撑。10月1日～7日，纽约商业交易所（COMEX）黄金大跌4.5%，创下一年来最大单周跌幅，其中上周二跌幅超过3.3%，也创下了2013年12月以来单日最大跌幅。10月4日，现货金价一度跌破1270美元/盎司关口，白银一度跌破18美元关口，跌幅超过5%，多次刷新英国脱欧公投以来最低。市场对欧佩克限产协议不断炒作，原油看涨情绪升温。这都使黄金的价格不被看好。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">市场对全球央行货币政策转向，担忧流动性逆转是黄金下跌的主要原因。其实在8月份之后，全球资本市场人士普遍猜测，各国将统一行动，主要在结构性改革、财政政策上发力，货币政策可能接近极限，全球的流动性将很快出现逆转。黄金价格的剧烈波动，就是对这一猜测的又一次市场反应。如果全球货币宽松走到尽头，那么利率将缓慢上升，全球的债券牛市也将终结。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">摩根大通统计的数据显示，今年英国退欧公投后，欧英日三大央行的季度资产购买规模连创新高。目前美欧英日四大央行的资产负债表已高达13万亿美元之巨，已占全球GDP的40%。预计在今年最后一个季度，欧英日三大央行将“加印”5060亿美元在市场上购买资产，创2009年美联储首推QE以来的最大季度规模。高盛表示，基于全球经济增长仍面临持续下行风险，同时市场可能仍在质疑货币政策应对任何经济潜在冲击的能力。因此，金价跌破每盎司1250美元可能是一个战略性的购买机会。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">值得关注的是，中国央行一直是购买黄金的主力。最新数据显示，截至9月末，国内黄金储备从2014年6月的1054.1吨大幅增加74%至1838.53吨。据中国黄金协会报导，2015年中国生产黄金515.88吨，黄金产量连续九年保持世界第一，黄金消费量连续三年保持世界第一。今年有望继续保持这一势头。不过，今年的黄金需求较往年有明显的回落。</p><p style=\"text-indent: 2em;\"><br/></p><p style=\"text-indent: 2em;\">来自Wind数据统计显示，目前，共有4家拥有黄金业务的上市公司发布了公司的前三季度业绩预报，而从预报结果来看，金价的变化，让这些公司的投资者暂时松了口气。“预计前三季度归属于上市公司股东的净利润变动幅度为增长350.00%至400.00%；同期归属于上市公司股东的净利润变动区间为9847.85万元至10942.05万元；业绩变动的原因是成本下降，黄金价格上升。”</p><p><br/></p>', null, null, null);
 INSERT INTO `jc_content_txt` VALUES ('142', '<p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年，1095天，四川政府采购大步向前：建章立制——搭建起制度框架；扩面增量——夯实政采地基；强化监管——为日常工作立柱架梁。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2014年以来，四川政府采购的改革创新成果，体现在一个个具体的数字上。而数字的背后，是四川政府采购工作的3年改革答卷——阳光透明，物有所值。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">□子融</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">省财政厅负责人谈政府采购</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：怎样评价我省近年来政府采购改革？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：近年来，我省政府采购法制体系已经基本建立，国家和地方出台的70多项制度构成了四川特色的制度体系。2015年，政府采购规模（财政部口径）达到1376亿元，已经居于全国第四位，2016年又突破2000亿元。依法监管、规范采购、公平竞争、诚信履约的政府采购运行机制显著改善。政府购买服务、PPP项目采购、批量集中采购、全面创新改革、简政放权、公共资源交易改革等各类改革快速推进。政府采购环境大幅改善，社会对政府采购的认可度明显提高。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">特别是在建章立制方面，我省率先在全国取消通用货物协议供货，推行网上竞价和商场（城）直购采购制度，有力遏制通用货物采购质次价高问题；建立采购项目需求论证和履约验收机制，全面落实采购人主体责任；建立政府采购当事人诚信管理机制和行贿犯罪记录查询机制，全面推进诚信体系建设；建立采购需求、评审评分情况、履约验收、绩效评价、质疑答复等关键信息全面公开机制，实现真正阳光采购；建立“三位一体”监督检查、考核和绩效评价机制，多维度考验政府采购执行等，皆走在全国的前列或为首创。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：当前政府采购监管面临怎样的形势？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：随着经济社会发展方式转变，政府采购监管所面临的形势也发生变化。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">一是经济发展方式转变对政府采购机制提出新要求。党的十八届五中全会提出创新、协调、绿色、开放、共享“五大发展理念”。政府采购制度作为政府调控经济、促进经济社会发展的重要政策工具，须不断改革创新。这要求我们要积极发挥政府采购政策作用，服务我省经济社会发展。去年以来，我省为推进“全面创新改革”，建立了促进中小企业发展和创新产品远期约定政府购买两项制度，就是政府采购政策服务于发展大局的重要体现。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">二是政府市场关系定位对政府采购管理提出新要求。党的十八届三中全会提出,要处理好政府和市场的关系，使市场在资源配置中起决定性作用。政府采购一头连接政府，一头连接市场，我们要按照“三公一诚信”的基本原则,更好发挥“裁判员”作用，制定和落实好比赛规则,维护好公平公正的市场秩序。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">三是依法治国法治理念对政府采购运行提出新要求。党的十八届四中全会提出，建设中国特色社会主义法治体系。这使得增强政府采购法制在采购活动中的约束力的要求更加明确。政府采购要防止权力干预、权力滥用，增强政府采购法制的约束力；要管住政府采购中想乱伸的权力之手，这就要求我们在工作中发挥各方面的监督制约机制，将内部监督、法定监督和社会监督相结合。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">财政部门作为政府采购制度改革的主导者、操刀人，要努力在构建规范透明、公平竞争、监督到位、严格问责的工作机制方面下功夫。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">四是全面深化改革任务对政府采购监督提出新要求。政府采购制度改革作为财政支出改革“三驾马车”之一，已进入全面深化改革的新阶段，啃硬骨头、趟深水区的事情会越来越多。这要求我们积极发挥公共财政管理综合职能；发挥政府采购监督合力，要与监察、审计等监督部门建立联合监督工作机制；发挥第三方社会监督作用，用社会的力量促进政府采购良性发展。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购改革需要把握哪些重点？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：当前,我省各项改革快速推进,政府采购改革要顺应这种变化，重点要把握好以下三方面关系。一是把握好依法行政和加强服务意识的关系，坚持“法定职责必须为、法无授权不可为”。二是把握好简政放权和加强监督管理的关系，坚持“抓大放小，有所为有所不为”。三是把握好基础工作和加强改革创新的关系，要“干好基础工作，不断推陈出新”。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：为加强政府采购监管，省财政厅下一步将有哪些打算？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：一是认真贯彻落实现有的政府采购法律制度，并在实践中不断创新完善。二是切实加强采购人、采购代理机构内部控制管理制度建设。三是积极深入推进政府采购信息化建设。将政府采购信息化建设工作纳入财政信息化建设的总体部署,进一步加强政府采购管理交易系统与部门预算、国库集中支付、资产管理等信息系统的衔接贯通。四是大力支持公共资源交易平台整合。按照国务院方案、14部委39号令、财政部的规定,落实好依法恢复集中采购机构的独立法人地位、积极参与制定本地区公共资源交易平台整合的具体实施方案、统一政府采购交易规则体系等工作要求。五是着力加强政府采购事中事后监管。六是着力加强政府采购机构队伍建设。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">政府采购政策解读</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：是不是公开招标才叫政府采购？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：公开招标与政府采购不是同一概念，公开招标只是政府采购方式之一。一个采购项目究竟适用于哪种采购方式，应当根据采购项目的具体需求和特点来定，不能一概而论。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">不同的采购方式，需要的时间不一。从发布采购公告到可以签订政府采购合同所需法定时间计算，公开招标约28天；邀请招标约34天；竞争性谈判约13天；竞争性磋商约18天；询价约13天；单一来源采购没有明确的时间限制，一般情况约7天。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：国有企业采购是政府采购吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：根据《政府采购法》的规定，政府采购是指各级国家机关、事业单位和团体组织，使用财政性资金采购依法制定的集中采购目录以内的或者采购限额标准以上的货物、工程和服务的行为。一个采购项目，必须采购主体、采购资金、采购范围、采购对象同时符合有关规定，才纳入政府采购管理。我国政府采购的主体是各级国家机关、事业单位和团体组织。因此，任何组织形式的企业采购都不属于政府采购范畴。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购的资金是财政性资金，是不是就是财政拨款的资金？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：根据《政府采购法实施条例》的规定，财政性资金是指纳入预算管理的资金。因此，不能将财政性资金等同于财政拨款的资金，财政性资金的范围要比财政拨款资金的范围大得多。比如，医院医疗收费、学校教育收费及其他事业单位的收费，都是纳入预算管理的，都属于政府采购财政性资金的范畴，这些资金就不是财政拨款资金。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：采购人在政府采购中是何种角色？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：是名副其实的“主角”。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：采购人是政府采购活动中的主体，是名副其实的主角。按照《政府采购法》及其实施条例、《党政机关厉行节约反对浪费条例》、《中华人民共和国政府信息公开条例》等法规，明确了采购人在采购需求制定、履约情况验收、内控机制建设、政策的落实、采购信息公开五个方面的主体责任。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：分散采购，就是单位自行随意采购吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：分散采购也是政府采购，应当按照《政府采购法》规定的方式和程序执行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">此外，政府采购中的自行采购，指的是采购人按照政府采购有关规定，自行组织采购，并不是自行随意购买。自行组织采购，通俗地说，就是采购单位既要干采购人的活，又要干采购代理机构的活，两个活，一肩挑。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购可优先采购本地企业产品吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不可以。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：政府采购市场是全国统一自由市场，阻挠和限制供应商自由进入本地区和本行业政府采购市场的行为是违法的。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政府采购应当有助于实现国家的经济和社会发展政策目标，政府采购政策包含多方面内容，其功能主要包括节约能源、保护环境、扶持不发达地区和少数民族地区、促进中小企业发展以及采购本国货物、工程和服务等。目前，没有优先采购本地企业产品这类政策。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">问：政府采购只受财政部门的监督吗？</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">答：不是。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政策解读：除了财政部门，监察机关和审计部门等依法负有行政监督职责的政府有关部门也是政府采购监督部门。按照《政府采购法》规定，各级人民政府财政部门是负责政府采购监督管理的部门，依法履行对政府采购活动的监督管理职责；各级人民政府其他有关部门依法履行与政府采购活动有关的监督管理职责。审计机关对政府采购进行审计监督，监察机关对参与政府采购活动的有关人员实施监察监督，总的来说就是各部门依据各自法定职责对政府采购中的“人”“财”“事”进行监督。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">26项制度</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　扎紧政策笼子</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">在国务院《政府采购法实施条例》、财政部《政府采购非招标采购方式管理办法》等法规制度的基础上，通过连续3年系统性建章立制，我省政府采购已构建起比较健全完善的政府采购制度体系，基本做到了事事有法可依、有章可循，进一步扎紧了制度的笼子。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省共计制定出台了《关于创新政府采购机制 加强政府采购监管工作的意见》《关于贯彻落实&lt;中华人民共和国政府采购法实施条例&gt;的若干规定》《四川省政府采购当事人诚信管理办法》《四川省政府采购项目需求论证和履约验收管理办法》《四川省政府采购促进中小企业发展的若干规定》等26项制度。<!--中华人民共和国政府采购法实施条例--></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">同时，结合“放管服”改革要求，主要厘清财政部门、采购单位、采购代理机构和评审专家在政府采购活动中的职责和义务，提出加强采购单位和采购代理机构内部控制管理的指导意见，做到权责清晰。明确政府采购计划备案、采购需求论证、采购文件编制、采购评审、履约验收、采购方式变更和进口产品审核等采购重点环节的执行要求，简化审核流程。建立对采购代理机构监督检查和考核、政府采购项目绩效评价等事后监督机制，强化事后监管。按照全面创新改革要求，为落实创新产品采购和促进中小企业发展等政府采购政策提供有力的制度保障。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">充分尊重和发挥了市场对资源配置的决定性作用，转变了围绕规范采购程序进行制度设计的传统思维,以有利于结果导向进行制度重构，注重政府采购透明度建设，引入第三方监督机制，推行法定监督和社会监督相结合的监督模式，使制度在实践中得到了良好的执行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">突破2000亿元</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　采购规模快速增长</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2016年我省政府采购规模达到2009.1亿元，较2015年增加632.6亿元，增长46%；较2013年增加1671.1亿元，同比增长208.7%，年均增幅达45.6%，占公共财政支出的比重较2013年提高19.9个百分点。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省政府采购改革逐步推进，范围不断扩大，同时各级财政部门严格执行“无预算、无计划、不采购”的原则，通过强化政府采购预算审查，推行政府采购计划备案管理，加强宣传培训，积极纠错纠偏，采购单位的政府采购意识不断提高，政府采购规模实现快速增长。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">资金节约率33.2%</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">我省从2015年正式推行批量集中采购，采购规模不断增加，采购单位不断增多，规模效应的优势凸显。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">据统计，2016年全省批量集中采购2.5亿元，资金节约率为33.2%；其中，省级批量集中采购3954万元，资金节约率达62.7%，执行批量集中采购的单位84家，较2015年增加16家。执行批量集中采购的产品价格普遍低于同期市场价格20%左右，个别项目甚至近50%。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">实践证明，批量集中采购是一种既能充分体现政府集中采购规模效应，又能让采购人普遍接受的一种创新方式。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　进口产品审核减少77项</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　简政放权 审核事项递减</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">进口商品采购方面，省级和部分市（州）已经推行进口产品“清单制”，单位采购清单内进口产品无需再单独向财政部门申请。据了解，有很多市县直接参照省级的做法和清单范围，在本地推行，这些做法，大大简化了审核程序，提高了采购效率。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">以省级为例，2016年，省财政厅审核进口产品148项，较2015年同期减少77项。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">简政放权对发挥政府采购政策作用、降低创新风险、激发创新活力、促进中小企业发展有着积极的作用。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　No.1</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　政府采购透明度四川最优</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">2016年11月1日，国家智库——中国社科院发布中国首个《政府采购透明度评估报告(2016)》。《评估报告》反映，我省批量集中采购模式得分为90.4分、投诉处理结果及违规处罚结果得分为100分，总分为92.15分。四川省级政府采购透明度全国第一。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，采购人、采购代理机构、评审专家、供应商等政府采购活动的当事人和参与者，对于政府采购的评价也在逐渐发生变化。以前常听到的“质次价高”“效率低”这样的话，现在已经少有负面的评价。这些现象说明政府采购环境在向好的方面发展。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">3669个项目</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　接受监督检查</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　规模和质量全国领先</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，各级财政部门依法处理政府采购投诉、举报案件1452件；对违反政府采购法律法规的47家采购人、41家采购代理机构、310家供应商、76名评审专家进行了行政处罚。同时，动态淘汰不合格评审专家1500多名。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">自2015年起，采取省市县三级联动、同步推进的方式，对政府采购代理机构的执业情况进行监督检查。2016年，创新性地将政府采购代理机构监督检查、考核以及政府采购执行情况绩效评价整合，对社会代理机构及其代理的政府采购项目开展全方位、多角度、解剖式的检查、考核和评价，全省共计检查政府采购代理机构446家，检查政府采购项目3669个，涉及采购金额810.6亿元，检查规模和质量在全国各省（市）中排名第一，受到财政部的高度评价。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">通过监督检查、考核和绩效评价，发现了政府采购活动中存在的问题和不足，明确了财政部门今后的重点监管方向。同时，通过对发现的违法违规行为的处理，震慑了政府采购当事人，也进一步规范了政府采购活动。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　30393人次</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　参加我省政府采购培训</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">近年来，我省为提高政府采购从业人员法制意识和执业能力，促进政府采购质量和效率提升，进行了多轮次法制政策和业务操作培训。据统计，2014年-2016年，省财政厅共举办各类培训班84期，采购人培训1500多人次、代理机构培训7500多人次、政府采购评审专家培训20593人次、政府采购监督管理工作人员培训800多人次。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">这些培训，于采购人而言，提高了认识及业务水平，推动了政府采购改革工作的深化；于代理机构而言，强化了从业人员的专业素质，提升了工作质量，促进了政府采购代理的规范化、专业化；于评审专家而言，提高了专业素质及政府采购评审工作质量，促进了政府采购的公平、公正；于监管人员而言，真正达到了统一思想、明确任务、振奋信心、提高本领的目的。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">探索政府采购政策宣传和执业教育新模式，针对不同的政府采购当事人和参与者，实现了对象全覆盖。同时，根据内容的不同，采取不同的方法、不同的形式，使宣传教育效果明显提高。通过宣传教育，使政府采购人、采购代理机构、评审专家、供应商等直接参与者明白了政府采购的“规矩”，也进一步扩大了政府采购的社会认知和认同，营造了良好的改革环境。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　378716条公告</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　　政府采购信息全面公开</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">3年来，我省不断加大政府采购信息公开力度，全省在四川政府采购网发布采购公告137608条、采购结果公告132394条、变更公告36766条、采购合同公告55575条、投诉处理决定公告945条、进口产品审核前公示3346条、单一来源采购审核前公示8652条、采购需求论证公示2422条、质疑答复公示1008条，广泛接受社会监督，让政府采购活动在阳光下运行。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">正是不断完善政府采购信息公开制度，进一步强化监督管理，我省政府采购工作得到了社会广泛的肯定和认可。</p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \"><strong style=\"margin: 0px; padding: 0px;\">　点睛</strong></p><p style=\"margin-top: 32px; margin-bottom: 0px; padding: 0px; font-size: 18px; text-indent: 2em; font-stretch: normal; line-height: 32px; font-family: \">政府采购信息公开，无论是对政府采购制度建设，还是社会公众、采购人、供应商来说，都是受益者。政府采购信息公开可以提高政府采购的透明度，方便社会公众监督，减少采购人的信息公告支出，便于供应商公平地获得采购信息。</p><p><br/></p>', null, null, null);
@@ -2472,12 +2492,17 @@ CREATE TABLE `jc_department` (
   KEY `fk_jc_department_site` (`site_id`),
   KEY `fk_jc_jc_department_parent` (`parent_id`),
   CONSTRAINT `fk_jc_jc_department_parent` FOREIGN KEY (`parent_id`) REFERENCES `jc_department` (`depart_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='部门';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='部门';
 
 -- ----------------------------
 -- Records of jc_department
 -- ----------------------------
-INSERT INTO `jc_department` VALUES ('1', '一级部门', null, '1', '1', null);
+INSERT INTO `jc_department` VALUES ('1', '四川大学华西医院', null, '1', '1', null);
+INSERT INTO `jc_department` VALUES ('2', '北京协和医院', null, '2', '1', null);
+INSERT INTO `jc_department` VALUES ('3', '病理科', null, '1', '1', '1');
+INSERT INTO `jc_department` VALUES ('4', '病理科', null, '1', '1', '2');
+INSERT INTO `jc_department` VALUES ('5', '放射科', null, '2', '1', '2');
+INSERT INTO `jc_department` VALUES ('6', '其他医院', null, '3', '1', null);
 
 -- ----------------------------
 -- Table structure for jc_dictionary
@@ -2489,22 +2514,47 @@ CREATE TABLE `jc_dictionary` (
   `value` varchar(255) NOT NULL COMMENT 'value',
   `type` varchar(255) NOT NULL COMMENT 'type',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='字典表';
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COMMENT='字典表';
 
 -- ----------------------------
 -- Records of jc_dictionary
 -- ----------------------------
-INSERT INTO `jc_dictionary` VALUES ('1', '10-20人', '10-20人', 'scale');
-INSERT INTO `jc_dictionary` VALUES ('2', '20-50人', '20-50人', 'scale');
-INSERT INTO `jc_dictionary` VALUES ('3', '50-10人', '50-10人', 'scale');
-INSERT INTO `jc_dictionary` VALUES ('4', '100人以上', '100人以上', 'scale');
-INSERT INTO `jc_dictionary` VALUES ('5', '私企', '私企', 'nature');
-INSERT INTO `jc_dictionary` VALUES ('6', '股份制', '股份制', 'nature');
-INSERT INTO `jc_dictionary` VALUES ('7', '国企', '国企', 'nature');
-INSERT INTO `jc_dictionary` VALUES ('8', '互联网', '互联网', 'industry');
-INSERT INTO `jc_dictionary` VALUES ('9', '房地产', '房地产', 'industry');
-INSERT INTO `jc_dictionary` VALUES ('10', '加工制造', '加工制造', 'industry');
-INSERT INTO `jc_dictionary` VALUES ('11', '服务行业', '服务行业', 'industry');
+INSERT INTO `jc_dictionary` VALUES ('1', '初级', '初级', '级别');
+INSERT INTO `jc_dictionary` VALUES ('2', '中级', '中级', '级别');
+INSERT INTO `jc_dictionary` VALUES ('3', '高级', '高级', '级别');
+INSERT INTO `jc_dictionary` VALUES ('4', '主治医师', '主治医师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('5', '副教授', '副教授', '职称');
+INSERT INTO `jc_dictionary` VALUES ('6', '教授', '教授', '职称');
+INSERT INTO `jc_dictionary` VALUES ('7', '副主任医师', '副主任医师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('8', '内科', '内科', '专业');
+INSERT INTO `jc_dictionary` VALUES ('9', '外科', '外科', '专业');
+INSERT INTO `jc_dictionary` VALUES ('10', '副研究员', '副研究员', '职称');
+INSERT INTO `jc_dictionary` VALUES ('11', '讲师', '讲师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('12', '研究员', '研究员', '职称');
+INSERT INTO `jc_dictionary` VALUES ('13', '医师', '医师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('14', '主管技师', '主管技师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('15', '主任医师', '主任医师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('16', '助教', '助教', '职称');
+INSERT INTO `jc_dictionary` VALUES ('17', '助理研究员', '助理研究员', '职称');
+INSERT INTO `jc_dictionary` VALUES ('18', '医士', '医士', '职称');
+INSERT INTO `jc_dictionary` VALUES ('19', '主管医师', '主管医师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('20', '护士', '护士', '职称');
+INSERT INTO `jc_dictionary` VALUES ('21', '护师', '护师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('22', '主管护师', '主管护师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('23', '副主任护师', '副主任护师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('24', '主任护师', '主任护师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('25', '技士', '技士', '职称');
+INSERT INTO `jc_dictionary` VALUES ('26', '技师', '技师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('27', '副主任技师', '副主任技师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('28', '主任技师', '主任技师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('29', '主任药师', '主任药师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('30', '副主任药师', '副主任药师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('31', '主管药师', '主管药师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('32', '药师', '药师', '职称');
+INSERT INTO `jc_dictionary` VALUES ('33', '药士', '药士', '职称');
+INSERT INTO `jc_dictionary` VALUES ('34', '其他', '其他', '职称');
+INSERT INTO `jc_dictionary` VALUES ('35', '中国', '中国', '国籍');
+INSERT INTO `jc_dictionary` VALUES ('36', '外国', '外国', '国籍');
 
 -- ----------------------------
 -- Table structure for jc_directive_tpl
@@ -2651,6 +2701,16 @@ INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/111121213xss.docx', '测试.doc
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/11112910l4qa.jpg', '3c6d55fbb2fb43161e70f38528a4462308f7d3e6.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201610/11113157dh9e.jpg', '0.jpg', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/201701/160016148i9t.jpg', '1.jpg', '1', '11');
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/012124176acx.png', '无标题1.png', '1', '130');
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/021908507wtn.png', '无标题3png.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02190935f36w.png', '无标题.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02191009zrq0.jpg', '东软工商登记信息.jpg', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02191052ccou.png', '无标题4.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/021912057lwm.png', '无标题1.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02193434vhtr.png', '无标题1.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02194630xqa5.png', '无标题1.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/02194839cmud.png', '无标题1.png', '0', null);
+INSERT INTO `jc_file` VALUES ('/u/cms/www/201702/021949513bq0.png', '无标题1.png', '0', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093458gynd.jpg', '22093458gynd.jpg', '1', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093502mmft.jpg', '22093502mmft.jpg', '1', null);
 INSERT INTO `jc_file` VALUES ('/u/cms/www/22093506l8pv.jpg', '22093506l8pv.jpg', '1', null);
@@ -2923,17 +2983,13 @@ CREATE TABLE `jc_guestbook` (
   CONSTRAINT `fk_jc_guestbook_admin` FOREIGN KEY (`admin_id`) REFERENCES `jc_user` (`user_id`),
   CONSTRAINT `fk_jc_guestbook_member` FOREIGN KEY (`member_id`) REFERENCES `jc_user` (`user_id`),
   CONSTRAINT `fk_jc_guestbook_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='CMS留言';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='CMS留言';
 
 -- ----------------------------
 -- Records of jc_guestbook
 -- ----------------------------
-INSERT INTO `jc_guestbook` VALUES ('3', '1', '1', null, '1', '117.41.152.66', '2016-10-10 15:02:04', null, '1', '1');
-INSERT INTO `jc_guestbook` VALUES ('4', '1', '1', null, '1', '117.41.152.66', '2016-10-10 15:07:53', null, '1', '1');
-INSERT INTO `jc_guestbook` VALUES ('5', '1', '1', null, '1', '117.41.152.66', '2016-10-10 15:08:41', null, '1', '1');
-INSERT INTO `jc_guestbook` VALUES ('6', '1', '1', null, '1', '117.41.152.66', '2016-10-10 15:09:06', null, '1', '1');
-INSERT INTO `jc_guestbook` VALUES ('7', '1', '1', null, null, '118.113.134.207', '2017-01-23 20:04:06', null, '0', '0');
-INSERT INTO `jc_guestbook` VALUES ('8', '1', '1', '15', null, '211.101.240.18', '2017-01-24 17:30:35', null, '0', '0');
+INSERT INTO `jc_guestbook` VALUES ('9', '1', '1', null, null, '127.0.0.1', '2017-02-01 12:19:47', null, '0', '0');
+INSERT INTO `jc_guestbook` VALUES ('10', '1', '1', '1', null, '127.0.0.1', '2017-02-01 12:21:18', null, '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_guestbook_ctg
@@ -2992,12 +3048,8 @@ CREATE TABLE `jc_guestbook_ext` (
 -- ----------------------------
 -- Records of jc_guestbook_ext
 -- ----------------------------
-INSERT INTO `jc_guestbook_ext` VALUES ('3', '新版caihongyixue v8的改动很大，希望做得更好，持续关注中。', '新版caihongyixue v8的改动很大，希望做得更好，持续关注中。', null, null, null, null);
-INSERT INTO `jc_guestbook_ext` VALUES ('4', '怎么在页面首页放一个视频之后我点击的时候就可以看？', '怎么在页面首页放一个视频之后我点击的时候就可以看？', null, null, null, null);
-INSERT INTO `jc_guestbook_ext` VALUES ('5', '网店和论坛的用户管理和caihongyixue 可以统一起来吗？	', '网店和论坛的用户管理和caihongyixue 可以统一起来吗？	', null, null, null, null);
-INSERT INTO `jc_guestbook_ext` VALUES ('6', '请问在内容中上传视频的限制是多大，能不能自己设置设置视频的大小	', '请问在内容中上传视频的限制是多大，能不能自己设置设置视频的大小	', null, null, null, null);
-INSERT INTO `jc_guestbook_ext` VALUES ('7', '稀里糊涂', '留下一点寂寞', null, null, null, null);
-INSERT INTO `jc_guestbook_ext` VALUES ('8', '你好', '测试', null, '1213388927@qq.com', '13663302328', '1213388927');
+INSERT INTO `jc_guestbook_ext` VALUES ('9', '特二食堂', '案说法是分散123123123', null, '123', '123', '123');
+INSERT INTO `jc_guestbook_ext` VALUES ('10', '啊啊沙发', '爱上谁发的撒发顺丰的', null, '123123', '18111266553', '772112312');
 
 -- ----------------------------
 -- Table structure for jc_job_apply
@@ -3058,7 +3110,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=236 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -3239,6 +3291,65 @@ INSERT INTO `jc_log` VALUES ('173', '1', null, '1', '2017-01-31 11:10:54', '45.7
 INSERT INTO `jc_log` VALUES ('174', '1', '1', '3', '2017-01-31 11:13:41', '45.76.105.95', '/admin/cms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/member/member_footer.html');
 INSERT INTO `jc_log` VALUES ('175', '1', '1', '3', '2017-02-01 00:12:08', '101.207.227.70', '/admin/cms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/index/index.html');
 INSERT INTO `jc_log` VALUES ('176', '1', '1', '3', '2017-02-01 00:12:23', '101.207.227.70', '/admin/cms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/mobile/index/index.html');
+INSERT INTO `jc_log` VALUES ('177', '1', '1', '3', '2017-02-01 12:19:47', '127.0.0.1', '/admin/cms/guestbook/o_save.do', '增加留言', 'id=9;title=特二食堂');
+INSERT INTO `jc_log` VALUES ('178', '1', '1', '3', '2017-02-01 12:20:35', '127.0.0.1', '/admin/cms/guestbook/o_update.do', '修改留言', 'id=9;title=特二食堂');
+INSERT INTO `jc_log` VALUES ('179', '1', '1', '3', '2017-02-01 12:21:33', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=6;title=请问在内容中上传视频的限制是多大，能不能自己设置设置视频的大小	');
+INSERT INTO `jc_log` VALUES ('180', '1', '1', '3', '2017-02-01 12:21:33', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=5;title=网店和论坛的用户管理和caihongyixue 可以统一起来吗？	');
+INSERT INTO `jc_log` VALUES ('181', '1', '1', '3', '2017-02-01 12:21:33', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=4;title=怎么在页面首页放一个视频之后我点击的时候就可以看？');
+INSERT INTO `jc_log` VALUES ('182', '1', '1', '3', '2017-02-01 12:21:34', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=3;title=新版caihongyixue v8的改动很大，希望做得更好，持续关注中。');
+INSERT INTO `jc_log` VALUES ('183', '1', '1', '3', '2017-02-01 12:21:39', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=8;title=你好');
+INSERT INTO `jc_log` VALUES ('184', '1', '1', '3', '2017-02-01 12:21:39', '127.0.0.1', '/admin/cms/guestbook/o_delete.do', '删除留言', 'id=7;title=稀里糊涂');
+INSERT INTO `jc_log` VALUES ('185', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=9;name=六十种民间“非遗”亮相郑州室内春集 观者如潮');
+INSERT INTO `jc_log` VALUES ('186', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=8;name=巴西２０１６年失业率达１１．５％');
+INSERT INTO `jc_log` VALUES ('187', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=7;name=罗马尼亚政府通过修改刑法紧急政令');
+INSERT INTO `jc_log` VALUES ('188', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=6;name=塞尔维亚和希腊计划改造升级连接两国的铁路');
+INSERT INTO `jc_log` VALUES ('189', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=5;name=“开门办春晚”让春晚大餐更“可口”');
+INSERT INTO `jc_log` VALUES ('190', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=4;name=联合国特使说叙利亚问题日内瓦和谈推迟至２月２０日举行');
+INSERT INTO `jc_log` VALUES ('191', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=3;name=5分钟剁好馅？10分钟发好面？现学现用！家家必备神技能（点开本文沾财运）');
+INSERT INTO `jc_log` VALUES ('192', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=2;name=快来接财神了！正月初五的正确打开方式全在这，全年都能“鸡”有钱！');
+INSERT INTO `jc_log` VALUES ('193', '1', '1', '3', '2017-02-01 13:36:48', '127.0.0.1', '/admin/cms/acquisition/o_delete_history.do', '删除采集历史', 'id=1;name=新西兰将于９月２３日举行议会选举');
+INSERT INTO `jc_log` VALUES ('194', null, null, '2', '2017-02-01 18:44:56', '127.0.0.1', '/admin/cms/login.do', 'login failure', 'username=15588882223');
+INSERT INTO `jc_log` VALUES ('195', '1', null, '1', '2017-02-01 18:45:04', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('196', '1', '1', '3', '2017-02-01 18:46:27', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('197', '1', '1', '3', '2017-02-01 19:16:38', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('198', '1', '1', '3', '2017-02-01 19:18:03', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('199', '1', '1', '3', '2017-02-01 19:18:27', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('200', '1', '1', '3', '2017-02-01 19:19:32', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=27;username=caihong4');
+INSERT INTO `jc_log` VALUES ('201', '1', '1', '3', '2017-02-01 19:31:06', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('202', '1', '1', '3', '2017-02-01 19:33:51', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('203', '1', '1', '3', '2017-02-01 19:35:15', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('204', '1', '1', '3', '2017-02-01 19:36:24', '127.0.0.1', '/admin/cms/member/o_save.do', '增加会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('205', '1', '1', '3', '2017-02-01 21:04:29', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('206', '1', '1', '3', '2017-02-01 21:04:53', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('207', '1', '1', '3', '2017-02-01 21:08:09', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('208', '1', '1', '3', '2017-02-01 21:25:12', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=130;title=党中央推进民族工作创新发展纪实');
+INSERT INTO `jc_log` VALUES ('209', '1', '1', '3', '2017-02-01 21:27:28', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=130;title=党中央推进民族工作创新发展纪实');
+INSERT INTO `jc_log` VALUES ('210', '1', '1', '3', '2017-02-02 00:28:31', '127.0.0.1', '/admin/cms/department/o_update.do', '修改部门', 'id=1;name=四川大学华西医院');
+INSERT INTO `jc_log` VALUES ('211', '1', '1', '3', '2017-02-02 00:28:48', '127.0.0.1', '/admin/cms/department/o_save.do', '增加部门', 'id=2;name=北京协和医院');
+INSERT INTO `jc_log` VALUES ('212', '1', '1', '3', '2017-02-02 00:31:02', '127.0.0.1', '/admin/cms/department/o_save.do', '增加部门', 'id=3;name=病理科');
+INSERT INTO `jc_log` VALUES ('213', '1', '1', '3', '2017-02-02 00:32:10', '127.0.0.1', '/admin/cms/department/o_update.do', '修改部门', 'id=1;name=四川大学华西医院');
+INSERT INTO `jc_log` VALUES ('214', '1', '1', '3', '2017-02-02 00:32:25', '127.0.0.1', '/admin/cms/department/o_save.do', '增加部门', 'id=4;name=病理科');
+INSERT INTO `jc_log` VALUES ('215', '1', '1', '3', '2017-02-02 00:33:03', '127.0.0.1', '/admin/cms/department/o_save.do', '增加部门', 'id=5;name=病理科');
+INSERT INTO `jc_log` VALUES ('216', '1', '1', '3', '2017-02-02 00:33:58', '127.0.0.1', '/admin/cms/department/o_update.do', '修改部门', 'id=5;name=放射科');
+INSERT INTO `jc_log` VALUES ('217', '1', '1', '3', '2017-02-02 00:45:37', '127.0.0.1', '/admin/cms/department/o_save.do', '增加部门', 'id=6;name=其他');
+INSERT INTO `jc_log` VALUES ('218', '1', '1', '3', '2017-02-02 00:48:42', '127.0.0.1', '/admin/cms/department/o_update.do', '修改部门', 'id=6;name=其他医院');
+INSERT INTO `jc_log` VALUES ('219', '1', '1', '3', '2017-02-02 18:16:46', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('220', '1', '1', '3', '2017-02-02 18:17:37', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('221', '1', '1', '3', '2017-02-02 18:17:55', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('222', '1', '1', '3', '2017-02-02 18:21:19', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('223', '1', '1', '3', '2017-02-02 19:44:55', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('224', '1', '1', '3', '2017-02-02 19:47:18', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('225', '1', '1', '3', '2017-02-02 19:49:21', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('226', '1', '1', '3', '2017-02-02 19:50:19', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=29;username=test');
+INSERT INTO `jc_log` VALUES ('227', '1', '1', '3', '2017-02-02 20:41:11', '127.0.0.1', '/admin/cms/dictionary/o_update.do', '修改字典值', 'id=8;name=肿瘤');
+INSERT INTO `jc_log` VALUES ('228', '1', '1', '3', '2017-02-02 23:42:23', '127.0.0.1', '/admin/cms/member/o_save.do', '增加会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('229', '1', '1', '3', '2017-02-02 23:43:02', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('230', '1', '1', '3', '2017-02-02 23:49:43', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('231', '1', '1', '3', '2017-02-02 23:52:47', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('232', '1', '1', '3', '2017-02-03 00:03:15', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('233', '1', '1', '3', '2017-02-03 00:06:52', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('234', '1', '1', '3', '2017-02-03 00:07:38', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=30;username=test1');
+INSERT INTO `jc_log` VALUES ('235', '1', '1', '3', '2017-02-03 00:47:08', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=27;username=caihong4');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3965,12 +4076,12 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
 -- ----------------------------
-INSERT INTO `jc_site_access` VALUES ('169', '17139ADD7763987B113D64BE1373FDAB', '1', '10:25:09', '2017-02-01', '101.207.227.1', '四川省', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('176', '01575C6E773CA30BECA4183B2734358E', '1', '23:06:22', '2017-02-02', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 53', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -3985,7 +4096,7 @@ CREATE TABLE `jc_site_access_count` (
   PRIMARY KEY (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`),
   CONSTRAINT `fk_jc_access_count_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
+) ENGINE=InnoDB AUTO_INCREMENT=360 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
 
 -- ----------------------------
 -- Records of jc_site_access_count
@@ -4078,6 +4189,9 @@ INSERT INTO `jc_site_access_count` VALUES ('353', '3', '2', '2017-01-29', '1');
 INSERT INTO `jc_site_access_count` VALUES ('354', '2', '1', '2017-01-30', '1');
 INSERT INTO `jc_site_access_count` VALUES ('355', '1', '1', '2017-01-31', '1');
 INSERT INTO `jc_site_access_count` VALUES ('356', '2', '1', '2017-01-31', '1');
+INSERT INTO `jc_site_access_count` VALUES ('357', '2', '3', '2017-02-01', '1');
+INSERT INTO `jc_site_access_count` VALUES ('358', '1', '2', '2017-02-01', '1');
+INSERT INTO `jc_site_access_count` VALUES ('359', '3', '2', '2017-02-01', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_pages
@@ -4094,11 +4208,13 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=809 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=820 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
 -- ----------------------------
+INSERT INTO `jc_site_access_pages` VALUES ('818', 'http://www.caihongyixue.com/?tmppass=123321', 'A1B2143CF07A42CEE2F2DB3D0E49CCA9', '2017-02-02', '00:04:15', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('819', 'http://www.caihongyixue.com/?tmppass=123321', '01575C6E773CA30BECA4183B2734358E', '2017-02-02', '23:06:22', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -4118,7 +4234,7 @@ CREATE TABLE `jc_site_access_statistic` (
   PRIMARY KEY (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`),
   CONSTRAINT `fk_jc_access_statistic_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=438 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=441 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
 
 -- ----------------------------
 -- Records of jc_site_access_statistic
@@ -4204,6 +4320,9 @@ INSERT INTO `jc_site_access_statistic` VALUES ('434', '2017-01-30', '2', '1', '1
 INSERT INTO `jc_site_access_statistic` VALUES ('435', '2017-01-30', '2', '1', '1', '2', '7', '1', 'source', '直接访问');
 INSERT INTO `jc_site_access_statistic` VALUES ('436', '2017-01-31', '3', '2', '2', '1', '1', '1', 'all', '');
 INSERT INTO `jc_site_access_statistic` VALUES ('437', '2017-01-31', '3', '2', '2', '1', '1', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('438', '2017-02-01', '14', '2', '7', '2', '-11933', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('439', '2017-02-01', '1', '1', '1', '1', '0', '1', 'area', '四川省');
+INSERT INTO `jc_site_access_statistic` VALUES ('440', '2017-02-01', '14', '2', '7', '2', '-11933', '1', 'source', '直接访问');
 
 -- ----------------------------
 -- Table structure for jc_site_attr
@@ -4220,16 +4339,16 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '936');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '207');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '947');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '215');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppkey', '0');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppSecret', '0');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '2');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '2');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '12');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '2');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '2');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '8');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '0');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '0');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '23');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '13');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '10');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '16');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -4491,39 +4610,57 @@ CREATE TABLE `jc_user` (
   `file_total` int(11) NOT NULL DEFAULT '0' COMMENT '上传文库文档个数',
   `grain` int(11) NOT NULL DEFAULT '0' COMMENT '文库财富值',
   `session_id` varchar(255) DEFAULT NULL,
+  `fans_cnt` int(11) NOT NULL DEFAULT '0' COMMENT '粉丝数',
+  `follow_cnt` int(11) NOT NULL DEFAULT '0' COMMENT '关注数',
+  `job_title` int(11) DEFAULT NULL COMMENT '职称',
+  `job_level` int(11) DEFAULT NULL COMMENT '级别',
+  `major` int(11) DEFAULT NULL COMMENT '专业',
+  `nation` int(11) DEFAULT NULL,
+  `id_no` varchar(20) DEFAULT NULL COMMENT '证件号码',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`),
   KEY `fk_jc_user_group` (`group_id`),
   KEY `fk_jc_user_depart` (`depart_id`),
+  KEY `fk_jc_user_major` (`major`),
+  KEY `fk_jc_user_nation` (`nation`),
+  KEY `fk_jc_user_jobtitle` (`job_title`),
+  KEY `fk_jc_user_joblevel` (`job_level`),
   CONSTRAINT `fk_jc_user_depart` FOREIGN KEY (`depart_id`) REFERENCES `jc_department` (`depart_id`),
-  CONSTRAINT `fk_jc_user_group` FOREIGN KEY (`group_id`) REFERENCES `jc_group` (`group_id`)
+  CONSTRAINT `fk_jc_user_group` FOREIGN KEY (`group_id`) REFERENCES `jc_group` (`group_id`),
+  CONSTRAINT `fk_jc_user_joblevel` FOREIGN KEY (`job_level`) REFERENCES `jc_dictionary` (`id`),
+  CONSTRAINT `fk_jc_user_jobtitle` FOREIGN KEY (`job_title`) REFERENCES `jc_dictionary` (`id`),
+  CONSTRAINT `fk_jc_user_major` FOREIGN KEY (`major`) REFERENCES `jc_dictionary` (`id`),
+  CONSTRAINT `fk_jc_user_nation` FOREIGN KEY (`nation`) REFERENCES `jc_dictionary` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS用户表';
 
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', null, 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-01 10:25:05', '101.207.227.67', '2350', '9', '334192', '14', '2017-01-17', '1', '0', '0', '0', '4', '103', '17139ADD7763987B113D64BE1373FDAB');
-INSERT INTO `jc_user` VALUES ('2', '2', null, 'caihong', null, '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-25 09:15:42', '117.174.29.135', '16', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '0', '449493ABF62380875B3D512A23C4923A');
-INSERT INTO `jc_user` VALUES ('3', '1', null, 'caihong1', null, '77219569@qq.com', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', '0', '0', '0', '2017-01-16', '0', '0', '0', '0', '0', '0', '294E1AA96E695E3815B69E69D5C08E48');
-INSERT INTO `jc_user` VALUES ('4', '1', null, 'caihong3', null, '77219569@qq.com', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', 'A0DFA5A2E188EBD6C3493AE102027503');
-INSERT INTO `jc_user` VALUES ('5', '1', null, '红山茶007', null, '423649967@qq.com', '2017-01-17 11:41:13', '182.138.200.232', '2017-01-17 16:14:33', '182.138.200.232', '7', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '906271CD70039CA011C31473FA1ECFDE');
-INSERT INTO `jc_user` VALUES ('6', '1', null, '彩虹医学编辑', null, 'caihongyixue@163.com', '2017-01-17 15:31:52', '182.138.200.232', '2017-01-17 15:31:52', '182.138.200.232', '0', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', null);
-INSERT INTO `jc_user` VALUES ('7', '1', null, 'ceshi123', null, 'caihongyixue@163.com', '2017-01-17 15:40:36', '182.138.200.232', '2017-01-17 15:42:09', '182.138.200.232', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '149C1E6ED3F33FBFD1174D76C9D4D8C0');
-INSERT INTO `jc_user` VALUES ('10', '1', null, 'qianfo_713', null, '77219569@qq.com', '2017-01-18 10:19:18', '117.173.132.144', '2017-01-18 14:38:02', '117.173.132.144', '3', '0', '0', '0', '2017-01-18', '0', '0', '0', '0', '0', '0', '02BEE083DEBB08E5C9CE3C44EA453B73');
-INSERT INTO `jc_user` VALUES ('11', '1', null, '成都李炳成', null, 'yyy9990@vip.163.com', '2017-01-19 17:54:44', '182.150.160.76', '2017-01-19 17:55:07', '182.150.160.76', '1', '0', '0', '0', '2017-01-19', '0', '0', '0', '0', '0', '0', 'BB25A2D17CA37C22C99CFCD14DB319BA');
-INSERT INTO `jc_user` VALUES ('12', '1', null, '彩虹妹妹', null, 'caihongyixue@163.com', '2017-01-24 12:56:23', '110.22.22.220', '2017-01-24 12:59:21', '110.22.22.220', '3', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '55686FDB5539095B8A4EC2142C740A88');
-INSERT INTO `jc_user` VALUES ('13', '1', null, 'Butter', null, 'dlxiyoulinux@gmail.com', '2017-01-24 17:06:34', '60.22.103.9', '2017-01-24 17:06:44', '60.22.103.9', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '805F7D16485CF7F4A92982B9FF4168B2');
-INSERT INTO `jc_user` VALUES ('14', '1', null, '彩虹', null, 'caihongyixue@163.com', '2017-01-24 17:08:56', '110.22.22.220', '2017-01-28 09:28:28', '110.22.22.220', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4C311F8E4B70B8251FB4FB68A7E2E5A3');
-INSERT INTO `jc_user` VALUES ('15', '1', null, 'Daisy', null, '1213388927@qq.com', '2017-01-24 17:09:33', '211.101.240.18', '2017-01-24 17:18:45', '211.101.240.18', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '3C9E189D885121451CB5B88867C3E71C');
-INSERT INTO `jc_user` VALUES ('16', '1', null, 'shbqsl-790818', null, '125257175@qq.com.cn', '2017-01-24 17:11:11', '180.212.194.81', '2017-01-24 17:52:00', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '67A7C25B0B9A29D489227409BC15EB4E');
-INSERT INTO `jc_user` VALUES ('17', '1', null, '李炳辰', null, 'yyy9990@vip.163.com', '2017-01-24 17:19:59', '171.214.210.223', '2017-01-24 17:20:12', '171.214.210.223', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B91A4FB5599CBA0BCCCDF0A45E071C18');
-INSERT INTO `jc_user` VALUES ('18', '1', null, 'shbqsl-790818sss', null, '125257175@qq.com', '2017-01-24 18:40:54', '180.212.194.81', '2017-01-24 18:42:21', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4CFB3B5B98AA41E391A5D8B5621FE33F');
-INSERT INTO `jc_user` VALUES ('19', '1', null, 'shbqsl-790818a', null, '125257175@qq.com', '2017-01-24 18:51:23', '180.212.194.81', '2017-01-24 18:52:08', '180.212.194.81', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '8358F444C334A354C8B4D6989C451AAD');
-INSERT INTO `jc_user` VALUES ('20', '1', null, 'shbqsl-790818aa', null, '125257175@qq.com', '2017-01-24 19:08:21', '180.212.194.81', '2017-01-24 19:08:29', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '229D8A51706FD481C890A13792864C79');
-INSERT INTO `jc_user` VALUES ('21', '1', null, 'ydk110', null, '564464797@qq.com', '2017-01-24 23:35:03', '221.203.80.59', '2017-01-25 01:13:23', '42.87.163.187', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B6D8F492C8055F703D0A7B80FADBDAAD');
-INSERT INTO `jc_user` VALUES ('22', '1', null, '北极光', null, '133620311@qq.com', '2017-01-25 10:12:36', '124.202.226.50', '2017-01-25 10:13:06', '124.202.226.50', '1', '0', '0', '0', '2017-01-25', '0', '0', '0', '0', '0', '0', '226B67FA39A6D368AE96D7810D8E03A3');
-INSERT INTO `jc_user` VALUES ('23', '1', null, 'caihong5', '15882454451', 'qianfo@713.com', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 00:38:06', '101.207.227.70', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null);
-INSERT INTO `jc_user` VALUES ('25', '1', null, 'qianfo', '15882454452', 'qianfo@173.com', '2017-02-01 00:49:10', '101.207.227.70', '2017-02-01 00:49:10', '101.207.227.70', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null);
+INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', '15588882222', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-01 18:45:04', '127.0.0.1', '2365', '9', '336788', '312', '2017-02-02', '1', '0', '0', '0', '4', '103', 'B7985988E3F736DF518639EC0775E1BB', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('2', '2', null, 'caihong', null, '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-25 09:15:42', '117.174.29.135', '16', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '0', '449493ABF62380875B3D512A23C4923A', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('3', '1', null, 'caihong1', null, '77219569@qq.com', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', '0', '0', '0', '2017-01-16', '0', '0', '0', '0', '0', '0', '294E1AA96E695E3815B69E69D5C08E48', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('4', '1', null, 'caihong3', null, '77219569@qq.com', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', 'A0DFA5A2E188EBD6C3493AE102027503', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('5', '1', null, '红山茶007', null, '423649967@qq.com', '2017-01-17 11:41:13', '182.138.200.232', '2017-01-17 16:14:33', '182.138.200.232', '7', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '906271CD70039CA011C31473FA1ECFDE', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('6', '1', null, '彩虹医学编辑', null, 'caihongyixue@163.com', '2017-01-17 15:31:52', '182.138.200.232', '2017-01-17 15:31:52', '182.138.200.232', '0', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', null, '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('7', '1', null, 'ceshi123', null, 'caihongyixue@163.com', '2017-01-17 15:40:36', '182.138.200.232', '2017-01-17 15:42:09', '182.138.200.232', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '149C1E6ED3F33FBFD1174D76C9D4D8C0', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('10', '1', null, 'qianfo_713', null, '77219569@qq.com', '2017-01-18 10:19:18', '117.173.132.144', '2017-01-18 14:38:02', '117.173.132.144', '3', '0', '0', '0', '2017-01-18', '0', '0', '0', '0', '0', '0', '02BEE083DEBB08E5C9CE3C44EA453B73', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('11', '1', null, '成都李炳成', null, 'yyy9990@vip.163.com', '2017-01-19 17:54:44', '182.150.160.76', '2017-01-19 17:55:07', '182.150.160.76', '1', '0', '0', '0', '2017-01-19', '0', '0', '0', '0', '0', '0', 'BB25A2D17CA37C22C99CFCD14DB319BA', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('12', '1', null, '彩虹妹妹', null, 'caihongyixue@163.com', '2017-01-24 12:56:23', '110.22.22.220', '2017-01-24 12:59:21', '110.22.22.220', '3', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '55686FDB5539095B8A4EC2142C740A88', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('13', '1', null, 'Butter', null, 'dlxiyoulinux@gmail.com', '2017-01-24 17:06:34', '60.22.103.9', '2017-01-24 17:06:44', '60.22.103.9', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '805F7D16485CF7F4A92982B9FF4168B2', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('14', '1', null, '彩虹', null, 'caihongyixue@163.com', '2017-01-24 17:08:56', '110.22.22.220', '2017-01-28 09:28:28', '110.22.22.220', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4C311F8E4B70B8251FB4FB68A7E2E5A3', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('15', '1', null, 'Daisy', null, '1213388927@qq.com', '2017-01-24 17:09:33', '211.101.240.18', '2017-01-24 17:18:45', '211.101.240.18', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '3C9E189D885121451CB5B88867C3E71C', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('16', '1', null, 'shbqsl-790818', null, '125257175@qq.com.cn', '2017-01-24 17:11:11', '180.212.194.81', '2017-01-24 17:52:00', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '67A7C25B0B9A29D489227409BC15EB4E', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('17', '1', null, '李炳辰', null, 'yyy9990@vip.163.com', '2017-01-24 17:19:59', '171.214.210.223', '2017-01-24 17:20:12', '171.214.210.223', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B91A4FB5599CBA0BCCCDF0A45E071C18', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('18', '1', null, 'shbqsl-790818sss', null, '125257175@qq.com', '2017-01-24 18:40:54', '180.212.194.81', '2017-01-24 18:42:21', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4CFB3B5B98AA41E391A5D8B5621FE33F', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('19', '1', null, 'shbqsl-790818a', null, '125257175@qq.com', '2017-01-24 18:51:23', '180.212.194.81', '2017-01-24 18:52:08', '180.212.194.81', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '8358F444C334A354C8B4D6989C451AAD', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('20', '1', null, 'shbqsl-790818aa', null, '125257175@qq.com', '2017-01-24 19:08:21', '180.212.194.81', '2017-01-24 19:08:29', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '229D8A51706FD481C890A13792864C79', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('21', '1', null, 'ydk110', null, '564464797@qq.com', '2017-01-24 23:35:03', '221.203.80.59', '2017-01-25 01:13:23', '42.87.163.187', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B6D8F492C8055F703D0A7B80FADBDAAD', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('22', '1', null, '北极光', null, '133620311@qq.com', '2017-01-25 10:12:36', '124.202.226.50', '2017-01-25 10:13:06', '124.202.226.50', '1', '0', '0', '0', '2017-01-25', '0', '0', '0', '0', '0', '0', '226B67FA39A6D368AE96D7810D8E03A3', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('23', '1', null, 'caihong5', '15882454451', 'qianfo@713.com', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 11:50:01', '127.0.0.1', '1', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', 'EA13B098142600FB03BBCA0680A9E318', '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('27', '2', '3', 'caihong4', '15588882222', '123@163.com', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', null);
+INSERT INTO `jc_user` VALUES ('28', '2', null, 'caihong6', '15588882223', 'caihongyixue@qq.com', '2017-02-01 17:42:22', '127.0.0.1', '2017-02-01 17:42:22', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('29', '1', '3', 'test', '1', '77219569@qq.com', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', null, null, null, '1', null);
+INSERT INTO `jc_user` VALUES ('30', '1', '3', 'test1', '15588882222', '77219569@qq.com', '2017-02-02 23:42:18', '127.0.0.1', '2017-02-02 23:42:18', '127.0.0.1', '0', '0', '0', '0', '2017-02-02', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '2', '8', '36', null);
 
 -- ----------------------------
 -- Table structure for jc_user_account
@@ -4608,7 +4745,7 @@ CREATE TABLE `jc_user_ext` (
 -- ----------------------------
 -- Records of jc_user_ext
 -- ----------------------------
-INSERT INTO `jc_user_ext` VALUES ('1', '彩虹医学网', '1', '2015-04-09 00:00:00', null, '四川', null, null, '1110999', '121212', '/user/images/201701/1416103162re.jpg', '');
+INSERT INTO `jc_user_ext` VALUES ('1', '彩虹医学网', '1', '2017-02-01 00:00:00', null, '四川', null, null, '1110999', '121212', '/user/images/201702/01213116x8mj.png', '');
 INSERT INTO `jc_user_ext` VALUES ('2', '彩虹', '1', null, null, null, null, null, null, null, null, null);
 INSERT INTO `jc_user_ext` VALUES ('3', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `jc_user_ext` VALUES ('4', null, null, null, null, null, null, null, null, null, null, null);
@@ -4629,7 +4766,30 @@ INSERT INTO `jc_user_ext` VALUES ('20', null, null, null, null, null, null, null
 INSERT INTO `jc_user_ext` VALUES ('21', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `jc_user_ext` VALUES ('22', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `jc_user_ext` VALUES ('23', null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `jc_user_ext` VALUES ('25', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `jc_user_ext` VALUES ('27', null, '1', null, null, null, null, null, null, null, '', null);
+INSERT INTO `jc_user_ext` VALUES ('28', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `jc_user_ext` VALUES ('29', 'test', null, null, null, null, null, null, null, null, '/u/cms/www/201702/021949513bq0.png', null);
+INSERT INTO `jc_user_ext` VALUES ('30', null, null, null, null, null, null, null, null, null, '', null);
+
+-- ----------------------------
+-- Table structure for jc_user_follow
+-- ----------------------------
+DROP TABLE IF EXISTS `jc_user_follow`;
+CREATE TABLE `jc_user_follow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户id',
+  `follow_user_id` int(11) NOT NULL,
+  `time` datetime NOT NULL COMMENT '关注时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `fk_follow_Idx` (`user_id`,`follow_user_id`) USING BTREE,
+  KEY `fk_follow_userid` (`follow_user_id`),
+  CONSTRAINT `follow_userid` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
+  CONSTRAINT `follower_userid` FOREIGN KEY (`follow_user_id`) REFERENCES `jc_user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of jc_user_follow
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for jc_user_menu
@@ -5217,6 +5377,10 @@ INSERT INTO `jc_webservice_param` VALUES ('2', '7', 'tel', '');
 INSERT INTO `jc_webservice_param` VALUES ('3', '0', 'auth_username', 'test');
 INSERT INTO `jc_webservice_param` VALUES ('3', '1', 'auth_password', 'test');
 INSERT INTO `jc_webservice_param` VALUES ('3', '2', 'username', '');
+INSERT INTO `jc_webservice_param` VALUES ('1', '8', 'telphone', null);
+INSERT INTO `jc_webservice_param` VALUES ('2', '8', 'telphone', null);
+INSERT INTO `jc_webservice_param` VALUES ('1', '9', 'groupId', null);
+INSERT INTO `jc_webservice_param` VALUES ('2', '9', 'groupId', null);
 
 -- ----------------------------
 -- Table structure for jc_workflow
@@ -5527,12 +5691,12 @@ CREATE TABLE `jo_user` (
   `activation_code` char(32) DEFAULT NULL COMMENT '激活码',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('1', 'admin', null, 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-01 10:25:05', '101.207.227.67', '1203', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('1', 'admin', null, 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-01 18:45:04', '127.0.0.1', '1206', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('2', 'caihong', null, null, 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-25 09:15:42', '117.174.29.135', '11', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('3', 'caihong1', null, '77219569@qq.com', '49cced1fe2e6a48f850daa28ec7c7087', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('4', 'caihong3', null, '77219569@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', null, null, null, '0', null, '1', null);
@@ -5552,5 +5716,8 @@ INSERT INTO `jo_user` VALUES ('19', 'shbqsl-790818a', null, '125257175@qq.com', 
 INSERT INTO `jo_user` VALUES ('20', 'shbqsl-790818aa', null, '125257175@qq.com', 'c8837b23ff8aaa8a2dde915473ce0991', '2017-01-24 19:08:21', '180.212.194.81', '2017-01-24 19:08:29', '180.212.194.81', '1', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('21', 'ydk110', null, '564464797@qq.com', 'af82cf39e2021b7a5c8c5e4dd483859d', '2017-01-24 23:35:03', '221.203.80.59', '2017-01-25 01:13:23', '42.87.163.187', '4', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('22', '北极光', null, '133620311@qq.com', 'd59f4480999b03203ea3423697e5eb2c', '2017-01-25 10:12:36', '124.202.226.50', '2017-01-25 10:13:06', '124.202.226.50', '1', null, null, null, '0', null, '1', null);
-INSERT INTO `jo_user` VALUES ('23', 'caihong5', '15882454451', 'qianfo@713.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 00:38:06', '101.207.227.70', '0', null, null, null, '0', null, '1', null);
-INSERT INTO `jo_user` VALUES ('25', 'qianfo', '15882454452', 'qianfo@173.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 00:49:10', '101.207.227.70', '2017-02-01 00:49:10', '101.207.227.70', '0', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('23', 'caihong5', '15882454451', 'qianfo@713.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 11:50:01', '127.0.0.1', '1', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('27', 'caihong4', '15588882222', '123@163.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('28', 'caihong6', '15588882223', 'caihongyixue@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 17:42:22', '127.0.0.1', '2017-02-01 17:42:22', '127.0.0.1', '0', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('29', 'test', '1', '77219569@qq.com', 'd41d8cd98f00b204e9800998ecf8427e', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('30', 'test1', '15588882222', '77219569@qq.com', 'd41d8cd98f00b204e9800998ecf8427e', '2017-02-02 23:42:18', '127.0.0.1', '2017-02-02 23:42:18', '127.0.0.1', '0', null, null, null, '0', null, '1', null);
