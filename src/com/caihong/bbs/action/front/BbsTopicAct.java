@@ -47,11 +47,13 @@ import com.caihong.bbs.manager.BbsLimitMng;
 import com.caihong.bbs.manager.BbsPostTypeMng;
 import com.caihong.bbs.manager.BbsTopicMng;
 import com.caihong.bbs.manager.BbsUserGroupMng;
+import com.caihong.bbs.manager.BbsUserMng;
 import com.caihong.bbs.manager.BbsVoteItemMng;
 import com.caihong.bbs.manager.BbsVoteRecordMng;
 import com.caihong.bbs.web.CmsUtils;
 import com.caihong.bbs.web.FrontUtils;
 import com.caihong.bbs.web.WebErrors;
+import com.caihong.common.page.Pagination;
 import com.caihong.common.web.RequestUtils;
 import com.caihong.common.web.ResponseUtils;
 import com.caihong.common.web.springmvc.MessageResolver;
@@ -622,6 +624,41 @@ public class BbsTopicAct {
 		}
 		ResponseUtils.renderJson(response, array.toString());
 	}
+	@RequestMapping("/topic/usertopic.jspx")
+	public void getTopicListByUserName(HttpServletResponse response,String username,Integer pageNo,Integer pageSize){
+		if(username==null||username.equals("")){
+			ResponseUtils.renderJson(response, "0");
+		}else{
+			BbsUser user=bbsUserMng.findByUsername(username);
+			if(user==null){
+				ResponseUtils.renderJson(response, "0");
+			}else{
+				Pagination page=manager.getMemberTopic(1, user.getId(), pageNo, pageSize);
+				
+				List<BbsTopic> list=(List<BbsTopic>)page.getList();
+				if(list==null||list.size()<=0){
+					ResponseUtils.renderJson(response, "0");
+				}else{
+					SimpleDateFormat format =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+					JSONArray array=new JSONArray();
+					try{
+						for(BbsTopic topic:list){
+							JSONObject object = new JSONObject();
+							object.put("username", topic.getCreater().getUsername());
+							object.put("createTime",format.format(topic.getCreateTime()));
+							object.put("title", topic.getTitle());
+							object.put("id", topic.getId());
+							object.put("replyCount", topic.getReplyCount());
+							array.put(object);
+						}
+					}catch(Exception e){
+						
+					}
+					ResponseUtils.renderJson(response, array.toString());
+				}
+			}
+		}
+	}
 
 	private WebErrors checkVote(HttpServletRequest request, BbsUser user,
 			BbsTopic topic, Integer[] itemIds) {
@@ -931,6 +968,8 @@ public class BbsTopicAct {
 	private BbsTopicMng manager;
 	@Autowired
 	private BbsForumMng bbsForumMng;
+	@Autowired
+	private BbsUserMng bbsUserMng;
 	@Autowired
 	private BbsCategoryMng bbsCategoryMng;
 	@Autowired
