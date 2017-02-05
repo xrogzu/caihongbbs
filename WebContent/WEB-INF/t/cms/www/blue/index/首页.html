@@ -160,32 +160,24 @@ function password() {
     [@category_list]
     [#list tag_list as ctg]
     <div class="t z">
-    <table width="100%" cellspacing="0" cellpadding="0">
+    <table width="100%" cellspacing="0" cellpadding="0" border="1">
       <tbody>
         <tr>
           <th class="h" colspan="6"><a class="closeicon fr"><img alt="" src="/${res}/bbs_forum/img/cate_fold.gif" /></a>
           <h2>&raquo; <a class="cfont">${ctg.title!}</a></h2>
           </th>
         </tr>
-<!--
-        <tr class="tr2">
-          <td width="*" colspan="2" class="tac">论坛</td>
-          <td class="tal y-style e">主题 / 文章</td>
-          <td class="tal y-style f">最后发表</td>
-          <td style="width: 120px;" class="tal">版主</td>
-        </tr>
--->
       </tbody>
       
      
         <tr class="tr3">
         [@forum_list categoryId=ctg.id]
 
-<td bgcolor="#FFFFFF"><ul>
+<td bgcolor="#fff"><ul>
       [#list tag_list as forum]
       
-          <li style="width:247px; height:107px; float:left; overflow:hidden; margin-bottom:10px;">
-	  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <li style="width:494px; height:57px; float:left; overflow:hidden; margin-bottom:10px;">
+	  <table width="100%" border="0" align="center"  style="border:solid 1px #add9c0;" cellpadding="0" cellspacing="0">
       <tr>
         <td width="30" rowspan="2" valign="top">
 		<table width="30" border="0" cellspacing="0" cellpadding="0" style="margin-top:12px !important; margin-top:5px;">
@@ -202,39 +194,32 @@ function password() {
 		</td>
         <td> </td></tr>
       
-      <tr>
-        <td valign="top">
-		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr >
+        <td valign="top" >
+		<table width="100%"  border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td>
 		</td>
 	  </tr>
       
       <tr>
-        <td>
+        <td width="300">
           <h3 class="b"><a href="${forum.url!}">${forum.title!}</a></h3>
 		  [#if forum.postToday gt 0]<span class="b" style="color:#FF0000;">(${forum.postToday!})</span>[/#if]
 		  </td>
+		  <td rowspan="2">
+		  		<span style="color:#838383;">${forum.postTotal!}</span><br/>
+		  		<span style="color:#838383;">
+		  	 [#if forum.lastPost??]
+          		${forum.lastReply.username!}
+         	[#else]${forum.moderators}[/#if] 
+         	</span>
+		  </td><td></td>
           </tr>
-          
           <tr>
             <td class="tal y-style  e">
-			<span style="color:#838383;">主题:</span>${forum.topicTotal!} &nbsp;
-			<span style="color:#838383;">贴数:</span> <span class="gray2 ">${forum.postTotal!}</span></td></tr>
-          <tr>
-            <td>
-          [#if forum.lastPost??]<span style="color:#838383;">标题:</span>
-          <a href="${forum.lastPost.url!}" title="${forum.lastPost.topic.title!}">[#if forum.lastPost.topic.title?? && forum.lastPost.topic.title?length &gt; 6]
-          ${forum.lastPost.topic.title?substring(0,6)}..[#else]${forum.lastPost.topic.title!}[/#if]</a> &nbsp;[#else]无[/#if]</td></tr>
-         <tr>
-           <td> [#if forum.lastPost??]<span style="color:#838383;">最后发表:</span>
-          <span class="f9">[${forum.lastTime!?string("yyyy-MM-dd")}]</span>&nbsp;[#else]无[/#if]</td></tr>
-        
-          <tr>
-            <td>
-            [#if forum.lastPost??]
-          <span style="color:#838383;">作者:</span><span class="gray2">${forum.lastReply.username!}
-         [#else]无[/#if]        </td></tr>
+			<span style="color:#838383;">[@text_cut s=forum.description?html len=26 append="..."/]</span></td></tr>
+          
           </table>         </td>
           </tr>
           </table>
