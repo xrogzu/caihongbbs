@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-02-03 00:50:29
+Date: 2017-02-05 16:41:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -330,7 +330,7 @@ INSERT INTO `bbs_forum` VALUES ('3', '7', '1', '243', '23', 'jyzs', '检验综�
 INSERT INTO `bbs_forum` VALUES ('4', '3', '1', '259', '24', 'nk', '内科', '', '内科', '', '0', '3', '7', '0', '', '5', '0', '100', '2017-01-24 19:35:24', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '1', '0', '1', '2', '3', '0');
 INSERT INTO `bbs_forum` VALUES ('5', '2', '1', '269', '24', 'yxcs', '影像和超声', '', '影像和超声', '', '10', '6', '22', '0', '', '5', '0', '100', '2017-01-24 20:10:44', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '1', '0', '1', '2', '3', '0');
 INSERT INTO `bbs_forum` VALUES ('6', '1', '1', '265', '24', 'zzbl', '组织病例', '', '组织病例', '', '0', '4', '7', '0', '', '5', '0', '100', '2017-01-24 19:59:28', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
-INSERT INTO `bbs_forum` VALUES ('7', '1', '1', null, null, 'xbbl', '细胞病例', '', '细胞病例', '', '1', '0', '0', '0', '', '5', '0', '100', null, '0', '', ',12,13,', ',12,13,', ',12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
+INSERT INTO `bbs_forum` VALUES ('7', '1', '1', null, null, 'xbbl', '细胞病例', '细胞病例细胞病例细胞病例', '细胞病例', '', '1', '0', '0', '0', '', '5', '0', '100', null, '0', 'admin', ',12,13,', ',12,13,', ',12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
 INSERT INTO `bbs_forum` VALUES ('8', '1', '1', '258', '24', 'bljs', '病理技术', '', '病理技术', '', '2', '1', '2', '0', '', '5', '0', '100', '2017-01-24 19:32:29', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
 INSERT INTO `bbs_forum` VALUES ('9', '1', '1', '272', '25', 'fzbl', '分子病理', '', '分子病理', '', '3', '1', '1', '0', '', '5', '0', '100', '2017-01-25 00:11:53', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
 INSERT INTO `bbs_forum` VALUES ('10', '1', '1', '266', '24', 'sjtl', '尸检讨论', '', '尸检讨论', '', '4', '1', '1', '0', '', '5', '0', '100', '2017-01-24 20:02:55', '0', '', ',14,1,12,13,', ',14,1,12,13,', ',14,1,12,13,', '1', '1', '0', '0', '1', '2', '3', '0');
@@ -959,7 +959,7 @@ CREATE TABLE `bbs_post_type` (
   CONSTRAINT `fk_bbs_post_type_parent` FOREIGN KEY (`parent_id`) REFERENCES `bbs_post_type` (`type_id`),
   CONSTRAINT `fk_bbs_post_type_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_bbs_type_forum` FOREIGN KEY (`forum_id`) REFERENCES `bbs_forum` (`FORUM_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bbs_post_type
@@ -1073,15 +1073,12 @@ CREATE TABLE `bbs_session` (
   PRIMARY KEY (`sid`),
   KEY `fk_session_user` (`user_id`),
   CONSTRAINT `fk_session_user` FOREIGN KEY (`user_id`) REFERENCES `jb_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2513 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
+) ENGINE=InnoDB AUTO_INCREMENT=2707 DEFAULT CHARSET=utf8 COMMENT='论坛会话';
 
 -- ----------------------------
 -- Records of bbs_session
 -- ----------------------------
-INSERT INTO `bbs_session` VALUES ('2509', '6B84269F4CBFC914E5403E13F15043F5', null, '127.0.0.1', '2017-02-03 00:41:55', '2017-02-03 00:41:55');
-INSERT INTO `bbs_session` VALUES ('2510', 'CF5CC32CEEE438217D303A9DB0E66E34', null, '127.0.0.1', '2017-02-03 00:41:55', '2017-02-03 00:41:55');
-INSERT INTO `bbs_session` VALUES ('2511', 'B8E5456F97F672FD6BD2251F7AD41C0B', null, '127.0.0.1', '2017-02-03 00:46:46', '2017-02-03 00:46:46');
-INSERT INTO `bbs_session` VALUES ('2512', '59DB7741E295040B4DA770D83C17B4A3', null, '127.0.0.1', '2017-02-03 00:46:46', '2017-02-03 00:46:46');
+INSERT INTO `bbs_session` VALUES ('2706', 'C0BA58E59D34485753ADCE55E978CF07', '5', '127.0.0.1', '2017-02-05 16:08:16', '2017-02-05 16:08:16');
 
 -- ----------------------------
 -- Table structure for bbs_third_account
@@ -1156,18 +1153,18 @@ CREATE TABLE `bbs_topic` (
 -- ----------------------------
 -- Records of bbs_topic
 -- ----------------------------
-INSERT INTO `bbs_topic` VALUES ('65', '3', '243', '186', '1', '5', '23', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-24 18:56:00', '2017-01-24 18:56:00', '30', '3', '1', '0', '0', null, '0', '0', null, null, '0', ',23,', '0', '1', '1', '0', '0', null, '0', '18', '5', '0');
+INSERT INTO `bbs_topic` VALUES ('65', '3', '243', '186', '1', '5', '23', '这个病例诊断什么？巨细胞修复性肉芽肿？骨巨细胞瘤？', '2017-01-14 01:13:05', '2017-01-24 18:56:00', '2017-01-24 18:56:00', '31', '3', '1', '0', '0', null, '0', '0', null, null, '0', ',23,', '0', '1', '1', '0', '0', null, '0', '19', '6', '0');
 INSERT INTO `bbs_topic` VALUES ('67', '4', '212', '200', '1', '11', '5', '测试测试', '2017-01-17 15:54:13', '2017-01-17 18:41:42', '2017-01-17 18:41:42', '16', '3', '0', '1', '0', null, '0', '0', null, null, '0', ',11,5,', '1', '1', '1', '0', '0', null, '0', '9', '9', '0');
 INSERT INTO `bbs_topic` VALUES ('68', '5', '205', '201', '1', '5', '9', '细胞学', '2017-01-17 15:55:30', '2017-01-17 16:04:07', '2017-01-17 16:04:07', '25', '3', '0', '0', '0', null, '0', '0', null, null, '1', ',11,5,9,', '1', '1', '1', '0', '0', null, '0', '24', '2', '0');
 INSERT INTO `bbs_topic` VALUES ('69', '4', '259', '202', '1', '5', '24', '组织学', '2017-01-17 15:56:00', '2017-01-24 19:35:24', '2017-01-24 19:35:24', '17', '1', '0', '0', '0', null, '0', '0', null, null, '1', ',24,', '0', '1', '1', '0', '0', null, '0', '15', '15', '0');
-INSERT INTO `bbs_topic` VALUES ('71', '3', '219', '211', '1', '5', '5', '你怎么女卡戴珊vnklanfvakln', '2017-01-17 16:54:20', '2017-01-19 13:52:33', '2017-01-19 13:52:33', '11', '1', '0', '1', '0', null, '0', '0', 'FF0000', null, '0', ',5,', '1', '1', '1', '0', '0', null, '0', '8', '8', '0');
-INSERT INTO `bbs_topic` VALUES ('72', '5', '256', '213', '1', '5', '24', '那个方法好', '2017-01-18 00:32:59', '2017-01-24 19:30:20', '2017-01-24 19:30:20', '36', '10', '0', '0', '0', null, '0', '0', null, null, '0', ',16,18,24,', '0', '1', '1', '0', '0', null, '0', '26', '18', '0');
-INSERT INTO `bbs_topic` VALUES ('75', '4', null, '218', '1', '6', '6', '123123123', '2017-01-18 18:30:23', '2017-01-18 18:30:23', '2017-01-18 18:30:23', '0', '0', '0', '0', '0', null, '0', '0', null, null, '1', ',', '0', '1', '1', '0', '0', null, '0', '0', '0', '0');
+INSERT INTO `bbs_topic` VALUES ('71', '3', '219', '211', '1', '5', '5', '你怎么女卡戴珊vnklanfvakln', '2017-01-17 16:54:20', '2017-01-19 13:52:33', '2017-01-19 13:52:33', '14', '1', '0', '1', '0', null, '0', '0', 'FF0000', null, '0', ',5,', '1', '1', '1', '0', '0', null, '11', '11', '11', '0');
+INSERT INTO `bbs_topic` VALUES ('72', '5', '256', '213', '1', '5', '24', '那个方法好', '2017-01-18 00:32:59', '2017-01-24 19:30:20', '2017-01-24 19:30:20', '37', '10', '0', '0', '0', null, '0', '0', null, null, '0', ',16,18,24,', '0', '1', '1', '0', '0', null, '19', '27', '19', '0');
+INSERT INTO `bbs_topic` VALUES ('75', '4', null, '218', '1', '6', '6', '123123123', '2017-01-18 18:30:23', '2017-01-18 18:30:23', '2017-01-18 18:30:23', '1', '0', '0', '0', '0', null, '0', '0', null, null, '1', ',', '0', '1', '1', '0', '0', null, '1', '1', '1', '0');
 INSERT INTO `bbs_topic` VALUES ('76', '5', null, '220', '1', '5', '5', 'test', '2017-01-21 22:41:32', '2017-01-21 22:41:32', '2017-01-21 22:41:32', '5', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '5', '1', '0', '1', '4', '0', '5', '5', '0');
 INSERT INTO `bbs_topic` VALUES ('77', '1', '227', '221', '1', '16', '16', 'cash', '2017-01-24 13:20:37', '2017-01-24 15:46:39', '2017-01-24 15:46:39', '10', '5', '0', '0', '0', null, '0', '0', null, null, '0', ',16,', '0', '3', '1', '0', '0', null, '0', '5', '5', '0');
-INSERT INTO `bbs_topic` VALUES ('78', '26', '260', '228', '1', '18', '24', '2017年1月24日星期二', '2017-01-24 17:12:58', '2017-01-24 19:36:35', '2017-01-24 19:36:35', '8', '2', '0', '0', '0', null, '0', '0', null, null, '0', ',21,24,', '0', '1', '1', '0', '0', null, '0', '7', '2', '0');
+INSERT INTO `bbs_topic` VALUES ('78', '26', '260', '228', '1', '18', '24', '2017年1月24日星期二', '2017-01-24 17:12:58', '2017-01-24 19:36:35', '2017-01-24 19:36:35', '9', '2', '0', '0', '0', null, '0', '0', null, null, '0', ',21,24,', '0', '1', '1', '0', '0', null, '3', '8', '3', '0');
 INSERT INTO `bbs_topic` VALUES ('79', '25', '267', '230', '1', '18', '24', '新年快乐', '2017-01-24 17:27:50', '2017-01-24 20:07:43', '2017-01-24 20:07:43', '27', '11', '0', '0', '0', null, '0', '0', null, null, '1', ',18,19,24,', '0', '1', '1', '0', '0', null, '0', '24', '1', '0');
-INSERT INTO `bbs_topic` VALUES ('80', '6', '247', '244', '1', '24', '24', '病理学的作用', '2017-01-24 19:10:41', '2017-01-24 19:11:41', '2017-01-24 19:11:41', '9', '3', '0', '0', '0', null, '0', '0', null, null, '0', ',24,', '0', '8', '1', '0', '0', null, '0', '5', '5', '0');
+INSERT INTO `bbs_topic` VALUES ('80', '6', '247', '244', '1', '24', '24', '病理学的作用', '2017-01-24 19:10:41', '2017-01-24 19:11:41', '2017-01-24 19:11:41', '12', '3', '0', '0', '0', null, '0', '0', null, null, '0', ',24,', '0', '8', '1', '0', '0', null, '6', '6', '6', '0');
 INSERT INTO `bbs_topic` VALUES ('81', '8', '258', '257', '1', '24', '24', '二、基本资料，修改头像、密码安全，保存资料后，没有提示。修改头像和密码安全 修改完后点击保存后就显示到基本资料界面了。二、基本资料，修改头像、密码安全，保存资料后，没有提示。修改头像和密码安全 修改完', '2017-01-24 19:32:22', '2017-01-24 19:32:29', '2017-01-24 19:32:29', '1', '1', '0', '0', '0', null, '0', '0', null, null, '0', ',24,', '0', '10', '1', '0', '0', null, '0', '1', '1', '0');
 INSERT INTO `bbs_topic` VALUES ('82', '6', null, '261', '1', '24', '24', '彩虹医生论坛测试结果', '2017-01-24 19:39:14', '2017-01-24 19:39:14', '2017-01-24 19:39:14', '4', '0', '0', '0', '0', null, '0', '0', null, null, '1', ',', '0', '8', '1', '0', '0', null, '0', '3', '3', '0');
 INSERT INTO `bbs_topic` VALUES ('83', '23', '271', '262', '1', '24', '25', '彩虹医生论坛测试结果.docx', '2017-01-24 19:56:19', '2017-01-24 23:37:01', '2017-01-24 23:37:01', '3', '3', '0', '0', '0', null, '0', '0', null, null, '1', ',24,25,', '0', '1', '1', '0', '0', null, '0', '3', '3', '0');
@@ -1180,7 +1177,7 @@ INSERT INTO `bbs_topic` VALUES ('89', '11', null, '273', '1', '25', '25', '123',
 INSERT INTO `bbs_topic` VALUES ('90', '14', null, '274', '1', '25', '25', '123', '2017-01-25 00:12:37', '2017-01-25 00:12:37', '2017-01-25 00:12:37', '0', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '0', '0', '0');
 INSERT INTO `bbs_topic` VALUES ('91', '15', null, '275', '1', '25', '25', '123', '2017-01-25 00:12:57', '2017-01-25 00:12:57', '2017-01-25 00:12:57', '0', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '0', '0', '0');
 INSERT INTO `bbs_topic` VALUES ('92', '17', null, '276', '1', '25', '25', '123', '2017-01-25 00:13:16', '2017-01-25 00:13:16', '2017-01-25 00:13:16', '0', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '0', '0', '0');
-INSERT INTO `bbs_topic` VALUES ('93', '16', null, '277', '1', '25', '25', '123', '2017-01-25 00:13:38', '2017-01-25 00:13:38', '2017-01-25 00:13:38', '4', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '4', '4', '0');
+INSERT INTO `bbs_topic` VALUES ('93', '16', null, '277', '1', '25', '25', '123', '2017-01-25 00:13:38', '2017-01-25 00:13:38', '2017-01-25 00:13:38', '5', '0', '0', '0', '0', null, '0', '0', null, null, '0', ',', '0', '1', '1', '0', '0', null, '0', '5', '5', '0');
 
 -- ----------------------------
 -- Table structure for bbs_topic_text
@@ -1435,7 +1432,7 @@ CREATE TABLE `bbs_webservice_call_record` (
   PRIMARY KEY (`record_id`),
   KEY `fk_webservice_record_auth` (`auth_id`),
   CONSTRAINT `fk_webservice_record_auth` FOREIGN KEY (`auth_id`) REFERENCES `bbs_webservice_auth` (`auth_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='接口调用记录';
 
 -- ----------------------------
 -- Records of bbs_webservice_call_record
@@ -1490,6 +1487,23 @@ INSERT INTO `bbs_webservice_call_record` VALUES ('47', 'user_update', '1', '2017
 INSERT INTO `bbs_webservice_call_record` VALUES ('48', 'user_update', '1', '2017-02-03 00:00:00');
 INSERT INTO `bbs_webservice_call_record` VALUES ('49', 'user_update', '1', '2017-02-03 00:00:00');
 INSERT INTO `bbs_webservice_call_record` VALUES ('50', 'user_update', '1', '2017-02-03 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('51', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('52', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('53', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('54', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('55', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('56', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('57', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('58', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('59', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('60', 'user_update', '1', '2017-02-04 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('61', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('62', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('63', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('64', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('65', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('66', 'user_update', '1', '2017-02-05 00:00:00');
+INSERT INTO `bbs_webservice_call_record` VALUES ('67', 'user_update', '1', '2017-02-05 00:00:00');
 
 -- ----------------------------
 -- Table structure for bbs_webservice_param
@@ -1665,8 +1679,8 @@ CREATE TABLE `jb_user` (
 -- ----------------------------
 -- Records of jb_user
 -- ----------------------------
-INSERT INTO `jb_user` VALUES ('5', '1', null, 'admin', 'caihongyixue@qq.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-25 13:37:48', '110.184.35.37', '1024', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '437', null, '简介', '01.gif', '0', '69', '122', '1', '191', null, '16', '0', 'B7985988E3F736DF518639EC0775E1BB', '3', '0');
-INSERT INTO `jb_user` VALUES ('6', '12', null, 'caihong', '', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-23 11:55:56', '117.174.30.239', '14', '0', '0', '2017-01-15', '0', '0', '0', null, null, '0', '10', null, null, null, '0', '2', '2', '0', '4', null, '2', '0', '449493ABF62380875B3D512A23C4923A', '1', '0');
+INSERT INTO `jb_user` VALUES ('5', '1', null, 'admin', 'caihongyixue@qq.com', '2017-01-03 12:02:04', '127.0.0.1', '2017-01-25 13:37:48', '110.184.35.37', '1028', '0', '0', '2011-03-17', '1', '0', '0', null, null, '0', '437', null, '简介', '01.gif', '0', '69', '122', '1', '191', null, '16', '0', '2EC4842F30B02C0A84DEE178B2C690D1', '3', '0');
+INSERT INTO `jb_user` VALUES ('6', '13', null, 'caihong', 'qianfo_713@163.com', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-23 11:55:56', '117.174.30.239', '14', '0', '0', '2017-01-15', '0', '0', '0', null, null, '0', '10', null, null, null, '0', '2', '2', '0', '4', null, '2', '0', '449493ABF62380875B3D512A23C4923A', '1', '0');
 INSERT INTO `jb_user` VALUES ('7', '1', null, 'caihong1', '77219569@qq.com', '2017-01-16 17:41:24', '127.0.0.1', '2017-01-16 17:41:24', '127.0.0.1', '2', '0', '0', '2017-01-16', '0', '0', '0', null, null, '0', '0', null, '', 'none.gif', '0', '0', '0', '0', '0', null, '0', '0', '294E1AA96E695E3815B69E69D5C08E48', '1', '0');
 INSERT INTO `jb_user` VALUES ('8', '1', null, 'caihong3', '77219569@qq.com', '2017-01-17 00:58:56', '127.0.0.1', '2017-01-17 00:58:56', '127.0.0.1', '1', '0', '0', '2017-01-17', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', 'A0DFA5A2E188EBD6C3493AE102027503', '1', '0');
 INSERT INTO `jb_user` VALUES ('9', '12', null, '红山茶007', '423649967@qq.com', '2017-01-17 11:41:15', '127.0.0.1', '2017-01-17 11:41:15', '127.0.0.1', '3', '0', '0', '2017-01-17', '0', '0', '0', null, '0', '0', '0', null, null, null, '0', '0', '1', '0', '1', null, '0', '0', '906271CD70039CA011C31473FA1ECFDE', '1', '0');
@@ -1674,9 +1688,9 @@ INSERT INTO `jb_user` VALUES ('10', '1', null, '彩虹医学编辑', 'caihongyix
 INSERT INTO `jb_user` VALUES ('11', '12', null, 'ceshi123', 'caihongyixue@163.com', '2017-01-17 15:40:37', '127.0.0.1', '2017-01-17 15:40:37', '127.0.0.1', '1', '0', '0', '2017-01-17', '0', '0', '0', null, '0', '0', '110', null, null, null, '0', '2', '12', '1', '14', null, '3', '0', '149C1E6ED3F33FBFD1174D76C9D4D8C0', '1', '0');
 INSERT INTO `jb_user` VALUES ('14', '1', null, 'qianfo_713', '77219569@qq.com', '2017-01-18 10:19:18', '127.0.0.1', '2017-01-18 10:19:18', '127.0.0.1', '2', '0', '0', '2017-01-18', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', '02BEE083DEBB08E5C9CE3C44EA453B73', '1', '0');
 INSERT INTO `jb_user` VALUES ('15', '1', null, '成都李炳成', 'yyy9990@vip.163.com', '2017-01-19 17:54:44', '127.0.0.1', '2017-01-19 17:54:44', '127.0.0.1', '1', '0', '0', '2017-01-19', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', 'BB25A2D17CA37C22C99CFCD14DB319BA', '1', '0');
-INSERT INTO `jb_user` VALUES ('16', '1', null, '彩虹妹妹', 'caihongyixue@163.com', '2017-01-24 12:56:23', '127.0.0.1', '2017-01-24 12:56:23', '127.0.0.1', '3', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '5', null, null, null, '0', '1', '6', '0', '7', null, '0', '0', '55686FDB5539095B8A4EC2142C740A88', '1', '0');
+INSERT INTO `jb_user` VALUES ('16', '13', null, '彩虹妹妹', 'caihongyixue@163.com', '2017-01-24 12:56:23', '127.0.0.1', '2017-01-24 12:56:23', '127.0.0.1', '3', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '5', null, null, null, '0', '1', '6', '0', '7', null, '0', '0', '55686FDB5539095B8A4EC2142C740A88', '1', '0');
 INSERT INTO `jb_user` VALUES ('17', '1', null, 'Butter', 'dlxiyoulinux@gmail.com', '2017-01-24 17:06:34', '127.0.0.1', '2017-01-24 17:06:34', '127.0.0.1', '1', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', '805F7D16485CF7F4A92982B9FF4168B2', '1', '0');
-INSERT INTO `jb_user` VALUES ('18', '1', null, '彩虹', 'caihongyixue@163.com', '2017-01-24 17:08:56', '127.0.0.1', '2017-01-24 17:08:56', '127.0.0.1', '3', '0', '0', '2017-01-24', '0', '0', '0', null, '0', '0', '10', null, null, null, '0', '2', '5', '0', '7', null, '2', '0', '4C311F8E4B70B8251FB4FB68A7E2E5A3', '1', '0');
+INSERT INTO `jb_user` VALUES ('18', '13', null, '彩虹', 'caihongyixue@163.com', '2017-01-24 17:08:56', '127.0.0.1', '2017-01-24 17:08:56', '127.0.0.1', '3', '0', '0', '2017-01-24', '0', '0', '0', null, '0', '0', '10', null, null, null, '0', '2', '5', '0', '7', null, '2', '0', '4C311F8E4B70B8251FB4FB68A7E2E5A3', '1', '0');
 INSERT INTO `jb_user` VALUES ('19', '1', null, 'Daisy', '1213388927@qq.com', '2017-01-24 17:09:33', '127.0.0.1', '2017-01-24 17:09:33', '127.0.0.1', '1', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '0', null, '我是一只特立独行的蜻蜓，，，，，，，，........tyhr', 'none.gif', '0', '0', '5', '0', '5', null, '0', '0', '3C9E189D885121451CB5B88867C3E71C', '1', '0');
 INSERT INTO `jb_user` VALUES ('20', '1', null, 'shbqsl-790818', '125257175@qq.com.cn', '2017-01-24 17:11:11', '127.0.0.1', '2017-01-24 17:11:11', '127.0.0.1', '1', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '0', null, '121322你好一、搜索好友处 打招呼 出现乱码。但是只是汉字的情况下，不识别汉字。', '10.gif', '0', '0', '0', '0', '0', null, '0', '0', '67A7C25B0B9A29D489227409BC15EB4E', '1', '0');
 INSERT INTO `jb_user` VALUES ('21', '1', null, '李炳辰', 'yyy9990@vip.163.com', '2017-01-24 17:19:59', '127.0.0.1', '2017-01-24 17:19:59', '127.0.0.1', '1', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '1', '0', '1', null, '0', '0', 'B91A4FB5599CBA0BCCCDF0A45E071C18', '1', '0');
@@ -1685,11 +1699,11 @@ INSERT INTO `jb_user` VALUES ('23', '1', null, 'shbqsl-790818a', '125257175@qq.c
 INSERT INTO `jb_user` VALUES ('24', '1', null, 'shbqsl-790818aa', '125257175@qq.com', '2017-01-24 19:08:21', '127.0.0.1', '2017-01-24 19:08:21', '127.0.0.1', '1', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '40', null, '', '01.gif', '0', '8', '18', '0', '26', null, '2', '0', '229D8A51706FD481C890A13792864C79', '1', '0');
 INSERT INTO `jb_user` VALUES ('25', '1', null, 'ydk110', '564464797@qq.com', '2017-01-24 23:35:03', '127.0.0.1', '2017-01-24 23:35:03', '127.0.0.1', '5', '0', '0', '2017-01-24', '0', '0', '0', null, null, '0', '30', null, null, null, '0', '6', '2', '0', '8', null, '4', '0', 'B6D8F492C8055F703D0A7B80FADBDAAD', '1', '0');
 INSERT INTO `jb_user` VALUES ('26', '1', null, '北极光', '133620311@qq.com', '2017-01-25 10:12:36', '127.0.0.1', '2017-01-25 10:12:36', '127.0.0.1', '1', '0', '0', '2017-01-25', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', '226B67FA39A6D368AE96D7810D8E03A3', '1', '0');
-INSERT INTO `jb_user` VALUES ('27', '1', null, 'caihong5', 'qianfo@713.com', '2017-02-01 00:38:06', '127.0.0.1', '2017-02-01 00:38:06', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
+INSERT INTO `jb_user` VALUES ('27', '13', null, 'caihong5', 'qianfo@713.com', '2017-02-01 00:38:06', '127.0.0.1', '2017-02-01 00:38:06', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
 INSERT INTO `jb_user` VALUES ('29', '13', null, 'caihong4', '123@163.com', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
 INSERT INTO `jb_user` VALUES ('30', '13', '15588882223', 'caihong6', 'caihongyixue@qq.com', '2017-02-01 17:42:23', '127.0.0.1', '2017-02-01 17:42:23', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
-INSERT INTO `jb_user` VALUES ('31', '1', null, 'test', '77219569@qq.com', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
-INSERT INTO `jb_user` VALUES ('32', '1', null, 'test1', '77219569@qq.com', '2017-02-02 23:42:23', '127.0.0.1', '2017-02-02 23:42:23', '127.0.0.1', '0', '0', '0', '2017-02-02', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
+INSERT INTO `jb_user` VALUES ('31', '13', null, 'test', '77219569@qq.com', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', '0', '0', '2017-02-01', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
+INSERT INTO `jb_user` VALUES ('32', '13', null, 'test1', '77219569@qq.com', '2017-02-02 23:42:23', '127.0.0.1', '2017-02-02 23:42:23', '127.0.0.1', '0', '0', '0', '2017-02-02', '0', '0', '0', null, null, '0', '0', null, null, null, '0', '0', '0', '0', '0', null, '0', '0', null, '1', '0');
 
 -- ----------------------------
 -- Table structure for jb_user_attr
@@ -1731,7 +1745,7 @@ CREATE TABLE `jb_user_ext` (
 -- Records of jb_user_ext
 -- ----------------------------
 INSERT INTO `jb_user_ext` VALUES ('5', 'true', null, null, null, '简介2222', null, null, null, null, '121212');
-INSERT INTO `jb_user_ext` VALUES ('6', '彩虹', '1', null, null, null, null, null, null, null, null);
+INSERT INTO `jb_user_ext` VALUES ('6', 'true', null, null, null, null, null, null, null, null, null);
 INSERT INTO `jb_user_ext` VALUES ('7', null, '1', null, null, null, null, null, null, null, null);
 INSERT INTO `jb_user_ext` VALUES ('8', null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `jb_user_ext` VALUES ('9', null, null, null, null, null, null, null, null, null, null);
@@ -1797,7 +1811,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-02-03', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.jeecms.com', '20', '#FF0000', '50', '1', '0', '0', '2017-02-05', '2011-12-26 13:32:26', 'jeecms', '12', null, null, null, null, null, '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,vsd,wav,wma,wmv,xls,xlsx,txt,xml,zip');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -2093,7 +2107,7 @@ CREATE TABLE `jo_user` (
 -- Records of jo_user
 -- ----------------------------
 INSERT INTO `jo_user` VALUES ('5', 'admin', '15588882222', 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-03-17 12:02:04', '127.0.0.1', '2017-01-25 13:37:48', '110.184.35.37', '1724', null, null, '1', null, null, '0', null);
-INSERT INTO `jo_user` VALUES ('6', 'caihong', null, null, 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-23 11:55:56', '117.174.30.239', '6', null, null, '1', null, null, '0', null);
+INSERT INTO `jo_user` VALUES ('6', 'caihong', null, 'qianfo_713@163.com', 'c4ca4238a0b923820dcc509a6f75849b', '2017-01-15 10:59:48', '127.0.0.1', '2017-01-23 11:55:56', '117.174.30.239', '6', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('7', 'caihong1', null, '77219569@qq.com', '4297f44b13955235245b2497399d7a93', '2017-01-16 17:41:24', '127.0.0.1', '2017-01-16 17:41:24', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('8', 'caihong3', null, '77219569@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-01-17 00:58:56', '127.0.0.1', '2017-01-17 00:58:56', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('9', '红山茶007', null, '423649967@qq.com', '14d7856a0a928ea325f3c013a19f29ef', '2017-01-17 11:41:15', '127.0.0.1', '2017-01-17 11:41:15', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
@@ -2112,7 +2126,7 @@ INSERT INTO `jo_user` VALUES ('23', 'shbqsl-790818a', null, '125257175@qq.com', 
 INSERT INTO `jo_user` VALUES ('24', 'shbqsl-790818aa', null, '125257175@qq.com', 'c8837b23ff8aaa8a2dde915473ce0991', '2017-01-24 19:08:21', '127.0.0.1', '2017-01-24 19:08:21', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('25', 'ydk110', null, '564464797@qq.com', 'af82cf39e2021b7a5c8c5e4dd483859d', '2017-01-24 23:35:03', '127.0.0.1', '2017-01-24 23:35:03', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('26', '北极光', null, '133620311@qq.com', 'd59f4480999b03203ea3423697e5eb2c', '2017-01-25 10:12:36', '127.0.0.1', '2017-01-25 10:12:36', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
-INSERT INTO `jo_user` VALUES ('27', 'caihong5', null, 'qianfo@713.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 00:38:06', '127.0.0.1', '2017-02-01 00:38:06', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
+INSERT INTO `jo_user` VALUES ('27', 'caihong5', '15882454451', 'qianfo@713.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 00:38:06', '127.0.0.1', '2017-02-01 00:38:06', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('29', 'caihong4', '15588882222', '123@163.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('30', 'caihong6', '15588882223', 'caihongyixue@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-02-01 17:42:23', '127.0.0.1', '2017-02-01 17:42:23', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
 INSERT INTO `jo_user` VALUES ('31', 'test', '1', '77219569@qq.com', 'c4ca4238a0b923820dcc509a6f75849b', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', null, null, '1', null, null, '0', null);
