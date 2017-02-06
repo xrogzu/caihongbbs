@@ -113,7 +113,7 @@ public class BbsPost extends BaseBbsPost {
 		if (StringUtils.isBlank(s)) {
 			return "";
 		} else {
-			if (getAffix()) {
+			/*if (getAffix()) {
 				Set<Attachment> att = getAttachments();
 				for (Attachment t : att) {
 					String oldcontent = "[attachment]" + t.getId()
@@ -129,7 +129,7 @@ public class BbsPost extends BaseBbsPost {
 						s = StrUtils.replace(s, oldcontent, newcontent);
 					}
 				}
-			}
+			}*/
 			if (getHidden()) {
 				List<String> list = getHideContent(s);
 				for (String str : list) {
@@ -137,7 +137,8 @@ public class BbsPost extends BaseBbsPost {
 							"[quote]" + str + "[/quote]");
 				}
 			}
-			return BbcodeHandler.toHtml(s);
+			return s;
+//			return BbcodeHandler.toHtml(s);
 		}
 	}
 	
