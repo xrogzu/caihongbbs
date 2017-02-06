@@ -24,4 +24,5 @@
 	
 	<bean id="thirdLoginAct" class="com.caihong.bbs.action.login.ThirdLoginAct"/>
 	<bean id="bbsSessionStatisticAct" class="com.caihong.bbs.action.front.BbsSessionStatisticAct"/>
+	<bean id="ueditorAct" class="com.caihong.bbs.action.front.UeditorAct"/>
 </beans>

@@ -695,6 +695,7 @@ baidu.flash._Base = (function(){
             callBack = callBack || new Function();
 
             var result = null;
+    
             if(isReady){
                 result = target.call(fnName, params);
                 callBack(result);

@@ -1,10 +1,10 @@
-package com.caihong.bbs.ueditor.define;
+package com.baidu.ueditor.define;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.caihong.bbs.ueditor.Encoder;
+import com.baidu.ueditor.Encoder;
 
 public class BaseState implements State {
 

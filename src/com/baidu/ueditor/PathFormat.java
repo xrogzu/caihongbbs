@@ -1,4 +1,4 @@
-package com.caihong.bbs.ueditor;
+package com.baidu.ueditor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

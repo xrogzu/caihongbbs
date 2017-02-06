@@ -1,8 +1,8 @@
-package com.caihong.bbs.ueditor.upload;
+package com.baidu.ueditor.upload;
 
-import com.caihong.bbs.ueditor.define.AppInfo;
-import com.caihong.bbs.ueditor.define.BaseState;
-import com.caihong.bbs.ueditor.define.State;
+import com.baidu.ueditor.define.AppInfo;
+import com.baidu.ueditor.define.BaseState;
+import com.baidu.ueditor.define.State;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -44,6 +44,44 @@ public class StorageManager {
 		return state;
 	}
 
+	public static State saveFileByInputStream(InputStream is, String path,
+			long maxSize) {
+		State state = null;
+
+		File tmpFile = getTmpFile();
+
+		byte[] dataBuf = new byte[ 2048 ];
+		BufferedInputStream bis = new BufferedInputStream(is, StorageManager.BUFFER_SIZE);
+
+		try {
+			BufferedOutputStream bos = new BufferedOutputStream(
+					new FileOutputStream(tmpFile), StorageManager.BUFFER_SIZE);
+
+			int count = 0;
+			while ((count = bis.read(dataBuf)) != -1) {
+				bos.write(dataBuf, 0, count);
+			}
+			bos.flush();
+			bos.close();
+
+			if (tmpFile.length() > maxSize) {
+				tmpFile.delete();
+				return new BaseState(false, AppInfo.MAX_SIZE);
+			}
+
+			state = saveTmpFile(tmpFile, path);
+
+			if (!state.isSuccess()) {
+				tmpFile.delete();
+			}
+
+			return state;
+			
+		} catch (IOException e) {
+		}
+		return new BaseState(false, AppInfo.IO_ERROR);
+	}
+
 	public static State saveFileByInputStream(InputStream is, String path) {
 		State state = null;
 
@@ -80,7 +118,7 @@ public class StorageManager {
 		String tmpFileName = (Math.random() * 10000 + "").replace(".", "");
 		return new File(tmpDir, tmpFileName);
 	}
-	
+
 	private static State saveTmpFile(File tmpFile, String path) {
 		State state = null;
 		File targetFile = new File(path);

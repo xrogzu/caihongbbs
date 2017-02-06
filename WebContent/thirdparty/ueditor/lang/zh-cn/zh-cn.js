@@ -654,7 +654,7 @@ UE.I18N['zh-cn'] = {
             lang_resave:"转存步骤",
             uploadBtn:{src:"upload.png",alt:"上传"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、点击顶部复制按钮，将地址复制到剪贴板；2、关闭图片转存窗口，点击编辑器的多图上传选择本地上传选项卡 3、点击选择图片，在弹出的对话框中使用Ctrl+V粘贴地址；4、点击打开后选择图片上传流程。"
+            lang_step:"1、点击顶部复制按钮，将地址复制到剪贴板；2、点击添加照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后选择图片上传流程。"
         },
         'fileType':"图片",
         'flashError':"FLASH初始化失败，请检查FLASH插件是否正确安装！",

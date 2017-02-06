@@ -11,7 +11,7 @@
       <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/ueditor.all.js"></script>
     <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/lang/zh-cn/zh-cn.js"></script>
-    
+    <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/lang/en/en.js"></script>
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/whole.css" />
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/layout.css" />
     <script type="text/javascript">
@@ -26,14 +26,14 @@ $(function() {
 
 	UE.getEditor('editor',{
 		toolbars: [[		             
-		               'source', '|', 'undo', 'redo', '|',
+		                'undo', 'redo', '|',
 		              'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
 		              'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
 		              'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
 		              'directionalityltr', 'directionalityrtl', 'indent', '|',
 		              'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
 		              'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-		              'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'insertframe',   '|',
+		              'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map',  '|',
 		              'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
 		              'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', 
 		          ]]
@@ -51,7 +51,8 @@ function checkContent(){
      alert("标题不能为空");
      return false;
   }
-  if($("#_editor_textarea").val()==""){
+  var conent=UE.getEditor('editor').getContent();
+  if(conent==""){ 
      alert("内容不能为空");
      return false;
   }
@@ -158,9 +159,7 @@ function checkContent(){
             <div>
             <textarea id="editor" rows="10" cols="80" vld="{rangelength:[2,4096]}" style="width: 96%" name="content"></textarea>
             </div>
-            <div class="fr gray" id="atc_content_warn" style="padding-right: 15px; padding-left: 15px; padding-bottom: 0px; padding-top: 0px">限 2,4096 字符</div>
             <div id="_file_container"></div>
-           <!--  <div id="_file_selecter">插入图片或附件：<input id="_editor_file" type="file" onchange="PnEditor.selectFile();" name="attachments" /></div> -->
             <div style="margin: 5px 0px">
             <input type="hidden" name="forumId" value="${forumId!}"/>
             <input class="btn fl b" type="submit" style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; height: 26px" value=" 提 交 " />
@@ -173,190 +172,7 @@ function checkContent(){
     </div>
     </div>
     </div>
-    <div id="_pop_container">
-    <div class="popupmenu_popup fontname_menu" id="_fontname_pop" style="display: none">
-    <ul unselectable="on">
-      <li unselectable="on">仿宋_GB2312</li>
-      <li unselectable="on">黑体</li>
-      <li unselectable="on">楷体_GB2312</li>
-      <li unselectable="on">宋体</li>
-      <li unselectable="on">新宋体</li>
-      <li unselectable="on">微软雅黑</li>
-      <li unselectable="on">Trebuchet MS</li>
-      <li unselectable="on">Tahoma</li>
-      <li unselectable="on">Arial</li>
-      <li unselectable="on">Impact</li>
-      <li unselectable="on">Verdana</li>
-      <li unselectable="on">Times New Roman</li>
-    </ul>
-    </div>
-    <div id="_fontsize_pop" style="display: none">
-    <ul unselectable="on">
-      <li unselectable="on" fontsize="10">较小</li>
-      <li unselectable="on" fontsize="18">较大</li>
-      <li unselectable="on" fontsize="6">极细字</li>
-      <li unselectable="on" fontsize="8">细字</li>
-      <li unselectable="on" fontsize="10">小字体</li>
-      <li unselectable="on" fontsize="14">中字体</li>
-      <li unselectable="on" fontsize="20">大字体</li>
-      <li unselectable="on" fontsize="25">加大字</li>
-      <li unselectable="on" fontsize="100">特大字</li>
-    </ul>
-    </div>
-    <div id="_forecolor_pop" style="display: none">
-    <table cellspacing="4" cellpadding="0" border="0">
-      <tbody>
-        <tr>
-          <td col="Black">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Sienna">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkOliveGreen">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkGreen">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkSlateBlue">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Navy">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Indigo">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkSlateGray">
-          <div unselectable="on"></div>
-          </td>
-        </tr>
-        <tr>
-          <td col="DarkRed">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkOrange">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Olive">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Green">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Teal">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Blue">
-          <div unselectable="on"></div>
-          </td>
-          <td col="SlateGray">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DimGray">
-          <div unselectable="on"></div>
-          </td>
-        </tr>
-        <tr>
-          <td col="Red">
-          <div unselectable="on"></div>
-          </td>
-          <td col="SandyBrown">
-          <div unselectable="on"></div>
-          </td>
-          <td col="YellowGreen">
-          <div unselectable="on"></div>
-          </td>
-          <td col="SeaGreen">
-          <div unselectable="on"></div>
-          </td>
-          <td col="MediumTurquoise">
-          <div unselectable="on"></div>
-          </td>
-          <td col="RoyalBlue">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Purple">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Gray">
-          <div unselectable="on"></div>
-          </td>
-        </tr>
-        <tr>
-          <td col="Magenta">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Orange">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Yellow">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Lime">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Cyan">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DeepSkyBlue">
-          <div unselectable="on"></div>
-          </td>
-          <td col="DarkOrchid">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Silver">
-          <div unselectable="on"></div>
-          </td>
-        </tr>
-        <tr>
-          <td col="Pink">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Wheat">
-          <div unselectable="on"></div>
-          </td>
-          <td col="LemonChiffon">
-          <div unselectable="on"></div>
-          </td>
-          <td col="PaleGreen">
-          <div unselectable="on"></div>
-          </td>
-          <td col="PaleTurquoise">
-          <div unselectable="on"></div>
-          </td>
-          <td col="LightBlue">
-          <div unselectable="on"></div>
-          </td>
-          <td col="Plum">
-          <div unselectable="on"></div>
-          </td>
-          <td col="White">
-          <div unselectable="on"></div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    <div class="_pop_input" id="_link_pop" style="display: none">
-    <div><label for="_link_url">链接地址：</label></div>
-    <div><input id="_link_url" type="text" /></div>
-    <div><label for="_link_label">链接标题：</label></div>
-    <div><input id="_link_label" type="text" /></div>
-    <div class="_center"><input id="_link_ok" type="button" onclick="PnEditor.insertUrl($('#_link_url').val(),$('#_link_label').val(),'link');$('#_link_pop').hide();$('#_link_url').val('');$('#_link_label').val('');" value="确定" /> <input class="_input_cancel" type="button" value="取消" /></div>
-    </div>
-    <div class="_pop_input" id="_email_pop" style="display: none">
-    <div><label for="_email_url">邮箱地址：</label></div>
-    <div><input id="_email_url" type="text" /></div>
-    <div class="_center"><input id="_email_ok" type="button" onclick="PnEditor.insertUrl($('#_email_url').val(),null,'email');$('#_email_pop').hide();$('#_email_url').val('');" value="确定" /> <input class="_input_cancel" type="button" value="取消" /></div>
-    </div>
-    <div class="_pop_input" id="_image_pop" style="display: none">
-    <div><label for="_image_url">图片地址：</label></div>
-    <div><input id="_image_url" type="text" /></div>
-    <div class="_center"><input id="_image_ok" type="button" onclick="PnEditor.insertUrl($('#_image_url').val(),null,'img');$('#_image_pop').hide();$('#_image_url').val('');" value="确定" /> <input class="_input_cancel" type="button" value="取消" /></div>
-    </div>
-    </div>
+   
     <!--/main-->
     <!--footer-->[#include "../include/页脚.html"/]<!--footer-->
   </body>
