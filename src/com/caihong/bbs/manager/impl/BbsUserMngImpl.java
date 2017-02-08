@@ -446,4 +446,17 @@ public class BbsUserMngImpl implements BbsUserMng {
 	public void setBbsUserGroupMng(BbsUserGroupMng bbsUserGroupMng) {
 		this.bbsUserGroupMng = bbsUserGroupMng;
 	}
+
+	@Override
+	public BbsUser updatePrestigeCnt(String username, Integer prestige) {
+		BbsUser user=dao.findByUsername(username);
+		if(user!=null){
+			if((user.getPrestige()+prestige)<0){
+				user.setPrestige(0l);
+			}else{
+				user.setPrestige(user.getPrestige()+prestige);
+			}
+		}
+		return user;
+	}
 }

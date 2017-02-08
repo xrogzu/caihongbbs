@@ -180,12 +180,14 @@ public class BbsUserAct {
 			return "redirect:v_list.do";
 		}
 	}
-	
+		
 	private void callWebService(String username,String password,String email,String telphone,Integer groupId,BbsUserExt userExt,String operate){
 		if(bbsWebserviceMng.hasWebservice(operate)){
 			Map<String,String>paramsValues=new HashMap<String, String>();
 			paramsValues.put("username", username);
-			paramsValues.put("password", password);
+			if(StringUtils.isNotBlank(password)){
+				paramsValues.put("password", password);
+			}
 			if(StringUtils.isNotBlank(email)){
 				paramsValues.put("email", email);
 			}
