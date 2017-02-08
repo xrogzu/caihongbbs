@@ -41,6 +41,7 @@
 		//alert('tbc_'+m+n);
 		g('tb_'+m+n).className='current';
 		g('tbc_'+m+n).className='dis';
+		$('#tab_id').val(n);
 	}
 	
 	function showimage(imgpath,value){
@@ -53,7 +54,11 @@
 		 var msg='${msg!}';
 		 if(msg){
 			 alert(msg);
-			 }
+		}
+		var tab_id='${tab_id!}';
+		if(tab_id){
+			HoverLi(1,tab_id,3);
+		}
 	 });
 </script>
 </head>
@@ -89,7 +94,7 @@
       <table class="set-table2" cellspacing="0" cellpadding="0" width="100%" border="0">
         <tbody>
           <tr>
-            <td class="td1" width="25%">性别</td>
+            <td class="td1" width="25%">性别<input id="tab_id" name="tab_id" type="hidden" value="${tab_id!}"></input></td>
             <td>
             [#if user.gender??]
             [#if user.gender] <input type="radio" checked="checked" name="gender" value="1" /> 男 <input type="radio" name="gender" value="0" /> 女</td>
@@ -135,7 +140,7 @@
 				<a href="${base}/member/editUserImg.jhtml">自定义头像</a>
 			</div>
             
-            <div style="float: left; margin-right: 1%">点击选择系统头像　　自定义头像</div>
+            <div style="float: left; margin-right: 1%">点击选择系统头像</div>
             
             <div id="face1" style="margin-top: 1%; float: left; width: 100%">
             <div id="iconbox">

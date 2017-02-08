@@ -2,12 +2,15 @@ package com.caihong.bbs.action.member;
 
 import static com.caihong.bbs.Constants.TPLDIR_MEMBER;
 import static com.caihong.bbs.Constants.TPLDIR_TOPIC;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +23,11 @@ import com.caihong.bbs.entity.BbsCreditExchange;
 import com.caihong.bbs.entity.BbsForum;
 import com.caihong.bbs.entity.BbsUser;
 import com.caihong.bbs.entity.BbsUserExt;
+import com.caihong.bbs.entity.BbsWebservice;
 import com.caihong.bbs.manager.BbsCreditExchangeMng;
 import com.caihong.bbs.manager.BbsForumMng;
 import com.caihong.bbs.manager.BbsUserMng;
+import com.caihong.bbs.manager.BbsWebserviceMng;
 import com.caihong.bbs.web.CmsUtils;
 import com.caihong.bbs.web.FrontUtils;
 import com.caihong.bbs.web.WebErrors;
@@ -122,7 +127,7 @@ public class UserPostAct {
 	}
 
 	@RequestMapping("/member/update.jspx")
-	public String informationSubmit(String email,String telphone,
+	public String informationSubmit(String email,String telphone,String tab_id,
 			String newPassword, String signed, String avatar, BbsUserExt ext,
 			HttpServletRequest request,HttpServletResponse response, ModelMap model) {
 		CmsSite site = CmsUtils.getSite(request);
@@ -144,9 +149,13 @@ public class UserPostAct {
 		Map<String,String>attrs=RequestUtils.getRequestMap(request, "attr_");
 		user = manager.updateMember(user.getId(), email, telphone,newPassword, null, signed,
 				avatar, ext,attrs, null);
+		callWebService(user.getUsername(), newPassword, email, telphone,user.getGroup().getId(),ext,BbsWebservice.SERVICE_TYPE_UPDATE_USER);
 		List<CmsConfigItem>items=cmsConfigItemMng.getList(site.getConfig().getId(), CmsConfigItem.CATEGORY_REGISTER);
 		model.put("user", user);
 		model.addAttribute("items", items);
+		if(tab_id!=null){
+			model.put("tab_id", tab_id);
+		}
 		FrontUtils.frontPageData(request, model);
 		model.put("msg", "保存成功");
 		return FrontUtils.getTplPath(request, site,
@@ -419,6 +428,36 @@ public class UserPostAct {
 		}
 		return 0;
 	}
+	
+	private void callWebService(String username,String password,String email,String telphone,Integer groupId,BbsUserExt userExt,String operate){
+		if(bbsWebserviceMng.hasWebservice(operate)){
+			Map<String,String>paramsValues=new HashMap<String, String>();
+			paramsValues.put("username", username);
+			paramsValues.put("password", password);
+			if(StringUtils.isNotBlank(email)){
+				paramsValues.put("email", email);
+			}
+			if(StringUtils.isNotBlank(telphone)){
+				paramsValues.put("telphone", telphone);
+			}
+			if(StringUtils.isNotBlank(userExt.getRealname())){
+				paramsValues.put("realname", userExt.getRealname());
+			}
+			if(userExt.getGender()!=null){
+				paramsValues.put("sex", userExt.getGender().toString());
+			}
+			if(StringUtils.isNotBlank(userExt.getMoble())){
+				paramsValues.put("tel",userExt.getMoble());
+			}
+			if(groupId!=null){
+				paramsValues.put("groupId",groupId+"");
+			}
+			bbsWebserviceMng.callWebService(operate, paramsValues);
+		}
+	}
+
+	@Autowired
+	private BbsWebserviceMng bbsWebserviceMng;
 
 	@Autowired
 	private BbsUserMng manager;
