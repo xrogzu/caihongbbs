@@ -149,7 +149,7 @@ public class RegisterAct {
 		}else{ 
 			try {
 				user = bbsUserMng.registerMember(username, email,telphone, false,password,
-						  ip, groupId, userExt,attrs);
+						  ip, groupId, userExt,attrs,null);
 				callWebService(username, password, email,telphone,groupId+"", userExt);
 			} catch (Exception e) {
 				model.addAttribute("status", 200);
@@ -186,7 +186,7 @@ public class RegisterAct {
 			    BbsUser user = null; 
 			    try {
 			    	BbsUserExt userExt = new BbsUserExt();
-					user = bbsUserMng.registerMember(username, email,telphone,false, password,ip, groupId, userExt,attrs);
+					user = bbsUserMng.registerMember(username, email,telphone,false, password,ip, groupId, userExt,attrs,null);
 			    } catch (Exception e) {
 					log.error("send email exception.", e);
 				}

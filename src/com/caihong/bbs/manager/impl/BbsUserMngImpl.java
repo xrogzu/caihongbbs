@@ -27,6 +27,7 @@ import com.caihong.bbs.manager.BbsUserExtMng;
 import com.caihong.bbs.manager.BbsUserGroupMng;
 import com.caihong.bbs.manager.BbsUserMng;
 import com.caihong.bbs.manager.BbsUserOnlineMng;
+import com.caihong.bbs.ws.HttpSender;
 import com.caihong.common.email.EmailSender;
 import com.caihong.common.email.MessageTemplate;
 import com.caihong.common.hibernate3.Updater;
@@ -78,12 +79,15 @@ public class BbsUserMngImpl implements BbsUserMng {
 	}
 
 	public BbsUser registerMember(String username, String email,String telphone,Boolean official,
-			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr) throws UnsupportedEncodingException, MessagingException {
+			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr,Integer prestige) throws UnsupportedEncodingException, MessagingException {
 		UnifiedUser unifiedUser = unifiedUserMng.save(username, email,telphone,
 				password, ip);
 		BbsUser user = new BbsUser();
 		user.forMember(unifiedUser);
 		user.setAttr(attr);
+		if(prestige!=null){
+			user.setPrestige(prestige.longValue());
+		}
 		BbsUserGroup group = null;
 		if (groupId != null) {
 			group = bbsUserGroupMng.findById(groupId);
@@ -332,6 +336,7 @@ public class BbsUserMngImpl implements BbsUserMng {
 		}
 		if (prestige != null) {
 			user.setPrestige(user.getPrestige() + prestige);
+			HttpSender.updateGrain(user.getUsername(), prestige);//同步彩虹币
 		}
 		// operator=-1无须下面操作
 		if (StringUtils.isNotBlank(mid) && operator != -1) {

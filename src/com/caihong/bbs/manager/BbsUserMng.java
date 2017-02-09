@@ -27,7 +27,7 @@ public interface BbsUserMng {
 	public BbsUser findByUsername(String username);
 	
 	public BbsUser registerMember(String username, String email,String telphone,Boolean official,
-			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr) throws UnsupportedEncodingException, MessagingException;
+			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr,Integer prestige) throws UnsupportedEncodingException, MessagingException;
 	
 	public BbsUser registerMember(String username, String email,String telphone,
 			String password, String ip, Integer groupId, BbsUserExt userExt,Map<String,String>attr, Boolean activation , EmailSender sender, MessageTemplate msgTpl) throws UnsupportedEncodingException, MessagingException ;
@@ -58,6 +58,7 @@ public interface BbsUserMng {
 	
 	public BbsUser updateMember(Integer id, String email,String telphone, String password,String realname,Boolean gender,String tel,Integer groupId);
 
+	public List<BbsUser> getList(Integer count);
 	public BbsUser deleteById(Integer id);
 
 	public BbsUser[] deleteByIds(Integer[] ids);

@@ -141,7 +141,7 @@ public class BbsUserAct {
 			HttpServletRequest request, ModelMap model) throws UnsupportedEncodingException, MessagingException {
 		String ip = RequestUtils.getIpAddr(request);
 		Map<String,String>attrs=RequestUtils.getRequestMap(request, "attr_");
-		bean = manager.registerMember(username, email,telphone,official, password, ip, groupId,ext,attrs);
+		bean = manager.registerMember(username, email,telphone,official, password, ip, groupId,ext,attrs,null);
 		callWebService(username, password, email,telphone, groupId,ext,BbsWebservice.SERVICE_TYPE_ADD_USER);
 		if(official!=null&&official){
 			return "redirect:v_officialuser_list.do";

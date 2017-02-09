@@ -174,7 +174,7 @@ public class ThirdLoginAct {
 						groupId = group.getId();
 					}
 					try {
-						BbsUser user =bbsUserMng.registerMember(username, null,null,false, username, RequestUtils.getIpAddr(request), groupId, new BbsUserExt(),null);
+						BbsUser user =bbsUserMng.registerMember(username, null,null,false, username, RequestUtils.getIpAddr(request), groupId, new BbsUserExt(),null,null);
 						bbsConfigEhCache.setBbsConfigCache(0, 0, 0, 1, user, site.getId());
 						callWebService(username, username, null, new BbsUserExt(), BbsWebservice.SERVICE_TYPE_ADD_USER);
 					} catch (Exception e) {

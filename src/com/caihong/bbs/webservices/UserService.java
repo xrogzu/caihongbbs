@@ -37,7 +37,7 @@ public class UserService  extends SpringBeanAutowiringSupport{
 	private static final Integer CMS_GROUP_DOCTOR_ID=2; //网站认证医生group id
 	
 	
-	public String addUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel,String telphone,String groupId) {
+	public String addUser(String auth_username,String auth_password,String username,String password,String email,String realname,String sex,String tel,String telphone,String groupId,String prestige) {
 		String responseCode=RESPONSE_CODE_AUTH_ERROR;
 		if(validate(auth_username, auth_password)){
 			if(StringUtils.isBlank(username)||StringUtils.isBlank(password)){
@@ -63,7 +63,7 @@ public class UserService  extends SpringBeanAutowiringSupport{
 				}
 				userExt.setMoble(tel);
 				try {
-					BbsUser user=bbsUserMng.registerMember(username, email,telphone,false, password, LOCAL_IP, group_id, userExt, null);
+					BbsUser user=bbsUserMng.registerMember(username, email,telphone,false, password, LOCAL_IP, group_id, userExt, null,new Integer(prestige));
 					responseCode=RESPONSE_CODE_SUCCESS;
 					bbsWebserviceCallRecordMng.save(auth_username, SERVICE_CODE_USER_ADD);
 					bbsConfigEhCache.setBbsConfigCache(0, 0, 0, 1, user, SITE_ID);

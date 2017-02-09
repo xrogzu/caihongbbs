@@ -21,6 +21,7 @@
 	<bean id="imageCutAct" class="com.caihong.bbs.action.member.ImageCutAct"></bean>
 	<bean id="reportFrontAct" class="com.caihong.bbs.action.member.BbsReportFrontAct"></bean>
 	<bean id="bbsTopicSearchAct" class="com.caihong.bbs.action.front.BbsTopicSearchAct"/>
+	<bean id="bbsWebserviceAct" class="com.caihong.bbs.action.front.BbsWebserviceAct"/>
 	
 	<bean id="thirdLoginAct" class="com.caihong.bbs.action.login.ThirdLoginAct"/>
 	<bean id="bbsSessionStatisticAct" class="com.caihong.bbs.action.front.BbsSessionStatisticAct"/>
