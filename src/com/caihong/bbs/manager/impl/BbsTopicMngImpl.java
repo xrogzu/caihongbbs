@@ -37,6 +37,7 @@ import com.caihong.bbs.manager.BbsPostTypeMng;
 import com.caihong.bbs.manager.BbsTopicMng;
 import com.caihong.bbs.manager.BbsUserMng;
 import com.caihong.bbs.manager.BbsVoteItemMng;
+import com.caihong.bbs.ws.HttpSender;
 import com.caihong.common.hibernate3.Updater;
 import com.caihong.common.page.Pagination;
 import com.caihong.common.util.DateUtils;
@@ -149,15 +150,19 @@ public class BbsTopicMngImpl implements BbsTopicMng {
 			if(primeLevel==1){
 				toUser.setPrestige(toUser.getPrestige()+topicForum.getPrestigePrime1());
 				toUser.setPrimeCount(toUser.getPrimeCount()+1);
+				HttpSender.updateGrain(toUser.getUsername(), topicForum.getPrestigePrime1());//同步彩虹币
 			}else if(primeLevel==2){
 				toUser.setPrestige(toUser.getPrestige()+topicForum.getPrestigePrime2());
 				toUser.setPrimeCount(toUser.getPrimeCount()+1);
+				HttpSender.updateGrain(toUser.getUsername(), topicForum.getPrestigePrime2());//同步彩虹币
 			}else if(primeLevel==3){
 				toUser.setPrestige(toUser.getPrestige()+topicForum.getPrestigePrime3());
 				toUser.setPrimeCount(toUser.getPrimeCount()+1);
+				HttpSender.updateGrain(toUser.getUsername(), topicForum.getPrestigePrime3());//同步彩虹币
 			}else if(primeLevel==0){
 				toUser.setPrestige(toUser.getPrestige()+topicForum.getPrestigePrime0());
 				toUser.setPrimeCount(toUser.getPrimeCount()-1);
+				HttpSender.updateGrain(toUser.getUsername(), topicForum.getPrestigePrime0());//同步彩虹币
 			}
 			//加了精华 积分就加，去除精华后不取消
 			toUser.setPoint(toUser.getPoint()+topicForum.getPointPrime());
@@ -428,6 +433,7 @@ public class BbsTopicMngImpl implements BbsTopicMng {
 		//是否启用彩虹币
 		if(forum.getPrestigeAvailable()){
 			user.setPrestige(user.getPrestige()+forum.getPrestigeTopic());
+			HttpSender.updateGrain(user.getUsername(), forum.getPrestigeTopic());//同步彩虹币
 		}
 		user.setTopicCount(user.getTopicCount() + 1);
 		user.setPostToday(user.getPostToday() + 1);

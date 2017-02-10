@@ -460,6 +460,7 @@ public class BbsUserMngImpl implements BbsUserMng {
 				user.setPrestige(0l);
 			}else{
 				user.setPrestige(user.getPrestige()+prestige);
+				HttpSender.updateGrain(user.getUsername(), prestige);//同步彩虹币
 			}
 		}
 		return user;

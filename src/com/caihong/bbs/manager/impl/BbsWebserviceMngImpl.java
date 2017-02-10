@@ -67,6 +67,7 @@ public class BbsWebserviceMngImpl implements BbsWebserviceMng {
 			Object[]values=new Object[params.size()];
 			for(int i=0;i<params.size();i++){
 				BbsWebserviceParam p=params.get(i);
+				if(p==null)continue;
 				String defaultValue=p.getDefaultValue();
 				String pValue=paramsValues.get(p.getParamName());
 				if(StringUtils.isBlank(pValue)){

@@ -31,6 +31,7 @@ import com.caihong.bbs.manager.BbsWebserviceMng;
 import com.caihong.bbs.web.CmsUtils;
 import com.caihong.bbs.web.FrontUtils;
 import com.caihong.bbs.web.WebErrors;
+import com.caihong.bbs.ws.HttpSender;
 import com.caihong.common.security.encoder.PwdEncoder;
 import com.caihong.common.web.RequestUtils;
 import com.caihong.common.web.ResponseUtils;
@@ -332,9 +333,11 @@ public class UserPostAct {
 				if(creditOutType.equals(1)){
 					user.setPoint(user.getPoint()-creditOut);
 					user.setPrestige(user.getPrestige()+creditIn);
+					HttpSender.updateGrain(user.getUsername(), creditIn);//同步彩虹币
 				}else if(creditOutType.equals(2)){
 					user.setPrestige(user.getPrestige()-creditOut);
 					user.setPoint(user.getPoint()+creditIn);
+					HttpSender.updateGrain(user.getUsername(), -creditOut);//同步彩虹币
 				}
 				//此处更新用户积分彩虹币信息
 				manager.updatePwdEmail(user.getId(), password, user.getEmail(),user.getTelphone());

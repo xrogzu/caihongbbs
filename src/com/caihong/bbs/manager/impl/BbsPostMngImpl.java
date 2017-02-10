@@ -31,6 +31,7 @@ import com.caihong.bbs.manager.BbsPostTypeMng;
 import com.caihong.bbs.manager.BbsTopicMng;
 import com.caihong.bbs.manager.BbsUserMng;
 import com.caihong.bbs.web.StrUtils;
+import com.caihong.bbs.ws.HttpSender;
 import com.caihong.common.hibernate3.Updater;
 import com.caihong.common.image.ImageUtils;
 import com.caihong.common.page.Pagination;
@@ -428,6 +429,8 @@ public class BbsPostMngImpl implements BbsPostMng {
 		//是否启用彩虹币
 		if(forum.getPrestigeAvailable()){
 			user.setPrestige(user.getPrestige()+forum.getPrestigeReply());
+			HttpSender.updateGrain(user.getUsername(), forum.getPrestigeReply());//同步彩虹币
+			
 		}
 		user.setPostToday(user.getPostToday() + 1);
 		user.setReplyCount(user.getReplyCount() + 1);
