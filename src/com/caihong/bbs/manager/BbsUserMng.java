@@ -71,7 +71,7 @@ public interface BbsUserMng {
 	
 	public void updateActiveLevel();
 	
-	public BbsUser updatePrestigeCnt(String username,Integer prestige);
+	public BbsUser updatePrestigeCnt(String username,Integer prestige,boolean isws);
 	
 	public void updatePoint(Integer userId,Integer point,  Integer prestige,String mid,int num,int operator);
 	

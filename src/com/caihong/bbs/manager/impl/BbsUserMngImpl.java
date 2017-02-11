@@ -453,14 +453,16 @@ public class BbsUserMngImpl implements BbsUserMng {
 	}
 
 	@Override
-	public BbsUser updatePrestigeCnt(String username, Integer prestige) {
+	public BbsUser updatePrestigeCnt(String username, Integer prestige,boolean isws) {
 		BbsUser user=dao.findByUsername(username);
 		if(user!=null){
 			if((user.getPrestige()+prestige)<0){
 				user.setPrestige(0l);
 			}else{
 				user.setPrestige(user.getPrestige()+prestige);
-				HttpSender.updateGrain(user.getUsername(), prestige);//同步彩虹币
+				if(!isws){
+					HttpSender.updateGrain(user.getUsername(), prestige);//同步彩虹币
+				}
 			}
 		}
 		return user;

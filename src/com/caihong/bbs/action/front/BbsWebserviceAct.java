@@ -32,7 +32,7 @@ public class BbsWebserviceAct {
 			ResponseUtils.renderJson(response, "0");
 		}else{
 			
-				BbsUser user=bbsUserMng.updatePrestigeCnt(username, prestige);
+				BbsUser user=bbsUserMng.updatePrestigeCnt(username, prestige,true);
 				if(user!=null){
 					ResponseUtils.renderJson(response, "1");
 				}else{
@@ -40,6 +40,11 @@ public class BbsWebserviceAct {
 			}
 		}
 	}
+	
+	/**
+	 * 临时同步论坛积分到cms
+	 * @param response
+	 */
 	@RequestMapping("/ws/updateUsersGrain.jspx")
 	public void updateUsersGrain(HttpServletResponse response){
 		List<BbsUser> list=bbsUserMng.getList(null);
