@@ -15,9 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/whole.css" />
     <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/layout.css" />
     <script type="text/javascript">
-$(function() {
-	new PnEditor();
-});
+
 function checkContent(){
 	var conent=UE.getEditor('editor').getContent();
 	if(conent==""){
@@ -103,7 +101,7 @@ UE.getEditor('editor',{
                </td>
             <td class="f_one" valign="top" style="padding-right: 7px; padding-left: 7px; padding-bottom: 7px; padding-top: 7px">            
             <div>
-            <textarea id="editor" rows="10" cols="80" vld="{rangelength:[2,4096]}" style="width: 96%" name="content">[#if otype??&&post??][#if otype==1][quote]${post.quoteContent!}[/quote][#else]回复第${post.indexCount!}楼[/#if][/#if]</textarea></div>
+            <textarea id="editor" rows="10" cols="80" vld="{rangelength:[2,4096]}" style="width: 96%" name="content">[#if otype??&&post??][#if otype==1]${"引用"+post.quoteContent!}[#else]回复第${post.indexCount!}楼[/#if][/#if]</textarea></div>
             <div class="fr gray" id="atc_content_warn" style="padding-right: 15px; padding-left: 15px; padding-bottom: 0px; padding-top: 0px">限 2,4096 字符</div>
 
             <div style="margin: 5px 0px">
