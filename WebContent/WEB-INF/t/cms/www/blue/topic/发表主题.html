@@ -7,7 +7,6 @@
     <script src="${resSys}/jquery.js" type="text/javascript"></script>
     <script src="${resSys}/front.js" type="text/javascript"></script>
     <script src="/${res}/bbs_forum/js/pony.js" type="text/javascript"></script>
-     <script src="/${res}/bbs_forum/js/PnEditor.js" type="text/javascript"></script>
       <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/ueditor.all.js"></script>
     <script type="text/javascript" charset="utf-8" src="${base}/thirdparty/ueditor/lang/zh-cn/zh-cn.js"></script>
@@ -17,7 +16,7 @@
     <script type="text/javascript">
 var VoteItem = "<div><input name='name'/><a href='javascript:;'>X</a></div>";
 $(function() {
-	new PnEditor();
+	
 	$(".AddItem").click(function(){
 		$("#itemPanel").append(VoteItem);
 		BindEvent();
