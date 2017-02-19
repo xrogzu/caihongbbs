@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhsot
-Source Server Version : 50703
+Source Server         : localhost
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : caihong_cms
 
 Target Server Type    : MYSQL
-Target Server Version : 50703
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-02-17 20:01:48
+Date: 2017-02-19 20:36:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -474,10 +474,10 @@ CREATE TABLE `jc_channel_count` (
 -- Records of jc_channel_count
 -- ----------------------------
 INSERT INTO `jc_channel_count` VALUES ('75', '472', '0', '0', '0', '50', '20', '28', '28', '28');
-INSERT INTO `jc_channel_count` VALUES ('76', '247', '11', '1', '1', '11', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('77', '126', '9', '5', '1', '15', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('78', '34', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('81', '76', '0', '0', '0', '10', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('76', '248', '12', '0', '0', '11', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('77', '128', '11', '1', '1', '15', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('78', '62', '29', '23', '23', '0', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('81', '110', '34', '0', '0', '10', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('82', '6', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('94', '11', '0', '0', '0', '16', '16', '16', '16', '16');
 INSERT INTO `jc_channel_count` VALUES ('95', '1', '1', '0', '0', '12', '12', '12', '12', '12');
@@ -581,7 +581,7 @@ CREATE TABLE `jc_channel_ext` (
 INSERT INTO `jc_channel_ext` VALUES ('75', '新闻资讯', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '510', '288', '310', '310', '2', '0', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
 INSERT INTO `jc_channel_ext` VALUES ('76', '专家团队', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_team.html', null, null, null, '0', '0', '510', '288', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/pic_team.html');
 INSERT INTO `jc_channel_ext` VALUES ('77', '空中课堂', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '1', '0', '510', '288', '310', '310', '2', '0', '0', null, null, null, '0', '0', '');
-INSERT INTO `jc_channel_ext` VALUES ('78', '预约会诊', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
+INSERT INTO `jc_channel_ext` VALUES ('78', '预约会诊', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news_reserve.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news_reserve.html');
 INSERT INTO `jc_channel_ext` VALUES ('81', '关于我们', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/alone/alone_about.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/alone/alone_about.html');
 INSERT INTO `jc_channel_ext` VALUES ('82', '留言板', null, null, '0', '0', '0', '0', '10', null, null, '/guestbook.jspx', null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '');
 INSERT INTO `jc_channel_ext` VALUES ('94', '医生论坛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/news.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0', '/WEB-INF/t/cms/www/mobile/channel/news.html');
@@ -804,7 +804,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-02-17', '2017-02-17 19:17:26', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-02-17', '2017-01-16');
+INSERT INTO `jc_config` VALUES ('1', null, null, '80', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '0', '120', '120', '/r/cms/www/watermark.png', 'www.caihongyixue.com', '40', '#FF0000', '100', '1', '0', '0', '2017-02-19', '2017-02-19 19:32:22', 'caihongyixue', '12', null, null, null, null, null, '0', '/opt/openoffice', '8820', 'D:/SWFTools/pdf2swf.exe', '0', '0', '2017-02-19', '2017-01-16');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -952,11 +952,11 @@ CREATE TABLE `jc_content` (
   KEY `index_jc_content_sort_date` (`sort_date`),
   KEY `index_jc_content_is_recommend` (`is_recommend`),
   KEY `index_jc_content_recommend_level` (`recommend_level`),
-  CONSTRAINT `fk_jc_contentchannel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`),
   CONSTRAINT `fk_jc_content_model` FOREIGN KEY (`model_id`) REFERENCES `jc_model` (`model_id`),
   CONSTRAINT `fk_jc_content_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_content_type` FOREIGN KEY (`type_id`) REFERENCES `jc_content_type` (`type_id`),
-  CONSTRAINT `fk_jc_content_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
+  CONSTRAINT `fk_jc_content_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
+  CONSTRAINT `fk_jc_contentchannel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COMMENT='CMS内容表';
 
 -- ----------------------------
@@ -1012,7 +1012,7 @@ INSERT INTO `jc_content` VALUES ('132', '96', '1', '2', '1', '1', '2016-10-10 13
 INSERT INTO `jc_content` VALUES ('133', '81', '1', '2', '9', '1', '2016-10-10 14:08:28', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('134', '81', '1', '2', '9', '1', '2016-10-10 14:11:44', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('135', '81', '1', '2', '9', '1', '2016-10-10 14:13:55', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('136', '81', '1', '2', '9', '1', '2016-10-10 14:14:59', '1', '0', '0', '2', '0', '0', '0', '0', '0', '1');
+INSERT INTO `jc_content` VALUES ('136', '96', '1', '2', '9', '1', '2016-10-10 14:14:59', '1', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('137', '81', '1', '2', '9', '1', '2016-10-10 14:17:16', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('138', '81', '1', '2', '9', '1', '2016-10-10 14:19:56', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
 INSERT INTO `jc_content` VALUES ('139', '81', '1', '2', '9', '1', '2016-10-10 14:24:49', '0', '0', '0', '2', '0', '0', '0', '0', '0', '1');
@@ -1521,7 +1521,7 @@ INSERT INTO `jc_content_channel` VALUES ('96', '132');
 INSERT INTO `jc_content_channel` VALUES ('81', '133');
 INSERT INTO `jc_content_channel` VALUES ('81', '134');
 INSERT INTO `jc_content_channel` VALUES ('81', '135');
-INSERT INTO `jc_content_channel` VALUES ('81', '136');
+INSERT INTO `jc_content_channel` VALUES ('96', '136');
 INSERT INTO `jc_content_channel` VALUES ('81', '137');
 INSERT INTO `jc_content_channel` VALUES ('81', '138');
 INSERT INTO `jc_content_channel` VALUES ('81', '139');
@@ -2093,7 +2093,7 @@ CREATE TABLE `jc_content_record` (
   PRIMARY KEY (`content_record_id`),
   KEY `fk_index_jc_content_record_content` (`content_id`),
   KEY `fk_index_jc_content_record_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COMMENT='文章操作记录';
 
 -- ----------------------------
 -- Records of jc_content_record
@@ -2161,6 +2161,7 @@ INSERT INTO `jc_content_record` VALUES ('84', '125', '1', '2017-01-18 18:44:17',
 INSERT INTO `jc_content_record` VALUES ('85', '59', '1', '2017-01-18 18:44:17', '6');
 INSERT INTO `jc_content_record` VALUES ('86', '130', '1', '2017-02-01 21:25:12', '1');
 INSERT INTO `jc_content_record` VALUES ('87', '130', '1', '2017-02-01 21:27:28', '1');
+INSERT INTO `jc_content_record` VALUES ('88', '136', '1', '2017-02-19 01:12:03', '1');
 
 -- ----------------------------
 -- Table structure for jc_content_reward_fix
@@ -3168,7 +3169,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=294 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -3452,6 +3453,20 @@ INSERT INTO `jc_log` VALUES ('276', '1', '1', '3', '2017-02-15 18:13:07', '127.0
 INSERT INTO `jc_log` VALUES ('277', '1', '1', '3', '2017-02-15 18:13:22', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=14;username=彩虹');
 INSERT INTO `jc_log` VALUES ('278', '1', null, '1', '2017-02-15 18:33:51', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('279', '1', null, '1', '2017-02-17 11:24:32', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('280', '1', null, '1', '2017-02-18 12:38:38', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('281', '1', null, '1', '2017-02-18 12:41:59', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('282', '1', null, '1', '2017-02-18 12:51:50', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('283', '1', null, '1', '2017-02-18 13:04:35', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('284', '1', null, '1', '2017-02-18 13:38:45', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('285', '1', null, '1', '2017-02-18 15:38:40', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('286', '1', null, '1', '2017-02-18 16:54:38', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('287', '1', null, '1', '2017-02-18 16:57:33', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('288', '1', null, '1', '2017-02-18 17:03:47', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('289', '1', null, '1', '2017-02-18 17:23:12', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('290', '1', '1', '3', '2017-02-18 17:33:35', '127.0.0.1', '/admin/cms/member/o_update.do', '更新会员', 'id=28;username=caihong6');
+INSERT INTO `jc_log` VALUES ('291', '1', null, '1', '2017-02-18 18:26:37', '127.0.0.1', '/admin/cms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('292', '1', '1', '3', '2017-02-18 22:39:04', '127.0.0.1', '/admin/cms/channel/o_update.do', '修改栏目', 'id=78;name=预约会诊');
+INSERT INTO `jc_log` VALUES ('293', '1', '1', '3', '2017-02-19 01:12:04', '127.0.0.1', '/admin/cms/content/o_update.do', '修改文章', 'id=136;title=《习近平的国家治理现代化思想》出版');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3868,7 +3883,7 @@ INSERT INTO `jc_origin` VALUES ('6', '腾讯新闻', '0');
 -- ----------------------------
 DROP TABLE IF EXISTS `jc_patient`;
 CREATE TABLE `jc_patient` (
-  `id` int(11) NOT NULL COMMENT 'id',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(50) NOT NULL,
   `gender` tinyint(1) DEFAULT NULL COMMENT '1,男 2女',
   `telphone` varchar(50) DEFAULT NULL,
@@ -3881,11 +3896,13 @@ CREATE TABLE `jc_patient` (
   `home_address` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jc_patient
 -- ----------------------------
+INSERT INTO `jc_patient` VALUES ('1', '病理科', '0', '15588882222', '2017-02-19', '511023198207138739', '1', '1', '2017-02-19 16:24:05', 'sic', '成都');
+INSERT INTO `jc_patient` VALUES ('2', '病理科', '0', '15588882222', '1986-09-23', '511011198609237646', '1', '1', '2017-02-19 18:27:44', 'sic', 'asdfafafasf');
 
 -- ----------------------------
 -- Table structure for jc_plug
@@ -3977,15 +3994,19 @@ CREATE TABLE `jc_reserve` (
   `order_num` varchar(100) DEFAULT NULL,
   `diagnosis` text COMMENT '医生诊断',
   `clinical_diagnosis` text,
+  `cancel_reason` varchar(1000) DEFAULT NULL COMMENT '取消原因',
   `patient_id` int(11) NOT NULL COMMENT 'id',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `patient_id` (`patient_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jc_reserve
 -- ----------------------------
+INSERT INTO `jc_reserve` VALUES ('1', '20', '2', '2017-02-21 00:00:00', '1', '1', '2017-02-19 16:29:58', '0', null, null, '阿萨德法师打发水电费', null, '1');
+INSERT INTO `jc_reserve` VALUES ('2', '20', '2', '2017-02-28 00:00:00', '1', '1', '2017-02-19 16:39:43', '0', null, null, '案发生的法师法师打发', null, '1');
+INSERT INTO `jc_reserve` VALUES ('3', '12', '12', '2017-02-28 00:00:00', '1', '1', '2017-02-19 18:27:44', '0', null, null, 'asfsdfasfasdf', null, '2');
 
 -- ----------------------------
 -- Table structure for jc_reserve_attachment
@@ -3995,7 +4016,7 @@ CREATE TABLE `jc_reserve_attachment` (
   `reserve_id` int(11) NOT NULL COMMENT 'id',
   `priority` int(11) NOT NULL COMMENT '排练顺序',
   `path` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `filename` varchar(255) DEFAULT NULL,
   KEY `reserve_id` (`reserve_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -4003,6 +4024,9 @@ CREATE TABLE `jc_reserve_attachment` (
 -- ----------------------------
 -- Records of jc_reserve_attachment
 -- ----------------------------
+INSERT INTO `jc_reserve_attachment` VALUES ('1', '0', '/uploads/201702/d8b519a912e147259699f1b0286c1bca.jpg', 'u=448533732', null);
+INSERT INTO `jc_reserve_attachment` VALUES ('2', '0', '/uploads/201702/29672dba26dd4d06bea7a4eeeb519bf1.jpg', 'timg - 副本.jpg', null);
+INSERT INTO `jc_reserve_attachment` VALUES ('3', '0', '/uploads/201702/e6528d67d2da497bad06858caff5019f.docx', '证明.docx', null);
 
 -- ----------------------------
 -- Table structure for jc_role
@@ -4038,25 +4062,6 @@ CREATE TABLE `jc_role_permission` (
 
 -- ----------------------------
 -- Records of jc_role_permission
--- ----------------------------
-
--- ----------------------------
--- Table structure for jc_schedule
--- ----------------------------
-DROP TABLE IF EXISTS `jc_schedule`;
-CREATE TABLE `jc_schedule` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `doctor_id` int(11) NOT NULL COMMENT '医生id',
-  `schedule_time` date DEFAULT NULL COMMENT '资源日期',
-  `price` double NOT NULL COMMENT '资源价格',
-  `counts` int(11) NOT NULL COMMENT '可用数量',
-  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '状态 : 1，可用\r\n0，停诊',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='排班表';
-
--- ----------------------------
--- Records of jc_schedule
 -- ----------------------------
 
 -- ----------------------------
@@ -4291,22 +4296,22 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
 -- ----------------------------
-INSERT INTO `jc_site_access` VALUES ('234', '65DE4663BBFE44172AFF71C87991AC69', '1', '08:58:52', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '8', '2', 'Win 7', 'chrome 50', '');
-INSERT INTO `jc_site_access` VALUES ('235', '5AA8C22A3111B48CC591525D9070BC4E', '1', '10:01:19', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('236', '0AC3B3DA6CA4B6365571A4D4F6963949', '1', '11:21:46', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('237', '7DBCE7792F81EFCB38F7067E12FDEDF3', '1', '12:44:02', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('238', 'F5463955413EEF38D35884192999F213', '1', '13:38:03', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '0', '1', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('239', 'C7DB78F41D104FE81B3CABD9882598A5', '1', '14:31:10', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/education/index.jhtml', 'http://www.caihongyixue.com/education/index.jhtml', '0', '1', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('240', '01D87BD16B3B59897C73D3CCAEF8AC1F', '1', '15:57:17', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '2', '2', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('241', '082BE0E464F8DE1799858E93E022DA95', '1', '19:24:58', '2017-02-17', '192.168.1.147', '', '直接访问', null, null, 'http://192.168.1.185:2021/', 'http://192.168.1.185:2021/', '1034', '32', 'MAC', 'safari 10', '');
-INSERT INTO `jc_site_access` VALUES ('242', '082BE0E464F8DE1799858E93E022DA95', '1', '19:24:58', '2017-02-17', '192.168.1.147', '', '直接访问', null, null, 'http://192.168.1.185:2021/', 'http://192.168.1.185:2021/', '61', '21', 'MAC', 'safari 10', '');
-INSERT INTO `jc_site_access` VALUES ('243', 'B9944BC013F5F0941A9E3538F1D369E7', '1', '19:33:36', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/?tmppass=123321', 'http://www.caihongyixue.com/?tmppass=123321', '12', '2', 'Win 7', 'chrome 55', '');
-INSERT INTO `jc_site_access` VALUES ('244', 'D19562B48EC0BCF5C61DAD46D76517D1', '1', '19:52:33', '2017-02-17', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/zjtd/index.jhtml', '5', '3', 'MAC', 'safari 9', '');
+INSERT INTO `jc_site_access` VALUES ('248', 'D5452D3D9C383382D1D5E95DE00EC566', '1', '00:27:02', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/yyhz/index.jhtml', 'http://www.caihongyixue.com/yyhz/index.jhtml', '688', '15', 'MAC', 'safari 9', '');
+INSERT INTO `jc_site_access` VALUES ('249', 'FA895983D8CC4477BFCEBC04077CDFD2', '1', '00:38:54', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/yyhz/index.jhtml', '351', '13', 'MAC', 'safari 9', '');
+INSERT INTO `jc_site_access` VALUES ('250', '5F41C34F6C0222561A9D9452E883F247', '1', '00:45:05', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/yyhz/index.jhtml', '1536', '9', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('251', 'C3E41ACCC57D678A197D0FC4ACF59B82', '1', '11:19:42', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('252', '08B9788C9C7EA8F414783D9E735076D7', '1', '12:09:24', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/#', 'http://www.caihongyixue.com/#', '173', '2', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('253', 'AA3F93876EC08A54AEFB3A348298E1B0', '1', '12:32:50', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '0', '1', 'Win 7', 'chrome 45', '');
+INSERT INTO `jc_site_access` VALUES ('254', '9303C7B9816E50C848334C7F07297E88', '1', '12:37:46', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '26', '2', 'Win 7', 'firefox 51', '');
+INSERT INTO `jc_site_access` VALUES ('255', '12D8B21FC198587B69F32E8DF6DE8B5C', '1', '13:17:43', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '7', '2', 'Win 7', 'firefox 51', '');
+INSERT INTO `jc_site_access` VALUES ('256', '5193B910E6DC4E1BAAFC8060BC039EF6', '1', '13:45:46', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/#', 'http://www.caihongyixue.com/#', '175', '2', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('257', '1A75102FBA19C84962CDF75A614169BF', '1', '14:43:45', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/#', 'http://www.caihongyixue.com/#', '0', '1', 'Win 7', 'chrome 53', '');
+INSERT INTO `jc_site_access` VALUES ('258', '6698B016467D2F69721FC6C0226B5190', '1', '17:59:35', '2017-02-19', '127.0.0.1', '', '直接访问', null, null, 'http://www.caihongyixue.com/', 'http://www.caihongyixue.com/', '12', '2', 'Win 7', 'ie 7', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -4321,7 +4326,7 @@ CREATE TABLE `jc_site_access_count` (
   PRIMARY KEY (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`),
   CONSTRAINT `fk_jc_access_count_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
+) ENGINE=InnoDB AUTO_INCREMENT=398 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
 
 -- ----------------------------
 -- Records of jc_site_access_count
@@ -4447,6 +4452,14 @@ INSERT INTO `jc_site_access_count` VALUES ('386', '1', '2', '2017-02-15', '1');
 INSERT INTO `jc_site_access_count` VALUES ('387', '2', '2', '2017-02-16', '1');
 INSERT INTO `jc_site_access_count` VALUES ('388', '1', '1', '2017-02-16', '1');
 INSERT INTO `jc_site_access_count` VALUES ('389', '8', '1', '2017-02-16', '1');
+INSERT INTO `jc_site_access_count` VALUES ('390', '1', '5', '2017-02-17', '1');
+INSERT INTO `jc_site_access_count` VALUES ('391', '2', '3', '2017-02-17', '1');
+INSERT INTO `jc_site_access_count` VALUES ('392', '3', '1', '2017-02-17', '1');
+INSERT INTO `jc_site_access_count` VALUES ('393', '21', '1', '2017-02-17', '1');
+INSERT INTO `jc_site_access_count` VALUES ('394', '32', '1', '2017-02-17', '1');
+INSERT INTO `jc_site_access_count` VALUES ('395', '10', '1', '2017-02-18', '1');
+INSERT INTO `jc_site_access_count` VALUES ('396', '11', '1', '2017-02-18', '1');
+INSERT INTO `jc_site_access_count` VALUES ('397', '95', '1', '2017-02-18', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_pages
@@ -4463,51 +4476,57 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=966 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=1075 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
 -- ----------------------------
-INSERT INTO `jc_site_access_pages` VALUES ('926', 'http://www.caihongyixue.com/?tmppass=123321', '65DE4663BBFE44172AFF71C87991AC69', '2017-02-17', '08:58:52', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('927', 'http://www.caihongyixue.com/?tmppass=123321', '5AA8C22A3111B48CC591525D9070BC4E', '2017-02-17', '10:01:19', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('928', 'http://www.caihongyixue.com/?tmppass=123321', '0AC3B3DA6CA4B6365571A4D4F6963949', '2017-02-17', '11:21:49', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('929', 'http://www.caihongyixue.com/?tmppass=123321', '7DBCE7792F81EFCB38F7067E12FDEDF3', '2017-02-17', '12:44:02', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('930', 'http://www.caihongyixue.com/?tmppass=123321', 'F5463955413EEF38D35884192999F213', '2017-02-17', '13:38:03', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('931', 'http://www.caihongyixue.com/education/index.jhtml', 'C7DB78F41D104FE81B3CABD9882598A5', '2017-02-17', '14:31:10', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('932', 'http://www.caihongyixue.com/?tmppass=123321', '01D87BD16B3B59897C73D3CCAEF8AC1F', '2017-02-17', '15:57:17', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('933', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:24:58', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('934', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:51', '1', '11', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('935', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:59', '63', '21', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('936', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:46', '3', '4', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('937', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:45', '1', '3', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('938', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:50', '0', '8', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('939', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:53', '0', '14', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('940', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:57', '2', '20', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('941', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:50', '0', '9', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('942', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:49', '0', '6', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('943', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:52', '1', '13', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('944', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:56', '0', '17', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('945', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:50', '1', '10', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('946', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:49', '0', '5', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('947', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:56', '1', '18', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('948', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:53', '2', '15', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('949', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:49', '1', '7', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('950', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:57', '0', '19', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('951', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:55', '1', '16', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('952', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:28', '12', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('953', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:52', '0', '12', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('954', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:25:40', '5', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('955', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:27:02', '15', '22', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('956', 'http://192.168.1.185:2021/?tmppass=123321', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:27:17', '5', '23', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('957', 'http://192.168.1.185:2021/zjtd/index.jhtml', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:27:22', '76', '24', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('958', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:28:38', '0', '25', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('959', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:28:41', '0', '28', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('960', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:28:41', '74', '29', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('961', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:29:55', '0', '30', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('962', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:28:38', '2', '26', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('963', 'http://192.168.1.185:2021/', '082BE0E464F8DE1799858E93E022DA95', '2017-02-17', '19:28:40', '1', '27', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('964', 'http://www.caihongyixue.com/?tmppass=123321', 'B9944BC013F5F0941A9E3538F1D369E7', '2017-02-17', '19:33:42', '0', '1', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('965', 'http://www.caihongyixue.com/', 'D19562B48EC0BCF5C61DAD46D76517D1', '2017-02-17', '19:52:34', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1029', 'http://www.caihongyixue.com/yyhz/index.jhtml', '2854135CE721133F5545FC9F04E43917', '2017-02-19', '00:12:16', '434', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1030', 'http://www.caihongyixue.com/yyhz/index.jhtml', '2854135CE721133F5545FC9F04E43917', '2017-02-19', '00:19:30', '53', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1031', 'http://www.caihongyixue.com/yyhz/index.jhtml', '2854135CE721133F5545FC9F04E43917', '2017-02-19', '00:20:23', '2', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1032', 'http://www.caihongyixue.com/yyhz/index.jhtml', '2854135CE721133F5545FC9F04E43917', '2017-02-19', '00:21:03', '0', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1033', 'http://www.caihongyixue.com/yyhz/index.jhtml', '2854135CE721133F5545FC9F04E43917', '2017-02-19', '00:20:25', '38', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1034', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:27:02', '3', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1035', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:27:45', '35', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1036', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:28:20', '428', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1037', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:27:05', '40', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1038', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:35:28', '33', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1039', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:36:48', '23', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1040', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:36:01', '47', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1041', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:37:55', '35', '14', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1042', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:37:11', '1', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1043', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:37:12', '43', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1044', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:37:12', '0', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1045', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'D5452D3D9C383382D1D5E95DE00EC566', '2017-02-19', '00:38:30', '0', '15', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1046', 'http://www.caihongyixue.com/', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:38:55', '4', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1047', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:38:59', '42', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1048', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:40:21', '6', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1049', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:39:41', '16', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1050', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:39:57', '24', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1051', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:40:27', '23', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1052', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:40:50', '35', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1053', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:41:25', '32', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1054', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:41:57', '103', '9', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1055', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:43:40', '12', '10', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1056', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:44:32', '13', '12', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1057', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:44:45', '0', '13', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1058', 'http://www.caihongyixue.com/yyhz/index.jhtml', 'FA895983D8CC4477BFCEBC04077CDFD2', '2017-02-19', '00:43:52', '40', '11', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1059', 'http://www.caihongyixue.com/', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:45:05', '59', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1060', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:46:04', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1061', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:52:52', '55', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1062', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:53:47', '34', '5', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1063', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:54:21', '57', '6', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1064', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:55:22', '0', '8', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1065', 'http://www.caihongyixue.com/yyhz/index.jhtml', '5F41C34F6C0222561A9D9452E883F247', '2017-02-19', '00:55:18', '4', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1066', 'http://www.caihongyixue.com/', 'C3E41ACCC57D678A197D0FC4ACF59B82', '2017-02-19', '11:19:42', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1067', 'http://www.caihongyixue.com/#', '08B9788C9C7EA8F414783D9E735076D7', '2017-02-19', '12:09:25', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1068', 'http://www.caihongyixue.com/', 'AA3F93876EC08A54AEFB3A348298E1B0', '2017-02-19', '12:33:03', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1069', 'http://www.caihongyixue.com/', '9303C7B9816E50C848334C7F07297E88', '2017-02-19', '12:37:47', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1070', 'http://www.caihongyixue.com/', '12D8B21FC198587B69F32E8DF6DE8B5C', '2017-02-19', '13:17:44', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1071', 'http://www.caihongyixue.com/#', '5193B910E6DC4E1BAAFC8060BC039EF6', '2017-02-19', '13:45:47', '174', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1072', 'http://www.caihongyixue.com/#', '5193B910E6DC4E1BAAFC8060BC039EF6', '2017-02-19', '13:48:41', '0', '2', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1073', 'http://www.caihongyixue.com/#', '1A75102FBA19C84962CDF75A614169BF', '2017-02-19', '14:43:48', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('1074', 'http://www.caihongyixue.com/', '6698B016467D2F69721FC6C0226B5190', '2017-02-19', '17:59:45', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -4527,7 +4546,7 @@ CREATE TABLE `jc_site_access_statistic` (
   PRIMARY KEY (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`),
   CONSTRAINT `fk_jc_access_statistic_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=469 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=473 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
 
 -- ----------------------------
 -- Records of jc_site_access_statistic
@@ -4644,6 +4663,10 @@ INSERT INTO `jc_site_access_statistic` VALUES ('465', '2017-02-15', '2', '2', '2
 INSERT INTO `jc_site_access_statistic` VALUES ('466', '2017-02-15', '2', '2', '2', '1', '0', '1', 'source', '直接访问');
 INSERT INTO `jc_site_access_statistic` VALUES ('467', '2017-02-16', '13', '3', '4', '3', '269', '1', 'all', '');
 INSERT INTO `jc_site_access_statistic` VALUES ('468', '2017-02-16', '13', '3', '4', '3', '269', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('469', '2017-02-17', '67', '2', '10', '6', '112', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('470', '2017-02-17', '67', '2', '10', '6', '112', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('471', '2017-02-18', '116', '1', '3', '38', '-22780', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('472', '2017-02-18', '116', '1', '3', '38', '-22780', '1', 'source', '直接访问');
 
 -- ----------------------------
 -- Table structure for jc_site_attr
@@ -4660,16 +4683,16 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '1109');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '292');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '1230');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '308');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppkey', '0');
 INSERT INTO `jc_site_attr` VALUES ('1', 'wxAppSecret', '0');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '40');
-INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '11');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '89');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '175');
-INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '87');
-INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '40');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayPvTotal', '50');
+INSERT INTO `jc_site_attr` VALUES ('1', 'dayVisitors', '13');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekPvTotal', '49');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthPvTotal', '296');
+INSERT INTO `jc_site_attr` VALUES ('1', 'monthVisitors', '103');
+INSERT INTO `jc_site_attr` VALUES ('1', 'weekVisitors', '13');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -4939,7 +4962,6 @@ CREATE TABLE `jc_user` (
   `nation` int(11) DEFAULT NULL,
   `comment_cnt` int(11) DEFAULT '0',
   `id_no` varchar(20) DEFAULT NULL COMMENT '证件号码',
-  `price` double(20,2) DEFAULT NULL COMMENT '医生坐诊价格',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `ak_username` (`username`),
   UNIQUE KEY `ak_userid` (`user_id`),
@@ -4960,39 +4982,39 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', '15588882222', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-17 19:46:36', '127.0.0.1', '2448', '9', '338285', '768', '2017-02-06', '1', '0', '0', '0', '4', '81', 'D19562B48EC0BCF5C61DAD46D76517D1', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('2', '2', '5', 'caihong', null, 'qianfo_713@163.com', '2017-01-15 10:59:48', '127.0.0.1', '2017-02-09 09:40:02', '127.0.0.1', '20', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '22', '0C49C5AE72D2FC99CAD38B85BBA4F476', '0', '1', '4', '1', '8', '35', '0', null, '20.00');
-INSERT INTO `jc_user` VALUES ('3', '1', null, 'caihong1', null, '77219569@qq.com', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', '0', '0', '0', '2017-01-16', '0', '0', '0', '0', '0', '0', '294E1AA96E695E3815B69E69D5C08E48', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('4', '1', null, 'caihong3', null, '77219569@qq.com', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', 'A0DFA5A2E188EBD6C3493AE102027503', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('5', '1', null, '红山茶007', null, '423649967@qq.com', '2017-01-17 11:41:13', '182.138.200.232', '2017-01-17 16:14:33', '182.138.200.232', '7', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '906271CD70039CA011C31473FA1ECFDE', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('6', '1', null, '彩虹医学编辑', null, 'caihongyixue@163.com', '2017-01-17 15:31:52', '182.138.200.232', '2017-01-17 15:31:52', '182.138.200.232', '0', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', null, '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('7', '1', null, 'ceshi123', null, 'caihongyixue@163.com', '2017-01-17 15:40:36', '182.138.200.232', '2017-01-17 15:42:09', '182.138.200.232', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '3', '149C1E6ED3F33FBFD1174D76C9D4D8C0', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('10', '1', null, 'qianfo_713', null, '77219569@qq.com', '2017-01-18 10:19:18', '117.173.132.144', '2017-01-18 14:38:02', '117.173.132.144', '3', '0', '0', '0', '2017-01-18', '0', '0', '0', '0', '0', '0', '02BEE083DEBB08E5C9CE3C44EA453B73', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('11', '1', null, '成都李炳成', null, 'yyy9990@vip.163.com', '2017-01-19 17:54:44', '182.150.160.76', '2017-01-19 17:55:07', '182.150.160.76', '1', '0', '0', '0', '2017-01-19', '0', '0', '0', '0', '0', '0', 'BB25A2D17CA37C22C99CFCD14DB319BA', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('12', '2', '3', '彩虹妹妹', null, 'caihongyixue@163.com', '2017-01-24 12:56:23', '110.22.22.220', '2017-01-24 12:59:21', '110.22.22.220', '3', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '55686FDB5539095B8A4EC2142C740A88', '0', '0', '4', '1', '8', '35', '1', null, '10.00');
-INSERT INTO `jc_user` VALUES ('13', '1', null, 'Butter', null, 'dlxiyoulinux@gmail.com', '2017-01-24 17:06:34', '60.22.103.9', '2017-01-24 17:06:44', '60.22.103.9', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '805F7D16485CF7F4A92982B9FF4168B2', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('14', '2', '5', '彩虹', null, 'caihongyixue@163.com', '2017-01-24 17:08:56', '110.22.22.220', '2017-01-28 09:28:28', '110.22.22.220', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '22', '4C311F8E4B70B8251FB4FB68A7E2E5A3', '1', '0', '4', '3', '8', '35', '1', null, '0.02');
-INSERT INTO `jc_user` VALUES ('15', '1', null, 'Daisy', null, '1213388927@qq.com', '2017-01-24 17:09:33', '211.101.240.18', '2017-01-24 17:18:45', '211.101.240.18', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '3C9E189D885121451CB5B88867C3E71C', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('16', '1', null, 'shbqsl-790818', null, '125257175@qq.com.cn', '2017-01-24 17:11:11', '180.212.194.81', '2017-01-24 17:52:00', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '67A7C25B0B9A29D489227409BC15EB4E', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('17', '1', null, '李炳辰', null, 'yyy9990@vip.163.com', '2017-01-24 17:19:59', '171.214.210.223', '2017-01-24 17:20:12', '171.214.210.223', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B91A4FB5599CBA0BCCCDF0A45E071C18', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('18', '1', null, 'shbqsl-790818sss', null, '125257175@qq.com', '2017-01-24 18:40:54', '180.212.194.81', '2017-01-24 18:42:21', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4CFB3B5B98AA41E391A5D8B5621FE33F', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('19', '1', null, 'shbqsl-790818a', null, '125257175@qq.com', '2017-01-24 18:51:23', '180.212.194.81', '2017-01-24 18:52:08', '180.212.194.81', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '8358F444C334A354C8B4D6989C451AAD', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('20', '1', null, 'shbqsl-790818aa', null, '125257175@qq.com', '2017-01-24 19:08:21', '180.212.194.81', '2017-01-24 19:08:29', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '2', '229D8A51706FD481C890A13792864C79', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('21', '1', null, 'ydk110', null, '564464797@qq.com', '2017-01-24 23:35:03', '221.203.80.59', '2017-01-25 01:13:23', '42.87.163.187', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '4', 'B6D8F492C8055F703D0A7B80FADBDAAD', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('22', '1', null, '北极光', null, '133620311@qq.com', '2017-01-25 10:12:36', '124.202.226.50', '2017-01-25 10:13:06', '124.202.226.50', '1', '0', '0', '0', '2017-01-25', '0', '0', '0', '0', '0', '0', '226B67FA39A6D368AE96D7810D8E03A3', '0', '0', null, null, null, '1', '0', null, null);
-INSERT INTO `jc_user` VALUES ('23', '2', null, 'caihong5', '15882454451', 'qianfo@713.com', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 11:50:01', '127.0.0.1', '1', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', 'EA13B098142600FB03BBCA0680A9E318', '0', '0', '4', '1', '8', '35', '0', null, '10.00');
-INSERT INTO `jc_user` VALUES ('27', '2', '3', 'caihong4', '15588882222', '123@163.com', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '0', null, '10.00');
-INSERT INTO `jc_user` VALUES ('28', '2', null, 'caihong6', '15588882223', 'caihongyixue@qq.com', '2017-02-01 17:42:22', '127.0.0.1', '2017-02-01 17:42:22', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '1', null, '12.00');
-INSERT INTO `jc_user` VALUES ('29', '2', '3', 'test', '1', '77219569@qq.com', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '0', null, '10.00');
-INSERT INTO `jc_user` VALUES ('30', '2', '3', 'test1', '15588882222', '77219569@qq.com', '2017-02-02 23:42:18', '127.0.0.1', '2017-02-02 23:42:18', '127.0.0.1', '0', '0', '0', '0', '2017-02-02', '0', '0', '0', '0', '0', '0', null, '0', '0', '5', '2', '9', '36', '0', null, '0.01');
-INSERT INTO `jc_user` VALUES ('31', '1', null, 'caih', '15544442222', '77219569@qq.com', '2017-02-09 17:52:42', '127.0.0.1', '2017-02-10 09:42:40', '127.0.0.1', '2', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', '125A67D40E33E3FC7D6CF45CBFB95F5A', '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('32', '1', null, 'caihh', '15566664444', '77219569@qq.com', '2017-02-09 17:58:25', '127.0.0.1', '2017-02-09 17:58:25', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('33', '1', null, 'caihhh', '15566664445', '77219569@qq.com', '2017-02-09 18:24:46', '127.0.0.1', '2017-02-09 18:24:46', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('34', '1', null, 'caihhhh', '15566664446', '77219569@qq.com', '2017-02-09 18:28:28', '127.0.0.1', '2017-02-09 18:28:28', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('35', '1', null, 'caihongh', '15566664447', '77219569@qq.com', '2017-02-09 18:36:15', '127.0.0.1', '2017-02-09 18:36:15', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('36', '1', null, '六六', '15588882224', '77219569@qq.com', '2017-02-14 21:54:44', '101.207.227.0', '2017-02-14 21:59:29', '101.207.231.69', '3', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', '6C272FBDEF1D128FD297699293AF8F25', '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('37', '1', null, '彩虹岛之箭', '15313242771', '125257175@qq.com', '2017-02-14 22:00:06', '42.122.139.53', '2017-02-14 22:00:10', '42.122.139.53', '1', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', 'EE6E9444C595816656A5AB31581204BE', '0', '0', null, null, null, null, null, null, null);
-INSERT INTO `jc_user` VALUES ('38', '1', null, '彩虹岛', '13691495770', '125257175@qq.com', '2017-02-14 22:02:38', '42.122.139.53', '2017-02-14 22:38:43', '111.162.197.247', '2', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', '8AD75A270106252D0188181F72BDA293', '0', '0', null, null, null, null, null, null, '0.01');
+INSERT INTO `jc_user` VALUES ('1', '1', '1', 'admin', '15588882222', 'caihongyixue@qq.com', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-19 19:36:55', '127.0.0.1', '2486', '9', '338285', '768', '2017-02-06', '1', '0', '0', '0', '4', '81', '4927E9483E58589B7293DE3096943CD5', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('2', '2', '5', 'caihong', null, 'qianfo_713@163.com', '2017-01-15 10:59:48', '127.0.0.1', '2017-02-09 09:40:02', '127.0.0.1', '20', '0', '0', '0', '2017-01-15', '0', '0', '0', '0', '0', '22', '0C49C5AE72D2FC99CAD38B85BBA4F476', '0', '1', '4', '1', '8', '35', '0', null);
+INSERT INTO `jc_user` VALUES ('3', '1', null, 'caihong1', null, '77219569@qq.com', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', '0', '0', '0', '2017-01-16', '0', '0', '0', '0', '0', '0', '294E1AA96E695E3815B69E69D5C08E48', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('4', '1', null, 'caihong3', null, '77219569@qq.com', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', 'A0DFA5A2E188EBD6C3493AE102027503', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('5', '1', null, '红山茶007', null, '423649967@qq.com', '2017-01-17 11:41:13', '182.138.200.232', '2017-01-17 16:14:33', '182.138.200.232', '7', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', '906271CD70039CA011C31473FA1ECFDE', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('6', '1', null, '彩虹医学编辑', null, 'caihongyixue@163.com', '2017-01-17 15:31:52', '182.138.200.232', '2017-01-17 15:31:52', '182.138.200.232', '0', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '0', null, '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('7', '1', null, 'ceshi123', null, 'caihongyixue@163.com', '2017-01-17 15:40:36', '182.138.200.232', '2017-01-17 15:42:09', '182.138.200.232', '1', '0', '0', '0', '2017-01-17', '0', '0', '0', '0', '0', '3', '149C1E6ED3F33FBFD1174D76C9D4D8C0', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('10', '1', null, 'qianfo_713', null, '77219569@qq.com', '2017-01-18 10:19:18', '117.173.132.144', '2017-01-18 14:38:02', '117.173.132.144', '3', '0', '0', '0', '2017-01-18', '0', '0', '0', '0', '0', '0', '02BEE083DEBB08E5C9CE3C44EA453B73', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('11', '1', null, '成都李炳成', null, 'yyy9990@vip.163.com', '2017-01-19 17:54:44', '182.150.160.76', '2017-01-19 17:55:07', '182.150.160.76', '1', '0', '0', '0', '2017-01-19', '0', '0', '0', '0', '0', '0', 'BB25A2D17CA37C22C99CFCD14DB319BA', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('12', '2', '3', '彩虹妹妹', null, 'caihongyixue@163.com', '2017-01-24 12:56:23', '110.22.22.220', '2017-01-24 12:59:21', '110.22.22.220', '3', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '55686FDB5539095B8A4EC2142C740A88', '0', '0', '4', '1', '8', '35', '1', null);
+INSERT INTO `jc_user` VALUES ('13', '1', null, 'Butter', null, 'dlxiyoulinux@gmail.com', '2017-01-24 17:06:34', '60.22.103.9', '2017-01-24 17:06:44', '60.22.103.9', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '805F7D16485CF7F4A92982B9FF4168B2', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('14', '2', '5', '彩虹', null, 'caihongyixue@163.com', '2017-01-24 17:08:56', '110.22.22.220', '2017-01-28 09:28:28', '110.22.22.220', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '22', '4C311F8E4B70B8251FB4FB68A7E2E5A3', '1', '0', '4', '3', '8', '35', '1', null);
+INSERT INTO `jc_user` VALUES ('15', '1', null, 'Daisy', null, '1213388927@qq.com', '2017-01-24 17:09:33', '211.101.240.18', '2017-01-24 17:18:45', '211.101.240.18', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '3C9E189D885121451CB5B88867C3E71C', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('16', '1', null, 'shbqsl-790818', null, '125257175@qq.com.cn', '2017-01-24 17:11:11', '180.212.194.81', '2017-01-24 17:52:00', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '67A7C25B0B9A29D489227409BC15EB4E', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('17', '1', null, '李炳辰', null, 'yyy9990@vip.163.com', '2017-01-24 17:19:59', '171.214.210.223', '2017-01-24 17:20:12', '171.214.210.223', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', 'B91A4FB5599CBA0BCCCDF0A45E071C18', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('18', '1', null, 'shbqsl-790818sss', null, '125257175@qq.com', '2017-01-24 18:40:54', '180.212.194.81', '2017-01-24 18:42:21', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '4CFB3B5B98AA41E391A5D8B5621FE33F', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('19', '1', null, 'shbqsl-790818a', null, '125257175@qq.com', '2017-01-24 18:51:23', '180.212.194.81', '2017-01-24 18:52:08', '180.212.194.81', '1', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '0', '8358F444C334A354C8B4D6989C451AAD', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('20', '1', null, 'shbqsl-790818aa', null, '125257175@qq.com', '2017-01-24 19:08:21', '180.212.194.81', '2017-01-24 19:08:29', '180.212.194.81', '2', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '2', '229D8A51706FD481C890A13792864C79', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('21', '1', null, 'ydk110', null, '564464797@qq.com', '2017-01-24 23:35:03', '221.203.80.59', '2017-01-25 01:13:23', '42.87.163.187', '4', '0', '0', '0', '2017-01-24', '0', '0', '0', '0', '0', '4', 'B6D8F492C8055F703D0A7B80FADBDAAD', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('22', '1', null, '北极光', null, '133620311@qq.com', '2017-01-25 10:12:36', '124.202.226.50', '2017-01-25 10:13:06', '124.202.226.50', '1', '0', '0', '0', '2017-01-25', '0', '0', '0', '0', '0', '0', '226B67FA39A6D368AE96D7810D8E03A3', '0', '0', null, null, null, '1', '0', null);
+INSERT INTO `jc_user` VALUES ('23', '2', null, 'caihong5', '15882454451', 'qianfo@713.com', '2017-02-01 00:38:06', '101.207.227.70', '2017-02-01 11:50:01', '127.0.0.1', '1', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', 'EA13B098142600FB03BBCA0680A9E318', '0', '0', '4', '1', '8', '35', '0', null);
+INSERT INTO `jc_user` VALUES ('27', '2', '3', 'caihong4', '15588882222', '123@163.com', '2017-02-01 17:21:42', '127.0.0.1', '2017-02-01 17:21:42', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '0', null);
+INSERT INTO `jc_user` VALUES ('28', '2', null, 'caihong6', '15588882223', 'caihongyixue@qq.com', '2017-02-01 17:42:22', '127.0.0.1', '2017-02-01 17:42:22', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '1', null);
+INSERT INTO `jc_user` VALUES ('29', '2', '3', 'test', '1', '77219569@qq.com', '2017-02-01 19:36:23', '127.0.0.1', '2017-02-01 19:36:23', '127.0.0.1', '0', '0', '0', '0', '2017-02-01', '0', '0', '0', '0', '0', '0', null, '0', '0', '4', '1', '8', '35', '0', null);
+INSERT INTO `jc_user` VALUES ('30', '2', '3', 'test1', '15588882222', '77219569@qq.com', '2017-02-02 23:42:18', '127.0.0.1', '2017-02-02 23:42:18', '127.0.0.1', '0', '0', '0', '0', '2017-02-02', '0', '0', '0', '0', '0', '0', null, '0', '0', '5', '2', '9', '36', '0', null);
+INSERT INTO `jc_user` VALUES ('31', '1', null, 'caih', '15544442222', '77219569@qq.com', '2017-02-09 17:52:42', '127.0.0.1', '2017-02-10 09:42:40', '127.0.0.1', '2', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', '125A67D40E33E3FC7D6CF45CBFB95F5A', '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('32', '1', null, 'caihh', '15566664444', '77219569@qq.com', '2017-02-09 17:58:25', '127.0.0.1', '2017-02-09 17:58:25', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('33', '1', null, 'caihhh', '15566664445', '77219569@qq.com', '2017-02-09 18:24:46', '127.0.0.1', '2017-02-09 18:24:46', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('34', '1', null, 'caihhhh', '15566664446', '77219569@qq.com', '2017-02-09 18:28:28', '127.0.0.1', '2017-02-09 18:28:28', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('35', '1', null, 'caihongh', '15566664447', '77219569@qq.com', '2017-02-09 18:36:15', '127.0.0.1', '2017-02-09 18:36:15', '127.0.0.1', '0', '0', '0', '0', '2017-02-09', '0', '0', '0', '0', '0', '10', null, '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('36', '1', null, '六六', '15588882224', '77219569@qq.com', '2017-02-14 21:54:44', '101.207.227.0', '2017-02-14 21:59:29', '101.207.231.69', '3', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', '6C272FBDEF1D128FD297699293AF8F25', '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('37', '1', null, '彩虹岛之箭', '15313242771', '125257175@qq.com', '2017-02-14 22:00:06', '42.122.139.53', '2017-02-14 22:00:10', '42.122.139.53', '1', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', 'EE6E9444C595816656A5AB31581204BE', '0', '0', null, null, null, null, null, null);
+INSERT INTO `jc_user` VALUES ('38', '1', null, '彩虹岛', '13691495770', '125257175@qq.com', '2017-02-14 22:02:38', '42.122.139.53', '2017-02-14 22:38:43', '111.162.197.247', '2', '0', '0', '0', '2017-02-14', '0', '0', '0', '0', '0', '10', '8AD75A270106252D0188181F72BDA293', '0', '0', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_user_account
@@ -5099,7 +5121,7 @@ INSERT INTO `jc_user_ext` VALUES ('21', null, null, null, null, null, null, null
 INSERT INTO `jc_user_ext` VALUES ('22', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `jc_user_ext` VALUES ('23', '柳柳', null, null, null, null, null, null, null, null, '/u/cms/www/201702/04183107ojjm.jpg', null);
 INSERT INTO `jc_user_ext` VALUES ('27', '王五', '1', null, null, null, null, null, null, null, '/u/cms/www/201702/04182757mfkn.jpg', null);
-INSERT INTO `jc_user_ext` VALUES ('28', null, null, null, null, null, null, null, null, null, '/u/cms/www/201702/04182725twg7.jpg', null);
+INSERT INTO `jc_user_ext` VALUES ('28', '流亡', '1', null, null, null, null, null, null, null, '/u/cms/www/201702/04182725twg7.jpg', null);
 INSERT INTO `jc_user_ext` VALUES ('29', '王五', null, null, null, null, null, null, null, null, '/u/cms/www/201702/04182703yuaq.jpg', null);
 INSERT INTO `jc_user_ext` VALUES ('30', '张峰', null, null, null, null, null, null, null, null, '/u/cms/www/201702/04182632usio.jpg', null);
 INSERT INTO `jc_user_ext` VALUES ('31', null, '1', null, null, null, null, null, null, null, null, null);
@@ -5123,8 +5145,8 @@ CREATE TABLE `jc_user_follow` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `fk_follow_Idx` (`user_id`,`follow_user_id`) USING BTREE,
   KEY `fk_follow_userid` (`follow_user_id`),
-  CONSTRAINT `follower_userid` FOREIGN KEY (`follow_user_id`) REFERENCES `jc_user` (`user_id`),
-  CONSTRAINT `follow_userid` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
+  CONSTRAINT `follow_userid` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
+  CONSTRAINT `follower_userid` FOREIGN KEY (`follow_user_id`) REFERENCES `jc_user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5214,6 +5236,7 @@ CREATE TABLE `jc_user_schedule` (
   `end_date` date DEFAULT NULL COMMENT '结束时间',
   `price` double NOT NULL DEFAULT '0' COMMENT '坐诊价格 : 坐诊价格',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `sign` varchar(255) DEFAULT NULL COMMENT '签名',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生排班';
@@ -5221,6 +5244,14 @@ CREATE TABLE `jc_user_schedule` (
 -- ----------------------------
 -- Records of jc_user_schedule
 -- ----------------------------
+INSERT INTO `jc_user_schedule` VALUES ('2', '1,0,0,0,0,1,1', '30', '2017-02-18', '2019-02-22', '20', '2017-02-18 17:25:46', null);
+INSERT INTO `jc_user_schedule` VALUES ('12', '0,1,0,1,1,0,0', '30', '2017-02-18', '2019-02-28', '12', '2017-02-18 17:25:33', null);
+INSERT INTO `jc_user_schedule` VALUES ('14', '0,0,1,1,0,1,1', '30', '2017-02-24', '2017-02-24', '45', '2017-02-18 17:25:12', null);
+INSERT INTO `jc_user_schedule` VALUES ('23', '0,0,1,1,1,0,0', '30', '2017-02-16', '2019-02-22', '50', '2017-02-18 17:24:58', null);
+INSERT INTO `jc_user_schedule` VALUES ('27', '0,0,1,1,1,0,0', '30', '2017-02-18', '2018-03-02', '22', '2017-02-18 17:24:16', null);
+INSERT INTO `jc_user_schedule` VALUES ('28', '1,1,0,0,0,0,0', '30', '2017-03-02', '2019-03-08', '22', '2017-02-18 17:23:56', null);
+INSERT INTO `jc_user_schedule` VALUES ('29', '1,1,0,0,0,1,0', '30', '2017-02-01', '2018-02-01', '25', '2017-02-18 17:20:59', null);
+INSERT INTO `jc_user_schedule` VALUES ('30', '0,1,1,1,0,1,1', '30', '2017-02-21', '2018-02-23', '22', '2017-02-18 17:04:07', null);
 
 -- ----------------------------
 -- Table structure for jc_user_site
@@ -5328,8 +5359,8 @@ CREATE TABLE `jc_vote_record` (
   PRIMARY KEY (`voterecored_id`),
   KEY `fk_jc_vote_record_topic` (`votetopic_id`),
   KEY `fk_jc_voterecord_user` (`user_id`),
-  CONSTRAINT `fk_jc_voterecord_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`),
-  CONSTRAINT `fk_jc_vote_record_topic` FOREIGN KEY (`votetopic_id`) REFERENCES `jc_vote_topic` (`votetopic_id`)
+  CONSTRAINT `fk_jc_vote_record_topic` FOREIGN KEY (`votetopic_id`) REFERENCES `jc_vote_topic` (`votetopic_id`),
+  CONSTRAINT `fk_jc_voterecord_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8 COMMENT='CMS投票记录';
 
 -- ----------------------------
@@ -6059,7 +6090,7 @@ CREATE TABLE `jo_user` (
 -- ----------------------------
 -- Records of jo_user
 -- ----------------------------
-INSERT INTO `jo_user` VALUES ('1', 'admin', null, 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-17 19:46:36', '127.0.0.1', '1279', null, null, null, '0', null, '1', null);
+INSERT INTO `jo_user` VALUES ('1', 'admin', null, 'caihongyixue@qq.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2011-01-03 00:00:00', '127.0.0.1', '2017-02-19 19:36:55', '127.0.0.1', '1310', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('2', 'caihong', null, 'qianfo_713@163.com', '202cb962ac59075b964b07152d234b70', '2017-01-15 10:59:48', '127.0.0.1', '2017-02-09 09:40:02', '127.0.0.1', '15', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('3', 'caihong1', null, '77219569@qq.com', '49cced1fe2e6a48f850daa28ec7c7087', '2017-01-16 17:41:06', '127.0.0.1', '2017-01-25 00:17:00', '101.207.227.64', '4', null, null, null, '0', null, '1', null);
 INSERT INTO `jo_user` VALUES ('4', 'caihong3', null, '77219569@qq.com', 'e10adc3949ba59abbe56e057f20f883e', '2017-01-17 00:58:53', '101.207.227.2', '2017-01-17 01:04:05', '101.207.227.2', '1', null, null, null, '0', null, '1', null);
