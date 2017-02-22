@@ -11,6 +11,17 @@
 <script src="${resSys}/jquery.js" type="text/javascript"></script>
 <script src="${resSys}/front.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="/${res}/bbs_forum/css/main.css" />
+<script type="text/javascript">
+function checkContent(){
+
+var content=$("#_editor_textarea").val();
+if(content==null||content=="")
+{
+	alert('内容必填');return false;
+}
+return true;
+}
+</script>
 </head>
 <body>
 <div class="main">
