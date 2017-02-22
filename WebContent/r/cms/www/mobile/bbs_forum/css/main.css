@@ -340,7 +340,7 @@ img{
     float:left;
     }
 .inf-n{
-    width:60%;
+    width:75%;
     height:40px;
     float:left;
     }
@@ -369,7 +369,7 @@ img{
     height:20px;
     }
 .inf-n h3 span{
-    float:left;
+    float:right;
     height:20px;
     color:#585858;
     font-size:12px;
@@ -591,7 +591,7 @@ img{
   color:#585858;
   font-size:14px;
   font-weight:normal;
-  height:15px;
+  
   display:block;
   }
 .member-m h2 span{
